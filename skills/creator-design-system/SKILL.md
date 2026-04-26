@@ -22,7 +22,7 @@ overrides.
 
 ---
 
-## Data Access Rule
+## Data Access Rule (BLOCKING)
 
 * **Never** fetch tokens, components, or themes from external URLs (GitHub
   links, CDNs, the web).
@@ -34,9 +34,20 @@ overrides.
   + `design-system/themes/*.json` (when product themes are added)
 * Product-specific rules live **inside this skill**, in `./products/`.
 
-If `design-system/` is not present at the repo root, stop and ask the user
-to verify the design-system folder is in place. Do not substitute with
-web-fetched copies.
+If `design-system/` is not present at the repo root, **STOP**:
+
+* Do not generate any UI output.
+* Do not fall back to values inlined in any other skill.
+* Do not use values from training data, web fetches, or memory.
+* Do not invent token names, hex values, sizes, or radii.
+
+Ask the user to either:
+
+1. `cd` into the repo that contains the design-system folder, or
+2. Explicitly point you at the correct project path.
+
+This rule is BLOCKING. The design system is the single source of truth — without
+it, no output is valid.
 
 ---
 

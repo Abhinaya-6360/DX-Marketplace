@@ -8,21 +8,40 @@ description: The visual language for Zoho Creator marketing pages — Creator he
 The shared visual language for Zoho Creator marketing pages. This skill owns
 three things, and three things only:
 
-1. The **CTA-vs-brand colour discipline rule** (which hex goes on which UI element).
+1. The **CTA-vs-brand colour discipline rule** (which token role goes on which UI element).
 2. The **header and footer markup** that wraps every Creator page.
 3. The **font stack and typography role mapping** for Creator surfaces.
 
-Everything else — the full colour palette, spacing, elevation, components,
-accessibility — comes from the `creator-design-system` skill, which reads the
-canonical token files in `design-system/foundations/` and
-`design-system/components/`.
+Everything else — colour values, spacing, elevation, components, accessibility —
+comes from the canonical token files under `design-system/`. This skill
+**never** holds copies of token values. It only describes the mapping.
+
+---
+
+## Data Access Rule (BLOCKING)
+
+This skill **cannot generate output** without access to the canonical token
+files. Specifically, it requires:
+
+* `design-system/foundations/colours.json` — for every hex value
+* `design-system/foundations/typography.json` — for font sizes and line heights
+* `design-system/foundations/spaces.json` — for padding and gaps
+* `design-system/components/cta-buttons.json` — for the CTA spec
+
+If `design-system/` is not at the repo root, **STOP**. Do not proceed with
+inlined values, memory, or web-fetched copies. Ask the user to point Claude
+at the right project (e.g. `cd ~/path/to/repo-with-design-system` and re-run).
+
+This is not negotiable. Generating chrome from invented or remembered hex
+values silently breaks the token-discipline guarantee that the entire
+architecture is built on.
 
 ---
 
 ## When to use
 
-Any time you're producing HTML/CSS for a Zoho Creator marketing page. This
-skill tells you:
+Any time you're producing HTML/CSS for a Zoho Creator marketing page, AND
+the design-system folder is accessible. This skill tells you:
 
 * Which CDS colours to use, and where to use each one.
 * The exact header and footer markup that wraps every Creator page.
@@ -37,17 +56,22 @@ animations — those are separate concerns owned by `creator-design-system`.
 
 **CTAs are red. Everything else is blue.**
 
-* **`#E42527` red (`--color-cta`)** — only for primary action buttons.
-  "Get Started", "Start Free Trial", "Contact Sales", "Subscribe", "Talk to
-  Sales" — buttons that drive a conversion. Hover `#A41719`, active `#680B0C`.
-  These hex values come from `design-system/foundations/colours.json` →
-  `families.buttonColorRed.scale.300/400/500`.
-* **`#0047FF` blue (`--color-brand`)** — the brand colour for everything
-  else interactive or branded. Links, the "Creator" wordmark, nav hover, FAQ
-  chevrons, plan ribbons, badges, decorative checkmarks, featured plan
-  borders, hero gradient tints, card hover shadow tints, focus rings.
-  These hex values come from `design-system/foundations/colours.json` →
-  `families.primary.scale.500/600/700` and `scale.0/50` for soft surfaces.
+* **`--color-cta`** — only for primary action buttons. "Get Started",
+  "Start Free Trial", "Contact Sales", "Subscribe", "Talk to Sales" — buttons
+  that drive a conversion.
+  - Default state: `colours.json → families.buttonColorRed.scale.300`
+  - Hover state:   `colours.json → families.buttonColorRed.scale.400`
+  - Active state:  `colours.json → families.buttonColorRed.scale.500`
+
+* **`--color-brand`** — the brand colour for everything else interactive
+  or branded. Links, the "Creator" wordmark, nav hover, FAQ chevrons, plan
+  ribbons, badges, decorative checkmarks, featured plan borders, hero
+  gradient tints, card hover shadow tints, focus rings.
+  - Default state: `colours.json → families.primary.scale.500`
+  - Hover state:   `colours.json → families.primary.scale.600`
+  - Active state:  `colours.json → families.primary.scale.700`
+  - Soft surface:  `colours.json → families.primary.scale.0`
+  - Soft alt:      `colours.json → families.primary.scale.50`
 
 **Decision rule when unsure:** *Does clicking this take the user toward
 signing up, paying, or contacting sales?* → red CTA. Otherwise → blue.
@@ -59,46 +83,41 @@ button.
 
 ## Workflow
 
-### Step 1 — Load colour values from CDS
+### Step 1 — Verify design-system is accessible
 
-Read `design-system/foundations/colours.json`. Use the `flat` block to
-generate CSS custom properties. Map them to the semantic tokens below.
+Confirm `design-system/` exists at the repo root before proceeding. If not,
+stop and ask the user. Do not fall back to inlined values.
 
-### Step 2 — Define semantic tokens at `:root`
+### Step 2 — Load colours and map to semantic tokens
 
-```css
-:root {
-  /* CTA — RED, only for primary action buttons */
-  --color-cta:        #E42527;   /* button bg */
-  --color-cta-hover:  #A41719;
-  --color-cta-active: #680B0C;
+Read `design-system/foundations/colours.json` and use the `flat` block to
+generate CSS custom properties. Then map them to the semantic tokens below:
 
-  /* Brand — BLUE, primary colour for everything else */
-  --color-brand:        #0047FF;   /* links, wordmark, ribbons, badges */
-  --color-brand-hover:  #003ACC;
-  --color-brand-active: #012B99;
-  --color-brand-soft:   #F3F7FF;   /* hero gradient end, soft section bg */
-  --color-brand-soft-2: #E4EDFF;   /* alt soft surface */
+```
+--color-cta:           color-button-red-300
+--color-cta-hover:     color-button-red-400
+--color-cta-active:    color-button-red-500
 
-  /* Text — from colours.json families.grey.scale */
-  --color-text-primary:   #000000;   /* headings */
-  --color-text-body:      #595959;   /* body copy (grey-500) */
-  --color-text-secondary: #919191;   /* muted (grey-400) */
+--color-brand:         color-primary-500
+--color-brand-hover:   color-primary-600
+--color-brand-active:  color-primary-700
+--color-brand-soft:    color-primary-0
+--color-brand-soft-2:  color-primary-50
 
-  /* Surfaces */
-  --color-surface-page:    #FFFFFF;
-  --color-surface-subtle:  #FAFAFA;   /* alt section bg (grey-0) */
-  --color-surface-darkest: #000000;   /* footer / inverted CTA bands */
+--color-text-primary:    color-black
+--color-text-body:       color-grey-500
+--color-text-secondary:  color-grey-400  (placeholders/dividers only — fails AA for body)
 
-  /* Borders */
-  --color-border-default: #EBEBEB;   /* grey-100 */
-  --color-border-strong:  #D1D1D1;   /* grey-200 */
+--color-surface-page:    color-white
+--color-surface-subtle:  color-grey-0
+--color-surface-darkest: color-black
 
-  /* Accents — sparing, intent-driven */
-  --color-accent-ai:      #5E05FF;   /* tertiary-500 — AI / premium */
-  --color-accent-warning: #FED70B;   /* quaternary-500 — yellow */
-  --color-accent-success: #03FF17;   /* senary-500 — green */
-}
+--color-border-default:  color-grey-100
+--color-border-strong:   color-grey-200
+
+--color-accent-ai:       color-tertiary-500
+--color-accent-warning:  color-quaternary-500
+--color-accent-success:  color-senary-500
 ```
 
 Reference **semantic tokens** in component styles, never raw hex. The
@@ -144,7 +163,7 @@ Every Creator marketing page must use this header and footer structure.
 </footer>
 ```
 
-#### Header / footer CSS skeleton
+#### Header / footer CSS (semantic tokens only)
 
 ```css
 .creator-header {
@@ -154,10 +173,9 @@ Every Creator marketing page must use this header and footer structure.
 }
 
 .creator-wordmark {
-  color: var(--color-brand);   /* ALWAYS blue, never red */
-  font-family: 'Zoho Puvi', Inter, system-ui, sans-serif;
+  color: var(--color-brand);   /* ALWAYS brand blue, never CTA red */
+  font-family: var(--font-display);
   font-weight: 600;
-  font-size: 24px;
   text-decoration: none;
 }
 
@@ -169,10 +187,9 @@ Every Creator marketing page must use this header and footer structure.
 }
 
 .creator-cta {
-  background: var(--color-cta);   /* ALWAYS red, never blue */
-  color: #FFFFFF;
-  padding: 12px 24px;
-  border-radius: 4px;
+  background: var(--color-cta);   /* ALWAYS CTA red, never brand blue */
+  color: var(--color-surface-page);
+  border-radius: var(--cds-radius-xs);  /* from radius.json — Radius/sm = 4px */
   font-weight: 600;
 }
 .creator-cta:hover  { background: var(--color-cta-hover); }
@@ -180,24 +197,27 @@ Every Creator marketing page must use this header and footer structure.
 
 .creator-footer {
   background: var(--color-surface-darkest);
-  color: #FFFFFF;
-  padding: 80px 0 40px;
+  color: var(--color-surface-page);
 }
 ```
 
-### Step 4 — Font stack
+For exact padding, gaps, font sizes — pull from `foundations/spaces.json`,
+`foundations/typography.json`, and `components/cta-buttons.json`. **Do not
+hardcode pixel values.**
 
-Use the CDS-canonical font stack:
+### Step 4 — Font stack mapping
+
+Use the CDS-canonical font stack from `foundations/typography.json`:
 
 ```css
 :root {
-  --font-display: 'Zoho Puvi', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-body:    Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: <typography.json → fontFamily.stack>;
+  --font-body:    <same stack — Zoho Puvi → Inter → system-ui fallback>;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 600;   /* Semibold */
+  font-weight: 600;
 }
 
 body, p, button, input, .creator-nav {
@@ -212,28 +232,27 @@ For exact size and line-height per heading and text tier, defer to
 
 Before finalizing any output, scan your CSS for:
 
-* Any raw hex codes — replace with semantic tokens.
-* Any non-CTA element using `--color-cta` (red) — replace with `--color-brand` (blue) or a neutral.
-* Any CTA button using `--color-brand` (blue) instead of `--color-cta` (red).
-* The "Creator" wordmark in header and footer — must be blue (`--color-brand`), not red.
+* Any raw hex codes — replace with semantic tokens or `colours.json` references.
+* Any pixel values for spacing — replace with `spaces.json` token references.
+* Any pixel values for font size — replace with `typography.json` token references.
+* Any non-CTA element using `--color-cta` — replace with `--color-brand` or a neutral.
+* Any CTA button using `--color-brand` — replace with `--color-cta`.
+* The "Creator" wordmark in header and footer — must be `--color-brand`, never `--color-cta`.
 
 ---
 
 ## What this skill does NOT cover
 
-* **Full colour palette** — comes from `design-system/foundations/colours.json`
-  via the `creator-design-system` skill.
+* **Colour values** — `design-system/foundations/colours.json`.
 * **Spacing, grid, breakpoints** — `design-system/foundations/{spaces,grids}.json`.
 * **Typography sizes / weights** — `design-system/foundations/typography.json`.
 * **Elevation, radius** — `design-system/foundations/{elevation,radius}.json`.
 * **CTA component spec** (5 variants × 4 sizes × 3 states) —
   `design-system/components/cta-buttons.json`.
 * **Accessibility** — `design-system/accessibility/wcag.json`.
-* **Page section patterns** (hero, pricing cards, resource grids, customer
-  story layouts) — separate concern.
-* **Animations and interactions** (scroll fade-up, accordions, hover lifts) —
-  separate concern.
+* **Page section patterns** (hero, pricing cards, resource grids) — separate concern.
+* **Animations and interactions** — separate concern.
 
 If you need any of the above, the `creator-design-system` skill handles them.
 This skill's job is purely Creator chrome, font stack, and the CTA-vs-brand
-discipline.
+discipline — and it cannot do that job without the design-system folder.
