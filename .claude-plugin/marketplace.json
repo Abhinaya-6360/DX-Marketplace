@@ -1,12 +1,25 @@
 {
-    "name": "DX-Marketplace",
-    "description": "Curated AI skills for structured UI design, frontend workflows, and Creator Design System enforcement.",
+  "name": "DX-Marketplace",
+  "owner": {
+    "name": "Abhinaya",
+    "url": "https://github.com/Abhinaya-6360"
+  },
+  "metadata": {
+    "description": "AI-powered design skills for UI, systems, and themes — built on the Creator Design System (CDS)",
     "version": "1.0.0",
-    "skills": [
-      {
-        "name": "creator-visual-language",
-        "path": "skills/creator-visual-language",
-        "description": "Transforms Claude into a Creator Design System expert — typography, layout, design tokens, components, and visual hierarchy."
-      }
-    ]
-  }
+    "repository": "https://github.com/Abhinaya-6360/DX-Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "creator-design-skills",
+      "version": "1.0.0",
+      "description": "Creator Design System enforcement, token usage, component authority, and visual language guides for Creator products",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/creator-design-system",
+        "./skills/creator-visual-language"
+      ]
+    }
+  ]
+}
