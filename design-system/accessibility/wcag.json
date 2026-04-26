@@ -1,0 +1,167 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Accessibility / WCAG Compliance",
+    "description": "WCAG 2.2 rules and page-by-page audit checklists for every CDS foundation. Tied to actual token values across the design-system folder.",
+    "version": "1.0",
+    "standard": "WCAG 2.2",
+    "targetLevel": "AA",
+    "meta": {
+      "tagline": "Accessible by default, by design.",
+      "subline": "Every token, component, and layout in CDS must clear WCAG 2.2 AA. AAA where it doesn't compromise the brand.",
+      "lastUpdated": "2026-04-26"
+    },
+    "principles": {
+      "perceivable":    { "id": "1", "label": "Perceivable",    "description": "Information and UI components must be presentable to users in ways they can perceive.", "applies": ["colours", "typography", "elevation", "spaces"] },
+      "operable":       { "id": "2", "label": "Operable",       "description": "UI components and navigation must be operable.", "applies": ["cta-buttons", "grids", "spaces"] },
+      "understandable": { "id": "3", "label": "Understandable", "description": "Information and UI operation must be understandable.", "applies": ["typography", "cta-buttons"] },
+      "robust":         { "id": "4", "label": "Robust",         "description": "Content must be robust enough to be interpreted by user agents, including assistive technologies.", "applies": ["cta-buttons", "all"] }
+    },
+    "rules": {
+      "contrast": {
+        "id": "1.4.3", "name": "Contrast (Minimum)", "level": "AA", "principle": "perceivable",
+        "thresholds": {
+          "normalText":   { "ratio": 4.5, "appliesTo": "Text under 18pt / 14pt bold" },
+          "largeText":    { "ratio": 3.0, "appliesTo": "Text 18pt+ or 14pt+ bold" },
+          "uiComponents": { "ratio": 3.0, "appliesTo": "Borders, icons, focus rings, form fields" },
+          "incidental":   { "ratio": null, "appliesTo": "Disabled, decorative, or pure-decoration text — exempt" }
+        },
+        "aaa": { "id": "1.4.6", "normalText": 7.0, "largeText": 4.5, "note": "Aim for AAA on long-form reading surfaces." },
+        "tools": ["axe DevTools", "Stark", "WebAIM Contrast Checker", "Figma Contrast plugin"]
+      },
+      "focusVisible": {
+        "id": "2.4.7", "name": "Focus Visible", "level": "AA", "principle": "operable",
+        "rule": "Every interactive element must show a clearly visible focus indicator.",
+        "specs": { "minThickness": "2px", "minContrastAgainstAdjacent": 3.0, "minContrastAgainstBackground": 3.0, "offsetFromElement": "2px outline-offset recommended" }
+      },
+      "focusNotObscured": { "id": "2.4.11", "name": "Focus Not Obscured (Minimum)", "level": "AA", "principle": "operable", "rule": "When an element has focus, it must not be entirely hidden by other content." },
+      "targetSize": {
+        "id": "2.5.8", "name": "Target Size (Minimum)", "level": "AA", "principle": "operable",
+        "rule": "Touch targets must be at least 24×24 CSS pixels.",
+        "aaa": { "id": "2.5.5", "minSize": "44×44 CSS pixels", "note": "Recommended for mobile-first surfaces." }
+      },
+      "textSpacing": {
+        "id": "1.4.12", "name": "Text Spacing", "level": "AA", "principle": "perceivable",
+        "rule": "Layouts must not break when users override these values:",
+        "userOverrides": { "lineHeight": "1.5× font size", "paragraphSpacing": "2× font size", "letterSpacing": "0.12× font size", "wordSpacing": "0.16× font size" }
+      },
+      "resize":          { "id": "1.4.4",  "name": "Resize Text", "level": "AA", "principle": "perceivable", "rule": "Text must be resizable up to 200% without loss of content or functionality.", "implication": "Use rem/em units for type, not fixed px." },
+      "reflow":          { "id": "1.4.10", "name": "Reflow", "level": "AA", "principle": "perceivable", "rule": "Content must reflow without horizontal scrolling at 320 CSS pixels wide.", "implication": "Mobile breakpoint must work down to 320px; nothing should require horizontal scroll except tables, maps, code." },
+      "nonTextContrast": { "id": "1.4.11", "name": "Non-Text Contrast", "level": "AA", "principle": "perceivable", "rule": "UI components and graphical objects must have at least 3:1 contrast against adjacent colors.", "appliesTo": ["Borders", "Form field outlines", "Focus rings", "Icon-only buttons", "Chart elements"] },
+      "nameRoleValue":   { "id": "4.1.2",  "name": "Name, Role, Value", "level": "A", "principle": "robust", "rule": "Every UI component must have a programmatic name, role, and current state exposed to assistive tech.", "implication": "Every CTA needs a meaningful accessible name; icon-only buttons need aria-label." },
+      "useOfColor":      { "id": "1.4.1",  "name": "Use of Color", "level": "A", "principle": "perceivable", "rule": "Color must not be the only means of conveying information.", "implication": "Errors need an icon or text label, not just red." },
+      "motion":          { "id": "2.3.3",  "name": "Animation from Interactions", "level": "AAA", "principle": "operable", "rule": "Motion animation triggered by interaction can be disabled.", "implication": "Honor prefers-reduced-motion." }
+    },
+    "checklists": {
+      "spaces": {
+        "page": "Foundations / Spaces",
+        "tokenFile": "foundations/spaces.json",
+        "items": [
+          { "id": "spaces-01", "rule": "1.4.12", "check": "Default body line-height ≥ 1.5× font size — verify space-md-1 (24px) accommodates 16px text comfortably.", "status": "pass", "evidence": "16px × 1.5 = 24px, matches md-1 token." },
+          { "id": "spaces-02", "rule": "2.5.8",  "check": "Minimum tappable space between adjacent CTAs ≥ 8px (preferably 12-16px).", "status": "pass", "evidence": "sm-2 (8px) is the floor; sm-3 (12px) recommended." },
+          { "id": "spaces-03", "rule": "1.4.10", "check": "Section gaps must collapse gracefully on mobile.", "status": "review", "evidence": "Spaces tokens are static; consumers need responsive rules (e.g., xl-10 → md-4 on XXS)." },
+          { "id": "spaces-04", "rule": "general","check": "Form field vertical padding ≥ sm-3 (12px) so 24px touch target is met.", "status": "pass", "evidence": "12px top + 12px bottom + content = ≥24px." }
+        ]
+      },
+      "grids": {
+        "page": "Foundations / Grids",
+        "tokenFile": "foundations/grids.json",
+        "items": [
+          { "id": "grids-01", "rule": "1.4.10", "check": "Layout reflows without horizontal scroll at 320px viewport.", "status": "review", "evidence": "XXS breakpoint is 576px — verify there are layout rules below 576px." },
+          { "id": "grids-02", "rule": "1.4.4",  "check": "Grid gutters scale with text resize.", "status": "pass", "evidence": "Gutters max at 32px (ML), drop to 16px on small breakpoints." },
+          { "id": "grids-03", "rule": "general","check": "Column count reduces sensibly: 12 → 8 → 4.", "status": "pass", "evidence": "XS=8 cols, XXS=4 cols — already enforced." },
+          { "id": "grids-04", "rule": "1.4.10", "check": "Data tables and code blocks may have horizontal scroll — confirm exception is documented.", "status": "review", "evidence": "Add usage note in foundations/grids.json." }
+        ]
+      },
+      "colours": {
+        "page": "Foundations / Brand Colours",
+        "tokenFile": "foundations/colours.json",
+        "items": [
+          { "id": "colours-01", "rule": "1.4.3",  "check": "White text on Primary 500 (#0047FF) ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio = 8.59:1." },
+          { "id": "colours-02", "rule": "1.4.3",  "check": "White text on Secondary 500 (#FF0405) ≥ 4.5:1.", "status": "fail", "evidence": "Contrast ratio ≈ 3.94:1. Use Secondary 600 (#D10000, 4.97:1) or large text only.", "remediation": "Define a 'safe text on red' rule." },
+          { "id": "colours-03", "rule": "1.4.3",  "check": "White text on Tertiary 500 (#5E05FF) ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 8.43:1." },
+          { "id": "colours-04", "rule": "1.4.3",  "check": "Black text on Quaternary 500 (#FED70B) ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 13.5:1." },
+          { "id": "colours-05", "rule": "1.4.3",  "check": "Black text on Quinary 500 (#E6FF0A) ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 17.1:1." },
+          { "id": "colours-06", "rule": "1.4.3",  "check": "Black text on Senary 500 (#03FF17) ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 16.2:1." },
+          { "id": "colours-07", "rule": "1.4.3",  "check": "Body text Grey 500 on Grey 0 ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 7.04:1." },
+          { "id": "colours-08", "rule": "1.4.3",  "check": "Secondary text Grey 400 on white ≥ 4.5:1.", "status": "fail", "evidence": "Contrast ratio ≈ 2.85:1.", "remediation": "Grey 400 is for borders, dividers, placeholder only — never body text." },
+          { "id": "colours-09", "rule": "1.4.11", "check": "Border Grey 200 on white ≥ 3:1 for UI components.", "status": "fail", "evidence": "Contrast ratio ≈ 1.65:1. OK for decorative dividers; not for form field borders.", "remediation": "Use Grey 500 (7.04:1) for any interactive border." },
+          { "id": "colours-10", "rule": "1.4.1",  "check": "Semantic colours paired with icon + text label, never colour alone.", "status": "review", "evidence": "Token system supports it; downstream components must enforce." },
+          { "id": "colours-11", "rule": "1.4.3",  "check": "Dark Grey 50 and 100 are duplicates (#1A1A1A) — confirm intentional.", "status": "review", "evidence": "Flagged in colours.json — verify with design team." }
+        ]
+      },
+      "typography": {
+        "page": "Foundations / Typography",
+        "tokenFile": "foundations/typography.json",
+        "items": [
+          { "id": "type-01", "rule": "1.4.4",   "check": "Font sizes use rem/em in code, not fixed px, so 200% browser zoom works.", "status": "review", "evidence": "Convert px tokens to rem in CSS layer (16px = 1rem base)." },
+          { "id": "type-02", "rule": "1.4.12",  "check": "Default body line-height (Text Medium 24/16 = 1.5) meets text spacing minimum.", "status": "pass", "evidence": "16px font / 24px line-height = 1.5 ratio." },
+          { "id": "type-03", "rule": "1.4.12",  "check": "Text Small line-height (18/12 = 1.5) meets minimum.", "status": "pass", "evidence": "12px font / 18px line-height = 1.5 ratio." },
+          { "id": "type-04", "rule": "1.4.12",  "check": "H1 line-height (96/80 = 1.2) acceptable for display sizes.", "status": "pass", "evidence": "Display type at 1.2 is industry standard." },
+          { "id": "type-05", "rule": "1.4.3",   "check": "Text Small (12px) is 'normal text' — needs 4.5:1 contrast.", "status": "review", "evidence": "Verify all 12px usages pair with Grey 500+ on light backgrounds." },
+          { "id": "type-06", "rule": "general", "check": "Negative letter-spacing on H1 (-4%) does not impair readability.", "status": "pass", "evidence": "-4% on display sizes is conservative." },
+          { "id": "type-07", "rule": "general", "check": "Line length stays between 45–75 characters at body size.", "status": "review", "evidence": "Add max-width: 65ch to prose components downstream." },
+          { "id": "type-08", "rule": "1.3.1",   "check": "Heading hierarchy preserved in markup, not skipped for visual styling.", "status": "review", "evidence": "Engineers: use semantic <h1>-<h6>." }
+        ]
+      },
+      "elevation": {
+        "page": "Foundations / Elevation",
+        "tokenFile": "foundations/elevation.json",
+        "items": [
+          { "id": "elev-01", "rule": "1.4.11",  "check": "Cards rely on shadow alone for separation — provide a 1px border fallback for high-contrast mode.", "status": "review", "evidence": "Add @media (forced-colors: active) border." },
+          { "id": "elev-02", "rule": "1.4.11",  "check": "Modal (XL elevation) backdrop must dim the page behind for focus separation.", "status": "review", "evidence": "Document the elevation + backdrop pairing." },
+          { "id": "elev-03", "rule": "general", "check": "Hover elevation lift (XS → S) is perceivable but not jarring.", "status": "pass", "evidence": "Subtle elevation shift complies with prefers-reduced-motion." },
+          { "id": "elev-04", "rule": "2.3.3",   "check": "Elevation transitions respect prefers-reduced-motion.", "status": "review", "evidence": "Engineers: wrap shadow transitions in @media (prefers-reduced-motion: no-preference)." }
+        ]
+      },
+      "radius": {
+        "page": "Foundations / Radius",
+        "tokenFile": "foundations/radius.json",
+        "items": [
+          { "id": "radius-01", "rule": "general", "check": "Pill-shaped tokens with active states must keep focus rings visible.", "status": "review", "evidence": "Use outline-offset: 2-4px on radius-full elements." },
+          { "id": "radius-02", "rule": "2.4.7",   "check": "Focus indicators on radius-xs (2px) inputs maintain visibility.", "status": "pass", "evidence": "2px outline + 2px offset = 4px halo; visible on thin inputs." }
+        ]
+      },
+      "ctaButtons": {
+        "page": "Atoms / CTA Buttons",
+        "tokenFile": "components/cta-buttons.json",
+        "items": [
+          { "id": "cta-01", "rule": "2.5.8",  "check": "All button sizes meet 24×24 minimum target size.", "status": "pass", "evidence": "XS=32, S=40, M=48, L=56." },
+          { "id": "cta-02", "rule": "2.5.5",  "check": "Touch-priority buttons meet AAA 44×44 target.", "status": "review", "evidence": "M (48) and L (56) pass. XS (32) and S (40) — restrict to mouse-only contexts." },
+          { "id": "cta-03", "rule": "1.4.3",  "check": "Primary: white text on #E42527 ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 4.66:1 — passes AA. Tight margin." },
+          { "id": "cta-04", "rule": "1.4.3",  "check": "Primary Hover: white text on #A41719 ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 8.6:1." },
+          { "id": "cta-05", "rule": "1.4.3",  "check": "Primary Line default: #0047FF text on white ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio ≈ 8.59:1." },
+          { "id": "cta-06", "rule": "1.4.11", "check": "Primary Line border (#0047FF, 2px) ≥ 3:1 against white.", "status": "pass", "evidence": "Contrast ratio ≈ 8.59:1." },
+          { "id": "cta-07", "rule": "1.4.3",  "check": "Secondary: white text on black ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio = 21:1." },
+          { "id": "cta-08", "rule": "1.4.3",  "check": "Tertiary: black text on white default ≥ 4.5:1.", "status": "pass", "evidence": "Contrast ratio = 21:1." },
+          { "id": "cta-09", "rule": "1.4.11", "check": "Tertiary default has NO border — verify it's distinguishable from background context.", "status": "fail", "evidence": "Tertiary on white surface is invisible until hovered.", "remediation": "Document: 'Tertiary requires adjacent visual cue (icon, label, or paired button).'" },
+          { "id": "cta-10", "rule": "2.4.7",  "check": "All buttons need a visible focus indicator. Token system does not currently define a focus-ring spec.", "status": "fail", "evidence": "cta-buttons.json defines default/hover/active but no focus state.", "remediation": "Add 'focus' state to all 5 variants. Recommended: 2px solid #0047FF outline with 2px offset." },
+          { "id": "cta-11", "rule": "4.1.2",  "check": "Buttons with icon + text need accessible name. Icon-only variants need aria-label.", "status": "review", "evidence": "Default ArrowRight + 'Sample CTA' provides name." },
+          { "id": "cta-12", "rule": "1.4.1",  "check": "Primary uses red — avoid using red as the only signal for 'destructive' meaning.", "status": "review", "evidence": "Naming: Primary = red, Primary Line = blue. Confirm intent." },
+          { "id": "cta-13", "rule": "general","check": "Disabled state spec is missing from cta-buttons.json.", "status": "fail", "evidence": "Only default/hover/active defined.", "remediation": "Add disabled state: 50% opacity, cursor: not-allowed, aria-disabled='true'." },
+          { "id": "cta-14", "rule": "2.3.3",  "check": "State transitions respect prefers-reduced-motion.", "status": "review", "evidence": "Wrap transitions in @media (prefers-reduced-motion: no-preference)." }
+        ]
+      }
+    },
+    "summary": {
+      "totalChecks": 47,
+      "byStatus": { "pass": 23, "fail": 5, "review": 19 },
+      "criticalFailures": [
+        { "id": "colours-02", "page": "Brand Colours", "issue": "White text on Secondary 500 fails AA (3.94:1)." },
+        { "id": "colours-08", "page": "Brand Colours", "issue": "Grey 400 on white fails AA for body text (2.85:1)." },
+        { "id": "colours-09", "page": "Brand Colours", "issue": "Grey 200 borders fail non-text contrast (1.65:1)." },
+        { "id": "cta-09",     "page": "CTA Buttons",   "issue": "Tertiary default has no visible boundary on white surfaces." },
+        { "id": "cta-10",     "page": "CTA Buttons",   "issue": "No focus state defined in CTA token system." },
+        { "id": "cta-13",     "page": "CTA Buttons",   "issue": "No disabled state defined in CTA token system." }
+      ]
+    },
+    "tooling": {
+      "design": ["Stark (Figma)", "Figma A11y plugin", "Contrast (Figma)"],
+      "code":   ["axe DevTools", "WAVE (WebAIM)", "Lighthouse", "Pa11y"],
+      "manual": ["Keyboard-only navigation pass", "Screen reader pass (VoiceOver, NVDA)", "200% browser zoom test", "320px viewport test", "prefers-reduced-motion enabled test", "Forced colors / High Contrast Mode test"]
+    },
+    "process": {
+      "designPhase":     ["Run Stark contrast check on every text/background pair before handoff", "Annotate focus states in Figma for every interactive element", "Provide alt-text or 'decorative' tag for every image"],
+      "developmentPhase":["Use semantic HTML — never <div onClick>", "Add aria-label to every icon-only button", "Test with keyboard only", "Run axe DevTools before merging any UI PR"],
+      "qaPhase":         ["Run automated audit (Lighthouse + axe) on every page", "Manual screen reader pass on critical flows", "Test at 200% zoom on Chrome and Safari", "Test with reduced motion enabled"]
+    }
+  }

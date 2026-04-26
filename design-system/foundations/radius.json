@@ -1,0 +1,44 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Foundations / Radius",
+    "description": "Five corner-radius tokens that set the visual temperament — from crisp rectangles to soft pills.",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU",
+      "nodeId": "4754:2751"
+    },
+    "meta": {
+      "totalTiers": 5,
+      "scaleRange": "2 → ∞",
+      "unit": "px",
+      "property": "border-radius",
+      "tagline": "From crisp corners to full pills.",
+      "subline": "Each radius tier carries a distinct feeling — use them to modulate visual warmth."
+    },
+    "tiers": {
+      "xs":     { "id": "01", "label": "X-small", "abbreviation": "XS",   "figmaName": "Radius/xs",     "value": 2,   "unit": "px", "css": "2px",   "description": "Crisp, almost square. Precision surfaces.", "useFor": "Input fields · Dense tables" },
+      "small":  { "id": "02", "label": "Small",   "abbreviation": "S",    "figmaName": "Radius/small",  "value": 8,   "unit": "px", "css": "8px",   "description": "Soft, practical. The default.",            "useFor": "Cards · Buttons · Badges", "isDefault": true },
+      "medium": { "id": "03", "label": "Medium",  "abbreviation": "M",    "figmaName": "Radius/medium", "value": 16,  "unit": "px", "css": "16px",  "description": "Friendly. For prominent surfaces.",        "useFor": "Feature cards · Modals" },
+      "large":  { "id": "04", "label": "Large",   "abbreviation": "L",    "figmaName": "Radius/large",  "value": 24,  "unit": "px", "css": "24px",  "description": "Warm, soft. Marketing & hero surfaces.",   "useFor": "Hero banners · Highlight cards" },
+      "full":   { "id": "05", "label": "Full",    "abbreviation": "Full", "figmaName": "Radius/full",   "value": 999, "unit": "px", "css": "999px", "description": "Full pill or circle. Accent shapes.",      "useFor": "Avatars · Pills · Chips · Toggles" }
+    },
+    "flat": {
+      "radius-xs": 2, "radius-sm": 8, "radius-md": 16, "radius-lg": 24, "radius-full": 999
+    },
+    "css": {
+      "--radius-xs": "2px", "--radius-sm": "8px", "--radius-md": "16px", "--radius-lg": "24px", "--radius-full": "999px"
+    },
+    "tailwind": {
+      "borderRadius": {
+        "xs": "2px", "sm": "8px", "md": "16px", "lg": "24px", "full": "999px"
+      }
+    },
+    "usage": {
+      "principle": "Radius should scale with surface size.",
+      "rules": [
+        { "type": "do",   "text": "Use Small (8px) as the default. Everything else is intentional modulation." },
+        { "type": "do",   "text": "Nest smaller radii inside larger ones. A card with radius-M contains chips with radius-S." },
+        { "type": "dont", "text": "Mix radius tiers arbitrarily. Stay within one or two tiers per composition." }
+      ]
+    }
+  }

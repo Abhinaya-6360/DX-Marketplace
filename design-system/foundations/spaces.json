@@ -1,0 +1,109 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "name": "Creator Design System / Foundations / Spaces",
+  "description": "A 4-pixel base scale across 33 tokens — the single source of spacing truth for padding, gaps, and margins across every product surface.",
+  "source": {
+    "type": "figma",
+    "file": "HwJgDmaNzfJYTeoMwe31yU",
+    "nodeId": "61:808"
+  },
+  "meta": {
+    "totalTokens": 33,
+    "baseUnit": 4,
+    "unit": "px",
+    "range": { "min": 4, "max": 240 },
+    "groups": 4,
+    "tagline": "Every space, accounted for.",
+    "subline": "Organised from micro-adjustments (4px) to layout-defining gaps (240px)."
+  },
+  "groups": {
+    "sm": {
+      "id": "01",
+      "label": "Small",
+      "category": "MICRO",
+      "description": "Tight spacing inside inline elements, icons, and compact controls.",
+      "count": 5,
+      "tokens": {
+        "sm-1": { "value": 4,  "unit": "px", "type": "dimension" },
+        "sm-2": { "value": 8,  "unit": "px", "type": "dimension" },
+        "sm-3": { "value": 12, "unit": "px", "type": "dimension" },
+        "sm-4": { "value": 16, "unit": "px", "type": "dimension" },
+        "sm-5": { "value": 20, "unit": "px", "type": "dimension" }
+      }
+    },
+    "md": {
+      "id": "02",
+      "label": "Medium",
+      "category": "COMPONENT",
+      "description": "Default spacing inside components — padding, gaps, item separation.",
+      "count": 8,
+      "tokens": {
+        "md-1": { "value": 24, "unit": "px", "type": "dimension" },
+        "md-2": { "value": 32, "unit": "px", "type": "dimension" },
+        "md-3": { "value": 40, "unit": "px", "type": "dimension" },
+        "md-4": { "value": 48, "unit": "px", "type": "dimension" },
+        "md-5": { "value": 56, "unit": "px", "type": "dimension" },
+        "md-6": { "value": 64, "unit": "px", "type": "dimension" },
+        "md-7": { "value": 72, "unit": "px", "type": "dimension" },
+        "md-8": { "value": 80, "unit": "px", "type": "dimension" }
+      }
+    },
+    "lg": {
+      "id": "03",
+      "label": "Large",
+      "category": "LAYOUT",
+      "description": "Section and container-level spacing between large blocks.",
+      "count": 10,
+      "tokens": {
+        "lg-1":  { "value": 88,  "unit": "px", "type": "dimension" },
+        "lg-2":  { "value": 96,  "unit": "px", "type": "dimension" },
+        "lg-3":  { "value": 104, "unit": "px", "type": "dimension" },
+        "lg-4":  { "value": 112, "unit": "px", "type": "dimension" },
+        "lg-5":  { "value": 120, "unit": "px", "type": "dimension" },
+        "lg-6":  { "value": 128, "unit": "px", "type": "dimension" },
+        "lg-7":  { "value": 136, "unit": "px", "type": "dimension" },
+        "lg-8":  { "value": 144, "unit": "px", "type": "dimension" },
+        "lg-9":  { "value": 152, "unit": "px", "type": "dimension" },
+        "lg-10": { "value": 160, "unit": "px", "type": "dimension" }
+      }
+    },
+    "xl": {
+      "id": "04",
+      "label": "X-large",
+      "category": "HERO",
+      "description": "Page-level and hero-surface spacing. Use sparingly.",
+      "count": 10,
+      "tokens": {
+        "xl-1":  { "value": 168, "unit": "px", "type": "dimension" },
+        "xl-2":  { "value": 176, "unit": "px", "type": "dimension" },
+        "xl-3":  { "value": 184, "unit": "px", "type": "dimension" },
+        "xl-4":  { "value": 192, "unit": "px", "type": "dimension" },
+        "xl-5":  { "value": 200, "unit": "px", "type": "dimension" },
+        "xl-6":  { "value": 208, "unit": "px", "type": "dimension" },
+        "xl-7":  { "value": 216, "unit": "px", "type": "dimension" },
+        "xl-8":  { "value": 224, "unit": "px", "type": "dimension" },
+        "xl-9":  { "value": 232, "unit": "px", "type": "dimension" },
+        "xl-10": { "value": 240, "unit": "px", "type": "dimension" }
+      }
+    }
+  },
+  "flat": {
+    "space-sm-1": 4, "space-sm-2": 8, "space-sm-3": 12, "space-sm-4": 16, "space-sm-5": 20,
+    "space-md-1": 24, "space-md-2": 32, "space-md-3": 40, "space-md-4": 48,
+    "space-md-5": 56, "space-md-6": 64, "space-md-7": 72, "space-md-8": 80,
+    "space-lg-1": 88, "space-lg-2": 96, "space-lg-3": 104, "space-lg-4": 112,
+    "space-lg-5": 120, "space-lg-6": 128, "space-lg-7": 136, "space-lg-8": 144,
+    "space-lg-9": 152, "space-lg-10": 160,
+    "space-xl-1": 168, "space-xl-2": 176, "space-xl-3": 184, "space-xl-4": 192,
+    "space-xl-5": 200, "space-xl-6": 208, "space-xl-7": 216, "space-xl-8": 224,
+    "space-xl-9": 232, "space-xl-10": 240
+  },
+  "usage": {
+    "principle": "Stick to the scale. Never eyeball spacing.",
+    "rules": [
+      { "type": "do", "text": "Use multiples of 4 only. The entire scale — from Sm-1 (4px) to Xl-10 (240px) — is 4px-aligned." },
+      { "type": "do", "text": "Double the space as you zoom out: icon↔text uses Sm-2, card padding Md-2, section gap Lg-4." },
+      { "type": "dont", "text": "Introduce off-scale values. If a layout calls for 18px, ask whether you need 16 or 20 — not 18." }
+    ]
+  }
+}

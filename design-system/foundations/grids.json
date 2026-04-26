@@ -1,0 +1,102 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "name": "Creator Design System / Foundations / Grids",
+  "description": "Seven responsive breakpoints with column, gutter, and width specs. The skeleton every Creator product is built on.",
+  "source": {
+    "type": "figma",
+    "file": "HwJgDmaNzfJYTeoMwe31yU",
+    "nodeId": "1:2"
+  },
+  "meta": {
+    "totalBreakpoints": 7,
+    "range": { "min": 576, "max": 1720, "unit": "px" },
+    "columns": { "min": 4, "max": 12 },
+    "gutter": { "min": 16, "max": 32, "unit": "px" },
+    "tagline": "One grid system, seven breakpoints.",
+    "subline": "From ultra-wide displays (1720px) to phones (576px). Always centered. Always rhythmic."
+  },
+  "breakpoints": {
+    "xl": {
+      "id": "01", "label": "Desktop XL", "category": "ULTRA-WIDE", "abbreviation": "XL",
+      "viewport": { "min": 1720, "max": null, "display": "1720px", "unit": "px" },
+      "columns": 12,
+      "gutter": { "value": 24, "unit": "px" },
+      "columnWidth": { "value": 88, "unit": "px" },
+      "align": "center"
+    },
+    "lg": {
+      "id": "02", "label": "Desktop L", "category": "DEFAULT DESKTOP", "abbreviation": "LG",
+      "viewport": { "min": 1400, "max": 1719, "display": "1400px", "unit": "px" },
+      "columns": 12,
+      "gutter": { "value": 24, "unit": "px" },
+      "columnWidth": { "value": 88, "unit": "px" },
+      "align": "center"
+    },
+    "ml": {
+      "id": "03", "label": "Desktop", "category": "STANDARD DESKTOP", "abbreviation": "ML",
+      "viewport": { "min": 1200, "max": 1399, "display": "1400→1200px", "unit": "px" },
+      "columns": 12,
+      "gutter": { "value": 32, "unit": "px" },
+      "columnWidth": { "value": 56, "unit": "px" },
+      "align": "center"
+    },
+    "md": {
+      "id": "04", "label": "Laptop", "category": "LAPTOP", "abbreviation": "MD",
+      "viewport": { "min": 992, "max": 1199, "display": "1200→992px", "unit": "px" },
+      "columns": 12,
+      "gutter": { "value": 16, "unit": "px" },
+      "columnWidth": { "value": 48, "unit": "px" },
+      "align": "center"
+    },
+    "sm": {
+      "id": "05", "label": "Tablet L", "category": "LARGE TABLET", "abbreviation": "SM",
+      "viewport": { "min": 768, "max": 991, "display": "992→768px", "unit": "px" },
+      "columns": 12,
+      "gutter": { "value": 16, "unit": "px" },
+      "columnWidth": { "value": 48, "unit": "px" },
+      "align": "center"
+    },
+    "xs": {
+      "id": "06", "label": "Tablet", "category": "TABLET", "abbreviation": "XS",
+      "viewport": { "min": 768, "max": null, "display": "768px", "unit": "px" },
+      "columns": 8,
+      "gutter": { "value": 16, "unit": "px" },
+      "columnWidth": { "value": 64, "unit": "px" },
+      "align": "center"
+    },
+    "xxs": {
+      "id": "07", "label": "Mobile", "category": "MOBILE", "abbreviation": "XXS",
+      "viewport": { "min": 576, "max": null, "display": "576px", "unit": "px" },
+      "columns": 4,
+      "gutter": { "value": 16, "unit": "px" },
+      "columnWidth": { "value": 104, "unit": "px" },
+      "align": "center"
+    }
+  },
+  "mediaQueries": {
+    "xl":  "@media (min-width: 1720px)",
+    "lg":  "@media (min-width: 1400px) and (max-width: 1719px)",
+    "ml":  "@media (min-width: 1200px) and (max-width: 1399px)",
+    "md":  "@media (min-width: 992px) and (max-width: 1199px)",
+    "sm":  "@media (min-width: 768px) and (max-width: 991px)",
+    "xs":  "@media (min-width: 768px)",
+    "xxs": "@media (min-width: 576px)"
+  },
+  "flat": {
+    "grid-xl-columns": 12, "grid-xl-gutter": 24, "grid-xl-column-width": 88,
+    "grid-lg-columns": 12, "grid-lg-gutter": 24, "grid-lg-column-width": 88,
+    "grid-ml-columns": 12, "grid-ml-gutter": 32, "grid-ml-column-width": 56,
+    "grid-md-columns": 12, "grid-md-gutter": 16, "grid-md-column-width": 48,
+    "grid-sm-columns": 12, "grid-sm-gutter": 16, "grid-sm-column-width": 48,
+    "grid-xs-columns": 8,  "grid-xs-gutter": 16, "grid-xs-column-width": 64,
+    "grid-xxs-columns": 4, "grid-xxs-gutter": 16, "grid-xxs-column-width": 104
+  },
+  "usage": {
+    "principle": "Design to the grid. Let the content breathe.",
+    "rules": [
+      { "type": "do", "text": "Always center the grid and respect the column widths — even when composing hero art." },
+      { "type": "do", "text": "Reduce columns as breakpoints shrink: 12 → 8 → 4. Don't force 12 columns on mobile." },
+      { "type": "dont", "text": "Design at only one breakpoint. Check every target device before shipping." }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Atoms / Buttons (CTA)",
+    "description": "The most-clicked element in every product. Five variants, four sizes, three interactive states — 60 totalled components that say \"do this next.\"",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU",
+      "nodeId": "7047:72634"
+    },
+    "meta": {
+      "totalVariants": 5,
+      "totalSizes": 4,
+      "totalStates": 3,
+      "totalComponents": 60,
+      "tagline": "Press to act.",
+      "subline": "From dense data tables to full-bleed heroes. One button type at four heights."
+    },
+    "base": {
+      "borderRadius": 4,
+      "borderRadiusToken": "radius/sm",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "fontWeight": 600,
+      "fontWeightLabel": "Semibold",
+      "iconSize": 24,
+      "iconDefault": "ArrowRight",
+      "borderWidth": 2,
+      "letterSpacingRatio": -0.01,
+      "display": "inline-flex",
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "sizes": {
+      "xs": { "id": "01", "label": "Extra Small", "abbreviation": "XS", "height": 32, "paddingX": 16, "paddingY": 12, "gap": 16, "fontSize": 16, "lineHeight": "normal", "letterSpacing": "-0.16px", "tokenName": "button-primary-xs", "useFor": "Inline actions · dense tables" },
+      "sm": { "id": "02", "label": "Small",       "abbreviation": "S",  "height": 40, "paddingX": 24, "paddingY": 16, "gap": 12, "fontSize": 16, "lineHeight": "normal", "letterSpacing": "-0.16px", "tokenName": "button-primary-sm", "useFor": "Cards · secondary panels" },
+      "md": { "id": "03", "label": "Medium",      "abbreviation": "M",  "height": 48, "paddingX": 24, "paddingY": 20, "gap": 12, "fontSize": 20, "lineHeight": "normal", "letterSpacing": "-0.20px", "tokenName": "button-primary-md", "useFor": "Default · most CTAs", "isDefault": true },
+      "lg": { "id": "04", "label": "Large",       "abbreviation": "L",  "height": 56, "paddingX": 32, "paddingY": 24, "gap": 12, "fontSize": 24, "lineHeight": "normal", "letterSpacing": "-0.24px", "tokenName": "button-primary-lg", "useFor": "Heroes · marketing surfaces" }
+    },
+    "variants": {
+      "primary": {
+        "id": "01", "label": "Primary",
+        "tokenName": "Button CTA/primary",
+        "description": "The default CTA. Highest priority action — one per surface.",
+        "isDefault": true, "border": false,
+        "states": {
+          "default": { "background": "#E42527", "backgroundToken": "Button-cta-red/300", "text": "#FFFFFF", "textToken": "White & black/White", "border": null },
+          "hover":   { "background": "#A41719", "backgroundToken": "Button-cta-red/400", "text": "#FFFFFF", "textToken": "White & black/White", "border": null },
+          "active":  { "background": "#680B0C", "backgroundToken": "Button-cta-red/500", "text": "#FFFFFF", "textToken": "White & black/White", "border": null }
+        }
+      },
+      "primaryLine": {
+        "id": "02", "label": "Primary Line",
+        "tokenName": "Button CTA/primary-line",
+        "description": "Outlined variant. Secondary to the primary filled CTA.",
+        "border": true, "borderWidth": 2,
+        "states": {
+          "default": { "background": "rgba(0, 71, 255, 0)", "backgroundDescription": "transparent", "text": "#0047FF", "textToken": "primary/500", "border": "#0047FF", "borderToken": "primary/500" },
+          "hover":   { "background": "rgba(7, 7, 180, 0.1)", "backgroundDescription": "10% blue tint", "text": "#0A0AFF", "border": "rgba(10, 10, 255, 0.8)" },
+          "active":  { "background": "rgba(7, 7, 180, 0.2)", "backgroundDescription": "20% blue tint", "text": "#0A0AFF", "border": "rgba(10, 10, 255, 0.8)" }
+        }
+      },
+      "secondary": {
+        "id": "03", "label": "Secondary",
+        "tokenName": "Button CTA/secondary",
+        "description": "Dark-filled alternative. For moments against colored surfaces.",
+        "border": false,
+        "states": {
+          "default": { "background": "#000000", "backgroundToken": "Semantic/Button/secondary/background-bg",     "text": "#FFFFFF", "textToken": "White & black/White", "border": null },
+          "hover":   { "background": "#383838", "backgroundToken": "Semantic/Button/secondary/background-hover",  "text": "#FFFFFF", "textToken": "White & black/White", "border": null },
+          "active":  { "background": "#262626", "backgroundToken": "Semantic/Button/secondary/background-active", "text": "#FFFFFF", "textToken": "White & black/White", "border": null }
+        }
+      },
+      "secondaryLine": {
+        "id": "04", "label": "Secondary Line",
+        "tokenName": "Button CTA/secondary-line",
+        "description": "Dark outlined button. Low-emphasis actions.",
+        "border": true, "borderWidth": 2,
+        "states": {
+          "default": { "background": "rgba(0, 0, 0, 0)", "backgroundDescription": "transparent", "text": "#000000", "textToken": "White & black/Black", "border": "#000000", "borderToken": "White & black/Black" },
+          "hover":   { "background": "#EBEBEB", "backgroundToken": "Grey/100", "text": "#000000", "border": "#000000" },
+          "active":  { "background": "#D1D1D1", "backgroundToken": "Grey/200", "text": "#000000", "border": "#000000" }
+        }
+      },
+      "tertiary": {
+        "id": "05", "label": "Tertiary",
+        "tokenName": "Button CTA/tertiary",
+        "description": "Ghost-style button. For dismiss, cancel, and tertiary actions.",
+        "border": false, "borderOnInteraction": true,
+        "states": {
+          "default": { "background": "#FFFFFF", "backgroundToken": "White & black/White", "text": "#000000", "textToken": "White & black/Black", "border": null },
+          "hover":   { "background": "#F5F5F5", "backgroundToken": "Grey/50",  "text": "#000000", "border": "#000000", "borderToken": "White & black/Black", "note": "Border appears on hover" },
+          "active":  { "background": "#EBEBEB", "backgroundToken": "Grey/100", "text": "#000000", "border": "#000000", "borderToken": "White & black/Black", "note": "Border appears on active" }
+        }
+      }
+    },
+    "matrix": {
+      "description": "All 60 component combinations as a flat lookup. Naming follows: button-{variant}-{size}-{state}",
+      "variantOrder": ["primary", "primary-line", "secondary", "secondary-line", "tertiary"],
+      "sizeOrder": ["xs", "sm", "md", "lg"],
+      "stateOrder": ["default", "hover", "active"]
+    },
+    "css": {
+      "primaryDefault":      { "background": "#E42527", "color": "#FFFFFF", "border": "none", "border-radius": "4px", "font-weight": 600, "display": "inline-flex", "align-items": "center", "justify-content": "center", "gap": "12px", "transition": "background-color 150ms ease-out" },
+      "primaryHover":        { "background": "#A41719" },
+      "primaryActive":       { "background": "#680B0C" },
+      "primaryLineDefault":  { "background": "transparent", "color": "#0047FF", "border": "2px solid #0047FF", "border-radius": "4px" },
+      "primaryLineHover":    { "background": "rgba(7, 7, 180, 0.1)", "color": "#0A0AFF", "border-color": "rgba(10, 10, 255, 0.8)" },
+      "primaryLineActive":   { "background": "rgba(7, 7, 180, 0.2)", "color": "#0A0AFF", "border-color": "rgba(10, 10, 255, 0.8)" },
+      "secondaryDefault":    { "background": "#000000", "color": "#FFFFFF", "border": "none" },
+      "secondaryHover":      { "background": "#383838" },
+      "secondaryActive":     { "background": "#262626" },
+      "secondaryLineDefault":{ "background": "transparent", "color": "#000000", "border": "2px solid #000000" },
+      "secondaryLineHover":  { "background": "#EBEBEB" },
+      "secondaryLineActive": { "background": "#D1D1D1" },
+      "tertiaryDefault":     { "background": "#FFFFFF", "color": "#000000", "border": "none" },
+      "tertiaryHover":       { "background": "#F5F5F5", "border": "2px solid #000000" },
+      "tertiaryActive":      { "background": "#EBEBEB", "border": "2px solid #000000" },
+      "sizeXS": { "height": "32px", "padding": "12px 16px", "gap": "16px", "font-size": "16px", "letter-spacing": "-0.16px" },
+      "sizeSM": { "height": "40px", "padding": "16px 24px", "gap": "12px", "font-size": "16px", "letter-spacing": "-0.16px" },
+      "sizeMD": { "height": "48px", "padding": "20px 24px", "gap": "12px", "font-size": "20px", "letter-spacing": "-0.20px" },
+      "sizeLG": { "height": "56px", "padding": "24px 32px", "gap": "12px", "font-size": "24px", "letter-spacing": "-0.24px" }
+    },
+    "flat": {
+      "btn-radius": 4, "btn-border-width": 2, "btn-font-weight": 600, "btn-icon-size": 24,
+      "btn-xs-height": 32, "btn-xs-padding-x": 16, "btn-xs-padding-y": 12, "btn-xs-gap": 16, "btn-xs-font-size": 16,
+      "btn-sm-height": 40, "btn-sm-padding-x": 24, "btn-sm-padding-y": 16, "btn-sm-gap": 12, "btn-sm-font-size": 16,
+      "btn-md-height": 48, "btn-md-padding-x": 24, "btn-md-padding-y": 20, "btn-md-gap": 12, "btn-md-font-size": 20,
+      "btn-lg-height": 56, "btn-lg-padding-x": 32, "btn-lg-padding-y": 24, "btn-lg-gap": 12, "btn-lg-font-size": 24,
+      "btn-primary-bg-default": "#E42527", "btn-primary-bg-hover": "#A41719", "btn-primary-bg-active": "#680B0C", "btn-primary-text": "#FFFFFF",
+      "btn-primary-line-bg-default": "transparent", "btn-primary-line-bg-hover": "rgba(7, 7, 180, 0.1)", "btn-primary-line-bg-active": "rgba(7, 7, 180, 0.2)", "btn-primary-line-border": "#0047FF", "btn-primary-line-text": "#0047FF",
+      "btn-secondary-bg-default": "#000000", "btn-secondary-bg-hover": "#383838", "btn-secondary-bg-active": "#262626", "btn-secondary-text": "#FFFFFF",
+      "btn-secondary-line-bg-default": "transparent", "btn-secondary-line-bg-hover": "#EBEBEB", "btn-secondary-line-bg-active": "#D1D1D1", "btn-secondary-line-border": "#000000", "btn-secondary-line-text": "#000000",
+      "btn-tertiary-bg-default": "#FFFFFF", "btn-tertiary-bg-hover": "#F5F5F5", "btn-tertiary-bg-active": "#EBEBEB", "btn-tertiary-border": "#000000", "btn-tertiary-text": "#000000"
+    },
+    "usage": {
+      "principle": "One primary CTA per surface. Match button hierarchy to action priority.",
+      "rules": [
+        { "type": "do",   "text": "Use Primary for the single most important action. Use Secondary or Line variants for alternatives." },
+        { "type": "do",   "text": "Default to Medium (48px). Step down for dense surfaces, up for marketing." },
+        { "type": "dont", "text": "Stack two Primary CTAs side-by-side. The hierarchy collapses and users hesitate." }
+      ]
+    }
+  }

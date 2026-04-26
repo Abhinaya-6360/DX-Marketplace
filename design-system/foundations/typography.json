@@ -1,0 +1,88 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Foundations / Typography",
+    "description": "A modular type scale engineered for clear hierarchy — from 12px micro-copy to 80px display. Four weights across 12 sizes.",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU",
+      "nodeId": "1942:136"
+    },
+    "meta": {
+      "totalSizes": 12,
+      "totalWeights": 4,
+      "range": { "min": 12, "max": 80, "unit": "px" },
+      "tagline": "Twelve steps, four weights.",
+      "subline": "Each scale tier has a semantic purpose. Start with the weight — size follows the hierarchy."
+    },
+    "fontFamily": {
+      "primary": "Zoho Puvi",
+      "type": "Variable · Sans-serif",
+      "fallback": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+      "stack": "'Zoho Puvi', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    },
+    "weights": {
+      "regular":  { "value": 400, "label": "Regular" },
+      "medium":   { "value": 500, "label": "Medium" },
+      "semibold": { "value": 600, "label": "Semibold" },
+      "bold":     { "value": 700, "label": "Bold" }
+    },
+    "tiers": {
+      "display": {
+        "id": "display", "label": "Display",
+        "category": "DISPLAY TYPE · FOR HERO SURFACES",
+        "title": "The big stuff. For moments that matter.",
+        "useFor": "Marketing · Hero · Editorial",
+        "tracking": "-3%", "trackingEm": -0.03,
+        "variants": {
+          "displayBold":  { "label": "DISPLAY · BOLD", "size": 80, "lineHeight": 88, "weight": "bold" },
+          "smallDisplay": { "label": "SMALL DISPLAY",  "size": 64, "lineHeight": 72, "weight": "bold" }
+        }
+      },
+      "h1": { "id": "h1", "label": "Heading 1", "abbreviation": "H1", "size": 80, "lineHeight": 96, "tracking": "-4%", "trackingEm": -0.04, "useFor": "Page titles · Landing headlines", "weights": ["regular", "medium", "semibold", "bold"] },
+      "h2": { "id": "h2", "label": "Heading 2", "abbreviation": "H2", "size": 60, "lineHeight": 68, "tracking": "-3%", "trackingEm": -0.03, "useFor": "Section titles · Sub-headlines", "weights": ["regular", "medium", "semibold", "bold"] },
+      "h3": { "id": "h3", "label": "Heading 3", "abbreviation": "H3", "size": 52, "lineHeight": 60, "tracking": "-3%", "trackingEm": -0.03, "useFor": "Card titles · Large callouts", "weights": ["regular", "medium", "semibold", "bold"] },
+      "h4": { "id": "h4", "label": "Heading 4", "abbreviation": "H4", "size": 44, "lineHeight": 52, "tracking": "-2%", "trackingEm": -0.02, "useFor": "Small headlines · Block titles", "weights": ["regular", "medium", "semibold", "bold"] },
+      "h5": { "id": "h5", "label": "Heading 5", "abbreviation": "H5", "size": 36, "lineHeight": 44, "tracking": "-2%", "trackingEm": -0.02, "useFor": "Utility headings", "weights": ["regular", "medium", "semibold", "bold"] },
+      "h6": { "id": "h6", "label": "Heading 6", "abbreviation": "H6", "size": 28, "lineHeight": 36, "tracking": "-1%", "trackingEm": -0.01, "useFor": "Inline headings · Category labels", "weights": ["regular", "medium", "semibold", "bold"] },
+      "textLarge":   { "id": "text-large",   "label": "Large text",   "abbreviation": "Text · Large",  "size": 20, "lineHeight": 28, "tracking": "-1%", "trackingEm": -0.01, "useFor": "Prominent body · Lead paragraphs", "weights": ["regular", "medium", "semibold", "bold"] },
+      "textMedium":  { "id": "text-medium",  "label": "Medium text",  "abbreviation": "Text · Medium", "size": 16, "lineHeight": 24, "tracking": "-1%", "trackingEm": -0.01, "useFor": "Default body text", "weights": ["regular", "medium", "semibold", "bold"] },
+      "textRegular": { "id": "text-regular", "label": "Regular text", "abbreviation": "Text · Reg",    "size": 14, "lineHeight": 22, "tracking": "-1%", "trackingEm": -0.01, "useFor": "Secondary body · Meta info", "weights": ["regular", "medium", "semibold", "bold"] },
+      "textSmall":   { "id": "text-small",   "label": "Small text",   "abbreviation": "Text · Small",  "size": 12, "lineHeight": 18, "tracking": "0",   "trackingEm": 0,     "useFor": "Captions · Helper text · Footnotes", "weights": ["regular", "medium", "semibold", "bold"] }
+    },
+    "flat": {
+      "font-family": "'Zoho Puvi', Inter, system-ui, sans-serif",
+      "font-weight-regular": 400, "font-weight-medium": 500, "font-weight-semibold": 600, "font-weight-bold": 700,
+      "font-size-display": 80, "font-size-small-display": 64,
+      "font-size-h1": 80, "font-size-h2": 60, "font-size-h3": 52, "font-size-h4": 44, "font-size-h5": 36, "font-size-h6": 28,
+      "font-size-text-lg": 20, "font-size-text-md": 16, "font-size-text-reg": 14, "font-size-text-sm": 12,
+      "line-height-display": 88, "line-height-small-display": 72,
+      "line-height-h1": 96, "line-height-h2": 68, "line-height-h3": 60, "line-height-h4": 52, "line-height-h5": 44, "line-height-h6": 36,
+      "line-height-text-lg": 28, "line-height-text-md": 24, "line-height-text-reg": 22, "line-height-text-sm": 18,
+      "letter-spacing-display": "-0.03em", "letter-spacing-h1": "-0.04em", "letter-spacing-h2": "-0.03em",
+      "letter-spacing-h3": "-0.03em", "letter-spacing-h4": "-0.02em", "letter-spacing-h5": "-0.02em",
+      "letter-spacing-h6": "-0.01em", "letter-spacing-text-lg": "-0.01em", "letter-spacing-text-md": "-0.01em",
+      "letter-spacing-text-reg": "-0.01em", "letter-spacing-text-sm": "0"
+    },
+    "css": {
+      "display":      { "font-size": "80px", "line-height": "88px", "font-weight": 700, "letter-spacing": "-0.03em" },
+      "smallDisplay": { "font-size": "64px", "line-height": "72px", "font-weight": 700, "letter-spacing": "-0.03em" },
+      "h1":           { "font-size": "80px", "line-height": "96px", "letter-spacing": "-0.04em" },
+      "h2":           { "font-size": "60px", "line-height": "68px", "letter-spacing": "-0.03em" },
+      "h3":           { "font-size": "52px", "line-height": "60px", "letter-spacing": "-0.03em" },
+      "h4":           { "font-size": "44px", "line-height": "52px", "letter-spacing": "-0.02em" },
+      "h5":           { "font-size": "36px", "line-height": "44px", "letter-spacing": "-0.02em" },
+      "h6":           { "font-size": "28px", "line-height": "36px", "letter-spacing": "-0.01em" },
+      "textLarge":    { "font-size": "20px", "line-height": "28px", "letter-spacing": "-0.01em" },
+      "textMedium":   { "font-size": "16px", "line-height": "24px", "letter-spacing": "-0.01em" },
+      "textRegular":  { "font-size": "14px", "line-height": "22px", "letter-spacing": "-0.01em" },
+      "textSmall":    { "font-size": "12px", "line-height": "18px", "letter-spacing": "0" }
+    },
+    "usage": {
+      "principle": "Hierarchy comes from weight, not just size.",
+      "rules": [
+        { "type": "do", "text": "Pair sizes with intentional weight. Regular for body, Semibold for labels, Bold for headlines." },
+        { "type": "do", "text": "Use H1/H2 sparingly — once per page. Over-using display type flattens the hierarchy." },
+        { "type": "dont", "text": "Skip scale tiers. Go from H1 → H2 → H3. Don't jump H1 → H4 without a reason." }
+      ]
+    }
+  }

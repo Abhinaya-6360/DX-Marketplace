@@ -1,0 +1,305 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Foundations / Brand Colours",
+    "description": "Every Creator surface, every button press, every marketing banner — they all begin here. A colour language designed for screen fluidity and press accuracy.",
+    "version": "v2.2",
+    "edition": "2026.01",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU",
+      "nodeId": "7074:749"
+    },
+    "meta": {
+      "totalTokens": 106,
+      "totalFamilies": 10,
+      "pantoneMatched": 6,
+      "cmyk": "Press-safe",
+      "figma": "Dual-mode",
+      "scaleRange": "0 → 950",
+      "coreLevel": 500,
+      "tagline": "The Colour System.",
+      "subline": "A colour language designed for screen fluidity and press accuracy."
+    },
+    "coreAnchors": {
+      "description": "The six 500-level colours that define every Creator brand surface.",
+      "primary":    { "name": "Bright Royal Blue", "hex": "#0047FF", "rgb": [0, 71, 255],   "pantone": "Reflex Blue C" },
+      "secondary":  { "name": "Vivid Red",         "hex": "#FF0405", "rgb": [255, 4, 5],    "pantone": "Red 032 C" },
+      "tertiary":   { "name": "Vibrant Violet",    "hex": "#5E05FF", "rgb": [94, 5, 255],   "pantone": "Violet C" },
+      "quaternary": { "name": "Radiant Yellow",    "hex": "#FED70B", "rgb": [254, 215, 11], "pantone": "Yellow C" },
+      "quinary":    { "name": "Electric Lime",     "hex": "#E6FF0A", "rgb": [230, 255, 10], "pantone": "389 C" },
+      "senary":     { "name": "Vivid Green",       "hex": "#03FF17", "rgb": [3, 255, 23],   "pantone": "802 C" }
+    },
+    "sections": {
+      "neutrals": {
+        "id": "01", "title": "The quiet workhorses.",
+        "description": "Text, backgrounds, borders, surface hierarchy. Black, white, and the full grey spectrum.",
+        "families": ["blackAndWhite", "grey", "darkGrey"]
+      },
+      "brand": {
+        "id": "02", "title": "The brand, loud and clear.",
+        "description": "The hero palette. Pantone-matched for print, electric on screen.",
+        "families": ["primary", "secondary", "tertiary"]
+      },
+      "accents": {
+        "id": "03", "title": "The high-energy highlights.",
+        "description": "Data viz, marketing moments, editorial and illustrations. Use with intention.",
+        "families": ["quaternary", "quinary", "senary"]
+      },
+      "component": {
+        "id": "04", "title": "Reserved scales.",
+        "description": "Token scales dedicated to specific components. Do not reuse outside their component.",
+        "families": ["buttonColorRed"]
+      }
+    },
+    "families": {
+      "blackAndWhite": {
+        "label": "Black & White", "section": "neutrals",
+        "description": "The two absolute endpoints of the spectrum.",
+        "core": "black", "coreLevel": null,
+        "pantone": "No Pantone · 100K / Paper",
+        "tokenCount": 2,
+        "useFor": "Pure backgrounds · High-contrast type · Print endpoints",
+        "scale": {
+          "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255] },
+          "black": { "hex": "#000000", "rgb": [0, 0, 0] }
+        }
+      },
+      "grey": {
+        "label": "Neutral Grey", "section": "neutrals",
+        "description": "Neutral greys for text hierarchy, borders, dividers, and surface elevation.",
+        "core": "500", "coreLevel": 500, "coreHex": "#595959",
+        "pantone": "Cool Gray family",
+        "tokenCount": 12,
+        "useFor": "Body text · Secondary text · Borders · Dividers",
+        "scale": {
+          "0":   { "hex": "#FAFAFA", "rgb": [250, 250, 250] },
+          "50":  { "hex": "#F5F5F5", "rgb": [245, 245, 245] },
+          "100": { "hex": "#EBEBEB", "rgb": [235, 235, 235] },
+          "200": { "hex": "#D1D1D1", "rgb": [209, 209, 209] },
+          "300": { "hex": "#B5B5B5", "rgb": [181, 181, 181] },
+          "400": { "hex": "#919191", "rgb": [145, 145, 145] },
+          "500": { "hex": "#595959", "rgb": [89, 89, 89] },
+          "600": { "hex": "#4F4F4F", "rgb": [79, 79, 79] },
+          "700": { "hex": "#454545", "rgb": [69, 69, 69] },
+          "800": { "hex": "#383838", "rgb": [56, 56, 56] },
+          "900": { "hex": "#262626", "rgb": [38, 38, 38] },
+          "950": { "hex": "#1A1A1A", "rgb": [26, 26, 26] }
+        }
+      },
+      "darkGrey": {
+        "label": "Deep Neutral", "section": "neutrals",
+        "description": "Near-black scale reserved for dense data views, dark surfaces, and high-contrast typography in dark mode.",
+        "core": "500", "coreLevel": 500, "coreHex": "#0F0F0F",
+        "pantone": "Near-black range",
+        "tokenCount": 12,
+        "useFor": "Dark mode surfaces · Code blocks · Data tables",
+        "scale": {
+          "0":   { "hex": "#1F1F1F", "rgb": [31, 31, 31] },
+          "50":  { "hex": "#1A1A1A", "rgb": [26, 26, 26] },
+          "100": { "hex": "#1A1A1A", "rgb": [26, 26, 26] },
+          "200": { "hex": "#171717", "rgb": [23, 23, 23] },
+          "300": { "hex": "#141414", "rgb": [20, 20, 20] },
+          "400": { "hex": "#121212", "rgb": [18, 18, 18] },
+          "500": { "hex": "#0F0F0F", "rgb": [15, 15, 15] },
+          "600": { "hex": "#0D0D0D", "rgb": [13, 13, 13] },
+          "700": { "hex": "#0A0A0A", "rgb": [10, 10, 10] },
+          "800": { "hex": "#080808", "rgb": [8, 8, 8] },
+          "900": { "hex": "#050505", "rgb": [5, 5, 5] },
+          "950": { "hex": "#030303", "rgb": [3, 3, 3] }
+        }
+      },
+      "primary": {
+        "label": "Bright Royal Blue", "section": "brand",
+        "description": "The core brand colour. Used for primary buttons, links, and key surfaces across every product touchpoint.",
+        "core": "500", "coreLevel": 500, "coreHex": "#0047FF",
+        "pantone": "Reflex Blue C",
+        "tokenCount": 12,
+        "useFor": "Primary buttons · Active states · Brand marks · Links",
+        "scale": {
+          "0":   { "hex": "#F3F7FF", "rgb": [243, 247, 255] },
+          "50":  { "hex": "#E4EDFF", "rgb": [228, 237, 255] },
+          "100": { "hex": "#CCDAFF", "rgb": [204, 218, 255] },
+          "200": { "hex": "#9AB6FF", "rgb": [154, 182, 255] },
+          "300": { "hex": "#6691FF", "rgb": [102, 145, 255] },
+          "400": { "hex": "#336DFF", "rgb": [51, 109, 255] },
+          "500": { "hex": "#0047FF", "rgb": [0, 71, 255] },
+          "600": { "hex": "#003ACC", "rgb": [0, 58, 204] },
+          "700": { "hex": "#012B99", "rgb": [1, 43, 153] },
+          "800": { "hex": "#001D66", "rgb": [0, 29, 102] },
+          "900": { "hex": "#000E33", "rgb": [0, 14, 51] },
+          "950": { "hex": "#000719", "rgb": [0, 7, 25] }
+        }
+      },
+      "secondary": {
+        "label": "Vivid Red", "section": "brand",
+        "description": "The counterpoint to Primary Blue. Reserved for destructive actions, critical alerts, and bold accent moments.",
+        "core": "500", "coreLevel": 500, "coreHex": "#FF0405",
+        "pantone": "Red 032 C",
+        "tokenCount": 12,
+        "useFor": "Destructive buttons · Error states · Critical alerts",
+        "scale": {
+          "0":   { "hex": "#FFF5F4", "rgb": [255, 245, 244] },
+          "50":  { "hex": "#FFE5E4", "rgb": [255, 229, 228] },
+          "100": { "hex": "#FFCCCC", "rgb": [255, 204, 204] },
+          "200": { "hex": "#FF999A", "rgb": [255, 153, 154] },
+          "300": { "hex": "#FF6B6B", "rgb": [255, 107, 107] },
+          "400": { "hex": "#FF3938", "rgb": [255, 57, 56] },
+          "500": { "hex": "#FF0405", "rgb": [255, 4, 5] },
+          "600": { "hex": "#D10000", "rgb": [209, 0, 0] },
+          "700": { "hex": "#9F0101", "rgb": [159, 1, 1] },
+          "800": { "hex": "#660000", "rgb": [102, 0, 0] },
+          "900": { "hex": "#330000", "rgb": [51, 0, 0] },
+          "950": { "hex": "#1A0000", "rgb": [26, 0, 0] }
+        }
+      },
+      "tertiary": {
+        "label": "Vibrant Violet", "section": "brand",
+        "description": "The creative accent. Reserved for AI, premium features, and editorial moments.",
+        "core": "500", "coreLevel": 500, "coreHex": "#5E05FF",
+        "pantone": "Violet C",
+        "tokenCount": 12,
+        "useFor": "AI features · Premium states · Creative tools",
+        "scale": {
+          "0":   { "hex": "#F7F2FF", "rgb": [247, 242, 255] },
+          "50":  { "hex": "#EEE5FF", "rgb": [238, 229, 255] },
+          "100": { "hex": "#DECCFF", "rgb": [222, 204, 255] },
+          "200": { "hex": "#BD99FF", "rgb": [189, 153, 255] },
+          "300": { "hex": "#9F6BFF", "rgb": [159, 107, 255] },
+          "400": { "hex": "#7E38FF", "rgb": [126, 56, 255] },
+          "500": { "hex": "#5E05FF", "rgb": [94, 5, 255] },
+          "600": { "hex": "#4900D1", "rgb": [73, 0, 209] },
+          "700": { "hex": "#37009F", "rgb": [55, 0, 159] },
+          "800": { "hex": "#240066", "rgb": [36, 0, 102] },
+          "900": { "hex": "#130033", "rgb": [19, 0, 51] },
+          "950": { "hex": "#090019", "rgb": [9, 0, 25] }
+        }
+      },
+      "quaternary": {
+        "label": "Radiant Yellow", "section": "accents",
+        "description": "High-contrast highlight — especially potent on dark surfaces.",
+        "core": "500", "coreLevel": 500, "coreHex": "#FED70B",
+        "pantone": "Yellow C",
+        "tokenCount": 12,
+        "useFor": "Highlights · Warning states · Spot illustrations",
+        "scale": {
+          "0":   { "hex": "#FFFDF5", "rgb": [255, 253, 245] },
+          "50":  { "hex": "#FFFCEB", "rgb": [255, 252, 235] },
+          "100": { "hex": "#FFF9DB", "rgb": [255, 249, 219] },
+          "200": { "hex": "#FFF3B3", "rgb": [255, 243, 179] },
+          "300": { "hex": "#FEEA85", "rgb": [254, 234, 133] },
+          "400": { "hex": "#FEE253", "rgb": [254, 226, 83] },
+          "500": { "hex": "#FED70B", "rgb": [254, 215, 11] },
+          "600": { "hex": "#EAC301", "rgb": [234, 195, 1] },
+          "700": { "hex": "#CBA901", "rgb": [203, 169, 1] },
+          "800": { "hex": "#AD9001", "rgb": [173, 144, 1] },
+          "900": { "hex": "#7A6600", "rgb": [122, 102, 0] },
+          "950": { "hex": "#564800", "rgb": [86, 72, 0] }
+        }
+      },
+      "quinary": {
+        "label": "Electric Lime", "section": "accents",
+        "description": "Neon accent for data viz, callouts, and playful marketing surfaces.",
+        "core": "500", "coreLevel": 500, "coreHex": "#E6FF0A",
+        "pantone": "389 C",
+        "tokenCount": 12,
+        "useFor": "Data viz · Callout badges · Playful accents",
+        "scale": {
+          "0":   { "hex": "#FEFFF2", "rgb": [254, 255, 242] },
+          "50":  { "hex": "#FDFFE4", "rgb": [253, 255, 228] },
+          "100": { "hex": "#FAFFCC", "rgb": [250, 255, 204] },
+          "200": { "hex": "#F5FF9D", "rgb": [245, 255, 157] },
+          "300": { "hex": "#F0FF6A", "rgb": [240, 255, 106] },
+          "400": { "hex": "#EBFF3E", "rgb": [235, 255, 62] },
+          "500": { "hex": "#E6FF0A", "rgb": [230, 255, 10] },
+          "600": { "hex": "#C1D601", "rgb": [193, 214, 1] },
+          "700": { "hex": "#8E9F00", "rgb": [142, 159, 0] },
+          "800": { "hex": "#606B01", "rgb": [96, 107, 1] },
+          "900": { "hex": "#2E3300", "rgb": [46, 51, 0] },
+          "950": { "hex": "#171900", "rgb": [23, 25, 0] }
+        }
+      },
+      "senary": {
+        "label": "Vivid Green", "section": "accents",
+        "description": "Success states, growth signals, and positive metrics.",
+        "core": "500", "coreLevel": 500, "coreHex": "#03FF17",
+        "pantone": "802 C",
+        "tokenCount": 12,
+        "useFor": "Success states · Positive deltas · Growth metrics",
+        "scale": {
+          "0":   { "hex": "#F2FFF4", "rgb": [242, 255, 244] },
+          "50":  { "hex": "#E5FFE8", "rgb": [229, 255, 232] },
+          "100": { "hex": "#CCFFD0", "rgb": [204, 255, 208] },
+          "200": { "hex": "#99FFA2", "rgb": [153, 255, 162] },
+          "300": { "hex": "#6CFF77", "rgb": [108, 255, 119] },
+          "400": { "hex": "#37FF49", "rgb": [55, 255, 73] },
+          "500": { "hex": "#03FF17", "rgb": [3, 255, 23] },
+          "600": { "hex": "#04D111", "rgb": [4, 209, 17] },
+          "700": { "hex": "#019E0D", "rgb": [1, 158, 13] },
+          "800": { "hex": "#00660A", "rgb": [0, 102, 10] },
+          "900": { "hex": "#003203", "rgb": [0, 50, 3] },
+          "950": { "hex": "#011902", "rgb": [1, 25, 2] }
+        }
+      },
+      "buttonColorRed": {
+        "label": "Button Action Red", "section": "component",
+        "description": "Dedicated red scale tuned for destructive action buttons.",
+        "core": "300", "coreLevel": 300, "coreHex": "#E42527",
+        "pantone": "Reserved scale · not Pantone-matched",
+        "tokenCount": 8,
+        "useFor": "Delete buttons · Destructive confirm · Remove actions",
+        "scale": {
+          "0":   { "hex": "#FEF1F1", "rgb": [254, 241, 241] },
+          "50":  { "hex": "#FDE3E3", "rgb": [253, 227, 227] },
+          "100": { "hex": "#F9ADAE", "rgb": [249, 173, 174] },
+          "200": { "hex": "#F77071", "rgb": [247, 112, 113] },
+          "300": { "hex": "#E42527", "rgb": [228, 37, 39] },
+          "400": { "hex": "#A41719", "rgb": [164, 23, 25] },
+          "500": { "hex": "#680B0C", "rgb": [104, 11, 12] },
+          "600": { "hex": "#320203", "rgb": [50, 2, 3] }
+        }
+      }
+    },
+    "flat": {
+      "color-white": "#FFFFFF", "color-black": "#000000",
+      "color-grey-0": "#FAFAFA", "color-grey-50": "#F5F5F5", "color-grey-100": "#EBEBEB",
+      "color-grey-200": "#D1D1D1", "color-grey-300": "#B5B5B5", "color-grey-400": "#919191",
+      "color-grey-500": "#595959", "color-grey-600": "#4F4F4F", "color-grey-700": "#454545",
+      "color-grey-800": "#383838", "color-grey-900": "#262626", "color-grey-950": "#1A1A1A",
+      "color-dark-grey-0": "#1F1F1F", "color-dark-grey-50": "#1A1A1A", "color-dark-grey-100": "#1A1A1A",
+      "color-dark-grey-200": "#171717", "color-dark-grey-300": "#141414", "color-dark-grey-400": "#121212",
+      "color-dark-grey-500": "#0F0F0F", "color-dark-grey-600": "#0D0D0D", "color-dark-grey-700": "#0A0A0A",
+      "color-dark-grey-800": "#080808", "color-dark-grey-900": "#050505", "color-dark-grey-950": "#030303",
+      "color-primary-0": "#F3F7FF", "color-primary-50": "#E4EDFF", "color-primary-100": "#CCDAFF",
+      "color-primary-200": "#9AB6FF", "color-primary-300": "#6691FF", "color-primary-400": "#336DFF",
+      "color-primary-500": "#0047FF", "color-primary-600": "#003ACC", "color-primary-700": "#012B99",
+      "color-primary-800": "#001D66", "color-primary-900": "#000E33", "color-primary-950": "#000719",
+      "color-secondary-0": "#FFF5F4", "color-secondary-50": "#FFE5E4", "color-secondary-100": "#FFCCCC",
+      "color-secondary-200": "#FF999A", "color-secondary-300": "#FF6B6B", "color-secondary-400": "#FF3938",
+      "color-secondary-500": "#FF0405", "color-secondary-600": "#D10000", "color-secondary-700": "#9F0101",
+      "color-secondary-800": "#660000", "color-secondary-900": "#330000", "color-secondary-950": "#1A0000",
+      "color-tertiary-0": "#F7F2FF", "color-tertiary-50": "#EEE5FF", "color-tertiary-100": "#DECCFF",
+      "color-tertiary-200": "#BD99FF", "color-tertiary-300": "#9F6BFF", "color-tertiary-400": "#7E38FF",
+      "color-tertiary-500": "#5E05FF", "color-tertiary-600": "#4900D1", "color-tertiary-700": "#37009F",
+      "color-tertiary-800": "#240066", "color-tertiary-900": "#130033", "color-tertiary-950": "#090019",
+      "color-quaternary-0": "#FFFDF5", "color-quaternary-50": "#FFFCEB", "color-quaternary-100": "#FFF9DB",
+      "color-quaternary-200": "#FFF3B3", "color-quaternary-300": "#FEEA85", "color-quaternary-400": "#FEE253",
+      "color-quaternary-500": "#FED70B", "color-quaternary-600": "#EAC301", "color-quaternary-700": "#CBA901",
+      "color-quaternary-800": "#AD9001", "color-quaternary-900": "#7A6600", "color-quaternary-950": "#564800",
+      "color-quinary-0": "#FEFFF2", "color-quinary-50": "#FDFFE4", "color-quinary-100": "#FAFFCC",
+      "color-quinary-200": "#F5FF9D", "color-quinary-300": "#F0FF6A", "color-quinary-400": "#EBFF3E",
+      "color-quinary-500": "#E6FF0A", "color-quinary-600": "#C1D601", "color-quinary-700": "#8E9F00",
+      "color-quinary-800": "#606B01", "color-quinary-900": "#2E3300", "color-quinary-950": "#171900",
+      "color-senary-0": "#F2FFF4", "color-senary-50": "#E5FFE8", "color-senary-100": "#CCFFD0",
+      "color-senary-200": "#99FFA2", "color-senary-300": "#6CFF77", "color-senary-400": "#37FF49",
+      "color-senary-500": "#03FF17", "color-senary-600": "#04D111", "color-senary-700": "#019E0D",
+      "color-senary-800": "#00660A", "color-senary-900": "#003203", "color-senary-950": "#011902",
+      "color-button-red-0": "#FEF1F1", "color-button-red-50": "#FDE3E3", "color-button-red-100": "#F9ADAE",
+      "color-button-red-200": "#F77071", "color-button-red-300": "#E42527", "color-button-red-400": "#A41719",
+      "color-button-red-500": "#680B0C", "color-button-red-600": "#320203"
+    },
+    "handoff": {
+      "digital":     { "label": "FOR DIGITAL",     "title": "Hex for web & UI",  "description": "Copy hex values directly for CSS, SCSS, or design tools." },
+      "engineering": { "label": "FOR ENGINEERING", "title": "RGB for hand-off",  "description": "RGB values for engineers and colour math (gradients, alpha)." },
+      "print":       { "label": "FOR PRINT",       "title": "CMYK in Print/Colors", "description": "Pantone-matched CMYK values for press-accurate output." }
+    }
+  }

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "name": "Creator Design System (CDS)",
+  "version": "v2.2",
+  "edition": "2026.01",
+  "description": "Machine-readable token files for the Creator Design System. Source of truth for spacing, layout, colour, typography, elevation, radius, and component specs across every Creator product.",
+  "source": {
+    "type": "figma",
+    "file": "HwJgDmaNzfJYTeoMwe31yU",
+    "url": "https://www.figma.com/design/HwJgDmaNzfJYTeoMwe31yU/CDS"
+  },
+  "tokens": {
+    "foundations": {
+      "spaces": {
+        "file": "foundations/spaces.json",
+        "figmaNodeId": "61:808",
+        "tokenCount": 33,
+        "description": "4px-aligned spacing scale from 4px (sm-1) to 240px (xl-10)."
+      },
+      "grids": {
+        "file": "foundations/grids.json",
+        "figmaNodeId": "1:2",
+        "tokenCount": 7,
+        "description": "Seven responsive breakpoints from 576px (XXS) to 1720px (XL)."
+      },
+      "colours": {
+        "file": "foundations/colours.json",
+        "figmaNodeId": "7074:749",
+        "tokenCount": 106,
+        "description": "10 colour families with full scales (0–950). 6 Pantone-matched core anchors at 500-level."
+      },
+      "typography": {
+        "file": "foundations/typography.json",
+        "figmaNodeId": "1942:136",
+        "tokenCount": 12,
+        "description": "Type scale from 12px (Text Small) to 80px (H1/Display) across 4 weights."
+      },
+      "elevation": {
+        "file": "foundations/elevation.json",
+        "figmaNodeId": "4754:2739",
+        "tokenCount": 5,
+        "description": "Five drop-shadow tiers (XS → XL) for depth, focus, and surface temporality."
+      },
+      "radius": {
+        "file": "foundations/radius.json",
+        "figmaNodeId": "4754:2751",
+        "tokenCount": 5,
+        "description": "Five corner-radius tokens from 2px (XS) to 999px (Full)."
+      }
+    },
+    "components": {
+      "ctaButtons": {
+        "file": "components/cta-buttons.json",
+        "figmaNodeId": "7047:72634",
+        "tokenCount": 60,
+        "description": "5 variants × 4 sizes × 3 states. Primary, Primary Line, Secondary, Secondary Line, Tertiary."
+      }
+    },
+    "accessibility": {
+      "wcag": {
+        "file": "accessibility/wcag.json",
+        "standard": "WCAG 2.2 AA",
+        "checkCount": 47,
+        "description": "Page-by-page WCAG audit checklist tied to actual token values across all foundation files."
+      }
+    }
+  },
+  "consumers": {
+    "skill": "skills/cds-design-system/SKILL.md should reference these JSON files as authoritative token values when generating design or code output.",
+    "build": "Tokens can be transformed into CSS variables, Tailwind config, or platform-specific outputs via Style Dictionary or similar tools.",
+    "audit": "accessibility/wcag.json should be re-validated whenever any colour, type, or component token changes."
+  }
+}
