@@ -6,19 +6,20 @@
   },
   "metadata": {
     "description": "AI-powered design skills for UI, systems, and themes — built on the Creator Design System (CDS)",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "repository": "https://github.com/Abhinaya-6360/DX-Marketplace"
   },
   "plugins": [
     {
       "name": "creator-design-skills",
-      "version": "1.0.0",
-      "description": "Creator Design System enforcement, token usage, component authority, and visual language guides for Creator products",
+      "version": "1.1.0",
+      "description": "Creator Design System enforcement, token usage, component authority, accessibility checks, Creator chrome (header/footer + CTA-vs-brand discipline), and 8 token-strict creative directions for marketing sections",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/creator-design-system",
-        "./skills/creator-visual-language"
+        "./skills/creator-visual-language",
+        "./skills/creative-sections"
       ]
     }
   ]
