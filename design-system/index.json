@@ -1,9 +1,9 @@
 {
   "$schema": "https://design-tokens.org/schema.json",
   "name": "Creator Design System (CDS)",
-  "version": "v2.2",
+  "version": "v2.3",
   "edition": "2026.01",
-  "description": "Machine-readable token files for the Creator Design System. Source of truth for spacing, layout, colour, typography, elevation, radius, and component specs across every Creator product.",
+  "description": "Machine-readable token files for the Creator Design System. Source of truth for spacing, layout, colour, typography, elevation, radius, patterns, and component specs across every Creator product.",
   "source": {
     "type": "figma",
     "file": "HwJgDmaNzfJYTeoMwe31yU",
@@ -27,7 +27,7 @@
         "file": "foundations/colours.json",
         "figmaNodeId": "7074:749",
         "tokenCount": 106,
-        "description": "10 colour families with full scales (0–950). 6 Pantone-matched core anchors at 500-level."
+        "description": "10 colour families with full scales (0-950). 6 Pantone-matched core anchors at 500-level."
       },
       "typography": {
         "file": "foundations/typography.json",
@@ -39,13 +39,19 @@
         "file": "foundations/elevation.json",
         "figmaNodeId": "4754:2739",
         "tokenCount": 5,
-        "description": "Five drop-shadow tiers (XS → XL) for depth, focus, and surface temporality."
+        "description": "Five drop-shadow tiers (XS to XL) for depth, focus, and surface temporality."
       },
       "radius": {
         "file": "foundations/radius.json",
         "figmaNodeId": "4754:2751",
         "tokenCount": 5,
         "description": "Five corner-radius tokens from 2px (XS) to 999px (Full)."
+      },
+      "patterns": {
+        "file": "foundations/patterns.json",
+        "figmaNodeId": "7215:556",
+        "tokenCount": 13,
+        "description": "Three pattern families (Dot, Arrow, Division) across 13 variants for decorative surfaces."
       }
     },
     "components": {
@@ -53,7 +59,14 @@
         "file": "components/cta-buttons.json",
         "figmaNodeId": "7047:72634",
         "tokenCount": 60,
-        "description": "5 variants × 4 sizes × 3 states. Primary, Primary Line, Secondary, Secondary Line, Tertiary."
+        "description": "5 variants x 4 sizes x 3 states. Primary, Primary Line, Secondary, Secondary Line, Tertiary."
+      }
+    },
+    "themes": {
+      "creator": {
+        "file": "themes/creator.json",
+        "tokenCount": 12,
+        "description": "Creator product theme. Overrides only surface, border, text, and brand-soft tokens."
       }
     },
     "accessibility": {
@@ -66,7 +79,7 @@
     }
   },
   "consumers": {
-    "skill": "skills/cds-design-system/SKILL.md should reference these JSON files as authoritative token values when generating design or code output.",
+    "skill": "skills/creator-design-system/SKILL.md should reference these JSON files as authoritative token values when generating design or code output.",
     "build": "Tokens can be transformed into CSS variables, Tailwind config, or platform-specific outputs via Style Dictionary or similar tools.",
     "audit": "accessibility/wcag.json should be re-validated whenever any colour, type, or component token changes."
   }

@@ -1,0 +1,299 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Foundations / Patterns",
+    "description": "Decorative pattern motifs for hero surfaces, section backgrounds, and editorial accents. Three pattern families across 13 variants.",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU",
+      "nodeId": "7215:556"
+    },
+    "meta": {
+      "totalFamilies": 3,
+      "totalPatterns": 13,
+      "tileSize": { "value": 256, "unit": "px" },
+      "format": "svg-or-png-tile",
+      "tagline": "Three pattern families. One visual rhythm.",
+      "subline": "Dots, arrows, and division motifs — usable as backgrounds, borders, or editorial accents."
+    },
+    "families": {
+      "dot": {
+        "id": "01",
+        "label": "Dot",
+        "description": "Geometric dot grid motif. Use as a section-fill texture, behind hero copy, or as a soft background pattern.",
+        "useFor": "Hero backgrounds · Section textures · Soft surface fills",
+        "variantCount": 4,
+        "variants": {
+          "default": {
+            "id": "dot-default",
+            "label": "Default",
+            "figmaName": "Property 1=Default",
+            "figmaNodeId": "7215:444",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "description": "Default dot pattern for use on light surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/dot/default.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white · color-grey-0",
+            "recommendedFill": "color-grey-200 (decorative dots on light)"
+          },
+          "dot-small": {
+            "id": "dot-small",
+            "label": "Dot Small",
+            "figmaName": "Property 1=Dot-small",
+            "figmaNodeId": "7215:547",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "description": "Smaller, denser dot grid. Use when the default reads too coarse.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/dot/dot-small.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white · color-grey-0",
+            "recommendedFill": "color-grey-200"
+          },
+          "dot-dark": {
+            "id": "dot-dark",
+            "label": "Dot Dark",
+            "figmaName": "Property 1=Dot-dark",
+            "figmaNodeId": "7215:548",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "description": "Default dot pattern inverted for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/dot/dot-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-500 · color-dark-grey-700 · color-black",
+            "recommendedFill": "color-grey-800 (subtle) · color-grey-700 (visible)"
+          },
+          "dot-small-dark": {
+            "id": "dot-small-dark",
+            "label": "Dot Small Dark",
+            "figmaName": "Property 1=Dot-small-dark",
+            "figmaNodeId": "7215:549",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "description": "Smaller, denser dot grid for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/dot/dot-small-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-500 · color-dark-grey-700 · color-black",
+            "recommendedFill": "color-grey-800 (subtle) · color-grey-700 (visible)"
+          }
+        }
+      },
+      "arrow": {
+        "id": "02",
+        "label": "Arrow",
+        "description": "Directional arrow motif. Use as a kinetic accent, decorative fill, or section transition device.",
+        "useFor": "Hero accents · Section transitions · Editorial decoration · Direction cues",
+        "variantCount": 6,
+        "variants": {
+          "default": {
+            "id": "arrow-default",
+            "label": "Arrow Default",
+            "figmaName": "Arrow=Default",
+            "figmaNodeId": "7206:310",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "fillStyle": "default",
+            "description": "Standard arrow pattern for use on light surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/default.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white",
+            "recommendedFill": "color-black · color-grey-700"
+          },
+          "arrow-dark": {
+            "id": "arrow-dark",
+            "label": "Arrow Dark",
+            "figmaName": "Arrow=Arrow-dark",
+            "figmaNodeId": "7215:540",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "fillStyle": "default",
+            "description": "Arrow pattern inverted for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/arrow-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-700 · color-black",
+            "recommendedFill": "color-white · color-grey-200"
+          },
+          "arrow-fill": {
+            "id": "arrow-fill",
+            "label": "Arrow Fill",
+            "figmaName": "Arrow=Arrow -fill",
+            "figmaNodeId": "7215:541",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "fillStyle": "filled",
+            "description": "Filled-shape arrow variant. Higher visual weight than default.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/arrow-fill.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white",
+            "recommendedFill": "color-primary-500 · color-black"
+          },
+          "arrow-line": {
+            "id": "arrow-line",
+            "label": "Arrow Line",
+            "figmaName": "Arrow=Arrow-line",
+            "figmaNodeId": "7215:542",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "fillStyle": "outlined",
+            "description": "Outlined arrow variant. Lighter visual weight than default.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/arrow-line.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white",
+            "recommendedFill": "color-grey-700 · color-primary-500 (outline only)"
+          },
+          "arrow-fill-dark": {
+            "id": "arrow-fill-dark",
+            "label": "Arrow Fill Dark",
+            "figmaName": "Arrow=Arrow-fill-dark",
+            "figmaNodeId": "7215:543",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "fillStyle": "filled",
+            "description": "Filled arrow inverted for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/arrow-fill-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-700 · color-black",
+            "recommendedFill": "color-white · color-quinary-500 (lime accent)"
+          },
+          "arrow-line-dark": {
+            "id": "arrow-line-dark",
+            "label": "Arrow Line Dark",
+            "figmaName": "Arrow=Arrow-line-dark",
+            "figmaNodeId": "7215:544",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "fillStyle": "outlined",
+            "description": "Outlined arrow inverted for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/arrow/arrow-line-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-700 · color-black",
+            "recommendedFill": "color-grey-200 (subtle) · color-white (visible)"
+          }
+        }
+      },
+      "division": {
+        "id": "03",
+        "label": "Division",
+        "description": "Dividing-line / sectional rhythm motif. Use as a section break, hero subdivider, or geometric texture.",
+        "useFor": "Section dividers · Hero subdivision · Editorial structure",
+        "variantCount": 3,
+        "variants": {
+          "default": {
+            "id": "division-default",
+            "label": "Division Default",
+            "figmaName": "Property 1=Default",
+            "figmaNodeId": "7215:550",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "light",
+            "description": "Default division motif for light surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/division/default.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-white · color-grey-0",
+            "recommendedFill": "color-grey-200 · color-grey-300"
+          },
+          "division-dark": {
+            "id": "division-dark",
+            "label": "Division Dark",
+            "figmaName": "Property 1=division-dark",
+            "figmaNodeId": "7215:553",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "dark",
+            "description": "Division motif inverted for dark surfaces.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/division/division-dark.svg",
+              "exportPending": true
+            },
+            "recommendedSurface": "color-dark-grey-700 · color-black",
+            "recommendedFill": "color-grey-800 · color-grey-700"
+          },
+          "variant-3": {
+            "id": "division-variant-3",
+            "label": "Division Variant 3",
+            "figmaName": "Property 1=Variant3",
+            "figmaNodeId": "7293:679",
+            "tileSize": { "width": 256, "height": 256, "unit": "px" },
+            "tone": "unspecified",
+            "description": "Third division variant. Tone and fill style to be confirmed when the asset is exported from Figma.",
+            "asset": {
+              "type": "svg",
+              "path": "patterns/division/variant-3.svg",
+              "exportPending": true,
+              "exportNote": "Confirm tone (light/dark) and surface intent with the design team."
+            },
+            "recommendedSurface": "to be confirmed",
+            "recommendedFill": "to be confirmed"
+          }
+        }
+      }
+    },
+    "flat": {
+      "pattern-dot-default":         "patterns/dot/default.svg",
+      "pattern-dot-small":           "patterns/dot/dot-small.svg",
+      "pattern-dot-dark":            "patterns/dot/dot-dark.svg",
+      "pattern-dot-small-dark":      "patterns/dot/dot-small-dark.svg",
+      "pattern-arrow-default":       "patterns/arrow/default.svg",
+      "pattern-arrow-dark":          "patterns/arrow/arrow-dark.svg",
+      "pattern-arrow-fill":          "patterns/arrow/arrow-fill.svg",
+      "pattern-arrow-line":          "patterns/arrow/arrow-line.svg",
+      "pattern-arrow-fill-dark":     "patterns/arrow/arrow-fill-dark.svg",
+      "pattern-arrow-line-dark":     "patterns/arrow/arrow-line-dark.svg",
+      "pattern-division-default":    "patterns/division/default.svg",
+      "pattern-division-dark":       "patterns/division/division-dark.svg",
+      "pattern-division-variant-3":  "patterns/division/variant-3.svg"
+    },
+    "css": {
+      "tilingExample": "background-image: url('patterns/dot/default.svg'); background-repeat: repeat; background-size: 256px 256px;",
+      "heroAccentExample": "background: var(--color-white) url('patterns/arrow/arrow-fill.svg') no-repeat right top / 256px 256px;"
+    },
+    "usage": {
+      "principle": "Patterns add visual rhythm without adding chrome. Use sparingly.",
+      "rules": [
+        { "type": "do",   "text": "Use one pattern family per page section. Mixing dot + arrow + division in the same view creates noise." },
+        { "type": "do",   "text": "Match pattern tone to surface tone — light variants on light surfaces, dark variants on dark surfaces." },
+        { "type": "do",   "text": "Tile dot patterns as backgrounds. Use arrow / division patterns as discrete accents (one to three placements per section)." },
+        { "type": "dont", "text": "Stack patterns over CTAs, body text, or any interactive surface. Patterns are decorative — they should never compete with content." },
+        { "type": "dont", "text": "Recolour patterns outside the recommended fill tokens. Patterns inherit their colour from the design system, not from the page." },
+        { "type": "dont", "text": "Scale patterns below 192px tile size — the geometry breaks down. Tile at native 256px or larger." }
+      ]
+    },
+    "exportInstructions": {
+      "format": "SVG (preferred) or PNG @2x (fallback)",
+      "size": "256×256px native",
+      "fillStrategy": "Use currentColor in SVG so the pattern can be recoloured via CSS color property",
+      "destination": "design-system/foundations/patterns/{family}/{variant}.svg",
+      "todo": "Export all 13 variants from Figma at node 7215:556 and place them in the patterns/ directory next to this JSON file."
+    }
+  }
