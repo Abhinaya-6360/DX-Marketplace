@@ -1,0 +1,87 @@
+{
+    "$schema": "https://design-tokens.org/schema.json",
+    "name": "Creator Design System / Themes / Creator",
+    "description": "Product theme for Zoho Creator. Overrides only surface, background, and layout tokens — never component styles or brand colours. Component values come from design-system/components/, foundation values come from design-system/foundations/.",
+    "version": "1.0.0",
+    "source": {
+      "type": "figma",
+      "file": "HwJgDmaNzfJYTeoMwe31yU"
+    },
+    "meta": {
+      "product": "creator",
+      "type": "theme",
+      "appliesTo": [
+        "page background",
+        "section surfaces",
+        "soft brand-tinted surfaces",
+        "border colours",
+        "footer / inverted bands"
+      ],
+      "doesNotApplyTo": [
+        "components (CTA, inputs, cards, buttons)",
+        "brand anchor colours (Primary, Secondary, Tertiary at 500)",
+        "typography sizes and weights",
+        "spacing scale",
+        "elevation tiers",
+        "radius tokens"
+      ],
+      "tagline": "Creator surfaces, lit by CDS.",
+      "subline": "Surface and background tokens for Creator marketing pages. Components and brand stay sacred."
+    },
+    "tokens": {
+      "surface": {
+        "page":    { "value": "#FFFFFF", "ref": "foundations/colours.json → families.blackAndWhite.scale.white" },
+        "subtle":  { "value": "#FAFAFA", "ref": "foundations/colours.json → families.grey.scale.0" },
+        "muted":   { "value": "#F5F5F5", "ref": "foundations/colours.json → families.grey.scale.50" },
+        "darkest": { "value": "#000000", "ref": "foundations/colours.json → families.blackAndWhite.scale.black" }
+      },
+      "border": {
+        "default": { "value": "#EBEBEB", "ref": "foundations/colours.json → families.grey.scale.100" },
+        "strong":  { "value": "#D1D1D1", "ref": "foundations/colours.json → families.grey.scale.200" }
+      },
+      "brandSoft": {
+        "primary":   { "value": "#F3F7FF", "ref": "foundations/colours.json → families.primary.scale.0" },
+        "secondary": { "value": "#E4EDFF", "ref": "foundations/colours.json → families.primary.scale.50" },
+        "tertiary":  { "value": "#CCDAFF", "ref": "foundations/colours.json → families.primary.scale.100" }
+      },
+      "text": {
+        "primary":   { "value": "#000000", "ref": "foundations/colours.json → families.blackAndWhite.scale.black" },
+        "body":      { "value": "#595959", "ref": "foundations/colours.json → families.grey.scale.500" },
+        "secondary": { "value": "#919191", "ref": "foundations/colours.json → families.grey.scale.400", "warning": "Fails AA for body text — use only for placeholders, dividers, or borders." }
+      }
+    },
+    "flat": {
+      "creator-surface-page":      "#FFFFFF",
+      "creator-surface-subtle":    "#FAFAFA",
+      "creator-surface-muted":     "#F5F5F5",
+      "creator-surface-darkest":   "#000000",
+      "creator-border-default":    "#EBEBEB",
+      "creator-border-strong":     "#D1D1D1",
+      "creator-brand-soft-1":      "#F3F7FF",
+      "creator-brand-soft-2":      "#E4EDFF",
+      "creator-brand-soft-3":      "#CCDAFF",
+      "creator-text-primary":      "#000000",
+      "creator-text-body":         "#595959",
+      "creator-text-secondary":    "#919191"
+    },
+    "css": {
+      "rootSnippet": ":root { --creator-surface-page: #FFFFFF; --creator-surface-subtle: #FAFAFA; --creator-surface-muted: #F5F5F5; --creator-surface-darkest: #000000; --creator-border-default: #EBEBEB; --creator-border-strong: #D1D1D1; --creator-brand-soft-1: #F3F7FF; --creator-brand-soft-2: #E4EDFF; --creator-brand-soft-3: #CCDAFF; --creator-text-primary: #000000; --creator-text-body: #595959; --creator-text-secondary: #919191; }"
+    },
+    "usage": {
+      "principle": "Theme tokens override only surfaces, backgrounds, borders, and soft tints. Components and brand anchors are immutable.",
+      "rules": [
+        { "type": "do",   "text": "Use creator-* surface tokens for page and section backgrounds." },
+        { "type": "do",   "text": "Use creator-brand-soft-* for hero gradient ends, soft section bands, and decorative tints." },
+        { "type": "do",   "text": "Reference foundation tokens by their ID — never hardcode hex values that aren't in foundations/colours.json." },
+        { "type": "dont", "text": "Override component colours (CTA red, Primary blue) from this file. Components come from design-system/components/." },
+        { "type": "dont", "text": "Add new colour families here. New families belong in foundations/colours.json." },
+        { "type": "dont", "text": "Use creator-text-secondary (#919191) for body copy — fails WCAG AA at 2.85:1." }
+      ]
+    },
+    "notes": [
+      "All values reference foundation tokens — never hard-coded outside the system.",
+      "Component colours (CTA red, Primary blue, Secondary red) are NOT in this file by design.",
+      "Add new surface or background tokens here as Creator pages introduce them.",
+      "When dark-mode Creator surfaces are added, create a separate creator-dark.json rather than mixing modes here."
+    ]
+  }
