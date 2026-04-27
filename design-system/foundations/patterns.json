@@ -7,14 +7,16 @@
       "file": "HwJgDmaNzfJYTeoMwe31yU",
       "nodeId": "7215:556"
     },
-    "meta": {
-      "totalFamilies": 3,
-      "totalPatterns": 13,
-      "tileSize": { "value": 256, "unit": "px" },
-      "format": "svg-or-png-tile",
-      "tagline": "Three pattern families. One visual rhythm.",
-      "subline": "Dots, arrows, and division motifs — usable as backgrounds, borders, or editorial accents."
-    },
+  "meta": {
+    "totalFamilies": 3,
+    "totalPatterns": 13,
+    "tileSize": { "value": 256, "unit": "px" },
+    "format": "svg-or-png-tile",
+    "assetsExported": true,
+    "fillStrategy": "currentColor",
+    "tagline": "Three pattern families. One visual rhythm.",
+    "subline": "Dots, arrows, and division motifs — usable as backgrounds, borders, or editorial accents."
+  },
     "families": {
       "dot": {
         "id": "01",
