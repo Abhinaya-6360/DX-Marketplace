@@ -1,0 +1,8 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="arrow-fill" patternUnits="userSpaceOnUse" width="24" height="30.4">
+      <path d="M16 8 L4 1.0718 V14.9282 Z" fill="currentColor"/>
+    </pattern>
+  </ds>
+  <rect width="256" height="256" fill="url(#arrow-fill)"/>
+</svg>

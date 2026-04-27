@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="division-default" patternUnits="userSpaceOnUse" width="22.91" height="27.72">
+      <line x1="0" y1="11.31" x2="11.31" y2="0" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="256" height="256" fill="url(#division-default)</svg>
