@@ -51,16 +51,6 @@ A modular set of Claude skills that help you:
 /plugin install creator-design-skills
 ```
 
-### Option B — Clone directly
-
-```
-git clone https://github.com/Abhinaya-6360/DX-Marketplace
-```
-
-Everything you need — skills, CDS tokens, components, accessibility audit —
-is in this single repo. No submodule setup needed.
-
----
 
 ## ⚙️ Usage
 
