@@ -67,6 +67,11 @@
         "file": "themes/creator.json",
         "tokenCount": 12,
         "description": "Creator product theme. Overrides only surface, border, text, and brand-soft tokens."
+      },
+      "bookings": {
+        "file": "themes/bookings.json",
+        "tokenCount": 12,
+        "description": "Bookings product theme. Defines the Bookings-specific primary brand colour family (violet, #4A18A8) since Bookings' brand anchor differs from Creator's Primary blue."
       }
     },
     "accessibility": {
