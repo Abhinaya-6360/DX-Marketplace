@@ -16,9 +16,16 @@ containing this file). No external URL fetching — the system is fully local.
 2. Load tokens from `foundations/` (see Token Sources below)
 3. Load components from `components/` when building any UI element
 4. Load accessibility rules from `accessibility/wcag.json`
-5. If a product is specified → load `themes/{product}.json` (when added)
-6. Apply token overrides from the theme (for backgrounds/layout only, never
-   components)
+5. Detect the product from the request. Check the request text for a
+   product name matching any key under `tokens.themes` in `index.json`
+   (e.g. "Bookings", "Zoho Bookings", "bookings page/pricing/dashboard").
+   If a match is found → load `themes/{product}.json`. If no product is
+   named or matched, skip this step — foundations apply as-is (Creator's
+   shared `primary` is the default, since it lives in
+   `foundations/colours.json`, not a theme file).
+6. Apply token overrides from the theme (surface/background/layout tokens,
+   or a product-specific primary colour family when the product's brand
+   anchor differs from the shared foundation — see Theme Rules)
 7. Generate UI using canonical components from `components/*.json`
 
 ---
@@ -54,11 +61,18 @@ when you need an overview of what's available.
 
 If a product is specified:
 
-* Load theme from `themes/{product}.json` (when product themes are added)
-* Override **only** surface/background/layout tokens using theme values
+* Detect product from the request per Execution Flow step 5 — do not wait
+  for a formal parameter; a plain-language product name is sufficient
+* Load theme from `themes/{product}.json` once detected
+* Override **only** surface/background/layout tokens using theme values,
+  unless the theme defines its own `primary` colour family (e.g. Bookings)
+  — in that case, use the theme's primary family in place of
+  `foundations/colours.json → primary` for that product only
 * Component styles (buttons, inputs, cards) are **never** overridden by a
   theme — they come from `components/*.json` alone
 * Maintain structural consistency with the base system
+* If a product is named but no matching entry exists in `index.json →
+  tokens.themes` → **ASK** which theme to use rather than defaulting silently
 
 ---
 
