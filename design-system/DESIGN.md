@@ -18,7 +18,6 @@ containing this file). No external URL fetching — the system is fully local.
 4. Load product-specific behavior (if available, from the consuming skill)
 5. Apply token overrides from the theme (for backgrounds/layout only, never components)
 6. Generate UI using canonical components from components/*.json
-
 ---
 
 ## Token Sources
