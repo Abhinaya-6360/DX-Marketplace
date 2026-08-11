@@ -12,21 +12,12 @@ containing this file). No external URL fetching — the system is fully local.
 
 ## Execution Flow
 
-1. Load rules from this file (`DESIGN.md`)
-2. Load tokens from `foundations/` (see Token Sources below)
-3. Load components from `components/` when building any UI element
-4. Load accessibility rules from `accessibility/wcag.json`
-5. Detect the product from the request. Check the request text for a
-   product name matching any key under `tokens.themes` in `index.json`
-   (e.g. "Bookings", "Zoho Bookings", "bookings page/pricing/dashboard").
-   If a match is found → load `themes/{product}.json`. If no product is
-   named or matched, skip this step — foundations apply as-is (Creator's
-   shared `primary` is the default, since it lives in
-   `foundations/colours.json`, not a theme file).
-6. Apply token overrides from the theme (surface/background/layout tokens,
-   or a product-specific primary colour family when the product's brand
-   anchor differs from the shared foundation — see Theme Rules)
-7. Generate UI using canonical components from `components/*.json`
+Load rules from this file (DESIGN.md)
+Load tokens from tokens/ (see Token Sources below)
+If a product is specified → load themes/{product}.json
+Load product-specific behavior (if available, from the consuming skill)
+Apply token overrides from the theme (for backgrounds/layout only, never components)
+Generate UI using canonical components from components/*.json
 
 ---
 
