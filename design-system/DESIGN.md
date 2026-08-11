@@ -15,7 +15,6 @@ user has open. No external URL fetching — the system is fully local.
 
 ## Execution Flow
 
-<<<<<<< HEAD
 1. Load rules from this file (`${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md`)
 2. Load tokens from `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/` (see Token Sources below)
 3. Load components from `${CLAUDE_PLUGIN_ROOT}/design-system/components/` when building any UI element
@@ -33,14 +32,6 @@ user has open. No external URL fetching — the system is fully local.
    anchor differs from the shared foundation — see Theme Rules)
 7. Generate UI using canonical components from `${CLAUDE_PLUGIN_ROOT}/design-system/components/*.json`
 
-=======
-1. Load rules from this file (DESIGN.md)
-2. Load tokens from tokens/ (see Token Sources below)
-3. If a product is specified → load themes/{product}.json
-4. Load product-specific behavior (if available, from the consuming skill)
-5. Apply token overrides from the theme (for backgrounds/layout only, never components)
-6. Generate UI using canonical components from components/*.json
->>>>>>> 015f04203a13265fe8c2c3f5ed83b2b6a39e8ce8
 ---
 
 ## Token Sources
