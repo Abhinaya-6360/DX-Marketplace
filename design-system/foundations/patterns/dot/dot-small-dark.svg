@@ -5,5 +5,5 @@
       <circle cx="10" cy="10" r="2" fill="currentColor"/>
     </pattern>
   </defs>
-  <rect width="256" height="256" fiurl(#dot-small-dark)"/>
+  <rect width="256" height="256" fill="url(#dot-small-dark)"/>
 </svg>

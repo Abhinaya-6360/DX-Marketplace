@@ -13,24 +13,28 @@ three things, and three things only:
 3. The **font stack and typography role mapping** for Creator surfaces.
 
 Everything else — colour values, spacing, elevation, components, accessibility —
-comes from the canonical token files under `design-system/`. This skill
-**never** holds copies of token values. It only describes the mapping.
+comes from the canonical token files under `${CLAUDE_PLUGIN_ROOT}/design-system/`.
+This skill **never** holds copies of token values. It only describes the mapping.
 
 ---
 
 ## Data Access Rule (BLOCKING)
 
 This skill **cannot generate output** without access to the canonical token
-files. Specifically, it requires:
+files, bundled with this plugin at `${CLAUDE_PLUGIN_ROOT}/design-system/`.
+Specifically, it requires:
 
-* `design-system/foundations/colours.json` — for every hex value
-* `design-system/foundations/typography.json` — for font sizes and line heights
-* `design-system/foundations/spaces.json` — for padding and gaps
-* `design-system/components/cta-buttons.json` — for the CTA spec
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/colours.json` — for every hex value
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json` — for font sizes and line heights
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/spaces.json` — for padding and gaps
+* `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json` — for the CTA spec
 
-If `design-system/` is not at the repo root, **STOP**. Do not proceed with
-inlined values, memory, or web-fetched copies. Ask the user to point Claude
-at the right project (e.g. `cd ~/path/to/repo-with-design-system` and re-run).
+If `${CLAUDE_PLUGIN_ROOT}/design-system/` cannot be found, **STOP**. Do not
+proceed with inlined values, memory, or web-fetched copies. This should not
+normally happen — the folder ships inside the `creator-design-skills`
+plugin. Tell the user the plugin install looks incomplete or corrupted and
+suggest reinstalling it (`/plugin uninstall creator-design-skills` then
+`/plugin install creator-design-skills@DX-Marketplace`).
 
 This is not negotiable. Generating chrome from invented or remembered hex
 values silently breaks the token-discipline guarantee that the entire
@@ -40,8 +44,8 @@ architecture is built on.
 
 ## When to use
 
-Any time you're producing HTML/CSS for a Zoho Creator marketing page, AND
-the design-system folder is accessible. This skill tells you:
+Any time you're producing HTML/CSS for a Zoho Creator marketing page. This
+skill tells you:
 
 * Which CDS colours to use, and where to use each one.
 * The exact header and footer markup that wraps every Creator page.
@@ -85,13 +89,15 @@ button.
 
 ### Step 1 — Verify design-system is accessible
 
-Confirm `design-system/` exists at the repo root before proceeding. If not,
-stop and ask the user. Do not fall back to inlined values.
+Confirm `${CLAUDE_PLUGIN_ROOT}/design-system/` exists before proceeding. If
+not, stop and follow the Data Access Rule above. Do not fall back to
+inlined values.
 
 ### Step 2 — Load colours and map to semantic tokens
 
-Read `design-system/foundations/colours.json` and use the `flat` block to
-generate CSS custom properties. Then map them to the semantic tokens below:
+Read `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/colours.json` and use
+the `flat` block to generate CSS custom properties. Then map them to the
+semantic tokens below:
 
 ```
 --color-cta:           color-button-red-300
@@ -201,13 +207,16 @@ Every Creator marketing page must use this header and footer structure.
 }
 ```
 
-For exact padding, gaps, font sizes — pull from `foundations/spaces.json`,
-`foundations/typography.json`, and `components/cta-buttons.json`. **Do not
+For exact padding, gaps, font sizes — pull from
+`${CLAUDE_PLUGIN_ROOT}/design-system/foundations/spaces.json`,
+`${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json`, and
+`${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json`. **Do not
 hardcode pixel values.**
 
 ### Step 4 — Font stack mapping
 
-Use the CDS-canonical font stack from `foundations/typography.json`:
+Use the CDS-canonical font stack from
+`${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json`:
 
 ```css
 :root {
@@ -226,7 +235,7 @@ body, p, button, input, .creator-nav {
 ```
 
 For exact size and line-height per heading and text tier, defer to
-`design-system/foundations/typography.json`.
+`${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json`.
 
 ### Step 5 — Verify before saving
 
@@ -243,16 +252,17 @@ Before finalizing any output, scan your CSS for:
 
 ## What this skill does NOT cover
 
-* **Colour values** — `design-system/foundations/colours.json`.
-* **Spacing, grid, breakpoints** — `design-system/foundations/{spaces,grids}.json`.
-* **Typography sizes / weights** — `design-system/foundations/typography.json`.
-* **Elevation, radius** — `design-system/foundations/{elevation,radius}.json`.
+* **Colour values** — `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/colours.json`.
+* **Spacing, grid, breakpoints** — `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/{spaces,grids}.json`.
+* **Typography sizes / weights** — `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json`.
+* **Elevation, radius** — `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/{elevation,radius}.json`.
 * **CTA component spec** (5 variants × 4 sizes × 3 states) —
-  `design-system/components/cta-buttons.json`.
-* **Accessibility** — `design-system/accessibility/wcag.json`.
-* **Page section patterns** (hero, pricing cards, resource grids) — separate concern.
+  `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json`.
+* **Accessibility** — `${CLAUDE_PLUGIN_ROOT}/design-system/accessibility/wcag.json`.
+* **Page section patterns** (hero, pricing cards, resource grids) — owned by `creative-sections`.
 * **Animations and interactions** — separate concern.
 
-If you need any of the above, the `creator-design-system` skill handles them.
+If you need any of the above, the `creator-design-system` skill handles
+foundations and components, and `creative-sections` handles page sections.
 This skill's job is purely Creator chrome, font stack, and the CTA-vs-brand
 discipline — and it cannot do that job without the design-system folder.

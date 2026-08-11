@@ -17,8 +17,8 @@ triggers:
 ## Purpose
 
 Ensure every UI strictly follows CDS tokens, components, and themes from the
-local design system. No invented tokens, no external fetches, no component
-overrides.
+design-system folder bundled with this plugin. No invented tokens, no
+external fetches, no component overrides.
 
 ---
 
@@ -26,25 +26,32 @@ overrides.
 
 * **Never** fetch tokens, components, or themes from external URLs (GitHub
   links, CDNs, the web).
-* **Always** read from the local design system mounted at the repo root:
-  + `design-system/DESIGN.md`
-  + `design-system/foundations/*.json`
-  + `design-system/components/*.json`
-  + `design-system/accessibility/*.json`
-  + `design-system/themes/*.json` (when product themes are added)
-* Product-specific rules live **inside this skill**, in `./products/`.
+* **Always** read from the design-system folder bundled with this plugin,
+  at:
+  + `${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md`
+  + `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/*.json`
+  + `${CLAUDE_PLUGIN_ROOT}/design-system/components/*.json`
+  + `${CLAUDE_PLUGIN_ROOT}/design-system/accessibility/*.json`
+  + `${CLAUDE_PLUGIN_ROOT}/design-system/themes/*.json`
+* Product-specific rules live **inside this skill**, in `./products/`
+  (relative to this SKILL.md's own folder).
 
-If `design-system/` is not present at the repo root, **STOP**:
+If `${CLAUDE_PLUGIN_ROOT}/design-system/` is not present, **STOP**:
 
 * Do not generate any UI output.
 * Do not fall back to values inlined in any other skill.
 * Do not use values from training data, web fetches, or memory.
 * Do not invent token names, hex values, sizes, or radii.
 
-Ask the user to either:
+This should not normally happen — the design-system folder ships inside the
+`creator-design-skills` plugin, so it is available no matter which project
+the user has open. If it's genuinely missing, tell the user the plugin
+install looks incomplete or corrupted and suggest reinstalling it:
 
-1. `cd` into the repo that contains the design-system folder, or
-2. Explicitly point you at the correct project path.
+```
+/plugin uninstall creator-design-skills
+/plugin install creator-design-skills@DX-Marketplace
+```
 
 This rule is BLOCKING. The design system is the single source of truth — without
 it, no output is valid.
@@ -55,10 +62,10 @@ it, no output is valid.
 
 When resolving any style value, walk this order top-down:
 
-1. **Component tokens** — from `design-system/components/*.json`
-2. **Foundation tokens** — from `design-system/DESIGN.md` and
-   `design-system/foundations/*.json`
-3. **Product tokens** — from `design-system/themes/{product}.json`
+1. **Component tokens** — from `${CLAUDE_PLUGIN_ROOT}/design-system/components/*.json`
+2. **Foundation tokens** — from `${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md` and
+   `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/*.json`
+3. **Product tokens** — from `${CLAUDE_PLUGIN_ROOT}/design-system/themes/{product}.json`
 
 A lower-priority layer never overrides a higher one.
 
@@ -77,7 +84,7 @@ Before using any token:
 ## Component Authority Rule
 
 All UI components (Button, CTA, Input, etc.) must strictly follow definitions
-from `design-system/components/*.json`.
+from `${CLAUDE_PLUGIN_ROOT}/design-system/components/*.json`.
 
 * Do **not** override component colours, sizes, variants, or states.
 * Product files (e.g. `products/shift.md`, `products/crm.md`) must **not**
@@ -86,7 +93,7 @@ from `design-system/components/*.json`.
 
 ### Component Isolation Example
 
-* CTA → uses `design-system/components/cta-buttons.json` only
+* CTA → uses `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json` only
   (Primary red `#E42527`, Primary Line blue `#0047FF`).
 * Background → may use a Shift product theme (e.g. Shift darkGrey).
 * Product tokens apply only to: **backgrounds, layout, sections** — never to
@@ -113,8 +120,8 @@ If a required product token is missing → ASK instead of substituting.
 
 When a product is specified (e.g. Shift):
 
-* Auto-load `design-system/themes/{product}.json` for theme tokens (when
-  added).
+* Auto-load `${CLAUDE_PLUGIN_ROOT}/design-system/themes/{product}.json` for theme tokens
+  (Creator and Bookings themes already ship with this plugin).
 * Auto-load `./products/{product}.md` for product-specific rules and context.
 * Apply product tokens to:
   + page background
@@ -140,7 +147,7 @@ permitted** (backgrounds, layout, sections — never components).
 
 ## Accessibility Authority
 
-All output must respect `design-system/accessibility/wcag.json`:
+All output must respect `${CLAUDE_PLUGIN_ROOT}/design-system/accessibility/wcag.json`:
 
 * Verify text/background pairs against the contrast checklist before output.
 * Honour the focus-visible rule (2px solid outline, 2px offset minimum).

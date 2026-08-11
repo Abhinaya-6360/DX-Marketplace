@@ -1,6 +1,6 @@
 # CDS Direction Recipes
 
-Each direction is a specific composition of CDS tokens. Use these recipes verbatim — do not substitute tokens or invent values. All token names map to entries in `design-system/foundations/*.json` and `design-system/components/cta-buttons.json`.
+Each direction is a specific composition of CDS tokens. Use these recipes verbatim — do not substitute tokens or invent values. All token names map to entries in `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/*.json` and `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json`.
 
 ---
 

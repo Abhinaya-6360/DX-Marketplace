@@ -1,11 +1,11 @@
 ---
 name: creative-sections
-description: Build reusable, design-forward landing-page sections — heroes, feature blocks, testimonials, stat/numeric visuals, pricing tables, CTAs, footers, FAQs, logo strips, team grids, blog previews, timelines, comparison tables, integrations grids, before/after, and bento layouts — using STRICT Creator Design System (CDS) tokens from the bundled `design-system/` folder. Every output uses ONLY CDS colours, typography, spacing, elevation, radius, and the canonical CTA button component. Use this skill ANY time the user asks to build, design, or generate landing-page sections, marketing blocks, hero sections, feature sections, pricing tables, testimonial blocks, stat/numeric showcases, CTAs, or any individual section of a marketing/product page — even if they don't say "section" explicitly. Trigger on phrases like "build a hero", "design a pricing table", "I need a features section", "make a testimonials block", "create a landing page section", "design a stats section", "bento grid", "comparison table", or any request that's clearly one or more marketing-page blocks rather than a full app. Also trigger when the user wants creative/varied design directions for marketing UI under the CDS brand. Do NOT trigger for full SaaS apps, dashboards, admin UIs, or non-marketing components.
+description: Build reusable, design-forward landing-page sections — heroes, feature blocks, testimonials, stat/numeric visuals, pricing tables, CTAs, footers, FAQs, logo strips, team grids, blog previews, timelines, comparison tables, integrations grids, before/after, and bento layouts — using STRICT Creator Design System (CDS) tokens from the design-system folder bundled with this plugin. Every output uses ONLY CDS colours, typography, spacing, elevation, radius, and the canonical CTA button component. Use this skill ANY time the user asks to build, design, or generate landing-page sections, marketing blocks, hero sections, feature sections, pricing tables, testimonial blocks, stat/numeric showcases, CTAs, or any individual section of a marketing/product page — even if they don't say "section" explicitly. Trigger on phrases like "build a hero", "design a pricing table", "I need a features section", "make a testimonials block", "create a landing page section", "design a stats section", "bento grid", "comparison table", or any request that's clearly one or more marketing-page blocks rather than a full app. Also trigger when the user wants creative/varied design directions for marketing UI under the CDS brand. Do NOT trigger for full SaaS apps, dashboards, admin UIs, or non-marketing components.
 ---
 
 # Creative Sections — CDS-Strict
 
-A library of reusable, mix-and-match landing-page sections. The user picks the sections and a creative direction, and Claude builds them using **only** Creator Design System (CDS) tokens — colours, type, spacing, elevation, radius, and the canonical CTA button component bundled in `design-system/`.
+A library of reusable, mix-and-match landing-page sections. The user picks the sections and a creative direction, and Claude builds them using **only** Creator Design System (CDS) tokens — colours, type, spacing, elevation, radius, and the canonical CTA button component bundled with this plugin at `${CLAUDE_PLUGIN_ROOT}/design-system/`.
 
 Style variety in this skill comes from **how CDS tokens are composed** (which colour family, which type weight, which spacing rhythm, which radius tier) — not from inventing new colours, fonts, or shadows.
 
@@ -13,30 +13,35 @@ Style variety in this skill comes from **how CDS tokens are composed** (which co
 
 ## Data Access Rule (BLOCKING)
 
-This skill **cannot generate output** without access to the canonical token files. Specifically, it requires:
+This skill **cannot generate output** without access to the canonical token files, bundled with this plugin. Specifically, it requires:
 
-* `design-system/DESIGN.md` — loader rules
-* `design-system/index.json` — manifest of available token files
-* `design-system/foundations/colours.json` — every hex value
-* `design-system/foundations/typography.json` — type sizes, line heights, weights
-* `design-system/foundations/spaces.json` — padding and gap values
-* `design-system/foundations/radius.json` — corner radius values
-* `design-system/foundations/elevation.json` — drop shadow values
-* `design-system/foundations/grids.json` — breakpoints and column widths
-* `design-system/components/cta-buttons.json` — CTA button variants/sizes/states
-* `design-system/accessibility/wcag.json` — contrast pairings and audit results
+* `${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md` — loader rules
+* `${CLAUDE_PLUGIN_ROOT}/design-system/index.json` — manifest of available token files
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/colours.json` — every hex value
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/typography.json` — type sizes, line heights, weights
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/spaces.json` — padding and gap values
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/radius.json` — corner radius values
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/elevation.json` — drop shadow values
+* `${CLAUDE_PLUGIN_ROOT}/design-system/foundations/grids.json` — breakpoints and column widths
+* `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json` — CTA button variants/sizes/states
+* `${CLAUDE_PLUGIN_ROOT}/design-system/accessibility/wcag.json` — contrast pairings and audit results
 
-If `design-system/` is not at the repo root, **STOP**:
+If `${CLAUDE_PLUGIN_ROOT}/design-system/` cannot be found, **STOP**:
 
 * Do not generate any output.
 * Do not fall back to values inlined in any other skill, file, or recipe.
 * Do not use values from training data, web fetches, or memory.
 * Do not invent token names, hex values, sizes, or radii.
 
-Ask the user to either:
+This should not normally happen — the design-system folder ships inside
+the `creator-design-skills` plugin. If it's genuinely missing, tell the
+user the plugin install looks incomplete or corrupted and suggest
+reinstalling it:
 
-1. `cd` into the repo that contains the design-system folder, or
-2. Explicitly point Claude at the correct project path.
+```
+/plugin uninstall creator-design-skills
+/plugin install creator-design-skills@DX-Marketplace
+```
 
 This rule is BLOCKING. The design system is the single source of truth — without it, no output is valid.
 
@@ -46,11 +51,11 @@ This rule is BLOCKING. The design system is the single source of truth — witho
 
 On every invocation, in order:
 
-1. Read `design-system/DESIGN.md` — confirms the loader rules are intact.
-2. Read `design-system/index.json` — confirms token files exist.
+1. Read `${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md` — confirms the loader rules are intact.
+2. Read `${CLAUDE_PLUGIN_ROOT}/design-system/index.json` — confirms token files exist.
 3. Load only the token files needed for the requested sections (see Data Access Rule above for the full list).
-4. Load the CTA button spec → `design-system/components/cta-buttons.json`. **All buttons in output must use one of the 5 canonical variants × 4 sizes × 3 states defined here.**
-5. Load `design-system/accessibility/wcag.json` and reject any colour pairing flagged `fail` in `checklists.colours` regardless of what the user requests.
+4. Load the CTA button spec → `${CLAUDE_PLUGIN_ROOT}/design-system/components/cta-buttons.json`. **All buttons in output must use one of the 5 canonical variants × 4 sizes × 3 states defined here.**
+5. Load `${CLAUDE_PLUGIN_ROOT}/design-system/accessibility/wcag.json` and reject any colour pairing flagged `fail` in `checklists.colours` regardless of what the user requests.
 
 ---
 
@@ -166,8 +171,8 @@ Keep it brief.
 
 ## Critical Rules (recap)
 
-* **Read `design-system/DESIGN.md` and the relevant token JSONs every time.** Don't generate from memory.
-* **Stop and ask if `design-system/` is missing.** No fallbacks, no inlined values, no inventions.
+* **Read `${CLAUDE_PLUGIN_ROOT}/design-system/DESIGN.md` and the relevant token JSONs every time.** Don't generate from memory.
+* **Stop if `${CLAUDE_PLUGIN_ROOT}/design-system/` is missing.** No fallbacks, no inlined values, no inventions — treat it as a broken plugin install, not a missing user folder.
 * **Always offer 2–3 directions first.** Never pick silently.
 * **Tokens only — never raw values.** Emit CSS variables at the top, reference them everywhere.
 * **One CTA button component spec, no overrides.** No custom buttons. If a variant is missing, ASK.
