@@ -1,0 +1,249 @@
+/* CDS 2.0 tokens — generated from the CDS-2.0 Figma file. Do not edit by hand. */
+@font-face{font-family:'Zoho Puvi';font-weight:400;src:url('../assets/fonts/Zoho-Puvi-Regular.ttf') format('truetype');}
+@font-face{font-family:'Zoho Puvi';font-weight:500;src:url('../assets/fonts/Zoho-Puvi-Medium.ttf') format('truetype');}
+@font-face{font-family:'Zoho Puvi';font-weight:600;src:url('../assets/fonts/Zoho-Puvi-Semibold.ttf') format('truetype');}
+@font-face{font-family:'Zoho Puvi';font-weight:700;src:url('../assets/fonts/Zoho-Puvi-Bold.ttf') format('truetype');}
+:root{
+  --blue-10: #f5f8fe;
+  --blue-20: #e7edfe;
+  --blue-30: #dde6fd;
+  --blue-40: #c0d1fc;
+  --blue-50: #a3bcfa;
+  --blue-60: #86a6f9;
+  --blue-70: #6991f7;
+  --blue-80: #4c7cf6;
+  --blue-90: #2f67f4;
+  --blue-100: #0d4ef2;
+  --blue-110: #0b44d5;
+  --blue-120: #0a3bb8;
+  --blue-130: #08329b;
+  --blue-140: #07287e;
+  --blue-150: #051f61;
+  --blue-160: #041644;
+  --blue-170: #020c27;
+  --blue-180: #01030a;
+  --red-10: #fef6f6;
+  --red-20: #fef1f1;
+  --red-30: #fce4e3;
+  --red-40: #fad2d1;
+  --red-50: #f6a5a2;
+  --red-60: #f27c78;
+  --red-70: #ee5c58;
+  --red-80: #eb3c37;
+  --red-90: #e81d17;
+  --red-100: #cc1914;
+  --red-110: #ba1812;
+  --red-120: #a21510;
+  --red-130: #8b120e;
+  --red-140: #760d09;
+  --red-150: #5f0a07;
+  --red-160: #470806;
+  --red-170: #2f0504;
+  --red-180: #180302;
+  --green-10: #f6fef9;
+  --green-20: #edfdf4;
+  --green-30: #e3fcee;
+  --green-40: #d1fae3;
+  --green-50: #9af4c2;
+  --green-60: #6cefa7;
+  --green-70: #3eea8b;
+  --green-80: #17d36c;
+  --green-90: #09a54f;
+  --green-100: #078841;
+  --green-110: #06793a;
+  --green-120: #056b33;
+  --green-130: #055c2c;
+  --green-140: #044d25;
+  --green-150: #033f1e;
+  --green-160: #023117;
+  --green-170: #012210;
+  --green-180: #011409;
+  --violet-10: #f7f2ff;
+  --violet-20: #eee5ff;
+  --violet-30: #e8dcff;
+  --violet-40: #d7c2ff;
+  --violet-50: #c6a7ff;
+  --violet-60: #b38cff;
+  --violet-70: #a270ff;
+  --violet-80: #8e55ff;
+  --violet-90: #7b36ff;
+  --violet-100: #5e05ff;
+  --violet-110: #5202e4;
+  --violet-120: #4600c9;
+  --violet-130: #3c00ad;
+  --violet-140: #320090;
+  --violet-150: #280073;
+  --violet-160: #1f0057;
+  --violet-170: #150038;
+  --violet-180: #090019;
+  --yellow-10: #fffdf5;
+  --yellow-20: #fffbe7;
+  --yellow-30: #fffade;
+  --yellow-40: #fff5c3;
+  --yellow-50: #fff1a8;
+  --yellow-60: #feec8f;
+  --yellow-70: #fee773;
+  --yellow-80: #fee252;
+  --yellow-90: #fedc3a;
+  --yellow-100: #fed70b;
+  --yellow-110: #ecc502;
+  --yellow-120: #d8b401;
+  --yellow-130: #c4a301;
+  --yellow-140: #af9201;
+  --yellow-150: #9a8101;
+  --yellow-160: #866f00;
+  --yellow-170: #6f5d00;
+  --yellow-180: #564800;
+  --grey-10: #fafafa;
+  --grey-20: #f5f5f5;
+  --grey-30: #f0f0f0;
+  --grey-40: #ebebeb;
+  --grey-50: #e6e6e6;
+  --grey-60: #d6d7d8;
+  --grey-70: #c5c5c7;
+  --grey-80: #b3b4b5;
+  --grey-90: #a1a2a4;
+  --grey-100: #8f9193;
+  --grey-110: #7d7f82;
+  --grey-120: #6c6d71;
+  --grey-130: #5a5c60;
+  --grey-140: #484a4f;
+  --grey-150: #36393d;
+  --grey-160: #25272c;
+  --grey-170: #13161b;
+  --grey-180: #01040a;
+  --bluish-grey-10: #fafafa;
+  --bluish-grey-20: #f5f5f5;
+  --bluish-grey-30: #eff0f1;
+  --bluish-grey-40: #eaebec;
+  --bluish-grey-50: #e5e5e7;
+  --bluish-grey-60: #d5d6d9;
+  --bluish-grey-70: #c3c5c9;
+  --bluish-grey-80: #b0b2b8;
+  --bluish-grey-90: #9ea0a7;
+  --bluish-grey-100: #8c8f97;
+  --bluish-grey-110: #797d86;
+  --bluish-grey-120: #696c74;
+  --bluish-grey-130: #585b62;
+  --bluish-grey-140: #484a4f;
+  --bluish-grey-150: #37383c;
+  --bluish-grey-160: #26282b;
+  --bluish-grey-170: #161718;
+  --bluish-grey-180: #050506;
+  --base-white: #ffffff;
+  --base-black: #000000;
+  --role-text-body: var(--grey-160);
+  --role-text-secondary: var(--grey-120);
+  --role-text-link: var(--blue-100);
+  --role-text-on-colour: var(--base-white);
+  --role-surface-page: var(--base-white);
+  --role-surface-subtle: var(--grey-10);
+  --role-surface-dark: var(--blue-160);
+  --role-surface-brand: var(--blue-100);
+  --role-border-default: var(--grey-40);
+  --role-action-cta: var(--red-90);
+  --role-action-cta-hover: var(--red-100);
+  --role-action-cta-pressed: var(--red-110);
+  --role-action-secondary: var(--blue-100);
+  --role-status-success: var(--green-100);
+  --role-status-error: var(--red-100);
+  --role-accent-ai: var(--violet-100);
+  --role-accent-highlight: var(--yellow-100);
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-88: 88px;
+  --space-96: 96px;
+  --space-104: 104px;
+  --space-112: 112px;
+  --space-120: 120px;
+  --space-128: 128px;
+  --space-136: 136px;
+  --space-144: 144px;
+  --space-152: 152px;
+  --space-160: 160px;
+  --space-168: 168px;
+  --space-176: 176px;
+  --space-184: 184px;
+  --space-192: 192px;
+  --space-200: 200px;
+  --space-208: 208px;
+  --space-216: 216px;
+  --space-224: 224px;
+  --space-232: 232px;
+  --space-240: 240px;
+  --radius-xs: 4px;
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --radius-full: 999px;
+  --elevation-xs: 0 2px 4px 0 #00000040;
+  --elevation-small: 0 16px 24px -4px #00000040;
+  --elevation-medium: 0 24px 48px -8px #00000040;
+  --elevation-large: 0 40px 80px -16px #00000029;
+  --elevation-x-large: 12px 56px 112px -20px #0000002e;
+  --gradient-brand-depth: linear-gradient(135deg, #0d4ef2, #08329b);
+  --gradient-midnight: linear-gradient(135deg, #041644, #0d4ef2);
+  --gradient-ai: linear-gradient(135deg, #0d4ef2, #5e05ff);
+  --gradient-glow: radial-gradient(ellipse 50% 50% at 50% 50%, #0d4ef2, #041644);
+  --gradient-soft-blue: linear-gradient(180deg, #f5f8fe, #ffffff);
+  --gradient-soft-violet: linear-gradient(180deg, #f7f2ff, #ffffff);
+  --gradient-soft-yellow: linear-gradient(180deg, #fffdf5, #ffffff);
+  --gradient-mesh-soft-blue: radial-gradient(ellipse 48% 40% at 17% 30%, #ffffffbf 0%, #ffffff4d 55%, #ffffff00 100%), radial-gradient(ellipse 42% 40% at 8% 92%, #c0d1fc4d 0%, #c0d1fc1f 55%, #c0d1fc00 100%), radial-gradient(ellipse 45% 38% at 85% 100%, #a3bcfa66 0%, #a3bcfa29 55%, #a3bcfa00 100%), radial-gradient(ellipse 48% 45% at 92% 0%, #a3bcfa6b 0%, #a3bcfa2b 55%, #a3bcfa00 100%), linear-gradient(135deg, #c0d1fc00 20%, #c0d1fc30 58%, #c0d1fc8c 100%), linear-gradient(180deg, #f5f8fe, #ffffff);
+  --gradient-mesh-soft-ai: radial-gradient(ellipse 48% 40% at 17% 30%, #ffffffbf 0%, #ffffff4d 55%, #ffffff00 100%), radial-gradient(ellipse 42% 40% at 8% 92%, #c6a7ff66 0%, #c6a7ff29 55%, #c6a7ff00 100%), radial-gradient(ellipse 45% 38% at 85% 100%, #a3bcfa5c 0%, #a3bcfa25 55%, #a3bcfa00 100%), radial-gradient(ellipse 48% 45% at 92% 0%, #a3bcfa6b 0%, #a3bcfa2b 55%, #a3bcfa00 100%), linear-gradient(135deg, #c0d1fc00 20%, #c0d1fc30 58%, #c0d1fc8c 100%), linear-gradient(180deg, #f5f8fe, #ffffff);
+  --gradient-mesh-partner: radial-gradient(ellipse 45% 42% at 20% 42%, #ffffffb2 0%, #ffffff50 55%, #ffffff00 100%), radial-gradient(ellipse 40% 40% at 45% 102%, #fffadeff 0%, #fffade73 55%, #fffade00 100%), radial-gradient(ellipse 42% 45% at 12% 98%, #d1fae3ff 0%, #d1fae373 55%, #d1fae300 100%), radial-gradient(ellipse 40% 55% at 95% 30%, #d7c2ffe5 0%, #d7c2ff67 55%, #d7c2ff00 100%), radial-gradient(ellipse 42% 50% at 62% 5%, #c0d1fce5 0%, #c0d1fc67 55%, #c0d1fc00 100%), linear-gradient(180deg, #c0d1fcb2, #c0d1fc00), linear-gradient(#ffffff, #ffffff);
+  --font: 'Zoho Puvi', Arial, sans-serif;
+}
+.h1-regular{font-family:var(--font);font-weight:400;font-size:80px;line-height:88px;letter-spacing:-0.04em;}
+.h1-medium{font-family:var(--font);font-weight:500;font-size:80px;line-height:88px;letter-spacing:-0.04em;}
+.h1-semibold{font-family:var(--font);font-weight:600;font-size:80px;line-height:88px;letter-spacing:-0.04em;}
+.h1-bold{font-family:var(--font);font-weight:700;font-size:80px;line-height:88px;letter-spacing:-0.04em;}
+.h2-regular{font-family:var(--font);font-weight:400;font-size:72px;line-height:80px;letter-spacing:-0.03em;}
+.h2-medium{font-family:var(--font);font-weight:500;font-size:72px;line-height:80px;letter-spacing:-0.03em;}
+.h2-semibold{font-family:var(--font);font-weight:600;font-size:72px;line-height:80px;letter-spacing:-0.03em;}
+.h2-bold{font-family:var(--font);font-weight:700;font-size:72px;line-height:80px;letter-spacing:-0.03em;}
+.h3-regular{font-family:var(--font);font-weight:400;font-size:56px;line-height:64px;letter-spacing:-0.03em;}
+.h3-medium{font-family:var(--font);font-weight:500;font-size:56px;line-height:64px;letter-spacing:-0.03em;}
+.h3-semibold{font-family:var(--font);font-weight:600;font-size:56px;line-height:64px;letter-spacing:-0.03em;}
+.h3-bold{font-family:var(--font);font-weight:700;font-size:56px;line-height:64px;letter-spacing:-0.03em;}
+.h4-regular{font-family:var(--font);font-weight:400;font-size:48px;line-height:56px;letter-spacing:-0.02em;}
+.h4-medium{font-family:var(--font);font-weight:500;font-size:48px;line-height:56px;letter-spacing:-0.02em;}
+.h4-semibold{font-family:var(--font);font-weight:600;font-size:48px;line-height:56px;letter-spacing:-0.02em;}
+.h4-bold{font-family:var(--font);font-weight:700;font-size:48px;line-height:56px;letter-spacing:-0.02em;}
+.h5-regular{font-family:var(--font);font-weight:400;font-size:40px;line-height:48px;letter-spacing:-0.02em;}
+.h5-medium{font-family:var(--font);font-weight:500;font-size:40px;line-height:48px;letter-spacing:-0.02em;}
+.h5-semibold{font-family:var(--font);font-weight:600;font-size:40px;line-height:48px;letter-spacing:-0.02em;}
+.h5-bold{font-family:var(--font);font-weight:700;font-size:40px;line-height:48px;letter-spacing:-0.02em;}
+.h6-regular{font-family:var(--font);font-weight:400;font-size:32px;line-height:40px;letter-spacing:-0.01em;}
+.h6-medium{font-family:var(--font);font-weight:500;font-size:32px;line-height:40px;letter-spacing:-0.01em;}
+.h6-semibold{font-family:var(--font);font-weight:600;font-size:32px;line-height:40px;letter-spacing:-0.01em;}
+.h6-bold{font-family:var(--font);font-weight:700;font-size:32px;line-height:40px;letter-spacing:-0.01em;}
+.text-large-regular{font-family:var(--font);font-weight:400;font-size:20px;line-height:28px;letter-spacing:-0.01em;}
+.text-large-medium{font-family:var(--font);font-weight:500;font-size:20px;line-height:28px;letter-spacing:-0.01em;}
+.text-large-semibold{font-family:var(--font);font-weight:600;font-size:20px;line-height:28px;letter-spacing:-0.01em;}
+.text-large-bold{font-family:var(--font);font-weight:700;font-size:20px;line-height:28px;letter-spacing:-0.01em;}
+.text-medium-regular{font-family:var(--font);font-weight:400;font-size:16px;line-height:24px;letter-spacing:-0.01em;}
+.text-medium-medium{font-family:var(--font);font-weight:500;font-size:16px;line-height:24px;letter-spacing:-0.01em;}
+.text-medium-semibold{font-family:var(--font);font-weight:600;font-size:16px;line-height:24px;letter-spacing:-0.01em;}
+.text-medium-bold{font-family:var(--font);font-weight:700;font-size:16px;line-height:24px;letter-spacing:-0.01em;}
+.text-regular-regular{font-family:var(--font);font-weight:400;font-size:14px;line-height:20px;letter-spacing:-0.01em;}
+.text-regular-medium{font-family:var(--font);font-weight:500;font-size:14px;line-height:20px;letter-spacing:-0.01em;}
+.text-regular-semibold{font-family:var(--font);font-weight:600;font-size:14px;line-height:20px;letter-spacing:-0.01em;}
+.text-regular-bold{font-family:var(--font);font-weight:700;font-size:14px;line-height:20px;letter-spacing:-0.01em;}
+.text-small-regular{font-family:var(--font);font-weight:400;font-size:12px;line-height:16px;letter-spacing:0.0em;}
+.text-small-medium{font-family:var(--font);font-weight:500;font-size:12px;line-height:16px;letter-spacing:0.0em;}
+.text-small-semibold{font-family:var(--font);font-weight:600;font-size:12px;line-height:16px;letter-spacing:0.0em;}
+.text-small-bold{font-family:var(--font);font-weight:700;font-size:12px;line-height:16px;letter-spacing:0.0em;}
+.display-xl{font-family:var(--font);font-weight:700;font-size:88px;line-height:96px;letter-spacing:-0.03em;}
+.display-l{font-family:var(--font);font-weight:700;font-size:64px;line-height:72px;letter-spacing:-0.03em;}
+.text-xl-regular{font-family:var(--font);font-weight:400;font-size:24px;line-height:32px;letter-spacing:-0.01em;}
