@@ -1,0 +1,1860 @@
+{
+ "_source": "CDS-2.0 Figma · Templates · Social and video (Oct 2026). Positions in px on the template canvas.",
+ "templates": {
+  "feature": {
+   "name": "Social post · Feature",
+   "size": [
+    1080,
+    1080
+   ],
+   "variants": {
+    "product-light": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        108,
+        56
+       ],
+       "colour": "blue",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        308,
+        920,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        508,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        240,
+        636,
+        600,
+        372
+       ]
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ]
+    },
+    "statement-light": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "text",
+       "slot": "URL",
+       "r": [
+        80,
+        960,
+        600,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "zoho.com/creator"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        840,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        624,
+        920,
+        192
+       ],
+       "style": "display/xl",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        544,
+        108,
+        56
+       ],
+       "colour": "blue",
+       "label": "NEW"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ]
+    },
+    "product-bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        108,
+        56
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        308,
+        920,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        508,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        240,
+        636,
+        600,
+        372
+       ]
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    },
+    "statement-bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "text",
+       "slot": "URL",
+       "r": [
+        80,
+        960,
+        600,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "zoho.com/creator"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        840,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        624,
+        920,
+        192
+       ],
+       "style": "display/xl",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        544,
+        108,
+        56
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    }
+   }
+  },
+  "webinar": {
+   "name": "Social post · Webinar",
+   "size": [
+    1080,
+    1350
+   ],
+   "variants": {
+    "light": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        90,
+        110,
+        48
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        210,
+        56
+       ],
+       "colour": "blue",
+       "label": "LIVE WEBINAR"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        320,
+        900,
+        160
+       ],
+       "style": "h2/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Automate approvals with Zoho Creator"
+      },
+      {
+       "t": "text",
+       "slot": "Date and time",
+       "r": [
+        80,
+        500,
+        900,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "12 Nov 2026  ·  11:00 AM IST"
+      },
+      {
+       "t": "speakers",
+       "cards": [
+        {
+         "r": [
+          80,
+          588,
+          370,
+          586
+         ],
+         "variant": "soft-blue"
+        },
+        {
+         "r": [
+          510,
+          588,
+          370,
+          586
+         ],
+         "variant": "soft-blue"
+        }
+       ]
+      }
+     ]
+    },
+    "bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        90,
+        110,
+        48
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        210,
+        56
+       ],
+       "colour": "yellow",
+       "label": "LIVE WEBINAR"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        320,
+        900,
+        160
+       ],
+       "style": "h2/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Automate approvals with Zoho Creator"
+      },
+      {
+       "t": "text",
+       "slot": "Date and time",
+       "r": [
+        80,
+        500,
+        900,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "12 Nov 2026  ·  11:00 AM IST"
+      },
+      {
+       "t": "speakers",
+       "cards": [
+        {
+         "r": [
+          80,
+          588,
+          370,
+          586
+         ],
+         "variant": "brand-depth"
+        },
+        {
+         "r": [
+          510,
+          588,
+          370,
+          586
+         ],
+         "variant": "brand-depth"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "quote": {
+   "name": "Social post · Quote",
+   "size": [
+    1080,
+    1080
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0
+      },
+      {
+       "t": "card",
+       "r": [
+        499,
+        358,
+        615,
+        973
+       ],
+       "variant": "brand-depth",
+       "photoOnly": true
+      },
+      {
+       "t": "text",
+       "slot": "Quote",
+       "r": [
+        80,
+        255,
+        920,
+        240
+       ],
+       "style": "h2/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "“We replaced six spreadsheets with one Creator app in a week.”"
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        91,
+        110,
+        48
+       ],
+       "white": true
+      },
+      {
+       "t": "text",
+       "slot": "Name",
+       "r": [
+        235,
+        845,
+        475,
+        54
+       ],
+       "px": [
+        43.2,
+        700
+       ],
+       "fill": "base/white",
+       "align": "center",
+       "sample": "Full Name"
+      },
+      {
+       "t": "text",
+       "slot": "Role",
+       "r": [
+        235,
+        907,
+        475,
+        38
+       ],
+       "px": [
+        27,
+        500
+       ],
+       "fill": "blue/40",
+       "align": "center",
+       "sample": "Designation"
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0
+      },
+      {
+       "t": "card",
+       "r": [
+        499,
+        358,
+        615,
+        973
+       ],
+       "variant": "soft-blue",
+       "photoOnly": true
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "text",
+       "slot": "Quote",
+       "r": [
+        80,
+        255,
+        920,
+        240
+       ],
+       "style": "h2/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "“We replaced six spreadsheets with one Creator app in a week.”"
+      },
+      {
+       "t": "text",
+       "slot": "Name",
+       "r": [
+        235,
+        845,
+        475,
+        54
+       ],
+       "px": [
+        43.2,
+        700
+       ],
+       "fill": "grey/160",
+       "align": "center",
+       "sample": "Full Name"
+      },
+      {
+       "t": "text",
+       "slot": "Role",
+       "r": [
+        235,
+        907,
+        475,
+        38
+       ],
+       "px": [
+        27,
+        500
+       ],
+       "fill": "role/text/secondary",
+       "align": "center",
+       "sample": "Designation"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        89,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "email-header": {
+   "name": "Email header",
+   "size": [
+    1200,
+    400
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      48,
+      40,
+      1104,
+      320
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        64,
+        60,
+        200,
+        63
+       ],
+       "white": true
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        64,
+        172,
+        660,
+        56
+       ],
+       "style": "h4/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "What’s new in Zoho Creator"
+      },
+      {
+       "t": "text",
+       "slot": "Date",
+       "r": [
+        64,
+        252,
+        500,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "October 2026"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1052,
+        316,
+        100,
+        44
+       ],
+       "white": true
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      48,
+      40,
+      1104,
+      320
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        64,
+        60,
+        200,
+        63
+       ],
+       "white": false
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        64,
+        172,
+        660,
+        56
+       ],
+       "style": "h4/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "What’s new in Zoho Creator"
+      },
+      {
+       "t": "text",
+       "slot": "Date",
+       "r": [
+        64,
+        252,
+        500,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "October 2026"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1052,
+        316,
+        100,
+        44
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "landscape": {
+   "name": "Social post · Landscape",
+   "size": [
+    1200,
+    628
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      48,
+      48,
+      1104,
+      532
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        56,
+        48,
+        176,
+        55
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        56,
+        136,
+        93,
+        48
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        56,
+        204,
+        560,
+        192
+       ],
+       "style": "h3/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        640,
+        159,
+        500,
+        310
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        56,
+        412,
+        560,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1064,
+        541,
+        88,
+        39
+       ],
+       "white": true
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      48,
+      48,
+      1104,
+      532
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        56,
+        48,
+        176,
+        55
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        56,
+        136,
+        93,
+        48
+       ],
+       "colour": "blue",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        56,
+        204,
+        560,
+        192
+       ],
+       "style": "h3/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        640,
+        159,
+        500,
+        310
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        56,
+        412,
+        560,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1064,
+        541,
+        88,
+        39
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "x": {
+   "name": "Social post · X",
+   "size": [
+    1600,
+    900
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      48,
+      48,
+      1504,
+      804
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        249,
+        108,
+        56
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        329,
+        684,
+        240
+       ],
+       "style": "h2/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        860,
+        245,
+        660,
+        409
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        601,
+        700,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1442,
+        804,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      48,
+      48,
+      1504,
+      804
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        264,
+        108,
+        56
+       ],
+       "colour": "blue",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        344,
+        568,
+        240
+       ],
+       "style": "h2/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        860,
+        245,
+        660,
+        409
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        600,
+        700,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1442,
+        804,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "story": {
+   "name": "Story",
+   "size": [
+    1080,
+    1920
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      65,
+      250,
+      950,
+      1330
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        290,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        420,
+        108,
+        56
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        500,
+        920,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        110,
+        968,
+        860,
+        533
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        700,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        905,
+        300,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      65,
+      250,
+      950,
+      1330
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        290,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        420,
+        108,
+        56
+       ],
+       "colour": "blue",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        500,
+        920,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        110,
+        968,
+        860,
+        533
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        700,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "zoho",
+       "r": [
+        905,
+        300,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "reels-cover": {
+   "name": "Reels and Shorts cover",
+   "size": [
+    1080,
+    1920
+   ],
+   "variants": {
+    "default": {
+     "safe": [
+      65,
+      250,
+      875,
+      1220
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        290,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        690,
+        77,
+        40
+       ],
+       "colour": "yellow",
+       "label": "NEW"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        754,
+        840,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        830,
+        1422,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    }
+   }
+  },
+  "carousel-cover": {
+   "name": "Carousel · Cover",
+   "size": [
+    1080,
+    1350
+   ],
+   "variants": {
+    "default": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        200,
+        89,
+        40
+       ],
+       "colour": "yellow",
+       "label": "GUIDE"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        264,
+        920,
+        176
+       ],
+       "style": "h1/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "5 workflows to automate this week"
+      },
+      {
+       "t": "text",
+       "slot": "Swipe cue",
+       "r": [
+        80,
+        1222,
+        600,
+        28
+       ],
+       "style": "text-large/semibold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Swipe to see how  →"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        1238,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    }
+   }
+  },
+  "carousel-slide": {
+   "name": "Carousel · Slide",
+   "size": [
+    1080,
+    1350
+   ],
+   "variants": {
+    "bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        176,
+        55
+       ],
+       "white": true
+      },
+      {
+       "t": "text",
+       "slot": "Slide number",
+       "r": [
+        80,
+        184,
+        300,
+        88
+       ],
+       "style": "h1/bold",
+       "fill": "yellow/100",
+       "align": "left",
+       "sample": "01"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        288,
+        920,
+        160
+       ],
+       "style": "h2/bold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Route approvals automatically"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        468,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Set the rules once and Creator sends each request to the right approver."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        190,
+        660,
+        660,
+        409
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Page counter",
+       "r": [
+        80,
+        1246,
+        240,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "02 / 06"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        928,
+        1247,
+        88,
+        39
+       ],
+       "white": true
+      }
+     ]
+    },
+    "light": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.22
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        176,
+        55
+       ],
+       "white": false
+      },
+      {
+       "t": "text",
+       "slot": "Slide number",
+       "r": [
+        80,
+        184,
+        300,
+        88
+       ],
+       "style": "h1/bold",
+       "fill": "blue/100",
+       "align": "left",
+       "sample": "01"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        288,
+        920,
+        160
+       ],
+       "style": "h2/bold",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "Route approvals automatically"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        468,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "left",
+       "sample": "Set the rules once and Creator sends each request to the right approver."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        190,
+        660,
+        660,
+        409
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Page counter",
+       "r": [
+        80,
+        1246,
+        240,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "grey/160",
+       "align": "left",
+       "sample": "02 / 06"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        928,
+        1247,
+        88,
+        39
+       ],
+       "white": false
+      }
+     ]
+    }
+   }
+  },
+  "video-background": {
+   "name": "Video background · Calm",
+   "size": [
+    1920,
+    1080
+   ],
+   "variants": {
+    "default": {
+     "safe": [
+      96,
+      54,
+      1728,
+      786
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        1604,
+        64,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "lowerthird",
+       "r": [
+        80,
+        864,
+        720,
+        120
+       ],
+       "fill": "base/white",
+       "radius": 8,
+       "texts": [
+        {
+         "slot": "Speaker name",
+         "r": [
+          112,
+          886,
+          600,
+          40
+         ],
+         "style": "h6/bold",
+         "fill": "grey/160",
+         "align": "left",
+         "sample": "Speaker name"
+        },
+        {
+         "slot": "Role · Company",
+         "r": [
+          112,
+          942,
+          600,
+          28
+         ],
+         "style": "text-large/regular",
+         "fill": "grey/120",
+         "align": "left",
+         "sample": "Role · Company"
+        }
+       ]
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1714,
+        792,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    }
+   }
+  }
+ }
+}

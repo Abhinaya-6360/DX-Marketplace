@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.0 — Oct 2026
+- Social, video and email templates: 11 templates in 21 versions (Feature, Quote, Webinar, Landscape, X, Story, Reels cover, Carousel cover and slide, Email header, Video background) exported from the CDS-2.0 Figma file into assets/social/layouts.json.
+- scripts/render_social.py fills a template from a brief and renders an exact-size PNG with Zoho Puvi, the gradients, logos and Connect texture; handles topic (default, AI, partner), highlight words, screenshots and speaker photos.
+- Built-in brand check: text overflow, collisions, safe area, and a list of samples to replace.
+- Rendered social pieces no longer need designer review; YouTube thumbnails still do (their 3D artwork arrives in a later version).
+
 ## 2.0.1 — Oct 2026
 - Web: hero panel, CTA band, eyebrows and icon tiles now follow the page topic (default, AI, partner), so AI pages no longer get a blue CTA band with a pattern.
 - Red rule clarified: one red button per post, slide or email header; on web pages, at most one per section (nav, hero, CTA band). Matches Components · Buttons.
