@@ -1,0 +1,5007 @@
+[
+ {
+  "slide": 1,
+  "slots": [
+   {
+    "id": 4,
+    "sample": "PRESENTATION TITLE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Clean. Bold. Focused.",
+    "size_pt": 44,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "A one-line description of what this presentation covers and who it’s for.",
+    "size_pt": 12,
+    "max_chars": 144,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "PRESENTER",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 8,
+    "sample": "Name · Designation",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "DATE",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 10,
+    "sample": "Month 2026",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Default cover. Replace the title, description, presenter and date. The Weave pattern on the right stays as it is."
+ },
+ {
+  "slide": 2,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "AGENDA",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Agenda",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "First topic or section title",
+    "size_pt": 16,
+    "max_chars": 59,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Second topic or section title",
+    "size_pt": 16,
+    "max_chars": 59,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Third topic or section title",
+    "size_pt": 16,
+    "max_chars": 59,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Fourth topic or section title",
+    "size_pt": 16,
+    "max_chars": 59,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "List up to four sections. The number on the right is the slide where each section starts."
+ },
+ {
+  "slide": 3,
+  "slots": [
+   {
+    "id": 4,
+    "sample": "Section title goes here",
+    "size_pt": 40,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "An optional one-line summary of what this section covers.",
+    "size_pt": 12,
+    "max_chars": 86,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Section divider. Change the number and title for each section."
+ },
+ {
+  "slide": 4,
+  "slots": [
+   {
+    "id": 7,
+    "sample": "STATEMENT",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "A powerful statement that drives impact",
+    "size_pt": 40,
+    "max_chars": 46,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "An optional supporting line under the statement.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "One idea, one sentence. To swap the photo: select it, then choose Replace image. Keep the same crop so faces and key details stay clear of the text. Use a scene, not a close-up face, so the blue overlay reads well."
+ },
+ {
+  "slide": 5,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "01 / THE PROBLEM",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Your roadmap is full.",
+    "size_pt": 40,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "Your IT team isn’t.",
+    "size_pt": 40,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Every team has a backlog of “can we build a tool for X?”: approvals, field data, partner portals, ops dashboards. Most never get built.",
+    "size_pt": 12,
+    "max_chars": 194,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "GARTNER, 2025",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 8,
+    "sample": "70%",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "of new business apps will be built with low-code by 2027.",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Two-line headline: the problem in ink, the turn in blue. Replace the stat and its source; always cite where a number comes from."
+ },
+ {
+  "slide": 6,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "THE CHALLENGE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "From problem to solution",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "TODAY",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "label"
+   },
+   {
+    "id": 7,
+    "sample": "What’s slowing teams down",
+    "size_pt": 20,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "A pain point your audience will recognise",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "A second problem, stated plainly",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "A third problem, with its cost",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "WITH CREATOR",
+    "size_pt": 7,
+    "max_chars": 19,
+    "role": "label"
+   },
+   {
+    "id": 17,
+    "sample": "What Creator changes",
+    "size_pt": 20,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "The fix for the first problem",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "The fix for the second problem",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "The result, with a number if you can",
+    "size_pt": 12,
+    "max_chars": 48,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Left card: the problems. Right card: what changes with Creator. Keep three short lines each."
+ },
+ {
+  "slide": 7,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "OVERVIEW",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Everything you need to build and run apps",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 32,
+    "sample": "Capability name",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 33,
+    "sample": "A short line that explains what this capability does.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Six capabilities. Swap icons to match each one (Insert → Icon, then recolour to brand blue)."
+ },
+ {
+  "slide": 8,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "Three ways to start",
+    "size_pt": 36,
+    "max_chars": 33,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "New vendor",
+    "size_pt": 10,
+    "max_chars": 34,
+    "role": "screen"
+   },
+   {
+    "id": 14,
+    "sample": "Company name",
+    "size_pt": 7,
+    "max_chars": 49,
+    "role": "screen"
+   },
+   {
+    "id": 16,
+    "sample": "Contact email",
+    "size_pt": 7,
+    "max_chars": 49,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "Submit",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 20,
+    "sample": "FIRST STEP",
+    "size_pt": 8,
+    "max_chars": 57,
+    "role": "label"
+   },
+   {
+    "id": 21,
+    "sample": "Add a short description of each step, with enough context to understand what’s involved.",
+    "size_pt": 12,
+    "max_chars": 75,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "Sales overview",
+    "size_pt": 10,
+    "max_chars": 34,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "1,284",
+    "size_pt": 14,
+    "max_chars": 9,
+    "role": "screen"
+   },
+   {
+    "id": 32,
+    "sample": "orders",
+    "size_pt": 6,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 34,
+    "sample": "94%",
+    "size_pt": 14,
+    "max_chars": 9,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "on time",
+    "size_pt": 6,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 42,
+    "sample": "SECOND STEP",
+    "size_pt": 8,
+    "max_chars": 57,
+    "role": "label"
+   },
+   {
+    "id": 43,
+    "sample": "Add a short description of each step, with enough context to understand what’s involved.",
+    "size_pt": 12,
+    "max_chars": 75,
+    "role": "content"
+   },
+   {
+    "id": 51,
+    "sample": "My approvals",
+    "size_pt": 10,
+    "max_chars": 34,
+    "role": "screen"
+   },
+   {
+    "id": 53,
+    "sample": "PO-2381",
+    "size_pt": 8,
+    "max_chars": 21,
+    "role": "screen"
+   },
+   {
+    "id": 55,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 57,
+    "sample": "PO-2380",
+    "size_pt": 8,
+    "max_chars": 21,
+    "role": "screen"
+   },
+   {
+    "id": 59,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 61,
+    "sample": "PO-2379",
+    "size_pt": 8,
+    "max_chars": 21,
+    "role": "screen"
+   },
+   {
+    "id": 63,
+    "sample": "IN REVIEW",
+    "size_pt": 6,
+    "max_chars": 16,
+    "role": "screen"
+   },
+   {
+    "id": 65,
+    "sample": "PO-2378",
+    "size_pt": 8,
+    "max_chars": 21,
+    "role": "screen"
+   },
+   {
+    "id": 67,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 68,
+    "sample": "THIRD STEP",
+    "size_pt": 8,
+    "max_chars": 57,
+    "role": "label"
+   },
+   {
+    "id": 69,
+    "sample": "Add a short description of each step, with enough context to understand what’s involved.",
+    "size_pt": 12,
+    "max_chars": 75,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Each card holds a screenshot. Replace the sample screens with real product screenshots (select → Replace image, or paste a new screenshot on top)."
+ },
+ {
+  "slide": 9,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "SECTION LABEL",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "A compelling headline",
+    "size_pt": 40,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "A short paragraph that supports the headline. Two or three lines are enough; let the photo do the rest.",
+    "size_pt": 12,
+    "max_chars": 151,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "Half-page photo. To swap the photo: select it, then choose Replace image. Keep the same crop so faces and key details stay clear of the text."
+ },
+ {
+  "slide": 10,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "OUR PROCESS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "How we deliver, step by step",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Discovery",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "One line on what happens in this step.",
+    "size_pt": 8,
+    "max_chars": 97,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Strategy",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "One line on what happens in this step.",
+    "size_pt": 8,
+    "max_chars": 97,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Design",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "One line on what happens in this step.",
+    "size_pt": 8,
+    "max_chars": 97,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Build",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "One line on what happens in this step.",
+    "size_pt": 8,
+    "max_chars": 97,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Launch",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "One line on what happens in this step.",
+    "size_pt": 8,
+    "max_chars": 97,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Five steps. Fill the first circle to show where you are, or fill all of them for a finished plan."
+ },
+ {
+  "slide": 11,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ROADMAP",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "What’s coming next",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Q1 2027",
+    "size_pt": 12,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Q2 2027",
+    "size_pt": 12,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "Q3 2027",
+    "size_pt": 12,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 30,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 32,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 33,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 35,
+    "sample": "Q4 2027",
+    "size_pt": 12,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 37,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 38,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 40,
+    "sample": "Feature or milestone",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 41,
+    "sample": "A short description",
+    "size_pt": 8,
+    "max_chars": 37,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Four quarters. Keep each card to a name and one line; highlight the current quarter in blue."
+ },
+ {
+  "slide": 12,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "THE PRODUCT",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Build it once, run it everywhere",
+    "size_pt": 36,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "A one or two line description of the product surface shown here and why it matters.",
+    "size_pt": 12,
+    "max_chars": 88,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "First key capability or benefit",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Second key capability or benefit",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Third key capability or benefit",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Home",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "Orders",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "Approvals",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 22,
+    "sample": "Dashboards",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 23,
+    "sample": "Customers",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 24,
+    "sample": "Settings",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "Approvals",
+    "size_pt": 18,
+    "max_chars": 31,
+    "role": "screen"
+   },
+   {
+    "id": 26,
+    "sample": "12 requests waiting for you",
+    "size_pt": 8,
+    "max_chars": 71,
+    "role": "screen"
+   },
+   {
+    "id": 28,
+    "sample": "Pending",
+    "size_pt": 7,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "Approved",
+    "size_pt": 7,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 34,
+    "sample": "Avg. time",
+    "size_pt": 7,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "1.4 d",
+    "size_pt": 18,
+    "max_chars": 8,
+    "role": "screen"
+   },
+   {
+    "id": 38,
+    "sample": "Request",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 39,
+    "sample": "Requester",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 40,
+    "sample": "Amount",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 41,
+    "sample": "Status",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 43,
+    "sample": "Laptops for new hires",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 44,
+    "sample": "Priya S.",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 45,
+    "sample": "₹ 4,20,000",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 47,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 49,
+    "sample": "Office chairs",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 50,
+    "sample": "Arun K.",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 51,
+    "sample": "₹ 96,000",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 53,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 55,
+    "sample": "Cloud credits",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 56,
+    "sample": "Meera R.",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 57,
+    "sample": "₹ 1,50,000",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 59,
+    "sample": "IN REVIEW",
+    "size_pt": 6,
+    "max_chars": 16,
+    "role": "screen"
+   },
+   {
+    "id": 61,
+    "sample": "Event booth",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 62,
+    "sample": "Rahul D.",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 63,
+    "sample": "₹ 2,40,000",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 65,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 67,
+    "sample": "Training licences",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 68,
+    "sample": "Anita P.",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 69,
+    "sample": "₹ 60,000",
+    "size_pt": 8,
+    "max_chars": 29,
+    "role": "screen"
+   },
+   {
+    "id": 71,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "The window on the right is a sample product screen drawn with shapes. Replace it with a real screenshot: paste the screenshot, size it to the window, and delete the sample."
+ },
+ {
+  "slide": 13,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "WATCH",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "A short title for the video",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Insert your video over the dark frame (Insert → Video) and size it to fit, then delete the frame."
+ },
+ {
+  "slide": 14,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "INSIDE THE PRODUCT",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "A closer look at the interface",
+    "size_pt": 36,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "First feature",
+    "size_pt": 12,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "A short line describing this part of the UI.",
+    "size_pt": 8,
+    "max_chars": 55,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Second feature",
+    "size_pt": 12,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "A short line describing this part of the UI.",
+    "size_pt": 8,
+    "max_chars": 55,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Third feature",
+    "size_pt": 12,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "A short line describing this part of the UI.",
+    "size_pt": 8,
+    "max_chars": 55,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "FIELDS",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "Single line",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "Email",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "Number",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "Date",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 33,
+    "sample": "Dropdown",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "Lookup",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 37,
+    "sample": "File upload",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 39,
+    "sample": "Signature",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 41,
+    "sample": "PROPERTIES",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 42,
+    "sample": "Field name",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 44,
+    "sample": "Quantity",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 45,
+    "sample": "Type",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 47,
+    "sample": "Number",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 48,
+    "sample": "Required",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 50,
+    "sample": "Yes",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 51,
+    "sample": "Min value",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 55,
+    "sample": "Purchase request",
+    "size_pt": 14,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 56,
+    "sample": "Item name",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 58,
+    "sample": "Quantity",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 60,
+    "sample": "Department",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 62,
+    "sample": "Needed by",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 65,
+    "sample": "Submit",
+    "size_pt": 8,
+    "max_chars": 34,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Numbered markers on the screenshot match the numbered list. Move the markers onto the parts of your real screenshot they describe."
+ },
+ {
+  "slide": 15,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "THE PLATFORM",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "One platform, end to end",
+    "size_pt": 36,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Low-code application development",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Secure, scalable and compliant",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Workflow and process automation",
+    "size_pt": 10,
+    "max_chars": 47,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "BUILT ON",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "label"
+   },
+   {
+    "id": 12,
+    "sample": "SECURE BY DESIGN",
+    "size_pt": 7,
+    "max_chars": 25,
+    "role": "label"
+   },
+   {
+    "id": 14,
+    "sample": "AI-POWERED",
+    "size_pt": 7,
+    "max_chars": 17,
+    "role": "label"
+   },
+   {
+    "id": 16,
+    "sample": "SCALABLE",
+    "size_pt": 7,
+    "max_chars": 14,
+    "role": "label"
+   },
+   {
+    "id": 18,
+    "sample": "EXTENSIBLE",
+    "size_pt": 7,
+    "max_chars": 17,
+    "role": "label"
+   },
+   {
+    "id": 20,
+    "sample": "CONNECTED",
+    "size_pt": 7,
+    "max_chars": 15,
+    "role": "label"
+   },
+   {
+    "id": 28,
+    "sample": "Financial\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 31,
+    "sample": "Inventory\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 34,
+    "sample": "Procurement\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 37,
+    "sample": "Supply chain\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 40,
+    "sample": "Human capital\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 43,
+    "sample": "Project\nmanagement",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 46,
+    "sample": "Customer experience",
+    "size_pt": 6,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 49,
+    "sample": "Sales agents",
+    "size_pt": 7,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 52,
+    "sample": "Supply chain agents",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 55,
+    "sample": "HR agents",
+    "size_pt": 7,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 58,
+    "sample": "Operations agents",
+    "size_pt": 7,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 61,
+    "sample": "CX agents",
+    "size_pt": 7,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 64,
+    "sample": "Finance agents",
+    "size_pt": 7,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 66,
+    "sample": "AI AGENTS ORCHESTRATE END-TO-END PROCESSES",
+    "size_pt": 6,
+    "max_chars": 111,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Platform overview. Apps sit on the inner ring, AI agents on the outer ring (violet is for AI only). Edit any label directly."
+ },
+ {
+  "slide": 16,
+  "slots": [
+   {
+    "id": 6,
+    "sample": "04 / AI, BUILT IN",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Zia turns natural language into apps.",
+    "size_pt": 40,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "DESCRIBE",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "label"
+   },
+   {
+    "id": 9,
+    "sample": "“A leave tracker with manager approval”: schema and workflow drafted.",
+    "size_pt": 12,
+    "max_chars": 60,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "PREDICT",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "label"
+   },
+   {
+    "id": 11,
+    "sample": "Forecast churn, lead score and ticket priority on your own data.",
+    "size_pt": 12,
+    "max_chars": 60,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "SUMMARISE",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "label"
+   },
+   {
+    "id": 13,
+    "sample": "One-click record, thread and report summaries.",
+    "size_pt": 12,
+    "max_chars": 60,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "EXTRACT",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "label"
+   },
+   {
+    "id": 15,
+    "sample": "Pull fields from PDFs, emails and scanned forms.",
+    "size_pt": 12,
+    "max_chars": 60,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "POWERED BY",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 17,
+    "sample": "Zia.",
+    "size_pt": 44,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "The AI assistant trained on business app patterns, not the open internet.",
+    "size_pt": 10,
+    "max_chars": 144,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "AI slides only: the blue-to-violet gradient is reserved for AI content."
+ },
+ {
+  "slide": 17,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "MOBILE, DAY ONE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Every app you build runs on iOS and Android",
+    "size_pt": 36,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Native iOS and Android apps, generated automatically",
+    "size_pt": 10,
+    "max_chars": 53,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Offline data capture for field teams",
+    "size_pt": 10,
+    "max_chars": 53,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Barcode scanning, photos, location and signatures",
+    "size_pt": 10,
+    "max_chars": 53,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Site inspections",
+    "size_pt": 16,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 16,
+    "sample": "Warehouse 4",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 17,
+    "sample": "Today · 10:30",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "DONE",
+    "size_pt": 6,
+    "max_chars": 19,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "Plant B",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 22,
+    "sample": "Today · 14:00",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 24,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 26,
+    "sample": "Depot 12",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "Tomorrow",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "PLANNED",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "Store 33",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 32,
+    "sample": "Fri · 09:00",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 34,
+    "sample": "PLANNED",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 36,
+    "sample": "Hub North",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 37,
+    "sample": "Mon · 11:00",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 39,
+    "sample": "PLANNED",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 41,
+    "sample": "+ New inspection",
+    "size_pt": 8,
+    "max_chars": 59,
+    "role": "screen"
+   },
+   {
+    "id": 46,
+    "sample": "Approvals",
+    "size_pt": 16,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 48,
+    "sample": "Laptops x12",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 49,
+    "sample": "Priya S.",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 51,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 53,
+    "sample": "Office chairs",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 54,
+    "sample": "Arun K.",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 56,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 30,
+    "role": "screen"
+   },
+   {
+    "id": 58,
+    "sample": "Cloud credits",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 59,
+    "sample": "Meera R.",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 61,
+    "sample": "REVIEW",
+    "size_pt": 6,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 63,
+    "sample": "Event booth",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 64,
+    "sample": "Rahul D.",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 66,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 68,
+    "sample": "Licences",
+    "size_pt": 8,
+    "max_chars": 17,
+    "role": "screen"
+   },
+   {
+    "id": 69,
+    "sample": "Anita P.",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 71,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 30,
+    "role": "screen"
+   },
+   {
+    "id": 73,
+    "sample": "+ New inspection",
+    "size_pt": 8,
+    "max_chars": 59,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Two sample phone screens drawn with shapes. Replace them with real app screenshots placed inside the phone frames."
+ },
+ {
+  "slide": 18,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "CONNECTED",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Works with the tools you already use",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "500+",
+    "size_pt": 28,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "integrations, plus REST APIs and webhooks",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Native with the Zoho suite, and ready-made connectors for the ERP, CRM and productivity apps your teams use.",
+    "size_pt": 12,
+    "max_chars": 110,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Zoho CRM",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Zoho Books",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Zoho Desk",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Zoho Analytics",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Zoho People",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Zoho Projects",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 23,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "Partner logo",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Replace the partner logo tiles with approved partner logos only. The integration count is sample content: confirm the current number."
+ },
+ {
+  "slide": 19,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "TRUST",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Enterprise-grade security and compliance",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "SOC 2 Type II",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Independent audit of security controls",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "ISO 27001",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Information security management",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "GDPR",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Privacy and data protection",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "HIPAA",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Healthcare data safeguards",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Data residency",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Choose where your data is stored",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "SSO and audit logs",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Control access, trace every change",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "Sample list: confirm current certifications with the Zoho security team before use.",
+    "size_pt": 8,
+    "max_chars": 129,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Confirm every certification with the Zoho security team before sharing externally."
+ },
+ {
+  "slide": 20,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "SECTION LABEL",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Three points, side by side",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "10×",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Headline metric",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "A short line explaining what the number means.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "85%",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Headline metric",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "A short line explaining what the number means.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "3×",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Headline metric",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "A short line explaining what the number means.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Three key numbers. Keep each label short; cite sources in the speaker notes."
+ },
+ {
+  "slide": 21,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "GROWTH",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Apps built per quarter",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "100",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "200",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "300",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "400",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Q1 '25",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 23,
+    "sample": "Q2 '25",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 28,
+    "sample": "Q3 '25",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 33,
+    "sample": "Q4 '25",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 38,
+    "sample": "Q1 '26",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 43,
+    "sample": "Q2 '26",
+    "size_pt": 7,
+    "max_chars": 18,
+    "role": "label"
+   },
+   {
+    "id": 45,
+    "sample": "Apps built",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 47,
+    "sample": "Apps in production",
+    "size_pt": 7,
+    "max_chars": 31,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Bar chart drawn with shapes so it looks the same in Zoho Show. To change a value, resize the bar (100 units = 115px of height) and update the label, or replace it with Show’s own chart (Insert → Chart). Colour order: blue, then light blue."
+ },
+ {
+  "slide": 22,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ADOPTION",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Where teams use Creator",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "5,200",
+    "size_pt": 24,
+    "max_chars": 10,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "apps live",
+    "size_pt": 8,
+    "max_chars": 34,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Operations",
+    "size_pt": 14,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "38%",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Finance",
+    "size_pt": 14,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "24%",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "HR",
+    "size_pt": 14,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "18%",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "IT",
+    "size_pt": 14,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "12%",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "Other",
+    "size_pt": 14,
+    "max_chars": 30,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "8%",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Native doughnut chart: right-click → Edit data. Update the legend values on the right to match."
+ },
+ {
+  "slide": 23,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "MEET THE TEAM",
+    "size_pt": 10,
+    "max_chars": 144,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "The team",
+    "size_pt": 36,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Full Name",
+    "size_pt": 16,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Role",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Company",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Full Name",
+    "size_pt": 16,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Role",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Company",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Full Name",
+    "size_pt": 16,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Role",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Company",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Full Name",
+    "size_pt": 16,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Role",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Company",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   }
+  ],
+  "sample_images": 4,
+  "note": "Team photos sit inside the diamond frame. To swap the photo: select it, then choose Replace image. Keep the same crop so faces and key details stay clear of the text. Use head-and-shoulders photos on a plain background; the light blue backdrop keeps mixed photos looking like one set."
+ },
+ {
+  "slide": 24,
+  "slots": [
+   {
+    "id": 4,
+    "sample": "CUSTOMER STORY",
+    "size_pt": 7,
+    "max_chars": 22,
+    "role": "label"
+   },
+   {
+    "id": 5,
+    "sample": "“",
+    "size_pt": 40,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "A short customer quote that captures the impact in their own words.",
+    "size_pt": 36,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Full Name",
+    "size_pt": 10,
+    "max_chars": 51,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Designation, Company",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "60%",
+    "size_pt": 28,
+    "max_chars": 6,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "faster",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "3×",
+    "size_pt": 28,
+    "max_chars": 6,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "productivity",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "15+",
+    "size_pt": 28,
+    "max_chars": 6,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "countries",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "The cut-out photo sits on the brand diamond. To change it, use a cut-out (transparent background) photo of the customer: select → Replace image."
+ },
+ {
+  "slide": 25,
+  "slots": [
+   {
+    "id": 4,
+    "sample": "Customer logo",
+    "size_pt": 10,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 5,
+    "sample": "OWNERSHIP",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 6,
+    "sample": "IT · Big data and procurement",
+    "size_pt": 10,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "ZOHO ECOSYSTEM",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 8,
+    "sample": "Creator, Projects, Analytics",
+    "size_pt": 10,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "REGION",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 10,
+    "sample": "MEA",
+    "size_pt": 10,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "VERTICAL",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 12,
+    "sample": "Telecom",
+    "size_pt": 10,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "SCALE",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 14,
+    "sample": "One app, many teams across regions",
+    "size_pt": 10,
+    "max_chars": 37,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "CASE STUDY",
+    "size_pt": 7,
+    "max_chars": 17,
+    "role": "label"
+   },
+   {
+    "id": 17,
+    "sample": "Customer case study",
+    "size_pt": 36,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Objective",
+    "size_pt": 20,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "Streamline procurement by bringing data from different departments into one source of truth.",
+    "size_pt": 12,
+    "max_chars": 151,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Solution",
+    "size_pt": 20,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "First thing built or solved",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Second capability delivered",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "Third capability delivered",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 30,
+    "sample": "Highlights",
+    "size_pt": 20,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 32,
+    "sample": "Improved productivity",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 34,
+    "sample": "Removed information silos",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 36,
+    "sample": "Real-time decision-making",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Left panel: customer facts. Right: objective, solution and results. Replace the logo with an approved customer logo."
+ },
+ {
+  "slide": 26,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "06 / TRUSTED BY",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Thousands of companies. Every industry.",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Northwind",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 9,
+    "sample": "Lumen Pay",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 12,
+    "sample": "Bluepeak",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 15,
+    "sample": "Orbit Retail",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 18,
+    "sample": "Fieldline",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "Harbor Health",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 24,
+    "sample": "Northstar",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "Acme Co.",
+    "size_pt": 14,
+    "max_chars": 14,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "“A short quote from a customer about what they built and how fast.” — Role, Company",
+    "size_pt": 10,
+    "max_chars": 137,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Logo wall. The names are fictional samples: replace each tile with an approved customer logo."
+ },
+ {
+  "slide": 27,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "PLANS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Pick the plan that fits",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Standard",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "For small teams getting started",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "$8",
+    "size_pt": 36,
+    "max_chars": 10,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "/ user / month",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Unlimited apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Workflows and approvals",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Mobile apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Start free trial",
+    "size_pt": 8,
+    "max_chars": 46,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "MOST POPULAR",
+    "size_pt": 6,
+    "max_chars": 20,
+    "role": "label"
+   },
+   {
+    "id": 20,
+    "sample": "Professional",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "For growing teams",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "$20",
+    "size_pt": 36,
+    "max_chars": 10,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "/ user / month",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "Unlimited apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Workflows and approvals",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "Mobile apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 31,
+    "sample": "Start free trial",
+    "size_pt": 8,
+    "max_chars": 46,
+    "role": "content"
+   },
+   {
+    "id": 33,
+    "sample": "Enterprise",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 34,
+    "sample": "For large organisations",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 35,
+    "sample": "Custom",
+    "size_pt": 36,
+    "max_chars": 10,
+    "role": "content"
+   },
+   {
+    "id": 36,
+    "sample": "Talk to sales",
+    "size_pt": 8,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 38,
+    "sample": "Unlimited apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 40,
+    "sample": "Workflows and approvals",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 42,
+    "sample": "Mobile apps",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 44,
+    "sample": "Contact sales",
+    "size_pt": 8,
+    "max_chars": 39,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Prices are samples: always check the current pricing page. The primary (red) button marks the one action you want."
+ },
+ {
+  "slide": 28,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "LIVE DEMO",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Build a safer workplace",
+    "size_pt": 40,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "A short line on what you’ll show in the demo.",
+    "size_pt": 12,
+    "max_chars": 50,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Book a walkthrough",
+    "size_pt": 8,
+    "max_chars": 75,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "My approvals",
+    "size_pt": 16,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 13,
+    "sample": "PO-2381",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 15,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 17,
+    "sample": "PO-2380",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "PO-2379",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 23,
+    "sample": "IN REVIEW",
+    "size_pt": 6,
+    "max_chars": 16,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "PO-2378",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "PO-2377",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 33,
+    "sample": "PO-2376",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 37,
+    "sample": "PO-2375",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "screen"
+   },
+   {
+    "id": 39,
+    "sample": "IN REVIEW",
+    "size_pt": 6,
+    "max_chars": 16,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Demo slide. Replace the sample screen with the screen you’ll demo, or a QR code to book a demo."
+ },
+ {
+  "slide": 29,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "NEXT STEPS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "What happens after today",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "STEP",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 5,
+    "sample": "OWNER",
+    "size_pt": 7,
+    "max_chars": 36,
+    "role": "label"
+   },
+   {
+    "id": 6,
+    "sample": "WHEN",
+    "size_pt": 7,
+    "max_chars": 36,
+    "role": "label"
+   },
+   {
+    "id": 10,
+    "sample": "Share the proposal",
+    "size_pt": 14,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Zoho team",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "This week",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Workshop with your team",
+    "size_pt": 14,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Both teams",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Week 2",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Pilot app live",
+    "size_pt": 14,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Your team",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "Week 4",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "Review and scale",
+    "size_pt": 14,
+    "max_chars": 48,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "Both teams",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 30,
+    "sample": "Week 6",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Close with clear next steps: what, who, when."
+ },
+ {
+  "slide": 30,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "Thank you",
+    "size_pt": 44,
+    "max_chars": 23,
+    "role": "label"
+   },
+   {
+    "id": 6,
+    "sample": "Questions? Let’s talk.",
+    "size_pt": 12,
+    "max_chars": 86,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "© 2026 Zoho Corporation",
+    "size_pt": 7,
+    "max_chars": 147,
+    "role": "label"
+   },
+   {
+    "id": 9,
+    "sample": "EMAIL",
+    "size_pt": 7,
+    "max_chars": 36,
+    "role": "label"
+   },
+   {
+    "id": 10,
+    "sample": "name@zohocorp.com",
+    "size_pt": 10,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "WEB",
+    "size_pt": 7,
+    "max_chars": 36,
+    "role": "label"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Closing slide. Replace the email. The Zoho logo marks Creator as a Zoho product; keep it small, below the Creator logo."
+ },
+ {
+  "slide": 31,
+  "slots": [
+   {
+    "id": 3,
+    "sample": "EXTRA SLIDES",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "Use only when needed",
+    "size_pt": 40,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Slides 1–30 are the standard deck. The 15 slides after this one are alternatives and extras: copy the ones you need into the main part of your deck, then delete this divider and every extra slide you didn’t use.",
+    "size_pt": 12,
+    "max_chars": 259,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Delete this slide before presenting."
+ },
+ {
+  "slide": 32,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "ZOHOLICS 2026 · KEYNOTE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "The future of building apps with AI",
+    "size_pt": 44,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "DATE",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 9,
+    "sample": "12 November 2026",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "LOCATION",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 11,
+    "sample": "Chennai, India",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "SPEAKER",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 13,
+    "sample": "Name · Designation",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Event opener for keynotes and conferences. Replace the event name, title, date, location and speaker."
+ },
+ {
+  "slide": 33,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "PRESENTATION TITLE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Presentation title on one or two lines",
+    "size_pt": 40,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "A one-line description of what this presentation covers and who it’s for.",
+    "size_pt": 12,
+    "max_chars": 117,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "PRESENTER",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 9,
+    "sample": "Name · Designation",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "DATE",
+    "size_pt": 7,
+    "max_chars": 41,
+    "role": "label"
+   },
+   {
+    "id": 11,
+    "sample": "Month 2026",
+    "size_pt": 10,
+    "max_chars": 28,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "Cover with a photo. To swap the photo: select it, then choose Replace image. Keep the same crop so faces and key details stay clear of the text. Choose a photo with calm space on the left, where the text sits; the navy overlay keeps it readable."
+ },
+ {
+  "slide": 34,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "Section title goes here",
+    "size_pt": 40,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "An optional one-line summary of what this section covers.",
+    "size_pt": 12,
+    "max_chars": 86,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Section divider. Change the number and title for each section."
+ },
+ {
+  "slide": 35,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "02 / THE SOLUTION",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "One platform. Every app your business will ever need.",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "DRAG · DROP · DEPLOY",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Visual builder",
+    "size_pt": 20,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Design data models, forms and workflows on a canvas. No DevOps queue.",
+    "size_pt": 12,
+    "max_chars": 94,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "AUTOMATE · ORCHESTRATE",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Workflows + AI",
+    "size_pt": 20,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Native automation, approvals and Zia AI for formulas, summaries and insights.",
+    "size_pt": 12,
+    "max_chars": 94,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "RUN · ANYWHERE",
+    "size_pt": 7,
+    "max_chars": 54,
+    "role": "label"
+   },
+   {
+    "id": 17,
+    "sample": "Multi-cloud + mobile",
+    "size_pt": 20,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Web, iOS and Android out of the box. Deploy on Zoho cloud, AWS or your own.",
+    "size_pt": 12,
+    "max_chars": 94,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Three pillars of the solution. Blue, green and navy mark each pillar."
+ },
+ {
+  "slide": 36,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "05 / USE CASES",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "What teams build with Creator.",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "OPERATIONS",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 6,
+    "sample": "Field service apps",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Inspections, work orders, offline data capture.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "HR",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 10,
+    "sample": "Onboarding and leave",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "New-hire flows, leave approvals, exit checklists.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "SALES",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 14,
+    "sample": "CRM extensions",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Custom pipelines, partner portals, deal-room logic.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "FINANCE",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 18,
+    "sample": "Approvals and spend",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "PO routing, expense claims, vendor onboarding.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "PROCUREMENT",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 22,
+    "sample": "Vendor management",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Vendor scoring, contract renewals, RFQ workflows.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "CUSTOMER",
+    "size_pt": 7,
+    "max_chars": 55,
+    "role": "label"
+   },
+   {
+    "id": 26,
+    "sample": "Self-service portals",
+    "size_pt": 16,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Branded portals for status, tickets and docs.",
+    "size_pt": 12,
+    "max_chars": 64,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Six use cases by team. Replace with the teams your audience cares about."
+ },
+ {
+  "slide": 37,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "THE DIFFERENCE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Before and after Creator",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "BEFORE",
+    "size_pt": 7,
+    "max_chars": 11,
+    "role": "label"
+   },
+   {
+    "id": 7,
+    "sample": "Spreadsheets and email",
+    "size_pt": 20,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Requests lost in long email threads",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Copies of the same spreadsheet",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "No view of what’s pending",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "→",
+    "size_pt": 20,
+    "max_chars": 2,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "AFTER",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "label"
+   },
+   {
+    "id": 19,
+    "sample": "One app, real time",
+    "size_pt": 20,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Every request in one place",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "One source of truth for the whole team",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "Live status and approvals on mobile",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Before on the left, after on the right. Keep the after card in blue so the change reads at a glance."
+ },
+ {
+  "slide": 38,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "THE PRODUCT",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "One workspace to build, ship and manage apps",
+    "size_pt": 28,
+    "max_chars": 54,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "A one or two line description that sets the context before the reveal.",
+    "size_pt": 12,
+    "max_chars": 93,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Home",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 16,
+    "sample": "Orders",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 18,
+    "sample": "Approvals",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "Dashboards",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 20,
+    "sample": "Customers",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "Settings",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 22,
+    "sample": "Operations dashboard",
+    "size_pt": 18,
+    "max_chars": 65,
+    "role": "screen"
+   },
+   {
+    "id": 23,
+    "sample": "Live · updated 2 min ago",
+    "size_pt": 8,
+    "max_chars": 148,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "Pending",
+    "size_pt": 7,
+    "max_chars": 50,
+    "role": "screen"
+   },
+   {
+    "id": 28,
+    "sample": "Approved",
+    "size_pt": 7,
+    "max_chars": 50,
+    "role": "screen"
+   },
+   {
+    "id": 31,
+    "sample": "Avg. time",
+    "size_pt": 7,
+    "max_chars": 50,
+    "role": "screen"
+   },
+   {
+    "id": 32,
+    "sample": "1.4 d",
+    "size_pt": 18,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "Request",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 36,
+    "sample": "Requester",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 37,
+    "sample": "Amount",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 38,
+    "sample": "Status",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 40,
+    "sample": "Laptops for new hires",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 41,
+    "sample": "Priya S.",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 42,
+    "sample": "₹ 4,20,000",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 44,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 46,
+    "sample": "Office chairs",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 47,
+    "sample": "Arun K.",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 48,
+    "sample": "₹ 96,000",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 50,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   },
+   {
+    "id": 52,
+    "sample": "Cloud credits",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 53,
+    "sample": "Meera R.",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 54,
+    "sample": "₹ 1,50,000",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 56,
+    "sample": "IN REVIEW",
+    "size_pt": 6,
+    "max_chars": 16,
+    "role": "screen"
+   },
+   {
+    "id": 58,
+    "sample": "Event booth",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 59,
+    "sample": "Rahul D.",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 60,
+    "sample": "₹ 2,40,000",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 62,
+    "sample": "PENDING",
+    "size_pt": 6,
+    "max_chars": 13,
+    "role": "screen"
+   },
+   {
+    "id": 64,
+    "sample": "Training licences",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 65,
+    "sample": "Anita P.",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 66,
+    "sample": "₹ 60,000",
+    "size_pt": 8,
+    "max_chars": 63,
+    "role": "screen"
+   },
+   {
+    "id": 68,
+    "sample": "APPROVED",
+    "size_pt": 6,
+    "max_chars": 15,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Big product reveal on the Midnight gradient. Replace the sample screen with a real screenshot."
+ },
+ {
+  "slide": 39,
+  "slots": [
+   {
+    "id": 9,
+    "sample": "Purchase request · Form builder",
+    "size_pt": 8,
+    "max_chars": 64,
+    "role": "screen"
+   },
+   {
+    "id": 11,
+    "sample": "FIELDS",
+    "size_pt": 7,
+    "max_chars": 24,
+    "role": "screen"
+   },
+   {
+    "id": 13,
+    "sample": "Single line",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 15,
+    "sample": "Email",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 17,
+    "sample": "Number",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 19,
+    "sample": "Date",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 21,
+    "sample": "Dropdown",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 23,
+    "sample": "Lookup",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 25,
+    "sample": "File upload",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 27,
+    "sample": "Signature",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 29,
+    "sample": "PROPERTIES",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 30,
+    "sample": "Field name",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 32,
+    "sample": "Quantity",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 33,
+    "sample": "Type",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 35,
+    "sample": "Number",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 36,
+    "sample": "Required",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 38,
+    "sample": "Yes",
+    "size_pt": 8,
+    "max_chars": 23,
+    "role": "screen"
+   },
+   {
+    "id": 39,
+    "sample": "Min value",
+    "size_pt": 7,
+    "max_chars": 28,
+    "role": "screen"
+   },
+   {
+    "id": 43,
+    "sample": "Purchase request",
+    "size_pt": 20,
+    "max_chars": 33,
+    "role": "screen"
+   },
+   {
+    "id": 44,
+    "sample": "Item name",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 46,
+    "sample": "Quantity",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 48,
+    "sample": "Department",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 50,
+    "sample": "Needed by",
+    "size_pt": 8,
+    "max_chars": 32,
+    "role": "screen"
+   },
+   {
+    "id": 53,
+    "sample": "Submit",
+    "size_pt": 8,
+    "max_chars": 34,
+    "role": "screen"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Screenshot over the pattern edge. Paste your screenshot inside the black backdrop (28px border) and delete the sample screen."
+ },
+ {
+  "slide": 40,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ARCHITECTURE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "How the platform fits together",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Experience",
+    "size_pt": 20,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Web, mobile and portals",
+    "size_pt": 12,
+    "max_chars": 72,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Logic",
+    "size_pt": 20,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Workflows, rules and AI",
+    "size_pt": 12,
+    "max_chars": 72,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Data",
+    "size_pt": 20,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Forms, records and reports",
+    "size_pt": 12,
+    "max_chars": 72,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Integrations",
+    "size_pt": 20,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "ERP, CRM and APIs",
+    "size_pt": 12,
+    "max_chars": 72,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Four layers, top to bottom. Darker bands sit at the top; keep the order from user-facing to back end."
+ },
+ {
+  "slide": 41,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "GROWTH",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Monthly active users",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "0k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "10k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "20k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "30k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "40k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "50k",
+    "size_pt": 7,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Jan",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Feb",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Mar",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Apr",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "May",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Jun",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Jul",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Aug",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "Sep",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "Oct",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Nov",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Dec",
+    "size_pt": 7,
+    "max_chars": 9,
+    "role": "content"
+   },
+   {
+    "id": 75,
+    "sample": "2026",
+    "size_pt": 7,
+    "max_chars": 14,
+    "role": "content"
+   },
+   {
+    "id": 77,
+    "sample": "2025",
+    "size_pt": 7,
+    "max_chars": 14,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Line chart drawn with shapes so it imports into Zoho Show. To change a value, move the point and its two line ends, or replace the whole chart with Show’s own chart (Insert → Chart). Numbers are thousands of users."
+ },
+ {
+  "slide": 42,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "07 / ROI",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "The math your CFO wants to see.",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "10×",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "faster app delivery",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "vs. traditional development",
+    "size_pt": 8,
+    "max_chars": 70,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "70%",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "lower cost per app",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "average customer report",
+    "size_pt": 8,
+    "max_chars": 70,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "3 wk",
+    "size_pt": 44,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "from idea to live",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "median for first app",
+    "size_pt": 8,
+    "max_chars": 70,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "headcount added",
+    "size_pt": 12,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "scale through citizen developers",
+    "size_pt": 8,
+    "max_chars": 70,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Four outcome numbers. They are sample figures: replace them with verified customer data."
+ },
+ {
+  "slide": 43,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "CONVERSION",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "From visitor to customer",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Visitors",
+    "size_pt": 14,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "120,000",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Sign-ups",
+    "size_pt": 14,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "18,400",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "15% of visitors",
+    "size_pt": 12,
+    "max_chars": 36,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Active trials",
+    "size_pt": 14,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "7,600",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "41% of sign-ups",
+    "size_pt": 12,
+    "max_chars": 36,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Customers",
+    "size_pt": 14,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "2,100",
+    "size_pt": 14,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "28% of trials",
+    "size_pt": 12,
+    "max_chars": 36,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Funnel from first touch to customer. Bar lengths are visual only; update the numbers and percentages."
+ },
+ {
+  "slide": 44,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "COMPARISON",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "How Creator compares",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Editable table. Keep Creator in the highlighted blue column; keep claims fair and verifiable."
+ },
+ {
+  "slide": 45,
+  "slots": [
+   {
+    "id": 5,
+    "sample": "“",
+    "size_pt": 60,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "This product completely transformed the way our team builds and ships internal tools.",
+    "size_pt": 36,
+    "max_chars": 102,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Full Name",
+    "size_pt": 10,
+    "max_chars": 51,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Designation, Company",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "One strong quote. To swap the photo: select it, then choose Replace image. Keep the same crop so faces and key details stay clear of the text."
+ },
+ {
+  "slide": 46,
+  "slots": [
+   {
+    "id": 3,
+    "sample": "Questions?",
+    "size_pt": 44,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "Thank you for your time. Let’s keep the conversation going.",
+    "size_pt": 12,
+    "max_chars": 63,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "SPEAKER",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 6,
+    "sample": "Name · Designation",
+    "size_pt": 10,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "EMAIL",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 8,
+    "sample": "name@zohocorp.com",
+    "size_pt": 10,
+    "max_chars": 39,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "WEB",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 12,
+    "sample": "© 2026 Zoho Corporation",
+    "size_pt": 7,
+    "max_chars": 48,
+    "role": "label"
+   },
+   {
+    "id": 14,
+    "sample": "QR code",
+    "size_pt": 8,
+    "max_chars": 18,
+    "role": "screen"
+   },
+   {
+    "id": 15,
+    "sample": "Scan to book a demo",
+    "size_pt": 7,
+    "max_chars": 21,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Replace the speaker details and the QR code (generate one that links to your demo or contact page)."
+ }
+]
