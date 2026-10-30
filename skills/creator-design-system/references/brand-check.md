@@ -1,7 +1,8 @@
 # Brand check — before every handover
 
-Run this on anything you made, whatever the format. For decks, `scripts/check_deck.py`
-does the mechanical part; still read the list below.
+Run this on anything you made, whatever the format. For decks, `scripts/check_deck.py`,
+and for social, video and email, `scripts/render_social.py`, do the mechanical part; still
+read the list below.
 
 ## Must pass (fix before handing over)
 
@@ -22,7 +23,7 @@ does the mechanical part; still read the list below.
 - Every sample still in place: photos, product screens, names, logos, numbers, prices, dates.
 - Every number and quote they must confirm has a source.
 - What they must do by hand (e.g. resize chart bars in Show).
-- Who reviews it: social posts and thumbnails can go out after this check; web pages and
-  print go to a designer first.
+- Who reviews it: rendered social, video and email pieces can go out after this check;
+  YouTube thumbnails, web pages and print go to a designer first.
 
 Write the handover in plain language, no file paths or jargon.

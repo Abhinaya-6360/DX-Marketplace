@@ -33,18 +33,20 @@ replace or confirm.
    - `assets/shapes/` — Shape kit v1.0 (set `color` to a token).
    - `assets/patterns/` — Connect tiles (light and bold) for the calm texture.
    - `assets/fonts/` — Zoho Puvi Regular, Medium, Semibold, Bold.
-   - `assets/deck/` — the 46-slide master deck; `scripts/` — deck build and check.
+   - `assets/social/layouts.json` — the social, video and email templates; `scripts/render_social.py` renders them to PNG and checks them.
+   - `assets/deck/` — the 46-slide master deck; `scripts/build_deck.py` and `check_deck.py` build and check decks.
 4. Before handing anything over, run through `references/brand-check.md`, fix what fails, and
    give the marketer the "tell the marketer" list.
 
 ## What to deliver
 
 - **Decks**: an editable .pptx built from the master deck, ready to import into Zoho Show.
-- **Social, video, email**: PNG at the exact size (plus PDF for carousels).
+- **Social, video, email**: PNG at the exact size from the CDS template (plus PDF for carousels).
 - **Web**: one HTML file, labelled as a draft for design and dev review.
 
-Social posts and thumbnails can be published by the marketer after the brand check. Web
-pages and print always go to a designer first.
+Social posts, stories, carousels, email headers and video backgrounds can be published by the
+marketer once the check passes and every sample is replaced. YouTube thumbnails, web pages and
+print go to a designer first.
 
 ## When the brief is thin
 
