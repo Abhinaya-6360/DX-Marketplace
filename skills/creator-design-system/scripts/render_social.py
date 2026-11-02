@@ -15,6 +15,7 @@ brief.json:
   "tag": "NEW",                     # tag label; "" hides the tag
   "screenshot": "/path/screen.png", # optional: product screenshot for the card
   "photo": "/path/cutout.png",      # optional: Quote speaker (transparent cut-out PNG)
+  "partner_logo": "/path/logo.png", # partner topic: Creator | partner co-branded lockup
   "speakers": [{"name": "Priya Raman", "role": "Product Marketing", "company": "Zoho Creator",
                 "photo": "/path/priya.png"}]          # Webinar
 }
@@ -70,7 +71,7 @@ def font_css():
 def text_css(el):
     if "px" in el:
         size, weight = el["px"]
-        lh = round(size * 1.25)
+        lh = round(size * el.get("lh", 1.25))
         ls = "-0.01em"
     else:
         s = TS[el["style"]]
@@ -79,9 +80,11 @@ def text_css(el):
     return f"font-size:{size}px;font-weight:{weight};line-height:{lh}px;letter-spacing:{ls};"
 
 
-def rich(text, tone_bold, topic):
+def rich(text, tone_bold, topic, hl=None):
     t = html.escape(text).replace("\n", "<br>")
-    if topic in ("ai", "partner"):
+    if hl:
+        span = f"<span style='color:{colour(hl)}'>\\1</span>"
+    elif topic in ("ai", "partner"):
         span = f"<span style='color:{COL['violet/100']}'>\\1</span>"
     elif tone_bold:
         span = (f"<span style='background:{COL['yellow/100']};color:{COL['grey/160']};"
@@ -146,6 +149,37 @@ def card(r, variant, photo, texts=None):
     return f"<div data-el='card' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px'>{''.join(parts)}</div>", sample
 
 
+
+ICONLIB = json.load(open(A / "icons" / "icons.json"))["library"]
+
+
+def icon_svg(name, col, size, weight="regular"):
+    if name not in ICONLIB:
+        raise SystemExit(f"Unknown icon '{name}'. Run: python icon.py list")
+    i = ICONLIB[name][weight]
+    return f"<svg viewBox='{i['viewBox']}' width='{size}' height='{size}' fill='currentColor' style='color:{col};display:block'>{i['body']}</svg>"
+
+
+TILE = {"blue": ("blue/50", "blue/100", "blue/130", "blue/150"), "violet": ("violet/50", "violet/100", "violet/130", "violet/150")}
+
+
+def tile3d(r, family, icon, alpha=1):
+    """The CDS 3D tile: two bevels, gradient face, inner shade, gloss, hairline and rim light."""
+    x, y, s, _ = r
+    c50, c100, c130, c150 = (colour(t) for t in TILE[family])
+    rad = s * 0.22
+    face = (f"position:absolute;left:0;top:0;width:{s}px;height:{s}px;border-radius:{rad}px;"
+            f"background:radial-gradient(64% 64% at 50% 56%, {c150}75, {c150}00 100%), linear-gradient(135deg, {c50} 0%, {c100} 34%, {c130} 100%);"
+            f"box-shadow:inset {s*.011}px {s*.011}px 0 #ffffffd0, inset -{s*.004}px -{s*.004}px 0 #ffffff1a;overflow:hidden")
+    gloss = f"position:absolute;left:-30%;top:-20%;width:125%;height:70%;background:linear-gradient(160deg,#ffffff4d 0%,#ffffff00 62%);transform:rotate(-8deg)"
+    hair = f"position:absolute;left:{s*.055}px;top:{s*.055}px;width:{s*.89}px;height:{s*.89}px;border-radius:{rad*.8}px;border:{max(1.5, s/127)}px solid {c50}"
+    ic = f"<div style='position:absolute;left:{s*.27}px;top:{s*.26}px'>{icon_svg(icon, '#ffffff', s*.46)}</div>" if icon else ""
+    return (f"<div data-el='tile' style='position:absolute;left:{x}px;top:{y}px;width:{s}px;height:{s}px;opacity:{alpha}'>"
+            f"<div style='position:absolute;left:{s*.075}px;top:{s*.075}px;width:{s}px;height:{s}px;border-radius:{rad}px;background:{c150}'></div>"
+            f"<div style='position:absolute;left:{s*.039}px;top:{s*.039}px;width:{s}px;height:{s}px;border-radius:{rad}px;background:{c130}'></div>"
+            f"<div style='{face}'><div style='{gloss}'></div></div><div style='{hair}'></div>{ic}</div>")
+
+
 def build(brief):
     t = LAYOUTS[brief["template"]]
     v = t["variants"][brief.get("version", "default")]
@@ -160,8 +194,22 @@ def build(brief):
             html_el.append(b)
         elif k in ("lockup", "zoho"):
             x, y, w, h = el["r"]
+            if k == "zoho" and topic == "partner" and (brief.get("partner_logo") or brief.get("logo")):
+                continue  # Brand · Logo: no Zoho logo on pieces with the co-branded lockup
             f = ("creator-lockup" if k == "lockup" else "zoho-logo") + ("-white" if el["white"] else "-colour") + ".svg"
             html_el.append(f"<img data-el='{k}' src='{svg_uri(A / 'logos' / f)}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px'>")
+            plogo = brief.get("partner_logo") or brief.get("logo")
+            if k == "lockup" and (el.get("cobrand") or (topic == "partner" and plogo)):
+                # Brand · Logo 06: Creator first, thin divider, partner ~0.78x the lockup height, 0.23x gaps, one line
+                gap, dh, ph = h * 0.23, h * 0.77, h * 0.78
+                dx = x + w + gap
+                divc = COL['grey/140'] if not el["white"] else "#ffffff66"   # grey/140 on light, white 40% on dark
+                html_el.append(f"<div style='position:absolute;left:{dx}px;top:{y + (h - dh)/2}px;width:2px;height:{dh}px;background:{divc}'></div>")
+                if plogo:
+                    html_el.append(f"<img data-el='partnerlogo' src='{data_uri(plogo)}' style='position:absolute;left:{dx + 2 + gap}px;top:{y + (h - ph)/2}px;height:{ph}px;max-width:{w * 1.1}px;object-fit:contain;object-position:left center'>")
+                else:
+                    samples.append("partner logo (supply the partner's own logo file; keep its colours)")
+                    html_el.append(f"<div style='position:absolute;left:{dx + 2 + gap}px;top:{y + (h - ph)/2}px;height:{ph}px;width:{w*0.9}px;border:2px dashed {COL['grey/60']};border-radius:6px;color:{COL['grey/120']};font-size:{ph*0.3}px;display:flex;align-items:center;justify-content:center'>Partner logo</div>")
         elif k == "tag":
             label = brief.get("tag", el["label"])
             if label == "":
@@ -183,7 +231,7 @@ def build(brief):
                 val = el["sample"]
                 samples.append(f"{el['slot']} (sample text)")
             html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;"
-                           f"color:{colour(el['fill'])};text-align:{el['align']};{text_css(el)}'>{rich(val, bold, topic)}</div>")
+                           f"color:{colour(el['fill'])};text-align:{el['align']};{text_css(el)}'>{rich(val, bold, topic, el.get('hl'))}</div>")
         elif k == "screenshot":
             c, s = screenshot_card(el["r"], brief.get("screenshot"))
             html_el.append(c)
@@ -205,6 +253,68 @@ def build(brief):
                     samples.append(f"speaker {i+1} photo")
                 if not info.get("name"):
                     samples.append(f"speaker {i+1} name and role")
+        elif k == "glow":
+            x, y, w, h = el["r"]; c = colour(el["colour"]); a = int(el["alpha"] * 255)
+            html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:radial-gradient(closest-side,{c}{a:02x},{c}00)'></div>")
+        elif k == "sparkle":
+            x, y, w, h = el["r"]
+            html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;opacity:{el['alpha']}'>{icon_svg('sparkle', '#ffffff', w, 'fill')}</div>")
+        elif k == "shadow":
+            x, y, w, h = el["r"]
+            html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;border-radius:50%;background:radial-gradient(closest-side,#01030a99,#01030a00)'></div>")
+        elif k == "tile":
+            ic = brief.get(el.get("iconSlot") or "_", el.get("icon")) if el.get("iconSlot") else el.get("icon")
+            if el.get("iconSlot") and el["iconSlot"] not in brief and el.get("icon"):
+                samples.append(f"tile icon '{el['icon']}' (sample: pick an icon that fits the topic)")
+            fam = el["family"]
+            if topic == "ai" and fam == "blue" and el.get("iconSlot") == "icon" and brief["template"] != "youtube":
+                fam = "violet"
+            html_el.append(tile3d(el["r"], fam, ic, el.get("alpha", 1)))
+        elif k == "eyebrow":
+            x, y, w, h = el["r"]; size, weight = el["px"]
+            val = txt.get(el["slot"]) or el["sample"]
+            if el["slot"] not in txt: samples.append(f"{el['slot']} (sample text)")
+            dia = svg_uri(A / "shapes" / "shape-diamond-solid.svg", colour(el["diamond"]))
+            html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h+4}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;display:flex;align-items:center;gap:{size*0.4}px;"
+                           f"color:{colour(el['fill'])};font-size:{size}px;font-weight:{weight};line-height:{h}px;letter-spacing:.06em;white-space:nowrap'>"
+                           f"<img src='{dia}' style='width:{size*0.7}px;height:{size*0.7}px'>{html.escape(val.upper())}</div>")
+        elif k == "highlightbox":
+            x, y, w, h = el["r"]; size, weight = el["px"]
+            val = txt.get(el["slot"])
+            if val is None:
+                val = el["sample"]; samples.append(f"{el['slot']} (sample text)")
+            if val:
+                html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' style='position:absolute;left:{x}px;top:{y}px;max-width:{w}px;background:{colour(el['bg'])};"
+                               f"color:{colour(el['fill'])};font-size:{size}px;font-weight:{weight};line-height:{h - 9.5}px;padding:4.7px 9.5px;border-radius:6.3px;white-space:nowrap'>{html.escape(val)}</div>")
+        elif k == "bubble":
+            x, y, w, h = el["r"]; size, weight = el["px"]
+            val = txt.get(el["slot"]) or el["sample"]
+            if el["slot"] not in txt: samples.append(f"{el['slot']} (sample text)")
+            html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:#fff;border-radius:{h*0.22}px;"
+                           f"border:1px solid {COL['grey/40']};box-shadow:0 24px 48px -8px #00000040;display:flex;align-items:center;gap:14px;padding:0 22px;"
+                           f"font-size:{size}px;font-weight:{weight};color:{COL['bluish-grey/180']};white-space:nowrap;overflow:hidden'>"
+                           f"{icon_svg('ai-sparkle', COL['violet/100'], 26, 'fill')}<span style='flex:1;overflow:hidden;text-overflow:ellipsis'>{html.escape(val)}</span>"
+                           f"<span style='width:2px;height:30px;background:{COL['blue/100']}'></span></div>")
+        elif k == "photo":
+            x, y, w, h = el["r"]; img = brief.get("photo")
+            if img:
+                outl = "filter:" + " ".join(f"drop-shadow({dx}px {dy}px 0 #fff)" for dx, dy in ((5,0),(-5,0),(0,5),(0,-5))) + ";" if el.get("outline") else ""
+                html_el.append(f"<img data-el='photo' src='{data_uri(img)}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;object-fit:contain;object-position:bottom center;{outl}'>")
+            else:
+                samples.append("customer photo (supply a transparent cut-out PNG)")
+                sil = "#ffffff99"
+                html_el.append(f"<div style='position:absolute;left:{x+w*0.3}px;top:{y+h*0.1}px;width:{w*0.4}px;height:{w*0.4}px;border-radius:50%;background:{sil}'></div>"
+                               f"<div style='position:absolute;left:{x+w*0.12}px;top:{y+h*0.55}px;width:{w*0.76}px;height:{h*0.45}px;border-radius:{w*0.38}px {w*0.38}px 0 0;background:{sil}'></div>")
+        elif k == "customerlogo":
+            x, y, w, h = el["r"]; img = brief.get("logo")
+            if img:
+                html_el.append(f"<img data-el='logo' src='{data_uri(img)}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;object-fit:contain;object-position:right center'>")
+            else:
+                samples.append("customer logo (supply the customer's own logo file; keep its colours)")
+                html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;border:2px dashed {COL['grey/60']};border-radius:6px;color:{COL['grey/120']};font-size:18px;display:flex;align-items:center;justify-content:center'>Customer logo</div>")
+        elif k == "rule":
+            x, y, w, h = el["r"]
+            html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{colour(el['fill'])}'></div>")
         elif k == "lowerthird":
             x, y, w, h = el["r"]
             html_el.append(f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{colour(el['fill'])};border-radius:{el['radius']}px'></div>")

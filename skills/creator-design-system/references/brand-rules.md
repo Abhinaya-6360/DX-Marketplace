@@ -51,6 +51,19 @@ Pick by what the piece is, not by taste:
     set on the right safe edge. Never above that line.
   - Full colour on white; all-white on blue, navy or photos.
   - Decks: closing slide only. Never lock it up with Creator in a new arrangement.
+  - Not on pieces with the Creator × Partner co-branded lockup.
+
+## Partners (co-branded lockup)
+
+From Brand · Logo, section 06 · Together with partners. Creator always leads.
+- One line, centred: Creator lockup first, a thin 2 px divider (grey/140 on light backgrounds,
+  white at 40% on dark), then the partner's logo.
+- The partner logo is about 0.78× the Creator lockup's height (Creator about 1.2× taller);
+  lead by position, not by size. Leave 0.23× the lockup height on each side of the divider.
+- Use it on anything about a partner (topic partner): pass `partner_logo` and the renderer
+  builds the lockup in place of the Creator lockup. Leave the Zoho logo off co-branded
+  pieces, so there are never three logos.
+- Never put the partner first, make it larger, recolour it, or lock it up without the divider.
 
 ## Type
 
@@ -79,6 +92,12 @@ Pick by what the piece is, not by taste:
   (blue/20, icon blue/100); violet tile (violet/20, icon violet/100) for AI content only;
   on blue backgrounds a white tile with a blue/100 icon. Never red or green tiles, never red icons.
 - Icons explain; they never decorate. No stretching, outlines or gradients on icons.
+
+## 3D tile
+
+- The CDS 3D tile (Brand · Shapes) is artwork for YouTube thumbnails and social posts only —
+  never web pages, decks or print. Blue by default; violet only for AI content. One white
+  Regular icon per tile, from the CDS icon set.
 
 ## Imagery and content
 

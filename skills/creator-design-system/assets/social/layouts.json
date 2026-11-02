@@ -1855,6 +1855,390 @@
      ]
     }
    }
+  },
+  "youtube": {
+   "name": "YouTube thumbnail",
+   "size": [
+    1280,
+    720
+   ],
+   "variants": {
+    "deep-dive": {
+     "safe": [
+      48,
+      48,
+      1184,
+      624
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "midnight",
+       "texture": 0.12
+      },
+      {
+       "t": "glow",
+       "r": [
+        680,
+        225,
+        600,
+        456
+       ],
+       "colour": "blue/100",
+       "alpha": 0.55
+      },
+      {
+       "t": "glow",
+       "r": [
+        740,
+        327,
+        392,
+        300
+       ],
+       "colour": "blue/80",
+       "alpha": 0.45
+      },
+      {
+       "t": "sparkle",
+       "r": [
+        1190,
+        140,
+        30,
+        30
+       ],
+       "alpha": 0.5
+      },
+      {
+       "t": "sparkle",
+       "r": [
+        1215,
+        215,
+        22,
+        22
+       ],
+       "alpha": 0.35
+      },
+      {
+       "t": "sparkle",
+       "r": [
+        798,
+        282,
+        20,
+        20
+       ],
+       "alpha": 0.35
+      },
+      {
+       "t": "tile",
+       "r": [
+        972,
+        169,
+        159,
+        159
+       ],
+       "family": "blue",
+       "icon": null,
+       "alpha": 0.95
+      },
+      {
+       "t": "tile",
+       "r": [
+        896,
+        251,
+        213,
+        213
+       ],
+       "family": "blue",
+       "icon": null
+      },
+      {
+       "t": "shadow",
+       "r": [
+        760,
+        611,
+        380,
+        60
+       ]
+      },
+      {
+       "t": "tile",
+       "r": [
+        804,
+        353,
+        254,
+        254
+       ],
+       "family": "blue",
+       "icon": "star",
+       "iconSlot": "icon"
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        63,
+        237,
+        75
+       ],
+       "white": true
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1067,
+        65,
+        140,
+        62
+       ],
+       "white": true
+      },
+      {
+       "t": "eyebrow",
+       "slot": "Eyebrow",
+       "r": [
+        119,
+        230,
+        560,
+        30
+       ],
+       "px": [
+        30,
+        600
+       ],
+       "fill": "base/white",
+       "diamond": "yellow/100",
+       "sample": "FEATURE DEEP DIVES"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        119,
+        292,
+        640,
+        96
+       ],
+       "px": [
+        81,
+        600
+       ],
+       "lh": 1.17,
+       "fill": "base/white",
+       "align": "left",
+       "sample": "New portal page"
+      },
+      {
+       "t": "highlightbox",
+       "slot": "Highlight",
+       "r": [
+        119,
+        397,
+        640,
+        94
+       ],
+       "px": [
+        81,
+        600
+       ],
+       "bg": "yellow/100",
+       "fill": "bluish-grey/180",
+       "sample": "customisation"
+      }
+     ]
+    },
+    "campaign-ai": {
+     "safe": [
+      48,
+      48,
+      1184,
+      624
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-ai",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        79,
+        240,
+        76
+       ],
+       "white": false
+      },
+      {
+       "t": "zoho",
+       "r": [
+        1039,
+        81,
+        161,
+        71
+       ],
+       "white": false
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        154,
+        192,
+        973,
+        230
+       ],
+       "px": [
+        98,
+        600
+       ],
+       "lh": 1.1,
+       "fill": "bluish-grey/180",
+       "align": "center",
+       "hl": "blue/100",
+       "sample": "Beyond **vibe coding.** Built for **enterprise.**"
+      },
+      {
+       "t": "tile",
+       "r": [
+        655,
+        462,
+        200,
+        200
+       ],
+       "family": "blue",
+       "icon": "shield-check",
+       "iconSlot": "icon"
+      },
+      {
+       "t": "tile",
+       "r": [
+        505,
+        565,
+        200,
+        200
+       ],
+       "family": "violet",
+       "icon": "ai-sparkle",
+       "iconSlot": "icon2"
+      },
+      {
+       "t": "bubble",
+       "slot": "Prompt",
+       "r": [
+        369,
+        476,
+        300,
+        72
+       ],
+       "px": [
+        21,
+        500
+       ],
+       "sample": "Build me an app…"
+      }
+     ]
+    },
+    "customer-story-partner": {
+     "safe": [
+      48,
+      48,
+      1184,
+      624
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-partner",
+       "texture": 0
+      },
+      {
+       "t": "photo",
+       "r": [
+        672,
+        172,
+        638,
+        579
+       ],
+       "outline": true
+      },
+      {
+       "t": "lockup",
+       "r": [
+        87,
+        83,
+        240,
+        76
+       ],
+       "white": false,
+       "cobrand": true
+      },
+      {
+       "t": "text",
+       "slot": "Quote",
+       "r": [
+        119,
+        226,
+        726,
+        252
+       ],
+       "px": [
+        84,
+        600
+       ],
+       "lh": 0.99,
+       "fill": "bluish-grey/180",
+       "align": "left",
+       "hl": "violet/100",
+       "sample": "“Every business has a use case for **Zoho Creator.**”"
+      },
+      {
+       "t": "rule",
+       "r": [
+        119,
+        517,
+        48,
+        3
+       ],
+       "fill": "blue/60"
+      },
+      {
+       "t": "text",
+       "slot": "Name",
+       "r": [
+        119,
+        540,
+        470,
+        52
+       ],
+       "px": [
+        41,
+        600
+       ],
+       "fill": "bluish-grey/180",
+       "align": "left",
+       "sample": "Full Name"
+      },
+      {
+       "t": "text",
+       "slot": "Role",
+       "r": [
+        119,
+        594,
+        470,
+        38
+       ],
+       "px": [
+        29,
+        500
+       ],
+       "fill": "bluish-grey/150",
+       "align": "left",
+       "sample": "Role, Company"
+      }
+     ]
+    }
+   }
   }
  }
 }

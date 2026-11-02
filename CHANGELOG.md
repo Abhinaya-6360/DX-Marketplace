@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.2.2 — Nov 2026
+- Removed creator-visual-language. It only pointed to creator-design-system, which already covers web pages, so the plugin now has one skill: creator-design-system.
+- Co-brand divider: 2 px grey/140 on light backgrounds (white at 40% on dark), so it reads clearly on the soft meshes.
+- No Zoho logo on pieces with the Creator × Partner co-branded lockup (including the Partner YouTube thumbnail), to avoid three logos.
+- Web footer: the development team adds the common zoho.com product footer; page drafts show a placeholder band instead of a designed footer.
+
+## 2.2.1 — Nov 2026
+- Partner co-branding (Brand · Logo 06): Creator lockup first, thin grey/60 divider, partner logo about 0.78× the lockup height on one line. Used on the Partner YouTube thumbnail and on any partner-topic post given `partner_logo`. Partner thumbnail now also carries the Zoho logo top-right.
+
+## 2.2.0 — Oct 2026
+- YouTube thumbnails: Deep dive, Campaign · AI and Customer story · Partner, rendered like the other social templates. Artwork uses the new CDS 3D tile (blue, or violet for AI) with any icon from the CDS set; highlight box, eyebrow, prompt bubble, cut-out photo and customer logo supported.
+- Print: business card front and back, A4 flyer and roll-up banner. scripts/render_print.py makes real-size PDFs in the official CMYK values from Foundations · Colour, with 3 mm bleed, crop marks, embedded Zoho Puvi, vector patterns and a working QR code. Designer approval and a printed proof are still required.
+- Web: scripts/build_web.py builds responsive page drafts from the Templates · Web sections (nav, hero, features, stats, CTA band, footer) by topic, with a full-page preview and checks (one red button per section, sources for stats). New CDS 2.0 footer; feature cards use the CDS Icon tile.
+- Icons now inherit colour correctly when placed on tiles and in web pages.
+
 ## 2.1.0 — Oct 2026
 - Social, video and email templates: 11 templates in 21 versions (Feature, Quote, Webinar, Landscape, X, Story, Reels cover, Carousel cover and slide, Email header, Video background) exported from the CDS-2.0 Figma file into assets/social/layouts.json.
 - scripts/render_social.py fills a template from a brief and renders an exact-size PNG with Zoho Puvi, the gradients, logos and Connect texture; handles topic (default, AI, partner), highlight words, screenshots and speaker photos.
