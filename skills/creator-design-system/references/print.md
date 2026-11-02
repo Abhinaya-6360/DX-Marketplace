@@ -1,6 +1,6 @@
 # Print
 
-Four CDS 2.0 print templates (Templates · Print in the CDS-2.0 Figma file) are in
+Six CDS 2.0 print templates (Templates · Print in the CDS-2.0 Figma file) are in
 `assets/print/layouts.json`. `scripts/render_print.py` turns a brief into a print PDF:
 
 - colours in the **official CMYK values** from Foundations · Colour (tokens.json `cmyk`),
@@ -15,6 +15,13 @@ Four CDS 2.0 print templates (Templates · Print in the CDS-2.0 Figma file) are 
 | `business-card-back` | 85 × 55 mm | none (logo and Signature pattern) |
 | `a4-flyer` | 210 × 297 mm | Eyebrow, Headline, Body, Benefits (up to 3), Call to action |
 | `rollup-banner` | 850 × 2000 mm | Headline, QR link |
+| `trifold` | A4 landscape, 2 sheets (outside, inside), folds at 100 / 200 mm | Outside: Eyebrow, Headline (cover), Why heading, Reasons (up to 4), Why body (inside flap), Contact heading, Contact, QR (back). Inside: Eyebrow, Heading, Body, Features 1–3 (number, title, text), Quote, Attribution, Call to action |
+| `brochure-4pp` | A4, 4 pages (cover, inside-left, inside-right, back) | Cover: Eyebrow, Headline, Subline. Inside left: Eyebrow, Heading, Body, Quote, Attribution. Inside right: Features 1–3, Call to action. Back: Heading, Contact, QR, Legal (Zoho logo on the back only) |
+
+For `trifold` and `brochure-4pp`, give text per page in the brief under `"pages"` (format at the
+top of the script). The tri-fold's inside flap is 97 mm so it folds in cleanly; fold marks sit
+outside the bleed. The 4-page brochure is delivered as four single A4 pages; the printer
+imposes them on A3.
 
 ## Workflow
 
