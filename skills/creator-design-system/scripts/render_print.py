@@ -14,6 +14,13 @@ brief.json:
   "qr": "https://www.zoho.com/creator/"          # roll-up banner
 }
 
+Sets (tri-fold = outside + inside sheets; brochure-4pp = cover, inside-left, inside-right, back)
+take text per page:
+{"template": "trifold", "qr": "https://…",
+ "pages": {"outside": {"text": {...}, "list": {...}}, "inside": {"text": {...}}}}
+{"template": "brochure-4pp",
+ "pages": {"cover": {...}, "inside-left": {...}, "inside-right": {...}, "back": {...}}}
+
 Colours are the official CMYK values from Foundations · Colour (tokens.json "cmyk"), not
 converted screen colours. Every edge has 3 mm bleed and crop marks; text and logos must sit
 5 mm inside the trim. Zoho Puvi is embedded. A designer approves and orders a printed proof
@@ -154,110 +161,141 @@ def wrap(text, font, size, width):
     return lines
 
 
-def render(brief_path, out_pdf, preview=None):
-    b = json.load(open(brief_path))
-    t = T[b["template"]]
+SETS = json.load(open(A / "print" / "layouts.json")).get("sets", {})
+
+
+def draw_page(c, tkey, b, errors, samples):
+    t = T[tkey]
     sc = t["scale"]
     W, H = t["size"][0] * sc, t["size"][1] * sc
     PW, PH = W + 2 * (BLEED + MARK), H + 2 * (BLEED + MARK)
-    c = canvas.Canvas(str(out_pdf), pagesize=(PW, PH))
-    c.setTitle(f"Zoho Creator · {t['name']}"); c.setAuthor("Zoho Creator · CDS 2.0")
+    c.setPageSize((PW, PH))
     off = BLEED + MARK
     c.setTrimBox((off, off, off + W, off + H)); c.setBleedBox((off - BLEED, off - BLEED, off + W + BLEED, off + H + BLEED))
-    c.translate(off, off)
-    errors, samples = [], []
-    # background into the bleed
-    bg = t["bg"]; bleed_r = (-BLEED, -BLEED, W + 2 * BLEED, H + 2 * BLEED)
+    c.saveState(); c.translate(off, off)
+    bg = t["bg"]
     if "gradient" in bg:
         gradient_rect(c, (-BLEED, -BLEED, W + 2 * BLEED, H + 2 * BLEED), H, bg["gradient"])
     else:
         c.setFillColor(cm(bg["fill"])); c.rect(-BLEED, -BLEED, W + 2 * BLEED, H + 2 * BLEED, stroke=0, fill=1)
     safe = (SAFE, SAFE, W - SAFE, H - SAFE)
     txt, lst = b.get("text", {}), b.get("list", {})
+    label = t["name"]
     for el in t["el"]:
         k = el["t"]
         r = [v * sc for v in el["r"]]
         x, y, w, h = r
+        def grow(rr):
+            rr = list(rr)
+            if rr[0] <= 0: rr[0] -= BLEED; rr[2] += BLEED
+            if rr[1] <= 0: rr[1] -= BLEED; rr[3] += BLEED
+            if rr[0] + rr[2] >= W - 0.5: rr[2] += BLEED
+            if rr[1] + rr[3] >= H - 0.5: rr[3] += BLEED
+            return rr
         if k == "panel":
-            ext = [x - (BLEED if x <= 0 else 0), y - (BLEED if y <= 0 else 0), w + (BLEED if x <= 0 else 0) + (BLEED if x + w >= W - 0.5 else 0), h + (BLEED if y <= 0 else 0)]
-            gradient_rect(c, ext, H, el["gradient"])
+            gradient_rect(c, grow(r), H, el["gradient"])
+        elif k == "rect":
+            rr = grow(r) if not el.get("radius") else r
+            c.setFillColor(cm(el["fill"]))
+            if el.get("radius"): c.roundRect(rr[0], H - rr[1] - rr[3], rr[2], rr[3], el["radius"] * sc, stroke=0, fill=1)
+            else: c.rect(rr[0], H - rr[1] - rr[3], rr[2], rr[3], stroke=0, fill=1)
         elif k == "pattern":
             e2 = dict(el); rr = list(el["r"])
             if rr[1] + rr[3] >= t["size"][1] - 0.5: rr[3] += BLEED / sc
             if rr[0] + rr[2] >= t["size"][0] - 0.5: rr[2] += BLEED / sc
             if rr[1] <= 0: rr[1] -= BLEED / sc; rr[3] += BLEED / sc
+            if rr[0] <= 0: rr[0] -= BLEED / sc; rr[2] += BLEED / sc
             e2["r"] = rr
             draw_pattern(c, e2, H, sc)
-        elif k == "lockup":
-            draw_svg_file(c, A / "logos" / "creator-lockup-colour.svg", r, H, recolour=[0, 0, 0, 0] if el["white"] else None)
+        elif k in ("lockup", "zoho"):
+            f = "creator-lockup-colour.svg" if k == "lockup" else "zoho-logo-colour.svg"
+            draw_svg_file(c, A / "logos" / f, r, H, recolour=[0, 0, 0, 0] if el["white"] else None)
             if x < safe[0] - .5 or y < safe[1] - .5 or x + w > safe[2] + .5 or y + h > safe[3] + .5:
-                errors.append("Creator lockup sits outside the 5 mm safe zone.")
+                errors.append(f"{label}: {'Creator lockup' if k == 'lockup' else 'Zoho logo'} sits outside the 5 mm safe zone.")
         elif k in ("text", "list", "button"):
             weight, size = el["font"]; font = f"Puvi-{weight}"; size *= sc
             if k == "list":
                 items = lst.get(el["slot"]) or el["sample"]
-                if el["slot"] not in lst: samples.append(f"{el['slot']} (sample text)")
-                if len(items) > el["max"]: errors.append(f"{el['slot']}: at most {el['max']} items.")
+                if el["slot"] not in lst: samples.append(f"{label}: {el['slot']} (sample text)")
+                if len(items) > el["max"]: errors.append(f"{label}: {el['slot']} — at most {el['max']} items.")
                 c.setFont(font, size); c.setFillColor(cm(el["fill"]))
                 for i, it in enumerate(items[:el["max"]]):
                     line = "•  " + it
-                    if pdfmetrics.stringWidth(line, font, size) > w: errors.append(f"{el['slot']}: '{it[:30]}…' is too long for one line.")
+                    if pdfmetrics.stringWidth(line, font, size) > w: errors.append(f"{label}: {el['slot']} — '{it[:30]}…' is too long for one line.")
                     c.drawString(x, H - y - size - i * el["step"] * sc, line)
                 continue
             val = txt.get(el["slot"])
             if val is None:
-                val = el["sample"]; samples.append(f"{el['slot']} (sample text)")
+                val = el["sample"]; samples.append(f"{label}: {el['slot']} (sample text)")
             if k == "button":
                 c.setFillColor(cm(el["fill"])); c.roundRect(x, H - y - h, w, h, el["radius"] * sc, stroke=0, fill=1)
                 c.setFont(font, size); c.setFillColor(cm(el["text"]))
-                if pdfmetrics.stringWidth(val, font, size) > w - 2 * el["pad"] * sc: errors.append(f"{el['slot']}: too long for the button.")
+                if pdfmetrics.stringWidth(val, font, size) > w - 2 * el["pad"] * sc: errors.append(f"{label}: {el['slot']} — too long for the button.")
                 c.drawString(x + el["pad"] * sc, H - y - h / 2 - size * 0.35, val)
                 continue
             lead = size * 1.3
             lines = wrap(val, font, size, w)
             if len(lines) * lead > h * 1.05 + 0.5:
-                errors.append(f"{el['slot']}: {len(lines)} lines don't fit (room for {max(1, int(h / lead))}). Shorten it; don't change the size.")
+                errors.append(f"{label}: {el['slot']} — {len(lines)} lines don't fit (room for {max(1, int(h / lead))}). Shorten it; don't change the size.")
             c.setFont(font, size); c.setFillColor(cm(el["fill"]))
             for i, line in enumerate(lines):
                 ty = H - y - size - i * lead
-                if el.get("align") == "center":
-                    c.drawCentredString(x + w / 2, ty, line)
-                else:
-                    c.drawString(x, ty, line)
+                if el.get("align") == "center": c.drawCentredString(x + w / 2, ty, line)
+                else: c.drawString(x, ty, line)
         elif k == "qr":
             c.setFillColor(cm(el["fill"])); c.roundRect(x, H - y - h, w, h, el["radius"] * sc, stroke=0, fill=1)
             link = b.get("qr")
             if not link:
-                link = el["sample"]; samples.append("QR code link (sample: zoho.com/creator)")
+                link = el["sample"]; samples.append(f"{label}: QR code link (sample: zoho.com/creator)")
             q = rlqr.QrCodeWidget(link); bx = q.getBounds(); qs = (w * 0.86)
             d = Drawing(qs, qs, transform=[qs / (bx[2] - bx[0]), 0, 0, qs / (bx[3] - bx[1]), 0, 0]); q.barFillColor = cm("base/black"); d.add(q)
             renderPDF.draw(d, c, x + (w - qs) / 2, H - y - h + (h - qs) / 2)
-    # crop marks (outside the bleed), registration-free, K only
     c.setStrokeColor(cm("base/black")); c.setLineWidth(0.25)
     for (px, py) in ((0, 0), (W, 0), (0, H), (W, H)):
         dx = -1 if px == 0 else 1; dy = -1 if py == 0 else 1
         c.line(px + dx * (BLEED + 1 * MM), py, px + dx * (BLEED + MARK - 1 * MM), py)
         c.line(px, py + dy * (BLEED + 1 * MM), px, py + dy * (BLEED + MARK - 1 * MM))
-    c.showPage(); c.save()
-    print(f"Saved {out_pdf} · {t['name']} · trim {t['size_mm'][0]}×{t['size_mm'][1]} mm · 3 mm bleed · CMYK")
+    c.setDash(2, 2)
+    for fx in t.get("folds", []):      # fold marks, outside the bleed, top and bottom
+        fx *= sc
+        c.line(fx, H + BLEED + 1 * MM, fx, H + BLEED + MARK - 1 * MM); c.line(fx, -BLEED - 1 * MM, fx, -BLEED - MARK + 1 * MM)
+    c.setDash()
+    c.restoreState(); c.showPage()
+
+
+def render(brief_path, out_pdf, preview=None):
+    b = json.load(open(brief_path))
+    key = b["template"]
+    pages = SETS.get(key, [key])
+    c = canvas.Canvas(str(out_pdf))
+    name = T[pages[0]]["name"].split(" · ")[0]
+    c.setTitle(f"Zoho Creator · {name}"); c.setAuthor("Zoho Creator · CDS 2.0")
+    errors, samples = [], []
+    for pk in pages:
+        pb = {**b, **b.get("pages", {}).get(pk.split("-", 1)[1], {})} if key in SETS else b
+        draw_page(c, pk, pb, errors, samples)
+    c.save()
+    t = T[pages[0]]
+    print(f"Saved {out_pdf} · {name} · {len(pages)} page(s) · trim {t['size_mm'][0]}×{t['size_mm'][1]} mm · 3 mm bleed · CMYK" + (" · fold marks" if t.get("folds") else ""))
     print("PRINT CHECK"); print("Errors: none" if not errors else "Errors:")
     for e in errors: print("  ✗", e)
     print("To replace before printing:" if samples else "To replace: none")
-    for s in samples: print("  •", s)
+    for s_ in samples: print("  •", s_)
     print("Before it goes to a vendor: a designer approves it and orders one printed proof (Guides · Print).")
     if preview:
         import subprocess
-        subprocess.run(["pdftoppm", "-png", "-r", "60" if sc == 1 else "8", "-singlefile", str(out_pdf), str(Path(preview).with_suffix(""))], check=False)
+        subprocess.run(["pdftoppm", "-png", "-r", "60" if T[pages[0]]["scale"] == 1 else "8", str(out_pdf), str(Path(preview).with_suffix(""))], check=False)
     return 1 if errors else 0
 
 
 if __name__ == "__main__":
     a = sys.argv[1:]
     if not a or a[0] == "list":
-        for k, t in T.items(): print(f"{k:22} {t['size_mm'][0]}×{t['size_mm'][1]} mm   ({t['name']})")
+        for k, t in T.items(): print(f"{k:24} {t['size_mm'][0]}×{t['size_mm'][1]} mm   ({t['name']})")
+        for k, pg in SETS.items(): print(f"{k:24} set of {len(pg)} pages: {', '.join(pg)}")
     elif a[0] == "slots":
-        for e in T[a[1]]["el"]:
-            if e.get("slot"): print(f"{e['slot']}: {e['t']}")
+        for pk in SETS.get(a[1], [a[1]]):
+            print(f"[{pk}]"); [print(f"  {e['slot']}: {e['t']}") for e in T[pk]["el"] if e.get("slot")]
     else:
         pv = a[a.index("--preview") + 1] if "--preview" in a else None
         sys.exit(render(a[0], a[1], pv))

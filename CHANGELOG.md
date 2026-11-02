@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.3.0 — Nov 2026
+- Brochures: A4 tri-fold (outside and inside sheets, 100/100/97 mm panels, fold marks) and 4-page A4 brochure (cover, inside left, inside right, back), in the official CMYK values with 3 mm bleed. Text is given per page. Matching templates added to Templates · Print in Figma.
+
 ## 2.2.2 — Nov 2026
 - Removed creator-visual-language. It only pointed to creator-design-system, which already covers web pages, so the plugin now has one skill: creator-design-system.
 - Co-brand divider: 2 px grey/140 on light backgrounds (white at 40% on dark), so it reads clearly on the soft meshes.
