@@ -23,6 +23,7 @@ replace or confirm.
    | Presentation, deck, slides, pitch, webinar talk | `references/deck.md` |
    | Social post, story, carousel, thumbnail, video background, email header, banner | `references/social.md` |
    | Landing page, web page, web section, zoho.com/creator | `references/web.md` |
+   | Business card, flyer, roll-up banner, anything printed | `references/print.md` |
 
 3. Build with the files in this skill:
    - `design-system/tokens.css` — CSS variables for every colour, role, space, radius,
@@ -33,7 +34,9 @@ replace or confirm.
    - `assets/shapes/` — Shape kit v1.0 (set `color` to a token).
    - `assets/patterns/` — Connect tiles (light and bold) for the calm texture.
    - `assets/fonts/` — Zoho Puvi Regular, Medium, Semibold, Bold.
-   - `assets/social/layouts.json` — the social, video and email templates; `scripts/render_social.py` renders them to PNG and checks them.
+   - `assets/social/layouts.json` — the social, video, email and YouTube templates; `scripts/render_social.py` renders them to PNG and checks them.
+   - `assets/print/layouts.json` — the print templates; `scripts/render_print.py` makes CMYK PDFs with bleed.
+   - `scripts/build_web.py` — builds web page drafts from the Templates · Web sections.
    - `assets/deck/` — the 46-slide master deck; `scripts/build_deck.py` and `check_deck.py` build and check decks.
 4. Before handing anything over, run through `references/brand-check.md`, fix what fails, and
    give the marketer the "tell the marketer" list.
@@ -42,11 +45,12 @@ replace or confirm.
 
 - **Decks**: an editable .pptx built from the master deck, ready to import into Zoho Show.
 - **Social, video, email**: PNG at the exact size from the CDS template (plus PDF for carousels).
-- **Web**: one HTML file, labelled as a draft for design and dev review.
+- **Web**: one self-contained HTML file plus a preview PNG, labelled as a draft for design and dev review.
+- **Print**: a CMYK PDF at real size with 3 mm bleed and crop marks, for a designer to approve.
 
-Social posts, stories, carousels, email headers and video backgrounds can be published by the
-marketer once the check passes and every sample is replaced. YouTube thumbnails, web pages and
-print go to a designer first.
+Social posts, stories, carousels, email headers, video backgrounds and YouTube thumbnails can
+be published by the marketer once the check passes and every sample is replaced. Web pages
+and print go to a designer first.
 
 ## When the brief is thin
 

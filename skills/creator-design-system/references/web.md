@@ -1,7 +1,15 @@
 # Web pages (zoho.com/creator)
 
-> **Status (v2.0):** web output is a **reviewable HTML draft** for design and dev, never
-> production code. Full section templates arrive in v2.2.
+> Web output is a **reviewable HTML draft** for design and dev, never production code.
+
+## Workflow
+
+1. Get the brief: page topic (default, AI or partner), the message, sections needed, real
+   numbers with sources, and a product screenshot if there is one.
+2. Write page.json (format at the top of `scripts/build_web.py`): sections in order from
+   nav, hero, features, stats, cta, footer (the footer is a placeholder for the dev team's). Pick card icons with `python scripts/icon.py list`.
+3. Run `python scripts/build_web.py page.json <name>.html --preview <name>.png`, fix every
+   error, view the preview, and hand over the HTML with the "To replace" list.
 
 ## Grid
 
@@ -30,7 +38,7 @@ Assemble pages from these, in this order when they're all used:
    bold, body text-large, buttons ("Start free trial" red primary with arrow, "Book a demo"
    secondary); right: a 640 × 520 panel, radius/large, holding the product screenshot card.
 3. **Feature grid**: centred section header (eyebrow, title, description), then 3 feature
-   cards (white, 1 px grey/40 border, radius/large, 32 px padding, a 48 px icon tile with a
+   cards with a CDS Icon tile (white, 1 px grey/40 border, radius/large, 32 px padding, a 48 px icon tile with a
    24 px icon from `scripts/icon.py`).
 4. **Stats**: blue/10 band, section header, 4 stat blocks. Values only from the marketer,
    with a source; otherwise "00%" placeholders.
@@ -46,9 +54,7 @@ Section padding: 120 px top and bottom, 200 px sides; 64 px between header and c
   hero, CTA band). Links, nav hover, badges, ribbons, checkmarks and focus rings are blue/100.
 - Use `tokens.css` variables, never raw hex or invented sizes.
 - The Creator lockup is the SVG in `assets/logos/`, never a typed "Creator" wordmark.
-- **Footer:** CDS 2.0 has no footer template yet. Use a simple footer on role/surface/dark
-  (blue/160): white Creator lockup, link columns (Product, Resources, Company, Legal) in
-  text-medium, and "© Zoho Corporation. All rights reserved." Flag it as provisional in the
-  handover.
+- **Footer:** the development team adds the common zoho.com product footer. Drafts show a
+  placeholder band; never design a footer.
 - Live zoho.com pages may still use pre-CDS 2.0 colours. Drafts follow CDS 2.0; that
   difference is expected.

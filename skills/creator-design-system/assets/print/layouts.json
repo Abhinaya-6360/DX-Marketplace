@@ -1,0 +1,32 @@
+{
+ "_source": "CDS-2.0 Figma · Templates · Print (Oct 2026). Units are points at template scale; 'scale' converts to real size (roll-up is drawn at 1:10).",
+ "templates": {
+  "business-card-front": {"name": "Business card · Front", "size_mm": [85, 55], "size": [241, 156], "scale": 1, "bg": {"fill": "base/white"},
+   "el": [
+    {"t": "lockup", "r": [17, 17, 85, 26.8], "white": false},
+    {"t": "text", "slot": "Name", "r": [17, 79.4, 207, 13], "font": ["Bold", 10], "fill": "grey/160", "sample": "Full Name"},
+    {"t": "text", "slot": "Designation", "r": [17, 93.5, 207, 10], "font": ["Medium", 7.5], "fill": "blue/100", "sample": "Designation"},
+    {"t": "text", "slot": "Contact", "r": [17, 119.1, 207, 18.2], "font": ["Regular", 7], "fill": "grey/130", "sample": "name@zohocorp.com  ·  +91 00000 00000\nzoho.com/creator"}]},
+  "business-card-back": {"name": "Business card · Back", "size_mm": [85, 55], "size": [241, 156], "scale": 1, "bg": {"fill": "blue/100"},
+   "el": [
+    {"t": "pattern", "kind": "signature", "r": [0, 99.2, 241, 56.8], "tile": 120, "fill": "blue/120"},
+    {"t": "lockup", "r": [69.4, 34, 102, 32.1], "white": true}]},
+  "a4-flyer": {"name": "A4 flyer", "size_mm": [210, 297], "size": [595.3, 841.9], "scale": 1, "bg": {"fill": "base/white"},
+   "el": [
+    {"t": "panel", "r": [0, 0, 595.3, 396.8], "gradient": ["blue/100", "blue/130"]},
+    {"t": "pattern", "kind": "weave", "r": [340.2, 0, 255.1, 396.8], "tile": 240, "fill": "base/white", "opacity": 1},
+    {"t": "lockup", "r": [42.5, 42.5, 119.1, 37.5], "white": true},
+    {"t": "text", "slot": "Eyebrow", "r": [42.5, 147.4, 283.5, 12], "font": ["Semibold", 9], "fill": "yellow/100", "sample": "EVENT · DATE"},
+    {"t": "text", "slot": "Headline", "r": [42.5, 170.1, 283.5, 78], "font": ["Bold", 30], "fill": "base/white", "sample": "Headline for the flyer on two lines"},
+    {"t": "text", "slot": "Body", "r": [42.5, 439.4, 510.2, 57.2], "font": ["Regular", 11], "fill": "grey/160", "sample": "Body copy explains the offer or event in two or three short sentences. Keep it at 9–11pt for comfortable reading."},
+    {"t": "list", "slot": "Benefits", "r": [42.5, 524.4, 510.2, 90], "font": ["Medium", 11], "fill": "grey/160", "step": 25.5, "max": 3, "sample": ["First benefit", "Second benefit", "Third benefit"]},
+    {"t": "button", "slot": "Call to action", "r": [42.5, 652, 170.1, 39.7], "fill": "red/90", "radius": 4, "font": ["Semibold", 9], "text": "base/white", "pad": 11.3, "sample": "Register at zoho.com/creator"},
+    {"t": "lockup", "r": [450.7, 785.2, 102, 32.1], "white": false}]},
+  "rollup-banner": {"name": "Roll-up banner", "size_mm": [850, 2000], "size": [241, 567], "scale": 10, "bg": {"gradient": ["blue/100", "blue/130"]},
+   "el": [
+    {"t": "pattern", "kind": "weave", "r": [0, 368.5, 241, 198.5], "tile": 240, "fill": "base/white", "opacity": 1},
+    {"t": "lockup", "r": [49.6, 34, 141.7, 44.6], "white": true},
+    {"t": "text", "slot": "Headline", "r": [22.7, 121.9, 195.6, 93], "font": ["Bold", 24.1], "fill": "base/white", "align": "center", "sample": "Headline that reads from three metres away"},
+    {"t": "qr", "slot": "QR link", "r": [92.1, 289.1, 56.7, 56.7], "fill": "base/white", "radius": 4, "sample": "https://www.zoho.com/creator/"}]}
+ }
+}

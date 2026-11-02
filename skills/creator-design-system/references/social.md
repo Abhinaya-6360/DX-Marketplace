@@ -49,15 +49,21 @@ neutral placeholders and the check lists them.
 
 ## YouTube thumbnails
 
-The five thumbnail versions (Campaign · AI, Deep dive, Explainer, Customer story · Partner,
-Learning series · AI) use custom 3D artwork and are not in the renderer yet. Until they are,
-build them from these specs with `design-system/tokens.css` and label them **Draft — designer
-review**: 1280 × 720, 48 px safe area with the bottom-right video-length corner clear,
-Creator lockup top-left, Zoho logo top-right in a white tab, headline 80–96 px with one
-highlighted phrase, an eyebrow of at least 28 px.
+`youtube` (1280 × 720) has three versions, rendered like every other template:
+
+| Version | Use it for | Slots and images |
+| --- | --- | --- |
+| `deep-dive` | Feature deep dives, how-tos (Midnight) | Eyebrow, Headline, Highlight (yellow box); `icon` on the front tile |
+| `campaign-ai` | AI campaigns (soft AI mesh) | Headline with **highlighted** words, Prompt (the chat bubble); `icon` and `icon2` on the tiles |
+| `customer-story-partner` | Partner and customer stories (partner mesh) | Quote with **highlighted** words, Name, Role; `photo` (cut-out), `partner_logo` (shown in the Creator | partner co-branded lockup) |
+
+The artwork uses the CDS **3D tile** (Brand · Shapes): blue by default, violet only for AI.
+Pick tile icons from `scripts/icon.py list` that match the topic (for example `star`,
+`shield-check`, `flow`, `chart-bar`, `users-three`). Keep the video-length corner (bottom
+right) clear — the templates already do.
 
 ## Who publishes
 
-Posts, stories, carousels, email headers and video backgrounds rendered with no errors can be
-published by the marketer once every sample is replaced. YouTube thumbnails, web pages and
-print go to a designer first.
+Everything rendered here with no errors — posts, stories, carousels, email headers, video
+backgrounds and YouTube thumbnails — can be published by the marketer once every sample is
+replaced. Web pages and print go to a designer first.

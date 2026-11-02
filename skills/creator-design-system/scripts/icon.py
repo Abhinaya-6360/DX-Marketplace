@@ -21,7 +21,7 @@ def svg(name, weight="regular", size=None, color=None):
         close = [n for n in data if name.replace("-", "") in n.replace("-", "")][:8]
         sys.exit(f"No icon '{name}'. Close matches: {', '.join(close) or 'none'}. Run: python icon.py list")
     i = data[name][weight]
-    attrs = f'xmlns="http://www.w3.org/2000/svg" viewBox="{i["viewBox"]}"'
+    attrs = f'xmlns="http://www.w3.org/2000/svg" viewBox="{i["viewBox"]}" fill="currentColor"'
     if size:
         attrs += f' width="{size}" height="{size}"'
     body = i["body"].replace("currentColor", color) if color else i["body"]
