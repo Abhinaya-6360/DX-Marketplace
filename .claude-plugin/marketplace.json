@@ -6,16 +6,16 @@
   },
   "metadata": {
     "description": "AI-powered design skills for UI, systems, and themes — built on the Creator Design System (CDS)",
-    "version": "2.3.0",
+    "version": "2.3.1",
     "repository": "https://github.com/Abhinaya-6360/DX-Marketplace"
   },
   "plugins": [
     {
       "name": "creator-design-skills",
-      "version": "2.3.0",
-      "description": "Zoho Creator CDS 2.0 for marketers: brand rules, tokens, logos, fonts and the master deck, for on-brand decks, social posts, thumbnails, email headers and web drafts.",
+      "version": "2.3.1",
+      "description": "Zoho Creator CDS 2.0 for marketers: brand rules, tokens, logos, fonts and the master deck, for on-brand decks, social posts, YouTube thumbnails, email headers, web drafts and print (business cards, flyers, roll-up banners and brochures).",
       "source": "./",
-      "strict": false,
+      "strict": true,
       "skills": [
         "./skills/creator-design-system"
       ]

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.3.1 — Nov 2026
+- Fixed: the plugin failed to load when installed from DX-Marketplace ("conflicting manifests") since 2.0.1. The marketplace entry now uses `strict: true`, so plugin.json and the marketplace skills list work together.
+- Plugin description now covers YouTube thumbnails and print (business cards, flyers, roll-up banners, brochures).
+
 ## 2.3.0 — Nov 2026
 - Brochures: A4 tri-fold (outside and inside sheets, 100/100/97 mm panels, fold marks) and 4-page A4 brochure (cover, inside left, inside right, back), in the official CMYK values with 3 mm bleed. Text is given per page. Matching templates added to Templates · Print in Figma.
 
