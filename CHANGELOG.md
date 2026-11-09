@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.3.2 — Nov 2026
+- Synced with the CDS-2.0 Figma file after the Nov 2026 audit.
+- Partner co-branding: partner logo about 0.85× the Creator lockup height (was 0.78×), 0.3× the lockup height between each logo and the divider (was 0.23×), matching Brand · Logo 06.
+- Spark pattern: AI-only, in any of the four colour versions.
+- Deck: the Zoho Show deck is 45 slides (30 standard + 15 extras); the .pptx also holds divider slide 31, which never stays in a finished deck.
+
 ## 2.3.1 — Nov 2026
 - Fixed: the plugin failed to load when installed from DX-Marketplace ("conflicting manifests") since 2.0.1. The marketplace entry now uses `strict: true`, so plugin.json and the marketplace skills list work together.
 - Plugin description now covers YouTube thumbnails and print (business cards, flyers, roll-up banners, brochures).

@@ -1,8 +1,9 @@
 # Decks for Zoho Show
 
 Claude never designs slides. It builds every deck from
-`assets/deck/CDS-2.0-Creator-Deck-All-Slides.pptx` — the same 46 slides marketers have in
-Zoho Show — so the result is on-brand and editable after import.
+`assets/deck/CDS-2.0-Creator-Deck-All-Slides.pptx` — the same 45 slides marketers have in
+Zoho Show (30 standard + 15 extras), plus slide 31, a divider that never stays in a finished
+deck — so the result is on-brand and editable after import.
 
 ## Workflow
 

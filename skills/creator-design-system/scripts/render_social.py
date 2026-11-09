@@ -200,8 +200,8 @@ def build(brief):
             html_el.append(f"<img data-el='{k}' src='{svg_uri(A / 'logos' / f)}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px'>")
             plogo = brief.get("partner_logo") or brief.get("logo")
             if k == "lockup" and (el.get("cobrand") or (topic == "partner" and plogo)):
-                # Brand · Logo 06: Creator first, thin divider, partner ~0.78x the lockup height, 0.23x gaps, one line
-                gap, dh, ph = h * 0.23, h * 0.77, h * 0.78
+                # Brand · Logo 06: Creator first, thin divider, partner ~0.85x the lockup height, 0.3x gaps, one line
+                gap, dh, ph = h * 0.30, h * 0.82, h * 0.85
                 dx = x + w + gap
                 divc = COL['grey/140'] if not el["white"] else "#ffffff66"   # grey/140 on light, white 40% on dark
                 html_el.append(f"<div style='position:absolute;left:{dx}px;top:{y + (h - dh)/2}px;width:2px;height:{dh}px;background:{divc}'></div>")

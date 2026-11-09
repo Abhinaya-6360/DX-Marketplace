@@ -58,8 +58,8 @@ Pick by what the piece is, not by taste:
 From Brand · Logo, section 06 · Together with partners. Creator always leads.
 - One line, centred: Creator lockup first, a thin 2 px divider (grey/140 on light backgrounds,
   white at 40% on dark), then the partner's logo.
-- The partner logo is about 0.78× the Creator lockup's height (Creator about 1.2× taller);
-  lead by position, not by size. Leave 0.23× the lockup height on each side of the divider.
+- The partner logo is about 0.85× the Creator lockup's height (Creator about 1.2× taller);
+  lead by position, not by size. Leave 0.3× the lockup height on each side of the divider.
 - Use it on anything about a partner (topic partner): pass `partner_logo` and the renderer
   builds the lockup in place of the Creator lockup. Leave the Zoho logo off co-branded
   pieces, so there are never three logos.
@@ -78,7 +78,7 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 - Shape kit v1.0: bracket (solid and frame), diamond, wedge (`assets/shapes/`, recolour with
   tokens). Never combine a pattern with a bold shape, or two patterns.
 - Patterns: Weave, Chain and Signature (logo family); Spark and Connect (story family).
-  Spark is AI-only. Let patterns bleed off one or two edges; Connect may run full-bleed only
+  Spark is AI-only, in any of the four colour versions (Blue, Ink, Light, Violet). Let patterns bleed off one or two edges; Connect may run full-bleed only
   as the calm texture above. No red in patterns.
 
 ## Icons
