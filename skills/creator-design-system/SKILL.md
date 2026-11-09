@@ -1,6 +1,6 @@
 ---
 name: creator-design-system
-description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 46-slide master deck, and the brand rules (red only for the main CTA, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
+description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 45-slide Zoho Show deck, and the brand rules (red only for the main CTA, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
 ---
 
 # Zoho Creator · CDS 2.0
@@ -37,7 +37,7 @@ replace or confirm.
    - `assets/social/layouts.json` — the social, video, email and YouTube templates; `scripts/render_social.py` renders them to PNG and checks them.
    - `assets/print/layouts.json` — the print templates; `scripts/render_print.py` makes CMYK PDFs with bleed.
    - `scripts/build_web.py` — builds web page drafts from the Templates · Web sections.
-   - `assets/deck/` — the 46-slide master deck; `scripts/build_deck.py` and `check_deck.py` build and check decks.
+   - `assets/deck/` — the 45-slide Zoho Show deck (plus one divider slide); `scripts/build_deck.py` and `check_deck.py` build and check decks.
 4. Before handing anything over, run through `references/brand-check.md`, fix what fails, and
    give the marketer the "tell the marketer" list.
 
