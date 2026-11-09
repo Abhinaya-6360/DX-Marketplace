@@ -72,6 +72,8 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   (see `references/email.md`).
 - Readable on a phone: on a 1080 px canvas, headlines 72 px or more, supporting text 32 px,
   names 28–32 px. Never shrink text to make it fit; shorten it.
+- Smallest sizes: 12 px on screen. In print, body 9 pt, captions and labels 8 pt, contact and
+  legal lines 7 pt, never smaller.
 - Highlight words: one or two words per headline, in a yellow/100 box (bold backgrounds),
   blue/100 text (light), or violet/100 text (AI and partner only).
 

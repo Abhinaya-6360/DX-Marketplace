@@ -13,6 +13,28 @@ People using this are usually marketers, not designers. Talk to them in plain la
 for missing facts instead of inventing them, and always tell them what they still need to
 replace or confirm.
 
+Use the same everyday words as the brand guidelines site (its "Words we use" page). Design
+names stay in the files and in Figma; in what you say to marketers, use the plain word first
+and give the design name in brackets only when they need to find it in Figma:
+
+| Design name | Say |
+| --- | --- |
+| lockup / mark | full logo / logo symbol |
+| clear space | empty space around the logo |
+| mesh (mesh-soft-blue, mesh-soft-ai, mesh-partner) | light background · Blue / AI / Partner |
+| CTA, Primary / Secondary / Inverse / Link button | main button, outline button, white button, text link |
+| role/text/body and other roles | what it's for: body text colour, main button colour… |
+| step 100, 10–180 scale | shade 100, shades from light (10) to dark (180) |
+| breakpoint, gutter | screen size, gap between columns |
+| tracking, line height | letter spacing, line spacing |
+| AA / AAA | easy to read / very easy to read |
+| safe area | the border text and logos must stay inside |
+| detach | break the template's link to the library |
+
+Radius and elevation keep their names (radius: how rounded the corners are; elevation: the
+shadow that lifts something off the page). Template and pattern versions keep their names too
+(Light and Bold, Calm and Bold, Blue, Ink, Light, Violet, Brand depth, Midnight, Glow).
+
 ## Always
 
 1. Read `references/brand-rules.md` before making anything. Those rules are the brand.
