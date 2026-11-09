@@ -35,6 +35,9 @@ imposes them on A3.
 
 ## Handover — always say this
 
+Hand over the PDF together with `assets/swatches/CDS-2.0-print-swatches.ase`, so the
+designer and vendor have every brand colour as a named CMYK swatch.
+
 Print is never sent straight to a vendor. A designer approves the PDF, confirms the vendor's
 preset (PDF/X-4, Coated FOGRA39 or the vendor's profile, total ink under 300%), and orders
 one printed proof before the full run (Guides · Print). The logo artwork colours are process

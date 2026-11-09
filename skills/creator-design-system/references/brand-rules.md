@@ -68,6 +68,8 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 ## Type
 
 - Zoho Puvi only (`assets/fonts/`). Use the text styles in tokens (h1–h6, display, text-*).
+  The one exception is email newsletters: Georgia for headings, Helvetica Neue for body
+  (see `references/email.md`).
 - Readable on a phone: on a 1080 px canvas, headlines 72 px or more, supporting text 32 px,
   names 28–32 px. Never shrink text to make it fit; shorten it.
 - Highlight words: one or two words per headline, in a yellow/100 box (bold backgrounds),
@@ -95,8 +97,8 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 
 ## 3D tile
 
-- The CDS 3D tile (Brand · Shapes) is artwork for YouTube thumbnails and social posts only —
-  never web pages, decks or print. Blue by default; violet only for AI content. One white
+- The CDS 3D tile (Brand · Shapes) is artwork for YouTube thumbnails, social posts and email
+  newsletters — never web pages, decks or print. Blue by default; violet only for AI content. One white
   Regular icon per tile, from the CDS icon set.
 
 ## Imagery and content
