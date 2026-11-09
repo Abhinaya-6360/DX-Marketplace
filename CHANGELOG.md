@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.0 — Nov 2026
+- Built on 2.3.2 (the CDS-2.0 audit sync); nothing from 2.3.2 changes.
+- Email newsletters: scripts/build_email.py builds email-safe newsletters (600 px, table layout, inline styles, PNG images, preheader, mobile rule) from the CDS newsletter sections — header, title with 3D tile, greeting, tinted bands (blue, violet for AI, green, yellow), item lists, stories, one red CTA, sign-off and social footer — and zips them for any email tool with a preview.
+- Email typography exception: Georgia headings and Helvetica Neue body, email only. 3D tile now allowed in email.
+- Swatch files: CDS-2.0-print-swatches.ase (official CMYK) and CDS-2.0-screen-swatches.ase (RGB). Handed over when someone asks for brand colours, and with every print PDF.
+- Five Phosphor social logos added to the icon set for email footers.
+
 ## 2.3.2 — Nov 2026
 - Synced with the CDS-2.0 Figma file after the Nov 2026 audit.
 - Partner co-branding: partner logo about 0.85× the Creator lockup height (was 0.78×), 0.3× the lockup height between each logo and the divider (was 0.23×), matching Brand · Logo 06.
