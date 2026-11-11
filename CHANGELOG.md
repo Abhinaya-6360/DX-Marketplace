@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.1 — Nov 2026
+- Plain words for marketers: SKILL.md now lists the everyday words from the brand site's "Words we use" page (full logo, main button, light background, shade 100 …), so Claude speaks the same language as the site. Design and file names are unchanged.
+- Text XL now has all four weights (Medium, Semibold and Bold added), matching the CDS-2.0 Figma text styles.
+- Print minimums written into the rules: body 9 pt, captions and labels 8 pt, contact and legal lines 7 pt, never smaller.
+- tokens.json gains a `descriptions` map: a one-line use note for every colour, role, spacing and radius token, the same text as the variable descriptions in the CDS-2.0 Figma file. Values and keys are unchanged.
+
 ## 2.4.0 — Nov 2026
 - Built on 2.3.2 (the CDS-2.0 audit sync); nothing from 2.3.2 changes.
 - Email newsletters: scripts/build_email.py builds email-safe newsletters (600 px, table layout, inline styles, PNG images, preheader, mobile rule) from the CDS newsletter sections — header, title with 3D tile, greeting, tinted bands (blue, violet for AI, green, yellow), item lists, stories, one red CTA, sign-off and social footer — and zips them for any email tool with a preview.

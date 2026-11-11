@@ -247,3 +247,6 @@
 .display-xl{font-family:var(--font);font-weight:700;font-size:88px;line-height:96px;letter-spacing:-0.03em;}
 .display-l{font-family:var(--font);font-weight:700;font-size:64px;line-height:72px;letter-spacing:-0.03em;}
 .text-xl-regular{font-family:var(--font);font-weight:400;font-size:24px;line-height:32px;letter-spacing:-0.01em;}
+.text-xl-medium{font-family:var(--font);font-weight:500;font-size:24px;line-height:32px;letter-spacing:-0.01em;}
+.text-xl-semibold{font-family:var(--font);font-weight:600;font-size:24px;line-height:32px;letter-spacing:-0.01em;}
+.text-xl-bold{font-family:var(--font);font-weight:700;font-size:24px;line-height:32px;letter-spacing:-0.01em;}
