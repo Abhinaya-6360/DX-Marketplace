@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.3 — Nov 2026
+- SKILL.md no longer points to the brand site's "Words we use" page, which was removed; the plain-words table stays.
+- Brand check and the skill description now include the form-error exception for red (red/100, never a button), matching the 2.4.2 brand rule.
+
 ## 2.4.2 — Nov 2026
 - Red: besides the main button, red/100 is also allowed for error messages in forms (role/status/error), never as a button. Matches the brand site's Colours, Buttons and Form controls pages.
 

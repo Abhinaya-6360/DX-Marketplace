@@ -9,7 +9,7 @@ read the list below.
 
 1. **Size**: exact pixel size of the template (social, video, email) or 1920 × 1080 slides.
 2. **Safe area**: text, logos and the CTA sit inside the template's safe area.
-3. **Red**: only on main calls to action; one red button per post, slide or email header, and at most one per section on web pages.
+3. **Red**: only on main calls to action; one red button per post, slide or email header, and at most one per section on web pages. The only other red is a form error message (red/100), never a button.
 4. **Violet**: present only if the topic is AI or a partner.
 5. **Background**: chosen from the table in `brand-rules.md`; no pattern behind faces or on
    AI or Glow gradients.
