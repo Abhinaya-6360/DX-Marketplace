@@ -10,7 +10,8 @@ or gradient that isn't there.
 - **Brand blue is blue/100 (#0d4ef2).** Text is grey/160 (#25272c) on light, white on blue or navy.
 - **Red is only for the main call to action** (role/action/cta, red/90): buttons that ask someone
   to sign up, register, buy or contact sales. Never red for emphasis, icons, borders, tags,
-  badges, charts or decoration. Never use blue for a main action.
+  badges, charts or decoration. Never use blue for a main action. The one other use is error
+  messages in forms (role/status/error, red/100), which is never a button.
   - Social posts, thumbnails, email headers and slides: **one red button** at most.
   - Web pages: every sign-up, buy or contact-sales button is red, but **at most one red button
     per section** (nav, hero, CTA band each get one). Everything else interactive is blue.
