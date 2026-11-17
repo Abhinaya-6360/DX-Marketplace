@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.4.2 — Nov 2026
+- Red: besides the main button, red/100 is also allowed for error messages in forms (role/status/error), never as a button. Matches the brand site's Colours, Buttons and Form controls pages.
+
 ## 2.4.1 — Nov 2026
 - Plain words for marketers: SKILL.md now lists the everyday words from the brand site's "Words we use" page (full logo, main button, light background, shade 100 …), so Claude speaks the same language as the site. Design and file names are unchanged.
 - Text XL now has all four weights (Medium, Semibold and Bold added), matching the CDS-2.0 Figma text styles.
