@@ -1,6 +1,6 @@
 ---
 name: creator-design-system
-description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, email newsletters, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 45-slide Zoho Show deck, and the brand rules (red only for the main CTA, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
+description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, email newsletters, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 45-slide Zoho Show deck, and the brand rules (red only for the main CTA and form error messages, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
 ---
 
 # Zoho Creator · CDS 2.0
@@ -13,7 +13,7 @@ People using this are usually marketers, not designers. Talk to them in plain la
 for missing facts instead of inventing them, and always tell them what they still need to
 replace or confirm.
 
-Use the same everyday words as the brand guidelines site (its "Words we use" page). Design
+Use the same everyday words as the brand guidelines site. Design
 names stay in the files and in Figma; in what you say to marketers, use the plain word first
 and give the design name in brackets only when they need to find it in Figma:
 
