@@ -69,6 +69,8 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 ## Type
 
 - Zoho Puvi only (`assets/fonts/`). Use the text styles in tokens (h1–h6, display, text-*).
+- Headings are Semibold: h1–h6/semibold and display (Semibold). Use Bold only when a heading
+  needs extra weight, never as the default. Body Regular; labels and buttons Semibold.
   The one exception is email newsletters: Georgia for headings, Helvetica Neue for body
   (see `references/email.md`).
 - Readable on a phone: on a 1080 px canvas, headlines 72 px or more, supporting text 32 px,

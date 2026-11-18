@@ -95,20 +95,20 @@ nav .wrap{{display:flex;align-items:center;height:100%;gap:32px}} nav .links{{di
 nav a.l{{color:{C['grey/160']};text-decoration:none;font-weight:500;font-size:16px}} nav a.l:hover{{color:{C['blue/100']}}}
 .hero{{padding:120px 0}} .hero .wrap{{display:grid;grid-template-columns:1fr 640px;gap:64px;align-items:center}}
 .tag{{display:inline-block;height:40px;line-height:40px;padding:0 20px;border-radius:4px;font-weight:600;font-size:16px;color:#fff;background:{accent if topic != 'default' else C['blue/100']}}}
-h1{{font-size:72px;line-height:80px;letter-spacing:-.03em;font-weight:700;margin:24px 0}} .lead{{font-size:20px;line-height:28px;color:{C['grey/120']};max-width:560px}}
+h1{{font-size:72px;line-height:80px;letter-spacing:-.03em;font-weight:600;margin:24px 0}} .lead{{font-size:20px;line-height:28px;color:{C['grey/120']};max-width:560px}}
 .btns{{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}}
 .panel{{position:relative;height:520px;border-radius:24px;overflow:hidden;{panel}}}
 .shot{{position:absolute;left:72px;top:96px;width:620px;height:384px;border-radius:24px;background:#fff;border:1px solid {C['grey/40']};box-shadow:0 40px 80px -16px #00000029;overflow:hidden}}
 .shot img{{width:100%;height:100%;object-fit:cover;object-position:top left}}
 .sec{{padding:120px 0}} .head{{text-align:center;max-width:900px;margin:0 auto 64px}}
-.eyebrow{{font-size:16px;font-weight:600;color:{accent};margin-bottom:8px}} h2{{font-size:48px;line-height:56px;letter-spacing:-.02em;font-weight:700}}
+.eyebrow{{font-size:16px;font-weight:600;color:{accent};margin-bottom:8px}} h2{{font-size:48px;line-height:56px;letter-spacing:-.02em;font-weight:600}}
 .desc{{font-size:16px;line-height:24px;color:{C['grey/130']};margin-top:8px}}
 .cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}}
 .card{{background:#fff;border:1px solid {C['grey/40']};border-radius:24px;padding:32px}}
 .tile{{width:48px;height:48px;border-radius:4px;background:{tile_bg};display:flex;align-items:center;justify-content:center;margin-bottom:16px}}
 .card h3{{font-size:32px;line-height:40px;font-weight:600;letter-spacing:-.01em;margin-bottom:16px}} .card p{{font-size:16px;line-height:24px;color:{C['grey/120']}}}
 .stats{{background:{C['blue/10']}}} .statrow{{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}}
-.stat{{background:{C['blue/10']};border-radius:8px;padding:24px 28px}} .stat .v{{font-size:88px;line-height:96px;font-weight:700;letter-spacing:-.03em;color:{accent if topic=='ai' else C['blue/100']}}}
+.stat{{background:{C['blue/10']};border-radius:8px;padding:24px 28px}} .stat .v{{font-size:88px;line-height:96px;font-weight:600;letter-spacing:-.03em;color:{accent if topic=='ai' else C['blue/100']}}}
 .stat .lb{{font-size:20px;line-height:28px;color:{C['grey/130']}}} .stat .src{{font-size:12px;color:{C['grey/120']};margin-top:4px}}
 .cta{{padding:120px 0;text-align:center;color:#fff;{cta_bg}}} .cta h2{{font-size:56px;line-height:64px;color:#fff}} .cta p{{font-size:20px;line-height:28px;margin-top:24px}}
 .cta .btns{{justify-content:center}}

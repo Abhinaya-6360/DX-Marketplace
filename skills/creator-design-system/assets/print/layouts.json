@@ -1,8 +1,8 @@
 {
- "_source": "CDS-2.0 Figma · Templates · Print (Oct 2026). Units are points at template scale; 'scale' converts to real size (roll-up is drawn at 1:10).",
+ "_source": "CDS-2.0 Figma \u00b7 Templates \u00b7 Print (Oct 2026). Units are points at template scale; 'scale' converts to real size (roll-up is drawn at 1:10).",
  "templates": {
   "business-card-front": {
-   "name": "Business card · Front",
+   "name": "Business card \u00b7 Front",
    "size_mm": [
     85,
     55
@@ -72,12 +72,12 @@
       7
      ],
      "fill": "grey/130",
-     "sample": "name@zohocorp.com  ·  +91 00000 00000\nzoho.com/creator"
+     "sample": "name@zohocorp.com  \u00b7  +91 00000 00000\nzoho.com/creator"
     }
    ]
   },
   "business-card-back": {
-   "name": "Business card · Back",
+   "name": "Business card \u00b7 Back",
    "size_mm": [
     85,
     55
@@ -180,7 +180,7 @@
       9
      ],
      "fill": "yellow/100",
-     "sample": "EVENT · DATE"
+     "sample": "EVENT \u00b7 DATE"
     },
     {
      "t": "text",
@@ -192,7 +192,7 @@
       78
      ],
      "font": [
-      "Bold",
+      "Semibold",
       30
      ],
      "fill": "base/white",
@@ -212,7 +212,7 @@
       11
      ],
      "fill": "grey/160",
-     "sample": "Body copy explains the offer or event in two or three short sentences. Keep it at 9–11pt for comfortable reading."
+     "sample": "Body copy explains the offer or event in two or three short sentences. Keep it at 9\u201311pt for comfortable reading."
     },
     {
      "t": "list",
@@ -318,7 +318,7 @@
       93
      ],
      "font": [
-      "Bold",
+      "Semibold",
       24.1
      ],
      "fill": "base/white",
@@ -341,7 +341,7 @@
    ]
   },
   "trifold-outside": {
-   "name": "Tri-fold · Outside",
+   "name": "Tri-fold \u00b7 Outside",
    "size_mm": [
     297,
     210
@@ -421,7 +421,7 @@
       140
      ],
      "font": [
-      "Bold",
+      "Semibold",
       26
      ],
      "fill": "base/white",
@@ -437,7 +437,7 @@
       44
      ],
      "font": [
-      "Bold",
+      "Semibold",
       16
      ],
      "fill": "grey/160",
@@ -502,7 +502,7 @@
       20
      ],
      "font": [
-      "Bold",
+      "Semibold",
       16
      ],
      "fill": "grey/160",
@@ -522,7 +522,7 @@
       9
      ],
      "fill": "grey/130",
-     "sample": "zoho.com/creator\nsales@zohocorp.com  ·  +91 00000 00000"
+     "sample": "zoho.com/creator\nsales@zohocorp.com  \u00b7  +91 00000 00000"
     },
     {
      "t": "qr",
@@ -540,7 +540,7 @@
    ]
   },
   "trifold-inside": {
-   "name": "Tri-fold · Inside",
+   "name": "Tri-fold \u00b7 Inside",
    "size_mm": [
     297,
     210
@@ -594,7 +594,7 @@
       90
      ],
      "font": [
-      "Bold",
+      "Semibold",
       22
      ],
      "fill": "grey/160",
@@ -614,7 +614,7 @@
       10
      ],
      "fill": "grey/160",
-     "sample": "Two or three short sentences that explain what Creator does and who it is for. Keep it at 9–11pt for comfortable reading."
+     "sample": "Two or three short sentences that explain what Creator does and who it is for. Keep it at 9\u201311pt for comfortable reading."
     },
     {
      "t": "text",
@@ -626,7 +626,7 @@
       24
      ],
      "font": [
-      "Bold",
+      "Semibold",
       18
      ],
      "fill": "blue/100",
@@ -674,7 +674,7 @@
       24
      ],
      "font": [
-      "Bold",
+      "Semibold",
       18
      ],
      "fill": "blue/100",
@@ -722,7 +722,7 @@
       24
      ],
      "font": [
-      "Bold",
+      "Semibold",
       18
      ],
      "fill": "blue/100",
@@ -774,7 +774,7 @@
       14
      ],
      "fill": "grey/160",
-     "sample": "“A short customer quote that captures the impact in their own words.”"
+     "sample": "\u201cA short customer quote that captures the impact in their own words.\u201d"
     },
     {
      "t": "text",
@@ -814,7 +814,7 @@
    ]
   },
   "brochure-cover": {
-   "name": "Brochure 4pp · Cover",
+   "name": "Brochure 4pp \u00b7 Cover",
    "size_mm": [
     210,
     297
@@ -880,7 +880,7 @@
       140
      ],
      "font": [
-      "Bold",
+      "Semibold",
       36
      ],
      "fill": "base/white",
@@ -905,7 +905,7 @@
    ]
   },
   "brochure-inside-left": {
-   "name": "Brochure 4pp · Inside left",
+   "name": "Brochure 4pp \u00b7 Inside left",
    "size_mm": [
     210,
     297
@@ -945,7 +945,7 @@
       70
      ],
      "font": [
-      "Bold",
+      "Semibold",
       26
      ],
      "fill": "grey/160",
@@ -965,7 +965,7 @@
       11
      ],
      "fill": "grey/160",
-     "sample": "Three or four short sentences that explain what Creator does, who it is for and why it matters. Keep it at 9–11pt for comfortable reading."
+     "sample": "Three or four short sentences that explain what Creator does, who it is for and why it matters. Keep it at 9\u201311pt for comfortable reading."
     },
     {
      "t": "rect",
@@ -992,7 +992,7 @@
       16
      ],
      "fill": "grey/160",
-     "sample": "“A short customer quote that captures the impact in their own words.”"
+     "sample": "\u201cA short customer quote that captures the impact in their own words.\u201d"
     },
     {
      "t": "text",
@@ -1013,7 +1013,7 @@
    ]
   },
   "brochure-inside-right": {
-   "name": "Brochure 4pp · Inside right",
+   "name": "Brochure 4pp \u00b7 Inside right",
    "size_mm": [
     210,
     297
@@ -1037,7 +1037,7 @@
       28
      ],
      "font": [
-      "Bold",
+      "Semibold",
       22
      ],
      "fill": "blue/100",
@@ -1085,7 +1085,7 @@
       28
      ],
      "font": [
-      "Bold",
+      "Semibold",
       22
      ],
      "fill": "blue/100",
@@ -1133,7 +1133,7 @@
       28
      ],
      "font": [
-      "Bold",
+      "Semibold",
       22
      ],
      "fill": "blue/100",
@@ -1193,7 +1193,7 @@
    ]
   },
   "brochure-back": {
-   "name": "Brochure 4pp · Back",
+   "name": "Brochure 4pp \u00b7 Back",
    "size_mm": [
     210,
     297
@@ -1227,7 +1227,7 @@
       30
      ],
      "font": [
-      "Bold",
+      "Semibold",
       20
      ],
      "fill": "grey/160",
@@ -1247,7 +1247,7 @@
       10
      ],
      "fill": "grey/130",
-     "sample": "zoho.com/creator\nsales@zohocorp.com  ·  +91 00000 00000"
+     "sample": "zoho.com/creator\nsales@zohocorp.com  \u00b7  +91 00000 00000"
     },
     {
      "t": "qr",
@@ -1286,7 +1286,7 @@
       7
      ],
      "fill": "grey/130",
-     "sample": "© 2026 Zoho Corporation Pvt. Ltd. All rights reserved."
+     "sample": "\u00a9 2026 Zoho Corporation Pvt. Ltd. All rights reserved."
     }
    ]
   }

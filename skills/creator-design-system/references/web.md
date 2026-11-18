@@ -35,7 +35,7 @@ Assemble pages from these, in this order when they're all used:
    Customers) in text-medium/medium grey/160; right: "Sign in" (secondary button, blue) and
    "Sign up free" (primary button, **red**). White, 1 px bottom border grey/40, sticky.
 2. **Hero** (1720 × 720), background and panel from the topic table; left: tag, headline h2
-   bold, body text-large, buttons ("Start free trial" red primary with arrow, "Book a demo"
+   semibold, body text-large, buttons ("Start free trial" red primary with arrow, "Book a demo"
    secondary); right: a 640 × 520 panel, radius/large, holding the product screenshot card.
 3. **Feature grid**: centred section header (eyebrow, title, description), then 3 feature
    cards with a CDS Icon tile (white, 1 px grey/40 border, radius/large, 32 px padding, a 48 px icon tile with a
