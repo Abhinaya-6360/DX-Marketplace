@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.5.0 — Nov 2026
+- Headings are Semibold by default, matching the CDS-2.0 Figma file: display styles, social and video headlines (h1–h6), print headlines and big numbers, and web page drafts (h1, h2, stat numbers) move from Bold to Semibold. Bold stays available for a heading that needs extra weight. Names (business cards, speaker names) stay Bold.
+- brand-rules.md: new line on heading weight.
+- Not yet changed: the Zoho Show deck (.pptx) still uses Bold titles.
+
 ## 2.4.3 — Nov 2026
 - SKILL.md no longer points to the brand site's "Words we use" page, which was removed; the plain-words table stays.
 - Brand check and the skill description now include the form-error exception for red (red/100, never a button), matching the 2.4.2 brand rule.

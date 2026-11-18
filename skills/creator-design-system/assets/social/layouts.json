@@ -51,7 +51,7 @@
         920,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -222,7 +222,7 @@
         920,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -412,7 +412,7 @@
         900,
         160
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Automate approvals with Zoho Creator"
@@ -509,7 +509,7 @@
         900,
         160
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Automate approvals with Zoho Creator"
@@ -595,7 +595,7 @@
         920,
         240
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "“We replaced six spreadsheets with one Creator app in a week.”"
@@ -699,7 +699,7 @@
         920,
         240
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "“We replaced six spreadsheets with one Creator app in a week.”"
@@ -791,7 +791,7 @@
         660,
         56
        ],
-       "style": "h4/bold",
+       "style": "h4/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "What’s new in Zoho Creator"
@@ -854,7 +854,7 @@
         660,
         56
        ],
-       "style": "h4/bold",
+       "style": "h4/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "What’s new in Zoho Creator"
@@ -937,7 +937,7 @@
         560,
         192
        ],
-       "style": "h3/bold",
+       "style": "h3/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1020,7 +1020,7 @@
         560,
         192
        ],
-       "style": "h3/bold",
+       "style": "h3/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1112,7 +1112,7 @@
         684,
         240
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1195,7 +1195,7 @@
         568,
         240
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1287,7 +1287,7 @@
         920,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1370,7 +1370,7 @@
         920,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1462,7 +1462,7 @@
         840,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Approvals, automated in minutes"
@@ -1531,7 +1531,7 @@
         920,
         176
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "5 workflows to automate this week"
@@ -1603,7 +1603,7 @@
         300,
         88
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "yellow/100",
        "align": "left",
        "sample": "01"
@@ -1617,7 +1617,7 @@
         920,
         160
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "base/white",
        "align": "left",
        "sample": "Route approvals automatically"
@@ -1703,7 +1703,7 @@
         300,
         88
        ],
-       "style": "h1/bold",
+       "style": "h1/semibold",
        "fill": "blue/100",
        "align": "left",
        "sample": "01"
@@ -1717,7 +1717,7 @@
         920,
         160
        ],
-       "style": "h2/bold",
+       "style": "h2/semibold",
        "fill": "grey/160",
        "align": "left",
        "sample": "Route approvals automatically"
@@ -1822,7 +1822,7 @@
           600,
           40
          ],
-         "style": "h6/bold",
+         "style": "h6/semibold",
          "fill": "grey/160",
          "align": "left",
          "sample": "Speaker name"
