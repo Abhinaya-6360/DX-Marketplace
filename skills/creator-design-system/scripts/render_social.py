@@ -84,7 +84,10 @@ def rich(text, tone_bold, topic, hl=None):
     t = html.escape(text).replace("\n", "<br>")
     if hl:
         span = f"<span style='color:{colour(hl)}'>\\1</span>"
-    elif topic in ("ai", "partner"):
+    elif topic == "ai" and tone_bold:
+        # AI gradient: white text, highlight words in yellow/100 (never violet on the gradient)
+        span = f"<span style='color:{COL['yellow/100']}'>\\1</span>"
+    elif topic in ("ai", "partner") and not tone_bold:
         span = f"<span style='color:{COL['violet/100']}'>\\1</span>"
     elif tone_bold:
         span = (f"<span style='background:{COL['yellow/100']};color:{COL['grey/160']};"
@@ -99,7 +102,7 @@ def background(style, texture, topic):
     if topic == "ai":
         style, texture = ("ai", 0) if bold else ("mesh-soft-ai", 0)
     elif topic == "partner":
-        style, texture = ("midnight", 0.12 if texture else 0) if bold else ("mesh-partner", 0)
+        style, texture = ("midnight", 0.08 if texture else 0) if bold else ("mesh-partner", 0)
     g = TOKENS["gradients"][style]["css"]
     tile = A / "patterns" / ("connect-tile-bold.svg" if bold else "connect-tile-light.svg")
     tex = (f"<div style='position:absolute;inset:0;background:url({svg_uri(tile)}) 0 0/480px 480px;"
