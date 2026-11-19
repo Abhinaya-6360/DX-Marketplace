@@ -13,7 +13,7 @@ email.json:
   "intro": "One or two short paragraphs.",
   "sections": [
     {"type": "band", "tone": "blue", "icon": "lightbulb", "heading": "From idea to app with AI",
-     "items": [{"icon": "note-pencil", "title": "Plan", "text": "…"}],
+     "items": [{"icon": "pencil-simple", "title": "Plan", "text": "…"}],
      "link": {"label": "WATCH THE VIDEOS →", "url": "https://…"}},
     {"type": "list", "items": [{"icon": "ai-sparkle", "title": "…", "text": "…", "link": {"label": "READ MORE →", "url": "…"}}]},
     {"type": "story", "heading": "Customer spotlight", "tile": {"icon": "star"}, "image": "/path/photo.png",
@@ -210,9 +210,11 @@ def build(spec, out):
 
 
 if __name__ == "__main__":
+    import os; os.environ["CDS_ALLOW_VIOLATION"] = "1" if "--allow-violation" in sys.argv else os.environ.get("CDS_ALLOW_VIOLATION", ""); sys.argv = [x for x in sys.argv if x != "--allow-violation"]
     a = sys.argv[1:]
     if len(a) < 2: sys.exit(__doc__)
     spec = json.load(open(a[0])); out = Path(a[1]); out.mkdir(parents=True, exist_ok=True)
+    from check_system import guard; guard(spec, sys.argv)
     page, img, errors, samples = build(spec, out)
     img.render()
     if "--base-url" in a:

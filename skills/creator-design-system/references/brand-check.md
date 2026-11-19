@@ -1,6 +1,8 @@
 # Brand check — before every handover
 
-Run this on anything you made, whatever the format. For decks, `scripts/check_deck.py`,
+Run `python scripts/check_system.py <file>` first (the .html, .pptx, or the brief .json for
+PNG and PDF output); it must pass, or every remaining item must be listed as a System violation.
+Then run this on anything you made, whatever the format. For decks, `scripts/check_deck.py`,
 for social, video, email and YouTube, `scripts/render_social.py`, for web `scripts/build_web.py`
 and for print `scripts/render_print.py`, do the mechanical part; still
 read the list below.
@@ -16,10 +18,15 @@ read the list below.
 6. **Logos**: Creator lockup unchanged and in the right version for the background; Zoho logo
    about half its width, in an allowed position; customer logos in their own colours.
 7. **Type**: Zoho Puvi, text styles from tokens, readable sizes; nothing overflows its slot.
-8. **Icons**: from `assets/icons/icons.json` only (via `scripts/icon.py`), Regular unless active, in the right tile colour.
-9. **Contrast**: grey/160 on light, white on blue, navy and midnight.
+8. **Icons**: from `assets/icons/icons.json` only (via `scripts/icon.py`), Regular unless active, in the right tile colour. No emoji or symbol characters anywhere.
+9. **Contrast (WCAG AA)**: 4.5:1 for normal text, 3:1 for large text and icons; use the pairs in `brand-rules.md`.
+10. **Nothing from outside the system**: only CDS colours, gradients, Zoho Puvi text styles, spacing, radius, elevation, logos, shapes, patterns and templates.
 
 ## Tell the marketer (list it, by slide or by element)
+
+- **System check**: "Passes CDS 2.0", or **System violations**: each thing that doesn't fit the
+  system, why, and the on-system option you'd recommend instead. Flag violations in material
+  the marketer gave you too (their copy, file or draft).
 
 - Every sample still in place: photos, product screens, names, logos, numbers, prices, dates.
 - Every number and quote they must confirm has a source.

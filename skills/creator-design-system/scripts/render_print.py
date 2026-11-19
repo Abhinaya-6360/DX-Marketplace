@@ -265,6 +265,7 @@ def draw_page(c, tkey, b, errors, samples):
 
 def render(brief_path, out_pdf, preview=None):
     b = json.load(open(brief_path))
+    from check_system import guard; guard(b, sys.argv)
     key = b["template"]
     pages = SETS.get(key, [key])
     c = canvas.Canvas(str(out_pdf))
@@ -289,6 +290,7 @@ def render(brief_path, out_pdf, preview=None):
 
 
 if __name__ == "__main__":
+    import os; os.environ["CDS_ALLOW_VIOLATION"] = "1" if "--allow-violation" in sys.argv else os.environ.get("CDS_ALLOW_VIOLATION", ""); sys.argv = [x for x in sys.argv if x != "--allow-violation"]
     a = sys.argv[1:]
     if not a or a[0] == "list":
         for k, t in T.items(): print(f"{k:24} {t['size_mm'][0]}×{t['size_mm'][1]} mm   ({t['name']})")

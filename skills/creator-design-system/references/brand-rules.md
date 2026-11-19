@@ -21,6 +21,22 @@ or gradient that isn't there.
 - **Yellow (yellow/100)** is for highlight boxes and tags on bold backgrounds.
 - **Customer and partner logos keep their own colours.** Never recolour them.
 
+## Contrast (WCAG AA, always)
+
+- Normal text needs 4.5:1 against its background; large text (24 px and up, or 19 px Semibold
+  and up) and icons, borders that carry meaning and button outlines need 3:1.
+- Safe pairs (all pass AA for any text size):
+  | Background | Text and icons |
+  | --- | --- |
+  | white, grey/10, blue/10 | grey/160 (body), grey/120 (secondary), blue/100 (links, highlight), blue/130, violet/100 (AI and partner) |
+  | blue/20, violet/20 (tiles, soft panels) | grey/160, blue/100, blue/130, violet/100 — not grey/120 for small text |
+  | yellow/100 (highlight box) | grey/160 or blue/130 — not white, not blue/100 for small text |
+  | blue/100, brand-depth, midnight, glow, violet/100 | white; yellow/100 for large highlight words only |
+  | blue/130, blue/160, grey/160, grey/180 | white, yellow/100, blue/40 |
+- On light backgrounds (meshes, soft gradients) and on photos, check the lightest point behind
+  the text. If a pair isn't in the table, check it with `scripts/check_system.py contrast`.
+- Never fade text with opacity to make it secondary; use grey/120 instead.
+
 ## Gradients (backgrounds only, marketing only)
 
 Pick by what the piece is, not by taste:
@@ -93,6 +109,11 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 - Only the CDS icon set in `assets/icons/icons.json` (Phosphor, plus CDS custom icons such as
   `ai-sparkle`, `no-code`, `visual-builder` and the `portal-*` set). Never draw, import or
   mix in other icons or emoji. Get one with `python scripts/icon.py <name>` (`list` shows all).
+- **No emoji or symbol characters in copy** (🚀 ✅ ⭐ ✨ 👉 ✓ ★ ❤ …). Replace them with the CDS
+  icon that means the same, in a tile, or remove them: ✅ → `check-circle`, 🚀 → `rocket-launch`,
+  ⭐ → `star`, 💡 → `lightbulb`, 📈 → `trend-up`, 🔒 → `lock`, ⚡ → `lightning`, 🤖 → `robot`,
+  ✨ → `sparkle` (AI: `ai-sparkle`), 📅 → `calendar-blank`, 📍 → `map-pin`, 👥 → `users`.
+  Arrows (→), bullets, dashes, © and ™ are text, not emoji, and are fine.
 - Regular by default; Fill only for the selected or active item.
 - Sizes 16, 20, 24 or 32 px, matched to the text beside them.
 - Icon tiles: 32, 40, 48 or 64 px, radius 4 px, icon at half the tile size. Blue tile

@@ -172,10 +172,12 @@ footer .bot a{{display:inline;margin:0 0 0 24px;font-size:14px}} footer .bot .gr
 
 
 if __name__ == "__main__":
+    import os; os.environ["CDS_ALLOW_VIOLATION"] = "1" if "--allow-violation" in sys.argv else os.environ.get("CDS_ALLOW_VIOLATION", ""); sys.argv = [x for x in sys.argv if x != "--allow-violation"]
     a = sys.argv[1:]
     if len(a) < 2:
         sys.exit(__doc__)
     page = json.load(open(a[0]))
+    from check_system import guard; guard(page, sys.argv)
     h, samples, errors = build(page)
     Path(a[1]).write_text(h)
     print(f"Saved {a[1]}")
