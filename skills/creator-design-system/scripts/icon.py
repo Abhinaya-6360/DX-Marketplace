@@ -19,7 +19,9 @@ def svg(name, weight="regular", size=None, color=None):
     data = json.load(open(LIB))["library"]
     if name not in data:
         close = [n for n in data if name.replace("-", "") in n.replace("-", "")][:8]
-        sys.exit(f"No icon '{name}'. Close matches: {', '.join(close) or 'none'}. Run: python icon.py list")
+        sys.exit(f"No icon '{name}'. Close matches: {', '.join(close) or 'none'}. Run: python icon.py list. "
+                 "If nothing fits, draw one in the CDS custom style (custom_style in icons.json, brand-rules.md > Icons), "
+                 "mark it data-cds-new-icon=\"<name>\" and flag it for design review. Never use emoji.")
     i = data[name][weight]
     attrs = f'xmlns="http://www.w3.org/2000/svg" viewBox="{i["viewBox"]}" fill="currentColor"'
     if size:

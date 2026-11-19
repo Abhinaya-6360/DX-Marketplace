@@ -106,9 +106,16 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 
 ## Icons
 
-- Only the CDS icon set in `assets/icons/icons.json` (Phosphor, plus CDS custom icons such as
-  `ai-sparkle`, `no-code`, `visual-builder` and the `portal-*` set). Never draw, import or
-  mix in other icons or emoji. Get one with `python scripts/icon.py <name>` (`list` shows all).
+- Always take icons from the CDS 2.0 icon set in `assets/icons/icons.json` (Phosphor, plus CDS
+  custom icons such as `ai-sparkle`, `no-code`, `visual-builder`, `api`, `form`, `mobile-app` and
+  the `portal-*` set). Get one with `python scripts/icon.py <name>` (`list` shows all). Check the
+  list and the close matches before deciding an icon is missing.
+- Never use emoji, icon fonts, other icon sets, clip art or image-generated icons.
+- Only if no CDS icon fits the meaning, draw a new one in the CDS custom style: `viewBox="0 0 32 32"`,
+  2-unit line (`stroke-width="2"`), round ends and corners, about 3 units of empty space on each
+  side, one colour (`currentColor`), no text or letters inside. Put `data-cds-new-icon="<name>"`
+  on the `<svg>`. Use it like any CDS icon (sizes, tiles, colours below), and list it in the
+  handover as a new icon for the design team to review and add to the CDS 2.0 library.
 - **No emoji or symbol characters in copy** (🚀 ✅ ⭐ ✨ 👉 ✓ ★ ❤ …). Replace them with the CDS
   icon that means the same, in a tile, or remove them: ✅ → `check-circle`, 🚀 → `rocket-launch`,
   ⭐ → `star`, 💡 → `lightbulb`, 📈 → `trend-up`, 🔒 → `lock`, ⚡ → `lightning`, 🤖 → `robot`,

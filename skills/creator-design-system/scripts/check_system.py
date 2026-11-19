@@ -15,7 +15,9 @@ What it checks
   1. Emoji and outside symbols (✅ 🚀 ★ ✓ ❤ …): never in CDS work. Use a CDS icon.
   2. Colours: every hex/rgb value must be a CDS token (colour, role, gradient, elevation).
   3. Fonts: Zoho Puvi only (email: Georgia and Helvetica Neue).
-  4. Icons: inline SVG icons must come from assets/icons/icons.json.
+  4. Icons: inline SVG icons must come from assets/icons/icons.json. A new icon drawn because
+     none fitted must carry data-cds-new-icon="<name>", use viewBox 0 0 32 32, stroke-width 2
+     and currentColor; it is listed as NEW ICON for design review, not as a violation.
   5. Red: only on the main button (or a form error); everything else is flagged.
   6. Violet: only when the topic is AI or partner (--topic ai|partner).
   7. Contrast (WCAG AA): 4.5:1 for normal text, 3:1 for large text (24 px+, or 19 px+
@@ -171,6 +173,7 @@ def brief_violations(brief, topic=None):
 
 
 # ---------- files ----------
+NEW_ICONS = []   # icons drawn because none fitted: reported for design review
 ICON_BODIES = set()
 for v in ICONS.values():
     for w in ("regular", "fill"):
@@ -205,6 +208,16 @@ def check_html(src, email=False, topic=None):
         if first and first not in fonts_ok and not first.startswith("var("):
             out.append(f"font '{first}' is not in the system — use Zoho Puvi" + (" (email: Georgia / Helvetica Neue)" if email else ""))
     for svg in re.findall(r"<svg\b.*?</svg>", body, flags=re.S | re.I):
+        new = re.search(r'data-cds-new-icon="([^"]+)"', svg)
+        if new:
+            ok = ('viewBox="0 0 32 32"' in svg and re.search(r'stroke-width="2"', svg)
+                  and "currentColor" in svg and not re.search(r"<text\b", svg, flags=re.I))
+            if ok:
+                NEW_ICONS.append(new.group(1))
+            else:
+                out.append(f"new icon '{new.group(1)}' doesn't follow the CDS custom style — viewBox 0 0 32 32, "
+                           "stroke-width 2, currentColor, no text (brand-rules.md > Icons)")
+            continue
         ds = re.findall(r'\sd="([^"]{20,})"', svg)
         if ds and not all(d in ICON_BODIES or d in ASSET_PATHS for d in ds):
             if re.search(r'viewBox="0 0 (256|32|24|16|20) ', svg):
@@ -297,6 +310,9 @@ if __name__ == "__main__":
         for x in v:
             print("  ✗ " + x)
         bad += len(v)
+    if NEW_ICONS:
+        print("\nNEW ICON(S) for design review (drawn because no CDS icon fitted): " + ", ".join(dict.fromkeys(NEW_ICONS)))
+        print("  List each one in the handover so the design team can add it to the CDS 2.0 library.")
     sys.exit(1 if bad else 0)
 
 

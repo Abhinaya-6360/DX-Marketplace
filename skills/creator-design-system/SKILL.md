@@ -43,8 +43,12 @@ set and the CDS templates. Never improvise outside it.
 
 - **No emoji or outside symbols, anywhere**: not in headlines, lists, buttons, slides, posts
   or emails (🚀 ✅ ⭐ ✨ 👉 ✓ ★ …). Where an emoji would go, use a CDS icon in a CDS icon tile
-  (`python scripts/icon.py list`), or leave it out. Never draw an icon, take one from the web or
-  another set, or generate one.
+  (`python scripts/icon.py list`), or leave it out.
+- **Icons always come from the CDS 2.0 icon set** (`assets/icons/icons.json`, via
+  `scripts/icon.py`). Never take one from the web or another set, an icon font, emoji or an
+  image generator. Only if no CDS icon fits the meaning, draw a new one in the CDS custom style
+  (rules in `references/brand-rules.md` › Icons), mark it `data-cds-new-icon="<name>"`, and list
+  it in the handover as a new icon for the design team to review and add to the library.
 - **Readable for everyone (WCAG AA)**: normal text 4.5:1, large text (24 px and up, or 19 px
   Semibold) and icons 3:1. Use the pairs from `python scripts/check_system.py pairs`; check
   anything else with `python scripts/check_system.py contrast <text> <background>`.
@@ -80,7 +84,7 @@ set and the CDS templates. Never improvise outside it.
      elevation and the ten gradients, plus Zoho Puvi `@font-face` and text-style classes.
    - `design-system/tokens.json` — the same values for scripts.
    - `assets/logos/` — Creator lockup and Zoho logo, colour and white.
-   - `assets/icons/icons.json` — the CDS icon set (318 icons, Regular and Fill) with tile spec and rules; get any icon with `python scripts/icon.py <name>` (`list` shows all names).
+   - `assets/icons/icons.json` — the CDS icon set (363 icons plus 5 social logos, Regular and Fill) with tile spec and rules; get any icon with `python scripts/icon.py <name>` (`list` shows all names).
    - `assets/shapes/` — Shape kit v1.0 (set `color` to a token).
    - `assets/patterns/` — Connect tiles (light and bold) for the calm texture.
    - `assets/fonts/` — Zoho Puvi Regular, Medium, Semibold, Bold.
