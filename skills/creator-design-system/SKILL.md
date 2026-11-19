@@ -35,6 +35,33 @@ Radius and elevation keep their names (radius: how rounded the corners are; elev
 shadow that lifts something off the page). Template and pattern versions keep their names too
 (Light and Bold, Calm and Bold, Blue, Ink, Light, Violet, Brand depth, Midnight, Glow).
 
+## System first: stay in CDS 2.0 and flag every violation
+
+Everything you make uses only the system: CDS colours and gradients, Zoho Puvi text styles,
+the spacing and radius scale, elevation styles, CDS logos, shapes and patterns, the CDS icon
+set and the CDS templates. Never improvise outside it.
+
+- **No emoji or outside symbols, anywhere**: not in headlines, lists, buttons, slides, posts
+  or emails (🚀 ✅ ⭐ ✨ 👉 ✓ ★ …). Where an emoji would go, use a CDS icon in a CDS icon tile
+  (`python scripts/icon.py list`), or leave it out. Never draw an icon, take one from the web or
+  another set, or generate one.
+- **Readable for everyone (WCAG AA)**: normal text 4.5:1, large text (24 px and up, or 19 px
+  Semibold) and icons 3:1. Use the pairs from `python scripts/check_system.py pairs`; check
+  anything else with `python scripts/check_system.py contrast <text> <background>`.
+- **Elegant by default**: one message and one focal point, generous space from the spacing
+  scale, one accent colour plus the brand blue, Semibold headings with Regular body, no more
+  than three text sizes in a block, and the CDS template layout untouched.
+- **Flag violations, every time.** When a request, a brief, pasted copy or a file you're
+  given breaks the system (an emoji, an outside colour or font, a non-CDS icon, red that isn't
+  the main button, violet outside AI or partner content, text that fails AA, a pattern behind
+  a face, a generated product screen…), don't quietly do it and don't quietly drop it. Say in
+  one plain line what doesn't fit and why, offer two or three on-system options that look good
+  and pass AA, and build the best one by default. Only if the marketer still insists, make it
+  with `--allow-violation` and list it under **System violations** in the handover.
+- Every build and render script stops on emoji and outside colours in the brief;
+  `scripts/check_system.py` checks the finished file. Every handover ends with one line:
+  "System check: passes CDS 2.0" or the list of System violations.
+
 ## Always
 
 1. Read `references/brand-rules.md` before making anything. Those rules are the brand.
@@ -61,10 +88,12 @@ shadow that lifts something off the page). Template and pattern versions keep th
    - `assets/social/layouts.json` — the social, video, email and YouTube templates; `scripts/render_social.py` renders them to PNG and checks them.
    - `assets/print/layouts.json` — the print templates; `scripts/render_print.py` makes CMYK PDFs with bleed.
    - `scripts/build_web.py` — builds web page drafts from the Templates · Web sections.
+   - `scripts/check_system.py` — the system guard: emoji, outside colours, fonts and icons, red and violet use, WCAG AA contrast; `pairs` lists the AA-safe colour pairs.
    - `scripts/build_email.py` — builds email newsletters (email-safe HTML + images, zipped).
    - `assets/deck/` — the 45-slide Zoho Show deck (plus one divider slide); `scripts/build_deck.py` and `check_deck.py` build and check decks.
-4. Before handing anything over, run through `references/brand-check.md`, fix what fails, and
-   give the marketer the "tell the marketer" list.
+4. Before handing anything over, run `python scripts/check_system.py <file>` on what you made
+   (the .html, .pptx, or the brief .json for PNG and PDF output), then run through
+   `references/brand-check.md`, fix what fails, and give the marketer the "tell the marketer" list.
 
 ## What to deliver
 

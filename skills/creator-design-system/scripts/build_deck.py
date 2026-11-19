@@ -51,6 +51,7 @@ def set_text(shape, new_text):
 
 def main(plan_path, out_path):
     plan = json.load(open(plan_path))
+    from check_system import guard; guard(plan, sys.argv)
     prs = Presentation(SOURCE_DECK)
     slides = list(prs.slides)
     wanted = [s["source"] for s in plan["slides"]]
@@ -84,6 +85,7 @@ def main(plan_path, out_path):
 
 
 if __name__ == "__main__":
+    import os; os.environ["CDS_ALLOW_VIOLATION"] = "1" if "--allow-violation" in sys.argv else os.environ.get("CDS_ALLOW_VIOLATION", ""); sys.argv = [x for x in sys.argv if x != "--allow-violation"]
     if len(sys.argv) != 3:
         sys.exit(__doc__)
     main(sys.argv[1], sys.argv[2])

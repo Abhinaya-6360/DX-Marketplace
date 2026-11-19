@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.6.0 — Nov 2026
+- System first: SKILL.md now says to stay inside CDS 2.0 every time and to flag every violation. When a request or the marketer's material breaks the system, Claude says what doesn't fit, offers two or three on-system options that pass WCAG AA, and builds the best one; a violation is only made if the marketer insists, and it is listed under System violations in the handover.
+- No emoji or symbol characters in any output; brand-rules.md maps common emoji to CDS icons (✅ check-circle, 🚀 rocket-launch, ⭐ star …).
+- WCAG AA contrast written into the rules, with a table of safe text and background pairs (grey/120 is not for small text on blue/20 or violet/20; blue/100 is not for small text on yellow).
+- New scripts/check_system.py: checks briefs, HTML, SVG and .pptx for emoji, outside colours, fonts and icons, red outside the main button, violet outside AI and partner topics, and AA contrast; `pairs` lists the safe pairs, `contrast` checks one pair.
+- build_web, build_email, build_deck, render_social and render_print stop when the brief has emoji or outside colours (exit 2), unless run with --allow-violation.
+- build_email.py example used an icon that isn't in the set (note-pencil); now pencil-simple.
+
 ## 2.5.0 — Nov 2026
 - Headings are Semibold by default, matching the CDS-2.0 Figma file: display styles, social and video headlines (h1–h6), print headlines and big numbers, and web page drafts (h1, h2, stat numbers) move from Bold to Semibold. Bold stays available for a heading that needs extra weight. Names (business cards, speaker names) stay Bold.
 - brand-rules.md: new line on heading weight.

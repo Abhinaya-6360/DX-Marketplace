@@ -347,6 +347,7 @@ CHECK_JS = """(safe) => {
 
 def render(brief_path, out_png):
     brief = json.load(open(brief_path))
+    from check_system import guard; guard(brief, sys.argv)
     page, (W, H), safe, samples = build(brief)
     out_png = Path(out_png)
     out_html = out_png.with_suffix(".html")
@@ -376,6 +377,7 @@ def render(brief_path, out_png):
 
 
 if __name__ == "__main__":
+    import os; os.environ["CDS_ALLOW_VIOLATION"] = "1" if "--allow-violation" in sys.argv else os.environ.get("CDS_ALLOW_VIOLATION", ""); sys.argv = [x for x in sys.argv if x != "--allow-violation"]
     a = sys.argv[1:]
     if not a or a[0] == "list":
         for k, t in LAYOUTS.items():
