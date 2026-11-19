@@ -166,6 +166,8 @@ def brief_violations(brief, topic=None):
     out = []
     topic = topic or (brief.get("topic") if isinstance(brief, dict) else None)
     for path, s in _strings(brief):
+        if re.search(r"icon\d?$", path.split(".")[-1]) and s.strip().lower() == "robot" and topic == "ai":
+            out.append(f"{path}: robot icon on an AI piece — use ai-sparkle (robot is only for a literal robot)")
         out += text_violations(s, f"{path}: ")
         if HEX_RE.search(s) and not s.lower().endswith((".png", ".jpg", ".svg")):
             out += colour_violations(s, f"{path}: ")
@@ -241,6 +243,57 @@ def check_html(src, email=False, topic=None):
                 out.append(f"red on <{m.group('tag')}> that isn't the main button — red is only for the main button or a form error")
     if topic not in ("ai", "partner") and any(is_violet(h) for h in HEX_RE.findall(body)):
         out.append("violet is used, but the topic isn't AI or partner — use blue, or pass --topic ai|partner if it is")
+    out += ai_violations(body)
+    return out
+
+
+AI_GRAD_RE = re.compile(r"gradient\([^;'\"]*#0d4ef2[^;'\"]*#5e05ff", re.I)
+ROBOT_PATHS = set(re.findall(r'd="([^"]{20,})"', ICONS["robot"]["regular"]["body"] + ICONS["robot"]["fill"]["body"])) if "robot" in ICONS else set()
+
+
+def ai_violations(body):
+    """AI rules (Nov 2026): violet is an accent only; no violet text on the AI gradient; no robot for AI."""
+    from html.parser import HTMLParser
+    out = []
+    rules = {}
+    for sel, dec in re.findall(r"([^{}]+)\{([^{}]*)\}", " ".join(re.findall(r"<style[^>]*>(.*?)</style>", body, flags=re.S | re.I))):
+        for one in sel.split(","):
+            one = one.strip()
+            if re.fullmatch(r"\.[\w-]+", one):
+                rules[one[1:]] = rules.get(one[1:], "") + ";" + dec
+    found = set()
+
+    class W(HTMLParser):
+        stack = [False]
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            st = ";".join(rules.get(c, "") for c in (a.get("class") or "").split()) + ";" + (a.get("style") or "")
+            ai = self.stack[-1]
+            bg = decl(st, "background(?:-color)?")
+            if bg:
+                if AI_GRAD_RE.search(bg):
+                    ai = True
+                elif HEX_RE.search(bg) or "gradient" in bg:
+                    ai = False
+                h = HEX_RE.fullmatch(bg.strip())
+                small = re.search(r"(?:^|;)\s*height\s*:\s*(\d+(?:\.\d+)?)px", st)
+                if h and is_violet(bg.strip()) and not (small and float(small.group(1)) <= 64) and tag not in ("span",):
+                    found.add("solid violet background on a card, panel or button — on AI pieces violet is an accent only; use blue or the AI gradient")
+            col = decl(st, "color")
+            if ai and col and HEX_RE.search(col) and is_violet(HEX_RE.search(col).group()):
+                found.add("violet text on the AI gradient can't be read — use white text and yellow/100 for highlight words")
+            if tag not in ("br", "img", "meta", "link", "input", "hr", "path", "rect", "circle", "line", "polyline", "polygon", "ellipse", "stop", "use"):
+                self.stack.append(ai)
+        def handle_endtag(self, tag):
+            if len(self.stack) > 1 and tag not in ("br", "img", "meta", "link", "input", "hr", "path", "rect", "circle", "line", "polyline", "polygon", "ellipse", "stop", "use"):
+                self.stack.pop()
+        def handle_startendtag(self, tag, attrs):
+            pass
+
+    W().feed(body)
+    out += sorted(found)
+    if ROBOT_PATHS and any(d in ROBOT_PATHS for d in re.findall(r'\sd="([^"]{20,})"', body)):
+        out.append("robot icon used — ai-sparkle is the AI icon; robot is only for a literal robot")
     return out
 
 

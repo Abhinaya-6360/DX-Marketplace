@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.7.1 — Nov 2026
+Fixes from colleague testing and the 19 Nov Figma decisions (CDS-2.0 file, Foundations · Colour, Brand · Patterns, Templates · Social and video).
+- AI colour: blue stays the primary colour; on AI pieces violet is an accent only (highlight words on light backgrounds, the AI tag, ai-sparkle and its tile, soft glows). Never violet cards, panels, buttons or solid violet backgrounds. Bold AI background = gradient/ai, light = mesh-soft-ai. Partner content unchanged.
+- On the AI gradient all text is white and highlight words are yellow/100 (they were violet and couldn't be read). render_social.py updated; web stat numbers are always blue/100.
+- AI icon: ai-sparkle for anything AI, agents and bots included; robot only for a literal robot. Icons sit in a tile beside a heading, never after a sentence.
+- Carousels: carousel-cover and carousel-slide gain an `ai` version (AI gradient, no texture, yellow highlights), matching Figma Tone=AI. social.md: always build carousels from the templates, no custom illustrations, and the page counter counts the cover as page 1.
+- check_system.py flags violet text on the AI gradient, solid violet cards/panels/buttons, the robot icon on AI pieces (briefs and HTML).
+- Patterns subtler: Connect texture 12% on light (was 22%), 8% on Midnight and blue (was 12%); web hero and CTA band texture 8% (was 35% / 12%). Behind text a pattern is always subtle (faint texture or Calm); full-strength patterns only on panels with no text. Deck patterns unchanged.
+
 ## 2.7.0 — Nov 2026
 - 45 icons added to assets/icons/icons.json (363 icons plus 5 social logos), from the deck icon clean-up: 1,212 old deck icons were mapped to the library with no repeats. 17 new Creator icons in the CDS custom style (32 grid, 2-unit line, round ends, Regular and Fill): api, ocr, erp, llm, ai-app-builder, ai-code, app-deploy, app-migration, app-settings, blueprint, cloud-app, code-editor, data-import, developer, form, integrations, mobile-app (llm, ai-app-builder and ai-code are AI-only, violet). 28 from Phosphor: butterfly, certificate, charging-station, file-pdf, footprints, gavel, hand, hand-coins, hand-fist, hand-heart, hand-pointing, hand-tap, hands-clapping, identification-badge, identification-card, link-break, mask-happy, password, pill, plant, police-car, recycle, security-camera, shuffle, solar-panel, steering-wheel, steps, translate. Matches the CDS-2.0 Figma file, Foundations · Icons.
 - Icon rule: icons always come from the CDS 2.0 icon set; never emoji, icon fonts, other sets or generated images. If no CDS icon fits, Claude draws one in the CDS custom style, marks it data-cds-new-icon, and lists it in the handover for design review (replaces "never draw an icon"). SKILL.md, brand-rules.md, brand-check.md, icons.json (rule text and custom_style) and icon.py updated.

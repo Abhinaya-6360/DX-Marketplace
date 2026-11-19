@@ -74,12 +74,12 @@ def build(page):
     if topic == "default":
         panel = f"background:{C['blue/100']} url({tex_light}) 0 0/480px;"
         cta_bg = f"background:{C['blue/100']};"
-        cta_tex = f"<div class='tex' style='background-image:url({tex_light});opacity:.35'></div>"
+        cta_tex = f"<div class='tex' style='background-image:url({tex_light});opacity:.08'></div>"
     elif topic == "ai":
         panel = f"background:{G['ai']};"; cta_bg = f"background:{G['ai']};"; cta_tex = ""
     else:
         panel = f"background:#fff;border:1px solid {C['grey/40']};box-shadow:0 40px 80px -16px #00000029;"
-        cta_bg = f"background:{G['midnight']};"; cta_tex = f"<div class='tex' style='background-image:url({tex_bold});opacity:.12'></div>"
+        cta_bg = f"background:{G['midnight']};"; cta_tex = f"<div class='tex' style='background-image:url({tex_bold});opacity:.08'></div>"
     fonts = "".join(f"@font-face{{font-family:'Zoho Puvi';font-weight:{n};src:url('{b64(A/'fonts'/f'Zoho-Puvi-{w}.ttf','font/ttf')}')}}"
                     for w, n in (("Regular", 400), ("Medium", 500), ("Semibold", 600), ("Bold", 700)))
     css = f"""{fonts}
@@ -108,7 +108,7 @@ h1{{font-size:72px;line-height:80px;letter-spacing:-.03em;font-weight:600;margin
 .tile{{width:48px;height:48px;border-radius:4px;background:{tile_bg};display:flex;align-items:center;justify-content:center;margin-bottom:16px}}
 .card h3{{font-size:32px;line-height:40px;font-weight:600;letter-spacing:-.01em;margin-bottom:16px}} .card p{{font-size:16px;line-height:24px;color:{C['grey/120']}}}
 .stats{{background:{C['blue/10']}}} .statrow{{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}}
-.stat{{background:{C['blue/10']};border-radius:8px;padding:24px 28px}} .stat .v{{font-size:88px;line-height:96px;font-weight:600;letter-spacing:-.03em;color:{accent if topic=='ai' else C['blue/100']}}}
+.stat{{background:{C['blue/10']};border-radius:8px;padding:24px 28px}} .stat .v{{font-size:88px;line-height:96px;font-weight:600;letter-spacing:-.03em;color:{C['blue/100']}}}
 .stat .lb{{font-size:20px;line-height:28px;color:{C['grey/130']}}} .stat .src{{font-size:12px;color:{C['grey/120']};margin-top:4px}}
 .cta{{padding:120px 0;text-align:center;color:#fff;{cta_bg}}} .cta h2{{font-size:56px;line-height:64px;color:#fff}} .cta p{{font-size:20px;line-height:28px;margin-top:24px}}
 .cta .btns{{justify-content:center}}
@@ -133,7 +133,7 @@ footer .bot a{{display:inline;margin:0 0 0 24px;font-size:14px}} footer .bot .gr
             shot = (f"<img src='{b64(s['screenshot'],'image/png')}' alt=''>" if s.get("screenshot") else
                     f"<div style='height:100%;display:flex;align-items:center;justify-content:center;color:{C['grey/120']};font-size:16px;background:{C['grey/10']}'>Product screenshot (replace)</div>")
             if not s.get("screenshot"): samples.append("Hero: product screenshot")
-            tex = f"<div class='tex' style='background-image:url({tex_light});opacity:.35'></div>" if topic == "default" else ""
+            tex = f"<div class='tex' style='background-image:url({tex_light});opacity:.08'></div>" if topic == "default" else ""
             out.append(f"<section class='hero' style='background:{hero_bg}'><div class='wrap'><div>"
                        + (f"<span class='tag'>{esc(s['tag'])}</span>" if s.get('tag') else '') +
                        f"<h1>{rich(s.get('headline','Headline'), accent)}</h1><p class='lead'>{esc(s.get('body',''))}</p>"

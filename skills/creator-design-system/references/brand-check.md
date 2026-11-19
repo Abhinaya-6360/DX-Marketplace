@@ -12,13 +12,13 @@ read the list below.
 1. **Size**: exact pixel size of the template (social, video, email) or 1920 × 1080 slides.
 2. **Safe area**: text, logos and the CTA sit inside the template's safe area.
 3. **Red**: only on main calls to action; one red button per post, slide or email header, and at most one per section on web pages. The only other red is a form error message (red/100), never a button.
-4. **Violet**: present only if the topic is AI or a partner.
+4. **Violet**: present only if the topic is AI or a partner, and on AI pieces only as an accent (highlight words on light backgrounds, AI tag, `ai-sparkle` and its tile, soft glows). No violet cards, panels, buttons or solid backgrounds; no violet text on the AI gradient (yellow/100 highlights, white text).
 5. **Background**: chosen from the table in `brand-rules.md`; no pattern behind faces or on
    AI or Glow gradients.
 6. **Logos**: Creator lockup unchanged and in the right version for the background; Zoho logo
    about half its width, in an allowed position; customer logos in their own colours.
 7. **Type**: Zoho Puvi, text styles from tokens, readable sizes; nothing overflows its slot.
-8. **Icons**: from `assets/icons/icons.json` (via `scripts/icon.py`), Regular unless active, in the right tile colour. No emoji or symbol characters anywhere. An icon drawn because none fitted follows the CDS custom style, carries `data-cds-new-icon`, and is listed as a new icon for design review.
+8. **Icons**: from `assets/icons/icons.json` (via `scripts/icon.py`), Regular unless active, in the right tile colour. No emoji or symbol characters anywhere. `ai-sparkle` for AI, never the robot face. Icons sit in a tile beside a heading, never after a sentence. An icon drawn because none fitted follows the CDS custom style, carries `data-cds-new-icon`, and is listed as a new icon for design review.
 9. **Contrast (WCAG AA)**: 4.5:1 for normal text, 3:1 for large text and icons; use the pairs in `brand-rules.md`.
 10. **Nothing from outside the system**: only CDS colours, gradients, Zoho Puvi text styles, spacing, radius, elevation, logos, shapes, patterns and templates.
 

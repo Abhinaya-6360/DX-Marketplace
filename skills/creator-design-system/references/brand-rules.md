@@ -18,6 +18,13 @@ or gradient that isn't there.
 - **Violet is only for AI and partner content.** Violet glows (mesh-soft-ai, mesh-partner) and
   violet highlight words (violet/100) appear only when the piece is about AI or about partners.
   Violet icons, shapes, patterns and tags stay AI-only.
+- **On AI pieces violet is an accent, never the main colour.** Blue stays the primary colour.
+  Violet only for highlight words on light backgrounds, the AI tag, the `ai-sparkle` icon and its
+  tile, and soft glows. Never violet cards, panels, buttons or solid violet backgrounds.
+  Partner content keeps its current treatment.
+- **AI backgrounds:** Bold = `gradient/ai` (blue/100 → violet/100); Light = `mesh-soft-ai`.
+  On `gradient/ai` all text is white; highlight words and big numbers are yellow/100, at headline
+  size only; never violet text on the AI gradient; no pattern on it.
 - **Yellow (yellow/100)** is for highlight boxes and tags on bold backgrounds.
 - **Customer and partner logos keep their own colours.** Never recolour them.
 
@@ -43,11 +50,11 @@ Pick by what the piece is, not by taste:
 
 | Situation | Gradient | Pattern texture |
 | --- | --- | --- |
-| Light post, thumbnail, email header, banner | `mesh-soft-blue` | Connect, light tile, 22% |
+| Light post, thumbnail, email header, banner | `mesh-soft-blue` | Connect, light tile, 12% |
 | Light, and the topic is AI | `mesh-soft-ai` | none |
 | Light, and the topic is a partner | `mesh-partner` | none |
 | Bold, with a product screenshot | `glow`, centred behind the screenshot | none |
-| Bold, without a product screenshot | `midnight` | Connect, bold tile, 12% |
+| Bold, without a product screenshot | `midnight` | Connect, bold tile, 8% |
 | Calm web section or text-heavy slide | `soft-blue` (or `soft-violet` for AI, `soft-yellow` for offers) | none |
 | Print | Soft · blue, Soft · violet or Midnight (meshes band in print) | as above |
 
@@ -94,7 +101,8 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
 - Smallest sizes: 12 px on screen. In print, body 9 pt, captions and labels 8 pt, contact and
   legal lines 7 pt, never smaller.
 - Highlight words: one or two words per headline, in a yellow/100 box (bold backgrounds),
-  blue/100 text (light), or violet/100 text (AI and partner only).
+  blue/100 text (light), violet/100 text (AI and partner, light backgrounds only), or
+  yellow/100 text on the AI gradient.
 
 ## Shapes and patterns
 
@@ -102,7 +110,10 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   tokens). Never combine a pattern with a bold shape, or two patterns.
 - Patterns: Weave, Chain and Signature (logo family); Spark and Connect (story family).
   Spark is AI-only, in any of the four colour versions (Blue, Ink, Light, Violet). Let patterns bleed off one or two edges; Connect may run full-bleed only
-  as the calm texture above. No red in patterns.
+  as the faint texture above: 12% on light, 8% on Midnight and blue (web hero and CTA band too).
+  It should be felt, not seen, and never compete with the message. No red in patterns.
+- **Behind text, a pattern is always subtle**: the faint texture or the Calm version. Full-strength
+  patterns only on panels with no text on them (deck title panel, flyer side panel).
 
 ## Icons
 
@@ -118,7 +129,7 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   handover as a new icon for the design team to review and add to the CDS 2.0 library.
 - **No emoji or symbol characters in copy** (🚀 ✅ ⭐ ✨ 👉 ✓ ★ ❤ …). Replace them with the CDS
   icon that means the same, in a tile, or remove them: ✅ → `check-circle`, 🚀 → `rocket-launch`,
-  ⭐ → `star`, 💡 → `lightbulb`, 📈 → `trend-up`, 🔒 → `lock`, ⚡ → `lightning`, 🤖 → `robot`,
+  ⭐ → `star`, 💡 → `lightbulb`, 📈 → `trend-up`, 🔒 → `lock`, ⚡ → `lightning`, 🤖 → `ai-sparkle` (AI) or `robot` (a literal robot),
   ✨ → `sparkle` (AI: `ai-sparkle`), 📅 → `calendar-blank`, 📍 → `map-pin`, 👥 → `users`.
   Arrows (→), bullets, dashes, © and ™ are text, not emoji, and are fine.
 - Regular by default; Fill only for the selected or active item.
@@ -127,6 +138,9 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   (blue/20, icon blue/100); violet tile (violet/20, icon violet/100) for AI content only;
   on blue backgrounds a white tile with a blue/100 icon. Never red or green tiles, never red icons.
 - Icons explain; they never decorate. No stretching, outlines or gradients on icons.
+- **AI icon is `ai-sparkle`** for anything AI, agents and bots included. Never the robot face for AI;
+  `robot` is only for a literal robot.
+- **Icons sit in a tile beside a heading or label**, never tacked on after a sentence or mid-text.
 
 ## 3D tile
 

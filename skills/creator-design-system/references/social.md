@@ -31,21 +31,26 @@ with `scripts/render_social.py`, which produces the exact-size PNG and runs the 
 | `x` | 1600 × 900 | light, bold | X post |
 | `story` | 1080 × 1920 | light, bold | Instagram, Facebook or LinkedIn story |
 | `reels-cover` | 1080 × 1920 | default | Reels and Shorts cover |
-| `carousel-cover` | 1080 × 1350 | default | First slide of a carousel |
-| `carousel-slide` | 1080 × 1350 | light, bold | Inside slides: render one per slide, numbered |
+| `carousel-cover` | 1080 × 1350 | default (Bold), ai | First slide of a carousel |
+| `carousel-slide` | 1080 × 1350 | light, bold, ai | Inside slides: render one per slide, numbered |
 | `email-header` | 1200 × 400 | light, bold | Newsletter and campaign email header |
 | `video-background` | 1920 × 1080 | default | Background behind a talking-head video, with lower third |
 
 **Topic** changes only the background and accents, following `brand-rules.md`: AI gives the
-soft AI mesh (or the AI gradient on Bold), a violet tag and violet highlights; partner gives the
-partner mesh and violet highlights. Use AI or partner only when the content is about them.
+soft AI mesh with a violet tag and violet highlights on Light, or the AI gradient on Bold with white
+text and **yellow** highlights (never violet text on the gradient); partner gives the partner mesh
+and violet highlights. Violet is an accent only. Use AI or partner only when the content is about them.
 
 **Images:** a product screenshot replaces the drawn sample in the card. Speaker photos must be
 transparent cut-out PNGs (person only, no background). If none are given, the template keeps
 neutral placeholders and the check lists them.
 
-**Carousels:** render the cover, then one `carousel-slide` per point with "Slide number" (01,
-02…) and "Page counter" (02 / 06…), then combine the PNGs into a PDF, one page per slide.
+**Carousels:** always build from `carousel-cover` and `carousel-slide` (AI news and stories: the
+`ai` version of both). Render the cover, then one `carousel-slide` per point with "Slide number" (01,
+02…) and "Page counter" (02 / 06…), then combine the PNGs into a PDF, one page per slide. The page
+counter counts the cover as page 1, so point 01 sits on page 02; tell the marketer this. No custom
+illustrations (boarding passes, badges, mascots): the middle slot is a product screenshot. Icons only
+in tiles, never after a sentence.
 
 ## YouTube thumbnails
 

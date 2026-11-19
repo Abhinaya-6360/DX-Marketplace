@@ -19,7 +19,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -102,7 +102,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -273,7 +273,7 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
       },
       {
        "t": "lockup",
@@ -770,7 +770,7 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
       },
       {
        "t": "lockup",
@@ -833,7 +833,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -988,7 +988,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -1163,7 +1163,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -1338,7 +1338,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -1430,7 +1430,7 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
       },
       {
        "t": "lockup",
@@ -1499,7 +1499,81 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        200,
+        89,
+        40
+       ],
+       "colour": "yellow",
+       "label": "GUIDE"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        264,
+        920,
+        176
+       ],
+       "style": "h1/semibold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "5 workflows to automate this week"
+      },
+      {
+       "t": "text",
+       "slot": "Swipe cue",
+       "r": [
+        80,
+        1222,
+        600,
+        28
+       ],
+       "style": "text-large/semibold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Swipe to see how  →"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        1238,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ]
+    },
+    "ai": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "ai",
+       "texture": 0
       },
       {
        "t": "lockup",
@@ -1682,7 +1756,7 @@
       {
        "t": "bg",
        "style": "mesh-soft-blue",
-       "texture": 0.22
+       "texture": 0.12
       },
       {
        "t": "lockup",
@@ -1770,6 +1844,106 @@
        "white": false
       }
      ]
+    },
+    "ai": {
+     "safe": [
+      64,
+      64,
+      952,
+      1222
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "ai",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        72,
+        176,
+        55
+       ],
+       "white": true
+      },
+      {
+       "t": "text",
+       "slot": "Slide number",
+       "r": [
+        80,
+        184,
+        300,
+        88
+       ],
+       "style": "h1/semibold",
+       "fill": "yellow/100",
+       "align": "left",
+       "sample": "01"
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        288,
+        920,
+        160
+       ],
+       "style": "h2/semibold",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "Route approvals automatically"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        468,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "Set the rules once and Creator sends each request to the right approver."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        190,
+        660,
+        660,
+        409
+       ]
+      },
+      {
+       "t": "text",
+       "slot": "Page counter",
+       "r": [
+        80,
+        1246,
+        240,
+        40
+       ],
+       "style": "h6/medium",
+       "fill": "base/white",
+       "align": "left",
+       "sample": "02 / 06"
+      },
+      {
+       "t": "zoho",
+       "r": [
+        928,
+        1247,
+        88,
+        39
+       ],
+       "white": true
+      }
+     ]
     }
    }
   },
@@ -1791,7 +1965,7 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
       },
       {
        "t": "lockup",
@@ -1874,7 +2048,7 @@
       {
        "t": "bg",
        "style": "midnight",
-       "texture": 0.12
+       "texture": 0.08
       },
       {
        "t": "glow",
