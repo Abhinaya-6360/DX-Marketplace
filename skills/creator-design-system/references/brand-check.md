@@ -18,7 +18,7 @@ read the list below.
 6. **Logos**: Creator lockup unchanged and in the right version for the background; Zoho logo
    about half its width, in an allowed position; customer logos in their own colours.
 7. **Type**: Zoho Puvi, text styles from tokens, readable sizes; nothing overflows its slot.
-8. **Icons**: from `assets/icons/icons.json` only (via `scripts/icon.py`), Regular unless active, in the right tile colour. No emoji or symbol characters anywhere.
+8. **Icons**: from `assets/icons/icons.json` (via `scripts/icon.py`), Regular unless active, in the right tile colour. No emoji or symbol characters anywhere. An icon drawn because none fitted follows the CDS custom style, carries `data-cds-new-icon`, and is listed as a new icon for design review.
 9. **Contrast (WCAG AA)**: 4.5:1 for normal text, 3:1 for large text and icons; use the pairs in `brand-rules.md`.
 10. **Nothing from outside the system**: only CDS colours, gradients, Zoho Puvi text styles, spacing, radius, elevation, logos, shapes, patterns and templates.
 

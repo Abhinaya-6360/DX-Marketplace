@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.0 — Nov 2026
+- 45 icons added to assets/icons/icons.json (363 icons plus 5 social logos), from the deck icon clean-up: 1,212 old deck icons were mapped to the library with no repeats. 17 new Creator icons in the CDS custom style (32 grid, 2-unit line, round ends, Regular and Fill): api, ocr, erp, llm, ai-app-builder, ai-code, app-deploy, app-migration, app-settings, blueprint, cloud-app, code-editor, data-import, developer, form, integrations, mobile-app (llm, ai-app-builder and ai-code are AI-only, violet). 28 from Phosphor: butterfly, certificate, charging-station, file-pdf, footprints, gavel, hand, hand-coins, hand-fist, hand-heart, hand-pointing, hand-tap, hands-clapping, identification-badge, identification-card, link-break, mask-happy, password, pill, plant, police-car, recycle, security-camera, shuffle, solar-panel, steering-wheel, steps, translate. Matches the CDS-2.0 Figma file, Foundations · Icons.
+- Icon rule: icons always come from the CDS 2.0 icon set; never emoji, icon fonts, other sets or generated images. If no CDS icon fits, Claude draws one in the CDS custom style, marks it data-cds-new-icon, and lists it in the handover for design review (replaces "never draw an icon"). SKILL.md, brand-rules.md, brand-check.md, icons.json (rule text and custom_style) and icon.py updated.
+- check_system.py accepts a marked new icon that follows the custom style and reports it as NEW ICON for design review; an unmarked outside icon, or a marked one off-style, is still a violation.
+
 ## 2.6.0 — Nov 2026
 - System first: SKILL.md now says to stay inside CDS 2.0 every time and to flag every violation. When a request or the marketer's material breaks the system, Claude says what doesn't fit, offers two or three on-system options that pass WCAG AA, and builds the best one; a violation is only made if the marketer insists, and it is listed under System violations in the handover.
 - No emoji or symbol characters in any output; brand-rules.md maps common emoji to CDS icons (✅ check-circle, 🚀 rocket-launch, ⭐ star …).
