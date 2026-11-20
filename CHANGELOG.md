@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.8.3 — Nov 2026
+- icons.json: every icon now has a what-it's-for line (363 of 363; `python scripts/icon.py list` shows them), so Claude picks icons by meaning. The 296 Phosphor lines come from the brand site and are now in the CDS-2.0 Figma icon descriptions too, so Figma, skill and site match word for word. 25 lines were tidied on the way (UK spelling, clearer wording); Brain, MagicWand and Sparkle now say they are not the AI icon (use ai-sparkle).
+
 ## 2.8.2 — Nov 2026
 - icons.json: what-it's-for lines match the CDS-2.0 Figma icon descriptions word for word (Figma wins; the brand site follows it). Changed: ai-sparkle (agents and bots included; violet tile on AI content), robot (only for literal robots, e.g. hardware or robotics), portal-loan-application (form with a coin). Figma Icon/AISparkle description updated to the same wording.
 - Deck: slide 46 Questions speaker note rewritten for the new slide (no speaker details or QR code any more). deck-slots.json regenerated.
