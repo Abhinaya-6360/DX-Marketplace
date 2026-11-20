@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.8.1 — Nov 2026
+- check_system.py no longer flags the CDS 3D tile on AI pieces. The "solid violet background on a card, panel or button" rule (2.7.1) caught the tile's violet bevel layers (violet/150 and violet/130, 200 px), so the YouTube `campaign-ai` thumbnail failed the plugin's own check. Everything inside an element marked `data-el="tile"` is now skipped by that rule (brand-rules.md allows the violet tile for AI content); real violet cards, panels and buttons are still flagged.
+- build_email.py: the flat icon tile is marked `data-el="tile"` too (the 3D hero and story tiles already were, through render_social's tile3d), so AI newsletters with a violet `hero_tile` pass.
+- check_system.py: the HTML walker's element stack is now per check (it was shared between checks in one run).
+
 ## 2.8.0 — Nov 2026
 Deck infographics and web page templates, matching the CDS-2.0 Figma file (Templates · Deck and Templates · Web).
 - Deck: 13 infographic slides added as editable slides 47–59 (Figma I01–I13): stepped stats, rating gauge, cost breakdown, SWOT, data table, progress rings, overview with chart, three points as bubbles, KPI dashboard, pricing plans, bar chart with a highlight, partners, matrix. Charts and the table are real PowerPoint charts and tables, editable in Zoho Show. The deck is now 58 slides plus the divider.
