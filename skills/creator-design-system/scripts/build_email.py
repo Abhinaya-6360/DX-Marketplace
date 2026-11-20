@@ -77,7 +77,7 @@ def svg_icon(name, colour, size, weight="regular"):
 
 
 def tile_png(img, icon, size, bg, fg, radius, name):
-    inner = (f"<div style='width:{size}px;height:{size}px;border-radius:{radius}px;background:{C[bg]};display:flex;align-items:center;justify-content:center'>"
+    inner = (f"<div data-el='tile' style='width:{size}px;height:{size}px;border-radius:{radius}px;background:{C[bg]};display:flex;align-items:center;justify-content:center'>"
              f"{svg_icon(icon, C[fg], int(size * 0.5))}</div>")
     return img.add(name, size, size, inner)
 
@@ -86,7 +86,7 @@ def tile3d_png(img, icon, family, size, name):
     sys.path.insert(0, str(Path(__file__).parent))
     import render_social as rs
     pad = int(size * 0.12)
-    return img.add(name, size + pad, size + pad, rs.tile3d([0, 0, size, size], family, icon))
+    return img.add(name, size + pad, size + pad, rs.tile3d([0, 0, size, size], family, icon))   # tile3d marks it data-el='tile' (check_system exemption)
 
 
 def logo_png(img, f, w, name):

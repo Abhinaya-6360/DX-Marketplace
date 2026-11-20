@@ -263,12 +263,17 @@ def ai_violations(body):
                 rules[one[1:]] = rules.get(one[1:], "") + ";" + dec
     found = set()
 
+    VOID = ("br", "img", "meta", "link", "input", "hr", "path", "rect", "circle", "line", "polyline", "polygon", "ellipse", "stop", "use")
+
     class W(HTMLParser):
-        stack = [False]
+        def __init__(self):
+            super().__init__()
+            self.stack = [(False, False)]   # (inside the AI gradient, inside a CDS 3D tile)
         def handle_starttag(self, tag, attrs):
             a = dict(attrs)
             st = ";".join(rules.get(c, "") for c in (a.get("class") or "").split()) + ";" + (a.get("style") or "")
-            ai = self.stack[-1]
+            ai, tile = self.stack[-1]
+            tile = tile or (a.get("data-el") or "").strip().lower() == "tile"   # the 3D tile artwork may be violet on AI pieces
             bg = decl(st, "background(?:-color)?")
             if bg:
                 if AI_GRAD_RE.search(bg):
@@ -277,15 +282,15 @@ def ai_violations(body):
                     ai = False
                 h = HEX_RE.fullmatch(bg.strip())
                 small = re.search(r"(?:^|;)\s*height\s*:\s*(\d+(?:\.\d+)?)px", st)
-                if h and is_violet(bg.strip()) and not (small and float(small.group(1)) <= 64) and tag not in ("span",):
+                if h and is_violet(bg.strip()) and not tile and not (small and float(small.group(1)) <= 64) and tag not in ("span",):
                     found.add("solid violet background on a card, panel or button — on AI pieces violet is an accent only; use blue or the AI gradient")
             col = decl(st, "color")
             if ai and col and HEX_RE.search(col) and is_violet(HEX_RE.search(col).group()):
                 found.add("violet text on the AI gradient can't be read — use white text and yellow/100 for highlight words")
-            if tag not in ("br", "img", "meta", "link", "input", "hr", "path", "rect", "circle", "line", "polyline", "polygon", "ellipse", "stop", "use"):
-                self.stack.append(ai)
+            if tag not in VOID:
+                self.stack.append((ai, tile))
         def handle_endtag(self, tag):
-            if len(self.stack) > 1 and tag not in ("br", "img", "meta", "link", "input", "hr", "path", "rect", "circle", "line", "polyline", "polygon", "ellipse", "stop", "use"):
+            if len(self.stack) > 1 and tag not in VOID:
                 self.stack.pop()
         def handle_startendtag(self, tag, attrs):
             pass
