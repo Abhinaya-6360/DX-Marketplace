@@ -34,7 +34,8 @@ def svg(name, weight="regular", size=None, color=None):
 if __name__ == "__main__":
     a = sys.argv[1:]
     if not a or a[0] == "list":
-        print("\n".join(sorted(json.load(open(LIB))["library"]))); sys.exit()
+        lib = json.load(open(LIB))["library"]
+        print("\n".join(f"{n}  — {lib[n]['use']}" if lib[n].get("use") else n for n in sorted(lib))); sys.exit()
     weight = "fill" if "--fill" in a else "regular"
     size = a[a.index("--size") + 1] if "--size" in a else None
     color = a[a.index("--color") + 1] if "--color" in a else None

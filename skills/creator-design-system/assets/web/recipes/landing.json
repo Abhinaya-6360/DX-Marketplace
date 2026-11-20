@@ -1,0 +1,76 @@
+{
+ "title": "Simple product or feature landing page",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "split",
+   "tag": "NEW",
+   "headline": "Approvals, **automated** in minutes",
+   "body": "Send every request to the right approver, without the follow-ups.",
+   "primary": "Start free trial",
+   "secondary": "Book a demo"
+  },
+  {
+   "type": "logos",
+   "title": "Trusted by over 40,000 businesses"
+  },
+  {
+   "type": "features",
+   "eyebrow": "How it helps",
+   "title": "From request to **approved**, faster",
+   "lead": "Everything approvals need, in one app.",
+   "cards": [
+    {
+     "icon": "flow",
+     "title": "Route automatically",
+     "text": "Rules send each request to the right person."
+    },
+    {
+     "icon": "bell",
+     "title": "Remind, don't chase",
+     "text": "Automatic reminders before deadlines."
+    },
+    {
+     "icon": "chart-bar",
+     "title": "See every request",
+     "text": "Live dashboards for every team."
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "quote": "We cut approval time from **a week to a day**.",
+   "name": "Name",
+   "role": "Role, Company"
+  },
+  {
+   "type": "cta",
+   "headline": "Build your approval app **today**",
+   "body": "Free for 15 days. No credit card needed.",
+   "primary": "Start free trial",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "faq",
+   "items": [
+    {
+     "q": "Do I need to know how to code?",
+     "a": "No. Start from a template or describe the app you need."
+    },
+    {
+     "q": "Can it connect to our ERP?"
+    },
+    {
+     "q": "Is there a free trial?"
+    }
+   ]
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

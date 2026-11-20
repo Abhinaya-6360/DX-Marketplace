@@ -138,6 +138,10 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   (blue/20, icon blue/100); violet tile (violet/20, icon violet/100) for AI content only;
   on blue backgrounds a white tile with a blue/100 icon. Never red or green tiles, never red icons.
 - Icons explain; they never decorate. No stretching, outlines or gradients on icons.
+- **AI agent bot illustration** (`assets/illustrations/ai-agent-bot.svg`, Figma Illustration/AI agent bot):
+  approved for AI agent pieces on dark backgrounds only (Midnight, navy, blue 100, the AI gradient), as
+  the main picture of a hero, section, post or slide, one per piece. Never on white or light
+  backgrounds, never as a small icon, never recoloured or redrawn.
 - **AI icon is `ai-sparkle`** for anything AI, agents and bots included. Never the robot face for AI;
   `robot` is only for a literal robot.
 - **Icons sit in a tile beside a heading or label**, never tacked on after a sentence or mid-text.

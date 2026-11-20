@@ -1,0 +1,67 @@
+{
+ "title": "Partner or customer stories hub (from Example · Powered by page)",
+ "topic": "partner",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "centred",
+   "tag": "PARTNER STORIES",
+   "headline": "Built by Zoho Creator **partners**",
+   "body": "Real stories from the consultants and developers who build businesses on Zoho Creator.",
+   "stats": [
+    {
+     "value": "12",
+     "label": "partner stories"
+    },
+    {
+     "value": "5",
+     "label": "regions"
+    },
+    {
+     "value": "18+",
+     "label": "industries"
+    }
+   ]
+  },
+  {
+   "type": "stories",
+   "cards": [
+    {
+     "tag": "Manufacturing",
+     "title": "Partner name",
+     "text": "From technology vendor to business partner."
+    },
+    {
+     "tag": "Healthcare",
+     "title": "Partner name",
+     "text": "One line about the story."
+    },
+    {
+     "tag": "Retail",
+     "title": "Partner name",
+     "text": "One line about the story."
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "layout": "large",
+   "quote": "The platform didn't make us a partner. **It made us a business.**",
+   "name": "Name",
+   "role": "Founder, Partner company"
+  },
+  {
+   "type": "cta",
+   "layout": "light",
+   "headline": "Are you a Zoho Creator **partner**?",
+   "body": "Share your story with the community.",
+   "primary": "Share your story"
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

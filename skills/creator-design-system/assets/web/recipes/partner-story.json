@@ -1,0 +1,79 @@
+{
+ "title": "Single partner or customer story (from Example · Powered inside page)",
+ "topic": "partner",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "photo",
+   "eyebrow": "Partner story",
+   "headline": "Partner name's journey from **vendor to partner**",
+   "body": "How one Creator partner built a practice.",
+   "facts": {
+    "Industry": "Consulting",
+    "Region": "Region"
+   }
+  },
+  {
+   "type": "steps",
+   "layout": "timeline",
+   "eyebrow": "Their journey",
+   "title": "From first app to **thriving practice**",
+   "items": [
+    {
+     "when": "Year",
+     "title": "First app",
+     "text": "Started with one internal app."
+    },
+    {
+     "when": "Year",
+     "title": "Became a partner",
+     "text": "Started building for clients."
+    },
+    {
+     "when": "Year",
+     "title": "Growing practice",
+     "text": "A team serving many clients."
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "quote": "Zoho Creator let us **say yes** to every client request.",
+   "name": "Name",
+   "role": "Founder, Partner company"
+  },
+  {
+   "type": "stories",
+   "title": "More partner stories",
+   "cards": [
+    {
+     "tag": "Industry",
+     "title": "Partner name",
+     "text": "One line."
+    },
+    {
+     "tag": "Industry",
+     "title": "Partner name",
+     "text": "One line."
+    },
+    {
+     "tag": "Industry",
+     "title": "Partner name",
+     "text": "One line."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "layout": "light",
+   "headline": "Want to become a **partner**?",
+   "primary": "Apply now"
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

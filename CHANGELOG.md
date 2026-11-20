@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.8.0 — Nov 2026
+Deck infographics and web page templates, matching the CDS-2.0 Figma file (Templates · Deck and Templates · Web).
+- Deck: 13 infographic slides added as editable slides 47–59 (Figma I01–I13): stepped stats, rating gauge, cost breakdown, SWOT, data table, progress rings, overview with chart, three points as bubbles, KPI dashboard, pricing plans, bar chart with a highlight, partners, matrix. Charts and the table are real PowerPoint charts and tables, editable in Zoho Show. The deck is now 58 slides plus the divider.
+- Slide 44 Comparison table rebuilt as an editable five-column table (Zoho Creator against spreadsheets, custom code and point tools; Yes / Partly / No), and slide 46 Questions redesigned (light, big blue question mark, no contact details), matching Figma E13 and E15.
+- deck.md: infographic list, outlines that use them (new: Business case or QBR), and rules for their numbers, prices, logos and photos. deck-slots.json regenerated; check_deck.py asks to confirm the numbers on each infographic.
+- Web: build_web.py now builds pages from the full CDS 2.0 section library (new scripts/web_sections.py, ~40 sections from Templates · Web: heroes, features, bento, tabs, accordions, steps, comparison, platform, orbit with the AI agent bot, stories, stats, testimonials, FAQ, CTA). Ten page recipes in assets/web/recipes/ (landing, ai-product, platform-overview, deployment, erp-extension, industry, partner-hub, partner-story, event, press) so anyone can get a page that looks designed. web.md rewritten: workflow, recipes, section catalogue, how to make it look good.
+- AI agent bot illustration (assets/illustrations/ai-agent-bot.svg) for dark backgrounds on AI pieces, one per piece.
+- icons.json: what each custom and new icon is for; `icon.py list` shows it.
+- check_system.py: contrast check ignores see-through backgrounds (no false failures on tinted cards).
+
 ## 2.7.1 — Nov 2026
 Fixes from colleague testing and the 19 Nov Figma decisions (CDS-2.0 file, Foundations · Colour, Brand · Patterns, Templates · Social and video).
 - AI colour: blue stays the primary colour; on AI pieces violet is an accent only (highlight words on light backgrounds, the AI tag, ai-sparkle and its tile, soft glows). Never violet cards, panels, buttons or solid violet backgrounds. Bold AI background = gradient/ai, light = mesh-soft-ai. Partner content unchanged.

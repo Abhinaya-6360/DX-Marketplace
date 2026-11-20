@@ -1,0 +1,124 @@
+{
+ "title": "Solution page for extending a system such as an ERP (from Example · Extend ERP page)",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "diagram",
+   "tag": "ERP EXTENSIONS",
+   "headline": "Get more from your ERP **without touching the core**",
+   "body": "Build portals, approvals and dashboards on top of SAP, Oracle or NetSuite in days.",
+   "primary": "Get started",
+   "secondary": "Book a demo",
+   "nodes": [
+    {
+     "icon": "database",
+     "label": "ERP data"
+    },
+    {
+     "icon": "users",
+     "label": "Customer portals"
+    },
+    {
+     "icon": "plug",
+     "label": "1,000+ integrations"
+    },
+    {
+     "icon": "chart-bar",
+     "label": "Live dashboards"
+    }
+   ],
+   "cards": [
+    {
+     "title": "Approval workflow",
+     "text": "Purchase order #4821 · Approved"
+    },
+    {
+     "title": "Orders synced today",
+     "text": "12,480 (sample)"
+    }
+   ]
+  },
+  {
+   "type": "logos",
+   "title": "Trusted by teams running SAP, Oracle and NetSuite"
+  },
+  {
+   "type": "features",
+   "eyebrow": "What you can build",
+   "title": "Extend your ERP where it **falls short**",
+   "cards": [
+    {
+     "icon": "users",
+     "title": "Portals",
+     "text": "Give vendors and customers their own view."
+    },
+    {
+     "icon": "flow",
+     "title": "Approvals",
+     "text": "Multi-level approvals with SLAs."
+    },
+    {
+     "icon": "chart-bar",
+     "title": "Dashboards",
+     "text": "Live data from every system."
+    }
+   ]
+  },
+  {
+   "type": "tabs",
+   "layout": "side",
+   "tone": "dark",
+   "tabs": [
+    {
+     "icon": "truck",
+     "label": "Field teams",
+     "title": "Field teams",
+     "text": "Capture work on mobile, even offline.",
+     "points": [
+      "Photos and signatures",
+      "Sync to the ERP"
+     ]
+    },
+    {
+     "icon": "receipt",
+     "label": "Finance"
+    },
+    {
+     "icon": "package",
+     "label": "Procurement"
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "quote": "We cut approval time from **a week to a day**.",
+   "name": "Name",
+   "role": "Role, Company"
+  },
+  {
+   "type": "cta",
+   "headline": "Extend your ERP with **Zoho Creator**",
+   "primary": "Get started",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "faq",
+   "items": [
+    {
+     "q": "Does it change our ERP?",
+     "a": "No. Creator works alongside it through connectors and APIs."
+    },
+    {
+     "q": "Which ERPs are supported?"
+    }
+   ]
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

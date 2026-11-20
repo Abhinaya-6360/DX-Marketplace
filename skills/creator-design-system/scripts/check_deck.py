@@ -19,8 +19,12 @@ NUMBER_SLIDES = {5: "stat and its source", 20: "three numbers and their sources"
                  24: "result numbers", 42: "four outcome numbers and their sources",
                  43: "funnel counts", 21: "bar values (bars are shapes: resize by hand)",
                  41: "line values (lines are shapes: redraw by hand)", 22: "chart data",
-                 27: "current prices", 19: "current certifications"}
-NAMES = {1: "Cover", 16: "AI (Zia)", 30: "Thank you", 31: "divider", 46: "Questions"}
+                 27: "current prices", 19: "current certifications",
+                 47: "numbers", 48: "rating (move the marker; edit the chart in Show)", 49: "cost figures",
+                 51: "table figures (edit the table in Show)", 52: "percentages (edit each ring's chart data in Show)",
+                 53: "chart data (edit in Show)", 55: "numbers and chart data (edit in Show)", 56: "current prices",
+                 57: "bar values (bars are shapes: resize by hand)"}
+NAMES = {1: "Cover", 16: "AI (Zia)", 30: "Thank you", 31: "divider", 46: "Questions", 51: "Data table", 52: "Progress rings", 53: "Overview chart", 55: "KPI dashboard"}
 
 
 def main(plan_path):

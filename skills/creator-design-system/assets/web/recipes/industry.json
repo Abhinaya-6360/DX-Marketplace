@@ -1,0 +1,110 @@
+{
+ "title": "Industry page (from Example · Education industry page)",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "centred",
+   "tag": "EDUCATION",
+   "headline": "Powering **modern education** with apps that fit",
+   "body": "Admissions, academics and campus life in one place.",
+   "primary": "Start free trial",
+   "secondary": "Book a demo"
+  },
+  {
+   "type": "bento",
+   "eyebrow": "One platform",
+   "title": "A single source of truth for **all your key operations**",
+   "cards": [
+    {
+     "title": "Admissions and enrollment",
+     "text": "From enquiry to enrolled."
+    },
+    {
+     "title": "Academic operations",
+     "text": "Timetables, attendance and grades."
+    },
+    {
+     "title": "Campus and student life",
+     "text": "Clubs, events and hostels."
+    }
+   ]
+  },
+  {
+   "type": "tabs",
+   "layout": "bigtext",
+   "title": "Adapts to every institution",
+   "tabs": [
+    {
+     "label": "K–12 schools",
+     "title": "K–12 schools",
+     "text": "Manage admissions, attendance and parent updates.",
+     "points": [
+      "Parent portal",
+      "Attendance alerts"
+     ]
+    },
+    {
+     "label": "Universities"
+    },
+    {
+     "label": "Training centers"
+    },
+    {
+     "label": "Multi-campus"
+    }
+   ]
+  },
+  {
+   "type": "accordion",
+   "layout": "photos",
+   "title": "Built to fit each role in your campus",
+   "lead": "From the front office to the boardroom.",
+   "items": [
+    {
+     "label": "Administrator",
+     "text": "Control and automate operations across departments."
+    },
+    {
+     "label": "Teacher"
+    },
+    {
+     "label": "Parent"
+    },
+    {
+     "label": "Student"
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "quote": "Every department now works from **one source of truth**.",
+   "name": "Name",
+   "role": "Role, Institution"
+  },
+  {
+   "type": "cta",
+   "headline": "Build your campus apps **today**",
+   "primary": "Start free trial",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "faq",
+   "items": [
+    {
+     "q": "Can parents and students use it on mobile?",
+     "a": "Yes, with the Zoho Creator mobile apps."
+    },
+    {
+     "q": "Is student data secure?"
+    }
+   ]
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

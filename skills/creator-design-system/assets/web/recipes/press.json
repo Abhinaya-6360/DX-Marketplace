@@ -1,0 +1,46 @@
+{
+ "title": "Press or news hub (from Example · Press corner page)",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "centred",
+   "tag": "PRESS",
+   "headline": "Zoho Creator **in the news**",
+   "body": "Announcements, coverage and media resources."
+  },
+  {
+   "type": "stories",
+   "cards": [
+    {
+     "tag": "Announcement",
+     "title": "Headline of the news",
+     "text": "One line summary."
+    },
+    {
+     "tag": "Coverage",
+     "title": "Headline of the article",
+     "text": "Publication name."
+    },
+    {
+     "tag": "Award",
+     "title": "Headline",
+     "text": "One line summary."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "layout": "light",
+   "headline": "Media enquiries",
+   "body": "Contact the press team for interviews and resources.",
+   "primary": "Contact the press team"
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}
