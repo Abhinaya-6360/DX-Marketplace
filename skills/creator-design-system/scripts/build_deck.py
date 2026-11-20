@@ -13,7 +13,7 @@ plan.json:
   ]
 }
 
-- "source" is the slide number in the 46-slide deck. Slides appear in plan order;
+- "source" is the slide number in the 59-slide deck. Slides appear in plan order;
   every slide not listed is removed (including slide 31, the divider).
 - "text" maps shape id (from deck_inventory.py) to new text. Use "\\n" for a new
   paragraph. Formatting comes from the first run of the matching paragraph, so

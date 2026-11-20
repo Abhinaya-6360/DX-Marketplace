@@ -1,0 +1,154 @@
+{
+ "title": "Solution or deployment page with a sign-up form (from Example · Hybrid deployment page)",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "form",
+   "tag": "DEPLOY TO ZOHO CLOUD",
+   "headline": "Build in the cloud and deploy your apps **anywhere**",
+   "body": "Run your Zoho Creator apps on Zoho Cloud, on-premises, on AWS or on Azure.",
+   "primary": "Submit"
+  },
+  {
+   "type": "options",
+   "eyebrow": "Deployment options",
+   "title": "One app, multiple options to run it",
+   "options": [
+    {
+     "icon": "cloud",
+     "title": "Zoho Cloud",
+     "text": "Zoho runs the infrastructure, security, updates and availability.",
+     "points": [
+      "Infrastructure",
+      "Security",
+      "Updates",
+      "Availability"
+     ]
+    },
+    {
+     "icon": "hard-drives",
+     "title": "On-premises",
+     "text": "Install on your own Windows or Linux servers."
+    },
+    {
+     "icon": "cloud",
+     "title": "AWS",
+     "text": "Launch the Zoho Creator image from AWS Marketplace."
+    },
+    {
+     "icon": "cloud",
+     "title": "Azure",
+     "text": "Launch the Zoho Creator image from Azure Marketplace."
+    }
+   ]
+  },
+  {
+   "type": "darklist",
+   "layout": "cards",
+   "eyebrow": "Key benefits",
+   "title": "Why use hybrid deployment?",
+   "items": [
+    {
+     "icon": "shield-check",
+     "title": "Enhanced security",
+     "text": "Keep sensitive data on your own servers."
+    },
+    {
+     "icon": "gauge",
+     "title": "Optimized performance",
+     "text": "Run apps close to your users."
+    },
+    {
+     "icon": "coin",
+     "title": "Cost efficiency",
+     "text": "Use the infrastructure you already have."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "eyebrow": "Getting started",
+   "title": "Getting started with hybrid deployment",
+   "lead": "A short overview of how to get going.",
+   "items": [
+    {
+     "title": "Create your application",
+     "text": "Describe the app or build it in the builder.",
+     "tags": [
+      "Forms",
+      "Reports",
+      "Workflows"
+     ]
+    },
+    {
+     "title": "Choose your deployment",
+     "text": "Zoho Cloud, on-premises, AWS or Azure."
+    },
+    {
+     "title": "Configure your infrastructure",
+     "text": "Set up servers, access and backups."
+    }
+   ]
+  },
+  {
+   "type": "tabs",
+   "layout": "side",
+   "eyebrow": "Choosing a deployment method",
+   "title": "How to choose the right option",
+   "tabs": [
+    {
+     "icon": "buildings",
+     "label": "Medium-sized businesses",
+     "title": "Medium-sized businesses",
+     "text": "For teams with diverse IT requirements.",
+     "points": [
+      "Balance cost and control",
+      "Scale as you grow"
+     ]
+    },
+    {
+     "icon": "bank",
+     "label": "Large enterprises"
+    },
+    {
+     "icon": "rocket-launch",
+     "label": "Startups"
+    },
+    {
+     "icon": "hospital",
+     "label": "Healthcare"
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "headline": "Ready to deploy your apps **anywhere**?",
+   "body": "Build once in Zoho Creator, then choose where each app runs.",
+   "primary": "Start building with AI",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "faq",
+   "tone": "dark",
+   "items": [
+    {
+     "q": "Can I move an app from the cloud to on-premises later?",
+     "a": "Yes. Build once and choose where each app runs."
+    },
+    {
+     "q": "Do AWS and Azure images include a trial?"
+    },
+    {
+     "q": "Which databases are supported?"
+    }
+   ]
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

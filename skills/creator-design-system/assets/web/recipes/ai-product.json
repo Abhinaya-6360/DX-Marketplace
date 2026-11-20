@@ -1,0 +1,171 @@
+{
+ "title": "AI product or AI feature page (from Example · AI app builder page)",
+ "topic": "ai",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "cards",
+   "headline": "AI app builder for **every idea**",
+   "body": "Turn ideas into AI-powered business apps. Build with AI agents and connect to your systems.",
+   "primary": "Start building with AI",
+   "note": "Powered by Zia, with support for leading AI models.",
+   "cards": [
+    {
+     "title": "Order management",
+     "icon": "package"
+    },
+    {
+     "title": "Admission management",
+     "icon": "graduation-cap"
+    },
+    {
+     "title": "Expense management",
+     "icon": "receipt"
+    }
+   ]
+  },
+  {
+   "type": "logos",
+   "title": "Trusted by over 40,000 businesses worldwide"
+  },
+  {
+   "type": "comparison",
+   "eyebrow": "Why it's different",
+   "title": "How is Zoho Creator **different**?",
+   "them": {
+    "label": "Other AI app builders",
+    "points": [
+     "Stop at prompt-to-app",
+     "Separate tools to run and govern",
+     "Your data leaves your control"
+    ]
+   },
+   "us": {
+    "label": "Zoho Creator",
+    "points": [
+     "Plan, build, run and govern in one place",
+     "Connects to your existing systems",
+     "Enterprise-grade security"
+    ]
+   }
+  },
+  {
+   "type": "bento",
+   "eyebrow": "What you can build",
+   "title": "What you can build with **Zoho Creator AI**",
+   "cards": [
+    {
+     "title": "Agent-built applications",
+     "text": "From a business idea to a working app."
+    },
+    {
+     "title": "Intelligent applications",
+     "text": "Apps that predict, summarise and decide."
+    },
+    {
+     "title": "Conversational applications",
+     "text": "Users ask questions in plain language."
+    }
+   ]
+  },
+  {
+   "type": "accordion",
+   "layout": "steps",
+   "eyebrow": "Three layers. One platform.",
+   "title": "How to build your apps",
+   "items": [
+    {
+     "icon": "ai-sparkle",
+     "title": "The build-time layer",
+     "text": "Creator Agent helps you plan, build and test.",
+     "steps": [
+      {
+       "title": "Plan",
+       "points": [
+        "Describe what you need",
+        "Refine the spec"
+       ]
+      },
+      {
+       "title": "Build",
+       "points": [
+        "Generate the app",
+        "Review each change"
+       ]
+      },
+      {
+       "title": "Test",
+       "points": [
+        "Auto-generated tests",
+        "Fix before you ship"
+       ]
+      }
+     ]
+    },
+    {
+     "icon": "lightning",
+     "title": "The run-time layer",
+     "text": "AI in workflows, documents and dashboards."
+    },
+    {
+     "icon": "shield-check",
+     "title": "The governance layer",
+     "text": "Deployment, security and control."
+    }
+   ]
+  },
+  {
+   "type": "resources",
+   "eyebrow": "Developer guide",
+   "title": "Want to go deeper?",
+   "cards": [
+    {
+     "title": "Creating and managing AI agents"
+    },
+    {
+     "title": "Custom OCR models"
+    },
+    {
+     "title": "Deluge AI tasks"
+    },
+    {
+     "title": "MCP server documentation"
+    }
+   ]
+  },
+  {
+   "type": "testimonial",
+   "quote": "We saved **3 crores INR** in six months.",
+   "name": "Name",
+   "role": "Role, Company"
+  },
+  {
+   "type": "cta",
+   "headline": "One platform to build, run and connect **AI-powered** apps",
+   "primary": "Start building with AI",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "faq",
+   "tone": "dark",
+   "items": [
+    {
+     "q": "Does Zoho train AI models on my data?",
+     "a": "No. Your data stays yours."
+    },
+    {
+     "q": "Can I control what agents can change?"
+    },
+    {
+     "q": "Can I use other AI providers?"
+    }
+   ]
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

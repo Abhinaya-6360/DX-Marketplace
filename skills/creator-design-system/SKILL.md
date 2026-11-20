@@ -1,6 +1,6 @@
 ---
 name: creator-design-system
-description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, email newsletters, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 45-slide Zoho Show deck, and the brand rules (red only for the main CTA and form error messages, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
+description: Zoho Creator's CDS 2.0 brand system for marketing work. Use it for anything Zoho Creator marketers make — presentations and decks for Zoho Show, LinkedIn/Instagram/X/Facebook posts, stories, carousels, YouTube thumbnails, video backgrounds, email headers, email newsletters, banners, webinar promos, customer-quote posts, landing pages and zoho.com/creator web drafts. Trigger whenever the request mentions Zoho Creator, Creator, CDS, our brand, brand guidelines, on-brand, a deck, slides, a post, a banner, a thumbnail or a campaign asset, even if the user doesn't name the design system. It holds the CDS 2.0 tokens, logos, fonts, gradients, the 58-slide Zoho Show deck (with 13 infographic slides), and the brand rules (red only for the main CTA and form error messages, violet only for AI and partner content, Zoho logo placement), and it builds decks as editable .pptx and visuals as exact-size PNGs.
 ---
 
 # Zoho Creator · CDS 2.0
@@ -91,10 +91,11 @@ set and the CDS templates. Never improvise outside it.
    - `assets/swatches/` — CDS-2.0-print-swatches.ase (official CMYK) and CDS-2.0-screen-swatches.ase (RGB) for agencies, printers and designers.
    - `assets/social/layouts.json` — the social, video, email and YouTube templates; `scripts/render_social.py` renders them to PNG and checks them.
    - `assets/print/layouts.json` — the print templates; `scripts/render_print.py` makes CMYK PDFs with bleed.
-   - `scripts/build_web.py` — builds web page drafts from the Templates · Web sections.
+   - `scripts/build_web.py` + `scripts/web_sections.py` — build designed web page drafts from the ~40 Templates · Web sections; start from a recipe in `assets/web/recipes/` (10 page types from the Figma example pages).
+   - `assets/illustrations/ai-agent-bot.svg` — the AI agent bot illustration (dark backgrounds only, one per piece).
    - `scripts/check_system.py` — the system guard: emoji, outside colours, fonts and icons, red and violet use, WCAG AA contrast; `pairs` lists the AA-safe colour pairs.
    - `scripts/build_email.py` — builds email newsletters (email-safe HTML + images, zipped).
-   - `assets/deck/` — the 45-slide Zoho Show deck (plus one divider slide); `scripts/build_deck.py` and `check_deck.py` build and check decks.
+   - `assets/deck/` — the 58-slide Zoho Show deck (plus one divider slide; 47–59 are infographics); `scripts/build_deck.py` and `check_deck.py` build and check decks.
 4. Before handing anything over, run `python scripts/check_system.py <file>` on what you made
    (the .html, .pptx, or the brief .json for PNG and PDF output), then run through
    `references/brand-check.md`, fix what fails, and give the marketer the "tell the marketer" list.

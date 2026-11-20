@@ -227,7 +227,7 @@ def check_html(src, email=False, topic=None):
     for b in css_blocks(body):
         fg, bg = decl(b, "color"), decl(b, "background(?:-color)?")
         if fg and bg:
-            f, g = HEX_RE.search(fg), HEX_RE.findall(bg)
+            f, g = HEX_RE.search(fg), [h for h in HEX_RE.findall(bg) if not (len(h) == 9 and h[7:].lower() != 'ff')]  # skip see-through backgrounds
             if f and g:
                 size = decl(b, "font-size"); wt = decl(b, "font-weight") or "400"
                 px = float(re.match(r"[\d.]+", size).group()) if size and re.match(r"[\d.]+", size) else 16

@@ -1,0 +1,205 @@
+{
+ "title": "Platform or capability overview (from Example · Feature overview page)",
+ "topic": "ai",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "chips",
+   "tag": "AI-NATIVE",
+   "headline": "The **AI-native** platform for production-ready software",
+   "body": "Build, run and govern business apps with one agent.",
+   "primary": "Start building with AI",
+   "secondary": "Talk to sales",
+   "chips": [
+    {
+     "icon": "ai-sparkle",
+     "label": "Plans your app"
+    },
+    {
+     "icon": "code-editor",
+     "label": "Writes Deluge"
+    },
+    {
+     "icon": "shield-check",
+     "label": "Governed"
+    },
+    {
+     "icon": "app-deploy",
+     "label": "Deploys"
+    },
+    {
+     "icon": "chart-bar",
+     "label": "Dashboards"
+    },
+    {
+     "icon": "integrations",
+     "label": "1,000+ integrations"
+    }
+   ]
+  },
+  {
+   "type": "orbit",
+   "eyebrow": "Creator agent · every stage",
+   "title": "One agent, built into Creator, to handle the **entire lifecycle**",
+   "lead": "From first prompt to production, without separate tools.",
+   "nodes": [
+    {
+     "icon": "map-trifold",
+     "label": "Plans"
+    },
+    {
+     "icon": "pencil-simple",
+     "label": "Designs"
+    },
+    {
+     "icon": "wrench",
+     "label": "Builds"
+    },
+    {
+     "icon": "check-circle",
+     "label": "Tests"
+    },
+    {
+     "icon": "rocket-launch",
+     "label": "Deploys"
+    },
+    {
+     "icon": "ai-sparkle",
+     "label": "Creates agents"
+    }
+   ],
+   "steps": [
+    {
+     "title": "It plans",
+     "text": "Maps the data model and workflows before a single screen is built."
+    },
+    {
+     "title": "It designs",
+     "text": "Generates screens for each role, in your brand."
+    }
+   ]
+  },
+  {
+   "type": "platform",
+   "eyebrow": "Enterprise-grade from the ground up",
+   "title": "The platform beneath every app the agent builds",
+   "layers": [
+    {
+     "icon": "database",
+     "label": "Your data"
+    },
+    {
+     "icon": "flow",
+     "label": "Logic and workflows"
+    },
+    {
+     "icon": "shield-check",
+     "label": "Security and governance"
+    },
+    {
+     "icon": "cloud",
+     "label": "Infrastructure"
+    }
+   ],
+   "blocks": [
+    {
+     "title": "Your data, structured and owned",
+     "text": "Relational data you control."
+    },
+    {
+     "title": "Security built in",
+     "text": "Encryption, audit trails and access control."
+    }
+   ]
+  },
+  {
+   "type": "stacked",
+   "eyebrow": "Grows with you",
+   "title": "Same platform. Any size. Any stage.",
+   "cards": [
+    {
+     "title": "Always on, always available",
+     "text": "Built for business-critical apps.",
+     "points": [
+      "Uptime SLA",
+      "Global data centres"
+     ],
+     "stat": "00.0%",
+     "stat_label": "Uptime (add the real figure and source)"
+    },
+    {
+     "title": "Performance that holds as you grow",
+     "text": "From one team to the whole company.",
+     "points": [
+      "Auto-scaling"
+     ]
+    },
+    {
+     "title": "Extend it. Never replace it.",
+     "text": "Add modules as you go."
+    }
+   ]
+  },
+  {
+   "type": "tabs",
+   "layout": "bigtext",
+   "eyebrow": "Governance",
+   "title": "Govern before it goes live, **not after**",
+   "tabs": [
+    {
+     "label": "Identity and access",
+     "title": "Identity and access",
+     "text": "SAML, SSO and SCIM out of the box.",
+     "points": [
+      "Role-based permissions",
+      "Field-level access"
+     ]
+    },
+    {
+     "label": "Audit and compliance"
+    },
+    {
+     "label": "Security"
+    },
+    {
+     "label": "AI governance"
+    }
+   ]
+  },
+  {
+   "type": "darklist",
+   "eyebrow": "Why Creator",
+   "title": "Speed and control. On one platform.",
+   "items": [
+    {
+     "title": "One AI story, not two products",
+     "text": "Build and run with the same agent."
+    },
+    {
+     "title": "Governance built in",
+     "text": "Not bolted on later."
+    },
+    {
+     "title": "Pro-code when you need it",
+     "text": "Deluge, APIs and code editor."
+    },
+    {
+     "title": "Your data stays yours",
+     "text": "No training on customer data."
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "headline": "The platform that gets you to production **and keeps you there**",
+   "primary": "Start building with AI",
+   "secondary": "Talk to sales"
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}

@@ -4876,7 +4876,7 @@
   "slots": [
    {
     "id": 2,
-    "sample": "COMPARISON",
+    "sample": "COMPARE",
     "size_pt": 10,
     "max_chars": 103,
     "role": "content"
@@ -4887,10 +4887,17 @@
     "size_pt": 36,
     "max_chars": 66,
     "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Yes: included · Partly: partly or with add-ons · No: not available",
+    "size_pt": 7,
+    "max_chars": 123,
+    "role": "content"
    }
   ],
   "sample_images": 0,
-  "note": "Editable table. Keep Creator in the highlighted blue column; keep claims fair and verifiable."
+  "note": "Comparison table: a real table, edit it in Show. Keep Zoho Creator in the highlighted column; be fair to the others and check every claim."
  },
  {
   "slide": 45,
@@ -4932,76 +4939,1224 @@
   "slots": [
    {
     "id": 3,
-    "sample": "Questions?",
-    "size_pt": 44,
-    "max_chars": 18,
-    "role": "content"
+    "sample": "?",
+    "size_pt": 380,
+    "max_chars": 0,
+    "role": "label"
    },
    {
     "id": 4,
-    "sample": "Thank you for your time. Let’s keep the conversation going.",
-    "size_pt": 12,
-    "max_chars": 63,
+    "sample": "Questions?",
+    "size_pt": 44,
+    "max_chars": 17,
     "role": "content"
    },
    {
     "id": 5,
-    "sample": "SPEAKER",
-    "size_pt": 7,
-    "max_chars": 48,
-    "role": "label"
-   },
-   {
-    "id": 6,
-    "sample": "Name · Designation",
-    "size_pt": 10,
-    "max_chars": 39,
-    "role": "content"
-   },
-   {
-    "id": 7,
-    "sample": "EMAIL",
-    "size_pt": 7,
-    "max_chars": 48,
-    "role": "label"
-   },
-   {
-    "id": 8,
-    "sample": "name@zohocorp.com",
-    "size_pt": 10,
-    "max_chars": 39,
-    "role": "content"
-   },
-   {
-    "id": 9,
-    "sample": "WEB",
-    "size_pt": 7,
-    "max_chars": 48,
-    "role": "label"
-   },
-   {
-    "id": 12,
-    "sample": "© 2026 Zoho Corporation",
-    "size_pt": 7,
-    "max_chars": 48,
-    "role": "label"
-   },
-   {
-    "id": 14,
-    "sample": "QR code",
-    "size_pt": 8,
-    "max_chars": 18,
-    "role": "screen"
-   },
-   {
-    "id": 15,
-    "sample": "Scan to book a demo",
-    "size_pt": 7,
-    "max_chars": 21,
+    "sample": "Thank you for your time. Let’s keep the conversation going.",
+    "size_pt": 12,
+    "max_chars": 63,
     "role": "content"
    }
   ],
   "sample_images": 0,
   "note": "Replace the speaker details and the QR code (generate one that links to your demo or contact page)."
+ },
+ {
+  "slide": 47,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "REACH",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Growing every quarter",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "7M+",
+    "size_pt": 36,
+    "max_chars": 5,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Users on Creator",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "1M+",
+    "size_pt": 36,
+    "max_chars": 5,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Apps built",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "100+",
+    "size_pt": 36,
+    "max_chars": 5,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Countries",
+    "size_pt": 10,
+    "max_chars": 20,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Users",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Every team, one platform. Add one line on what this number means.",
+    "size_pt": 8,
+    "max_chars": 99,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Apps",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "From quick forms to full ERPs. Add one line on what this number means.",
+    "size_pt": 8,
+    "max_chars": 99,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Countries",
+    "size_pt": 12,
+    "max_chars": 32,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Customers across every region. Add one line on what this number means.",
+    "size_pt": 8,
+    "max_chars": 99,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Stepped stats: three growing numbers. Use only real numbers with a source."
+ },
+ {
+  "slide": 48,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "CUSTOMER SATISFACTION",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "How customers rate Creator",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Poor",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Fair",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Good",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Great",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Excellent",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "4.6",
+    "size_pt": 44,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "out of 5",
+    "size_pt": 12,
+    "max_chars": 28,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Average rating from [number] customer reviews. Source: add survey name and date.",
+    "size_pt": 10,
+    "max_chars": 86,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Gauge: move the marker to the rating. Use a real rating with its source."
+ },
+ {
+  "slide": 49,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ESTIMATE",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Cost breakdown",
+    "size_pt": 36,
+    "max_chars": 46,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Licences",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "$24,000",
+    "size_pt": 12,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 8,
+    "sample": "Implementation",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "$18,000",
+    "size_pt": 12,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Integrations",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "$12,000",
+    "size_pt": 12,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Training",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "$6,000",
+    "size_pt": 12,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Support (first year)",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "$8,000",
+    "size_pt": 12,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "Estimated total",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "$68,000",
+    "size_pt": 28,
+    "max_chars": 11,
+    "role": "content"
+   },
+   {
+    "id": 22,
+    "sample": "Figures are placeholders. Replace with the quote for this customer.",
+    "size_pt": 7,
+    "max_chars": 123,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "Cost breakdown: replace every figure with the customer's quote."
+ },
+ {
+  "slide": 50,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ANALYSIS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Where we stand",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "S",
+    "size_pt": 40,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Strengths",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "No-code and pro-code in one place",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Runs on Zoho's own cloud",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Mobile apps included",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "W",
+    "size_pt": 40,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Weaknesses",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Add a known gap here",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Add a second gap",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "Add a third gap",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 25,
+    "sample": "O",
+    "size_pt": 40,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Opportunities",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "AI-assisted app building",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 31,
+    "sample": "Teams leaving spreadsheets",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 33,
+    "sample": "Partner-led growth",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 35,
+    "sample": "T",
+    "size_pt": 40,
+    "max_chars": 1,
+    "role": "content"
+   },
+   {
+    "id": 36,
+    "sample": "Threats",
+    "size_pt": 12,
+    "max_chars": 16,
+    "role": "content"
+   },
+   {
+    "id": 39,
+    "sample": "New AI-first tools",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 41,
+    "sample": "Legacy vendor lock-in",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   },
+   {
+    "id": 43,
+    "sample": "Add a third threat",
+    "size_pt": 10,
+    "max_chars": 27,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "SWOT: keep three short points per box."
+ },
+ {
+  "slide": 51,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "FINANCIALS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Savings by quarter",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Data table: a real table, edit cells in Show. Every figure needs a source."
+ },
+ {
+  "slide": 52,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "ADOPTION",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Usage across teams",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "92%",
+    "size_pt": 22,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Operations",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Teams running daily work on Creator apps",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "78%",
+    "size_pt": 22,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Finance",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Approvals handled without email",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "64%",
+    "size_pt": 22,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "HR",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Onboarding steps automated",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "45%",
+    "size_pt": 22,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Sales",
+    "size_pt": 12,
+    "max_chars": 25,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Field teams using the mobile app",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "Share of each team using Creator weekly. Source: add source and date.",
+    "size_pt": 7,
+    "max_chars": 147,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Progress rings: real charts, edit each value in Show. Add the source."
+ },
+ {
+  "slide": 53,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "OVERVIEW",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Creator at a glance",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Apps built per quarter",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Thousands of apps",
+    "size_pt": 8,
+    "max_chars": 64,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "What Creator does",
+    "size_pt": 20,
+    "max_chars": 31,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "A low-code platform to build custom apps for any process — forms, workflows, portals and dashboards — on web and mobile.",
+    "size_pt": 12,
+    "max_chars": 106,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Who it's for",
+    "size_pt": 12,
+    "max_chars": 23,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Business teams and IT building apps together.",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Why it matters",
+    "size_pt": 12,
+    "max_chars": 23,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "Ship in days instead of months.",
+    "size_pt": 10,
+    "max_chars": 57,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Overview with a real column chart: edit the data in Show. Numbers need a source."
+ },
+ {
+  "slide": 54,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "WHAT WE OFFER",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Three ways teams use Creator",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Build",
+    "size_pt": 20,
+    "max_chars": 22,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Drag-and-drop apps, or write code when you need it.",
+    "size_pt": 10,
+    "max_chars": 45,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Automate",
+    "size_pt": 20,
+    "max_chars": 18,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Workflows and approvals that run on their own.",
+    "size_pt": 10,
+    "max_chars": 72,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Analyse",
+    "size_pt": 20,
+    "max_chars": 22,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Live reports and dashboards for every team.",
+    "size_pt": 10,
+    "max_chars": 45,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Three points as bubbles: one word and one line each."
+ },
+ {
+  "slide": 55,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "MARKET",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Where the growth is",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Teams on Creator",
+    "size_pt": 12,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "+21%",
+    "size_pt": 36,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Year-on-year growth in active teams.",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Apps per customer",
+    "size_pt": 12,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Average across paid accounts.",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Mobile usage",
+    "size_pt": 12,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "68%",
+    "size_pt": 36,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Share of apps used on mobile.",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Total users",
+    "size_pt": 12,
+    "max_chars": 24,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "12M",
+    "size_pt": 36,
+    "max_chars": 8,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "People using Creator-built apps.",
+    "size_pt": 10,
+    "max_chars": 29,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "New teams per month",
+    "size_pt": 12,
+    "max_chars": 43,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "KPI dashboard with a real bar-and-line chart: edit the data in Show. Every number needs a source."
+ },
+ {
+  "slide": 56,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "PRICING",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Plans for every team",
+    "size_pt": 36,
+    "max_chars": 41,
+    "role": "content"
+   },
+   {
+    "id": 6,
+    "sample": "Start free",
+    "size_pt": 20,
+    "max_chars": 26,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Build your first apps at no cost.",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Scale as you grow",
+    "size_pt": 20,
+    "max_chars": 26,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "Add users and apps when you need them.",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 14,
+    "sample": "Enterprise ready",
+    "size_pt": 20,
+    "max_chars": 26,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Security, governance and support built in.",
+    "size_pt": 12,
+    "max_chars": 44,
+    "role": "content"
+   },
+   {
+    "id": 17,
+    "sample": "Pay per user, per month",
+    "size_pt": 20,
+    "max_chars": 34,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Every plan includes web and mobile apps.",
+    "size_pt": 12,
+    "max_chars": 57,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "$8",
+    "size_pt": 24,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Standard",
+    "size_pt": 10,
+    "max_chars": 17,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "$20",
+    "size_pt": 24,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 24,
+    "sample": "Professional",
+    "size_pt": 10,
+    "max_chars": 17,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Custom",
+    "size_pt": 24,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Enterprise",
+    "size_pt": 10,
+    "max_chars": 17,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "*Billed annually. Prices are placeholders — check zoho.com/creator/pricing before you present.",
+    "size_pt": 7,
+    "max_chars": 98,
+    "role": "content"
+   }
+  ],
+  "sample_images": 1,
+  "note": "Pricing: check every price on zoho.com/creator/pricing before presenting."
+ },
+ {
+  "slide": 57,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "BY THE NUMBERS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Apps launched per quarter",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "Teams ship faster every quarter.",
+    "size_pt": 24,
+    "max_chars": 21,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Each quarter more teams move work off spreadsheets and email into apps they build themselves.",
+    "size_pt": 12,
+    "max_chars": 88,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "“We launched three apps in our first month.” — Name, Company",
+    "size_pt": 12,
+    "max_chars": 84,
+    "role": "content"
+   },
+   {
+    "id": 11,
+    "sample": "20%",
+    "size_pt": 12,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "27%",
+    "size_pt": 12,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "16%",
+    "size_pt": 12,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 23,
+    "sample": "34%",
+    "size_pt": 12,
+    "max_chars": 7,
+    "role": "content"
+   },
+   {
+    "id": 26,
+    "sample": "Q1 2026",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 27,
+    "sample": "Q2 2026",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 28,
+    "sample": "Q3 2026",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   },
+   {
+    "id": 29,
+    "sample": "Q4 2026",
+    "size_pt": 10,
+    "max_chars": 13,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Bar chart with a highlight: the bars are shapes. Resize each bar to its value; keep one bar highlighted."
+ },
+ {
+  "slide": 58,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "PARTNERS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Built with our partners",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Become a Zoho Creator partner — zoho.com/creator/partners",
+    "size_pt": 12,
+    "max_chars": 100,
+    "role": "content"
+   }
+  ],
+  "sample_images": 10,
+  "note": "Partner logos: use each partner's own logo in its own colours. Partner content only (violet label)."
+ },
+ {
+  "slide": 59,
+  "slots": [
+   {
+    "id": 2,
+    "sample": "WHERE CREATOR FITS",
+    "size_pt": 10,
+    "max_chars": 103,
+    "role": "content"
+   },
+   {
+    "id": 3,
+    "sample": "Power without the complexity",
+    "size_pt": 36,
+    "max_chars": 66,
+    "role": "content"
+   },
+   {
+    "id": 4,
+    "sample": "The only option that is both easy to use and powerful enough for core processes.",
+    "size_pt": 20,
+    "max_chars": 78,
+    "role": "content"
+   },
+   {
+    "id": 5,
+    "sample": "Spreadsheets are easy but break at scale. Custom code is powerful but slow and costly. Creator gives business teams the speed and IT the control.",
+    "size_pt": 12,
+    "max_chars": 132,
+    "role": "content"
+   },
+   {
+    "id": 7,
+    "sample": "Place your own product and competitors in the four boxes.",
+    "size_pt": 12,
+    "max_chars": 84,
+    "role": "content"
+   },
+   {
+    "id": 9,
+    "sample": "Custom code",
+    "size_pt": 20,
+    "max_chars": 15,
+    "role": "content"
+   },
+   {
+    "id": 10,
+    "sample": "Powerful, slow to change",
+    "size_pt": 10,
+    "max_chars": 31,
+    "role": "content"
+   },
+   {
+    "id": 12,
+    "sample": "Zoho Creator",
+    "size_pt": 20,
+    "max_chars": 15,
+    "role": "content"
+   },
+   {
+    "id": 13,
+    "sample": "Powerful and easy to use",
+    "size_pt": 10,
+    "max_chars": 31,
+    "role": "content"
+   },
+   {
+    "id": 15,
+    "sample": "Legacy tools",
+    "size_pt": 20,
+    "max_chars": 15,
+    "role": "content"
+   },
+   {
+    "id": 16,
+    "sample": "Rigid and hard to adopt",
+    "size_pt": 10,
+    "max_chars": 31,
+    "role": "content"
+   },
+   {
+    "id": 18,
+    "sample": "Spreadsheets",
+    "size_pt": 20,
+    "max_chars": 15,
+    "role": "content"
+   },
+   {
+    "id": 19,
+    "sample": "Easy, but break at scale",
+    "size_pt": 10,
+    "max_chars": 31,
+    "role": "content"
+   },
+   {
+    "id": 20,
+    "sample": "Ease of use →",
+    "size_pt": 10,
+    "max_chars": 75,
+    "role": "content"
+   },
+   {
+    "id": 21,
+    "sample": "Power →",
+    "size_pt": 10,
+    "max_chars": 25,
+    "role": "content"
+   }
+  ],
+  "sample_images": 0,
+  "note": "Matrix: put the product and competitors in the four boxes. Keep Creator in the highlighted box."
  }
 ]

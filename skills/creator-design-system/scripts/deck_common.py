@@ -1,7 +1,7 @@
 """Shared helpers for the CDS 2.0 deck scripts.
 
-The source deck is assets/deck/CDS-2.0-Creator-Deck-All-Slides.pptx (46 slides:
-1-30 standard, 31 divider, 32-46 extras). Never edit it in place; scripts
+The source deck is assets/deck/CDS-2.0-Creator-Deck-All-Slides.pptx (59 slides:
+1-30 standard, 31 divider, 32-46 extras, 47-59 infographics). Never edit it in place; scripts
 always write a new file.
 """
 from pathlib import Path
@@ -12,7 +12,8 @@ SOURCE_DECK = SKILL_DIR / "assets" / "deck" / "CDS-2.0-Creator-Deck-All-Slides.p
 EMU_PER_PT = 12700
 DIVIDER_SLIDE = 31
 CLOSING_SLIDES = {30, 46}
-EXTRA_SLIDES = set(range(32, 47))
+EXTRA_SLIDES = set(range(32, 60))
+INFOGRAPHIC_SLIDES = set(range(47, 60))
 
 
 def walk(shapes):
@@ -68,7 +69,7 @@ def sample_images(slide):
 
 # Slide 8's three step cards hold drawn sample screens but aren't named "(replace)".
 SCREEN_SHAPES_BY_SLIDE = {8: {"Shape 3", "Shape 19", "Shape 41"}}
-FIXED_LABELS = {"thank you"}
+FIXED_LABELS = {"thank you", "?"}
 
 
 def screen_regions(slide_no, slide):

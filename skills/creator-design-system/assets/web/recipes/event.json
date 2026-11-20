@@ -1,0 +1,87 @@
+{
+ "title": "Event, hackathon or webinar page (from Example · Partner hackathon page)",
+ "topic": "default",
+ "sections": [
+  {
+   "type": "nav"
+  },
+  {
+   "type": "hero",
+   "layout": "event",
+   "meta": "NO. 2027 / 01 · ZOHO CREATOR · CONFERENCE",
+   "badge": "OFFICIAL",
+   "headline": "Event name",
+   "year": "2027",
+   "body": "One line that says why to come.",
+   "date": "Date",
+   "place": "Place · Online",
+   "primary": "Register now"
+  },
+  {
+   "type": "features",
+   "eyebrow": "The brief",
+   "title": "It's your time to **build**",
+   "cards": [
+    {
+     "icon": "gift",
+     "title": "No entry fee",
+     "text": "Free to take part."
+    },
+    {
+     "icon": "users",
+     "title": "Who can take part",
+     "text": "Open to partners, alone or as a team."
+    },
+    {
+     "icon": "trophy",
+     "title": "What you can win",
+     "text": "Prizes and a spotlight on stage."
+    }
+   ]
+  },
+  {
+   "type": "steps",
+   "layout": "timeline",
+   "eyebrow": "The stages",
+   "title": "What are the stages?",
+   "items": [
+    {
+     "when": "Date",
+     "title": "Registration and ideation",
+     "text": "Register and share your idea."
+    },
+    {
+     "when": "Date",
+     "title": "Build",
+     "text": "Build your app with support from the team."
+    },
+    {
+     "when": "Date",
+     "title": "Win",
+     "text": "Finalists present on stage."
+    }
+   ]
+  },
+  {
+   "type": "faq",
+   "items": [
+    {
+     "q": "Who can take part?",
+     "a": "Zoho Creator partners, alone or in teams of up to four."
+    },
+    {
+     "q": "Is it online?"
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "layout": "dark",
+   "headline": "Now jump in and bring your ideas **to life**",
+   "primary": "Register now"
+  },
+  {
+   "type": "footer"
+  }
+ ]
+}
