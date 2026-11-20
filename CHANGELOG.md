@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.8.2 — Nov 2026
+- icons.json: what-it's-for lines match the CDS-2.0 Figma icon descriptions word for word (Figma wins; the brand site follows it). Changed: ai-sparkle (agents and bots included; violet tile on AI content), robot (only for literal robots, e.g. hardware or robotics), portal-loan-application (form with a coin). Figma Icon/AISparkle description updated to the same wording.
+- Deck: slide 46 Questions speaker note rewritten for the new slide (no speaker details or QR code any more). deck-slots.json regenerated.
+
 ## 2.8.1 — Nov 2026
 - check_system.py no longer flags the CDS 3D tile on AI pieces. The "solid violet background on a card, panel or button" rule (2.7.1) caught the tile's violet bevel layers (violet/150 and violet/130, 200 px), so the YouTube `campaign-ai` thumbnail failed the plugin's own check. Everything inside an element marked `data-el="tile"` is now skipped by that rule (brand-rules.md allows the violet tile for AI content); real violet cards, panels and buttons are still flagged.
 - build_email.py: the flat icon tile is marked `data-el="tile"` too (the 3D hero and story tiles already were, through render_social's tile3d), so AI newsletters with a violet `hero_tile` pass.
