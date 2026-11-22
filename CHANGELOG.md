@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.8.4 — Nov 2026
+- check_system.py recognises an email page on its own, whatever the file name (build_email's new `cds-template` marker, the email-client meta tag, or a table-based email layout), so the Georgia and Helvetica Neue email exception applies without `--email`. A newsletter saved as index.html no longer fails on its fonts. Web pages that use Georgia are still flagged.
+- build_email.py marks its output with `<meta name='cds-template' content='email'>`.
+
 ## 2.8.3 — Nov 2026
 - icons.json: every icon now has a what-it's-for line (363 of 363; `python scripts/icon.py list` shows them), so Claude picks icons by meaning. The 296 Phosphor lines come from the brand site and are now in the CDS-2.0 Figma icon descriptions too, so Figma, skill and site match word for word. 25 lines were tidied on the way (UK spelling, clearer wording); Brain, MagicWand and Sparkle now say they are not the AI icon (use ai-sparkle).
 

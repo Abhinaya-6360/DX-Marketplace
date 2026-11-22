@@ -1,7 +1,7 @@
 """CDS 2.0 system guard: flag anything that isn't from the system.
 
 Usage:
-  python check_system.py <file> [<file> ...] [--topic ai|partner] [--email]
+  python check_system.py <file> [<file> ...] [--topic ai|partner] [--email]   (emails are recognised on their own; --email forces it)
       Checks a brief (.json), web or email page (.html/.css), SVG, deck (.pptx),
       or plain copy (.txt/.md). Prints every SYSTEM VIOLATION; exit code 1 if any.
   python check_system.py contrast "#25272c" "#ffffff" [--large]
@@ -320,6 +320,15 @@ def check_pptx(path, topic=None):
     return out
 
 
+def looks_like_email(src):
+    """An email page, whatever its file name: build_email's marker, the email-client meta tag,
+    or the table layout email HTML uses (three or more role="presentation" tables)."""
+    head = src[:4000].lower()
+    return ("name='cds-template' content='email'" in head or 'name="cds-template" content="email"' in head
+            or "x-apple-disable-message-reformatting" in head
+            or len(re.findall(r"role\s*=\s*['\"]presentation['\"]", src, flags=re.I)) >= 3)
+
+
 def check_file(p, topic=None, email=False):
     p = Path(p); s = p.suffix.lower()
     if s == ".pptx":
@@ -328,7 +337,7 @@ def check_file(p, topic=None, email=False):
     if s == ".json":
         return brief_violations(json.loads(src), topic)
     if s in (".html", ".htm", ".css", ".svg"):
-        return check_html(src, email=email or "email" in p.name.lower(), topic=topic)
+        return check_html(src, email=email or "email" in p.name.lower() or looks_like_email(src), topic=topic)
     return text_violations(src) + colour_violations(src)
 
 
