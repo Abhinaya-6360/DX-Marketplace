@@ -104,6 +104,19 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   blue/100 text (light), violet/100 text (AI and partner, light backgrounds only), or
   yellow/100 text on the AI gradient.
 
+## Languages other than English
+
+Zoho Puvi has Latin letters only. For other languages:
+- **Social, video, YouTube, decks and newsletters:** Tamil, Hindi and other Devanagari, Arabic,
+  Japanese, Chinese and Korean text uses Noto Sans for those letters (bundled in
+  `assets/fonts/noto/`, or Noto Sans CJK). Arabic is set right to left and right-aligned. Every
+  such piece is listed as a font note for **design review** before it goes out.
+- **Other scripts** (Bengali, Telugu, Kannada, Malayalam, Gujarati, Thai, Hebrew, Cyrillic…):
+  no CDS font yet — flag it and ask the design team.
+- **Print:** never typeset non-English print with the print tool (it can't join these letters
+  correctly); it stops and the design team makes it.
+- **Web pages:** localised zoho.com pages are made by the web team. Build web drafts in English.
+
 ## Shapes and patterns
 
 - Shape kit v1.0: bracket (solid and frame), diamond, wedge (`assets/shapes/`, recolour with

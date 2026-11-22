@@ -74,7 +74,7 @@ def build(page):
         if t != "nav" and sum(1 for k in ("primary",) if s.get(k)) > 1:
             c.errors.append(f"Section {i+1} ({t}) has more than one red button.")
     css = fonts + section_css(C, G)
-    page_html = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
+    page_html = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='cds-kind' content='web'><meta name='viewport' content='width=device-width,initial-scale=1'>"
                  f"<title>{esc(page.get('title','Zoho Creator'))}</title><style>{css}</style></head><body>"
                  f"<div class='draft'>Draft for design and dev review · CDS 2.0 · not production code</div>{''.join(out)}</body></html>")
     return page_html, c.samples, c.errors
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     if len(a) < 2:
         sys.exit(__doc__)
     page = json.load(open(a[0]))
-    from check_system import guard; guard(page, sys.argv)
+    from check_system import guard; guard(page, sys.argv, kind="web")
     h, samples, errors = build(page)
     Path(a[1]).write_text(h)
     print(f"Saved {a[1]}")

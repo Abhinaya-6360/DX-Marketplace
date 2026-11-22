@@ -38,8 +38,8 @@ A = SKILL / "assets"
 TOK = json.load(open(SKILL / "design-system" / "tokens.json"))
 C = TOK["colour"]
 ICONS = json.load(open(A / "icons" / "icons.json"))["library"]
-HEAD = "Georgia,&quot;Times New Roman&quot;,serif"           # &quot; keeps the quotes inside style='…'
-BODY = "&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif"
+HEAD = "Georgia,&quot;Times New Roman&quot;,&quot;Noto Sans Tamil&quot;,&quot;Noto Sans Devanagari&quot;,&quot;Noto Sans Arabic&quot;,&quot;Noto Sans CJK JP&quot;,serif"           # &quot; keeps the quotes inside style='…'
+BODY = "&quot;Helvetica Neue&quot;,Helvetica,Arial,&quot;Noto Sans Tamil&quot;,&quot;Noto Sans Devanagari&quot;,&quot;Noto Sans Arabic&quot;,&quot;Noto Sans CJK JP&quot;,sans-serif"
 TONES = {  # band background, band border, header tile, item tile background
     "blue": ("blue/40", "blue/40", "blue/100", "blue/20"),
     "violet": ("violet/20", "violet/40", "violet/100", "violet/20"),
@@ -214,7 +214,7 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     if len(a) < 2: sys.exit(__doc__)
     spec = json.load(open(a[0])); out = Path(a[1]); out.mkdir(parents=True, exist_ok=True)
-    from check_system import guard; guard(spec, sys.argv)
+    from check_system import guard; guard(spec, sys.argv, kind="email")
     page, img, errors, samples = build(spec, out)
     img.render()
     if "--base-url" in a:

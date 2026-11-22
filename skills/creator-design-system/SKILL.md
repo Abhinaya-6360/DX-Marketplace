@@ -62,6 +62,11 @@ set and the CDS templates. Never improvise outside it.
   one plain line what doesn't fit and why, offer two or three on-system options that look good
   and pass AA, and build the best one by default. Only if the marketer still insists, make it
   with `--allow-violation` and list it under **System violations** in the handover.
+- **One main button:** one red button per post, slide or email, and one per section on web
+  pages. Any other action is an outline button or a text link.
+- **Other languages:** Zoho Puvi is Latin only. Non-English text uses Noto Sans and is flagged
+  for design review; print and web pages in other languages go to the design and web teams
+  (`references/brand-rules.md` › Languages).
 - Every build and render script stops on emoji and outside colours in the brief;
   `scripts/check_system.py` checks the finished file. Every handover ends with one line:
   "System check: passes CDS 2.0" or the list of System violations.

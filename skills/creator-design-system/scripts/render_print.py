@@ -265,7 +265,7 @@ def draw_page(c, tkey, b, errors, samples):
 
 def render(brief_path, out_pdf, preview=None):
     b = json.load(open(brief_path))
-    from check_system import guard; guard(b, sys.argv)
+    from check_system import guard; guard(b, sys.argv, kind="print")
     key = b["template"]
     pages = SETS.get(key, [key])
     c = canvas.Canvas(str(out_pdf))
