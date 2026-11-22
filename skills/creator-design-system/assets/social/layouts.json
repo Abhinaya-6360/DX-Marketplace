@@ -1538,6 +1538,20 @@
       },
       {
        "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        464,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "A quick guide to automating approvals, onboarding and reports, one slide at a time."
+      },
+      {
+       "t": "text",
        "slot": "Swipe cue",
        "r": [
         80,
@@ -1609,6 +1623,20 @@
        "fill": "base/white",
        "align": "left",
        "sample": "5 workflows to automate this week"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        80,
+        464,
+        860,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "left",
+       "sample": "A quick guide to automating approvals, onboarding and reports, one slide at a time."
       },
       {
        "t": "text",

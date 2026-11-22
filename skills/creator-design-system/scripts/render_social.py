@@ -60,12 +60,29 @@ def svg_uri(path, recolour=None):
     return "data:image/svg+xml;base64," + base64.b64encode(s.encode()).decode()
 
 
+# Zoho Puvi covers Latin. Other languages fall back to Noto Sans (bundled: Tamil, Devanagari, Arabic;
+# installed: Noto Sans CJK for Japanese, Chinese and Korean) and are flagged for design review.
+FONT_STACK = "'Zoho Puvi','Noto Sans Tamil','Noto Sans Devanagari','Noto Sans Arabic','Noto Sans CJK JP','Noto Sans CJK KR',sans-serif"
+RTL_RE = __import__("re").compile("[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff]")
+
+
 def font_css():
     out = []
     for w, n in WEIGHT.items():
         out.append(f"@font-face{{font-family:'Zoho Puvi';font-weight:{n};"
                    f"src:url('{data_uri(A / 'fonts' / f'Zoho-Puvi-{w.capitalize()}.ttf')}');}}")
+    noto = A / "fonts" / "noto"
+    if noto.exists():
+        for fam in ("Tamil", "Devanagari", "Arabic"):
+            for n, w in ((400, "Regular"), (500, "Regular"), (600, "SemiBold"), (700, "SemiBold")):
+                f = noto / f"NotoSans{fam}-{w}.ttf"
+                if f.exists():
+                    out.append(f"@font-face{{font-family:'Noto Sans {fam}';font-weight:{n};src:url('{data_uri(f)}');}}")
     return "\n".join(out)
+
+
+def rtl_css(text):
+    return "direction:rtl;unicode-bidi:plaintext;" if RTL_RE.search(text or "") else ""
 
 
 def text_css(el):
@@ -147,7 +164,7 @@ def card(r, variant, photo, texts=None):
     if texts:
         for (slot, ty, style, col) in (("name", 497, "h6/bold", cn), ("role", 543, "text-large/medium", cr), ("company", 573, "text-large/regular", cc)):
             st = TS[style]
-            parts.append(f"<div data-el='text' data-slot='speaker {slot}' style='position:absolute;left:{24*s}px;top:{ty*s}px;width:{352*s}px;"
+            parts.append(f"<div data-el='stext' data-slot='speaker {slot}' style='position:absolute;left:{24*s}px;top:{ty*s}px;width:{352*s}px;white-space:nowrap;"
                          f"text-align:center;color:{colour(col)};font-size:{st['size']*s}px;font-weight:{WEIGHT[st['weight']]};line-height:{st['lineHeight']*s}px'>{html.escape(texts.get(slot,''))}</div>")
     return f"<div data-el='card' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px'>{''.join(parts)}</div>", sample
 
@@ -187,7 +204,9 @@ def build(brief):
     t = LAYOUTS[brief["template"]]
     v = t["variants"][brief.get("version", "default")]
     W, H = t["size"]
-    topic = brief.get("topic", "default")
+    ver = brief.get("version", "default")
+    implied = "ai" if ver.endswith("ai") else "partner" if ver.endswith("partner") else "default"
+    topic = implied if implied != "default" else (brief.get("topic") or "default")   # an AI or partner version is that topic
     txt = brief.get("text", {})
     samples, html_el, bold = [], [], False
     for el in v["el"]:
@@ -233,8 +252,9 @@ def build(brief):
             if val is None:
                 val = el["sample"]
                 samples.append(f"{el['slot']} (sample text)")
+            align = "right" if (RTL_RE.search(val) and el["align"] == "left") else el["align"]
             html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;"
-                           f"color:{colour(el['fill'])};text-align:{el['align']};{text_css(el)}'>{rich(val, bold, topic, el.get('hl'))}</div>")
+                           f"color:{colour(el['fill'])};text-align:{align};{rtl_css(val)}{text_css(el)}'>{rich(val, bold, topic, el.get('hl'))}</div>")
         elif k == "screenshot":
             c, s = screenshot_card(el["r"], brief.get("screenshot"))
             html_el.append(c)
@@ -328,8 +348,8 @@ def build(brief):
                     samples.append(f"{tt['slot']} (sample text)")
                 html_el.append(f"<div data-el='text' data-slot='{tt['slot']}' data-h='{th}' data-zone='lowerthird' style='position:absolute;left:{tx}px;top:{ty}px;width:{tw}px;"
                                f"color:{colour(tt['fill'])};{text_css(tt)}'>{html.escape(val)}</div>")
-    page = (f"<!doctype html><html><head><meta charset='utf-8'><style>{font_css()}*{{margin:0;box-sizing:border-box}}"
-            f"body{{width:{W}px;height:{H}px;overflow:hidden;font-family:'Zoho Puvi',Arial,sans-serif}}"
+    page = (f"<!doctype html><html><head><meta charset='utf-8'><meta name='cds-kind' content='social'><meta name='cds-topic' content='{topic}'><style>{font_css()}*{{margin:0;box-sizing:border-box}}"
+            f"body{{width:{W}px;height:{H}px;overflow:hidden;font-family:{FONT_STACK}}}"
             f"#c{{position:relative;width:{W}px;height:{H}px;overflow:hidden}}</style></head>"
             f"<body><div id='c'>{''.join(html_el)}</div></body></html>")
     return page, (W, H), v.get("safe"), samples
@@ -345,6 +365,7 @@ CHECK_JS = """(safe) => {
   for(let i=0;i<b.length;i++) for(let j=i+1;j<b.length;j++){ const a=b[i],c=b[j];
     if(a.el==='text'&&c.el==='text'&&hit(a,c)) out.overlap.push(`${a.slot} overlaps ${c.slot}`);
     if(((a.el==='text'&&['screenshot','tag','zoho','lockup'].includes(c.el))||(c.el==='text'&&['screenshot','tag','zoho','lockup'].includes(a.el)))&&hit(a,c)) out.overlap.push(`${a.slot||a.el} overlaps ${c.slot||c.el}`); }
+  out.speaker=[...document.querySelectorAll('[data-el=stext]')].filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.dataset.slot);
   return out; }"""
 
 
@@ -368,6 +389,7 @@ def render(brief_path, out_png):
     errors = [f"Text too long — {o}. Shorten it; don't change the size." for o in res["overflow"]]
     errors += [f"Collision — {o}." for o in res["overlap"]]
     errors += [f"Outside the safe area — {o}." for o in res["outside"]]
+    errors += [f"Too long for the speaker card — {o}. Shorten it (e.g. first and last name, a shorter job title)." for o in res.get("speaker", [])]
     print(f"Saved {out_png} ({W}×{H}) and {out_html.name}")
     print("BRAND CHECK")
     print("Errors: none" if not errors else "Errors:")

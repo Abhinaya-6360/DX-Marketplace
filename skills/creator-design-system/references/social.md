@@ -30,8 +30,8 @@ with `scripts/render_social.py`, which produces the exact-size PNG and runs the 
 | `landscape` | 1200 × 628 | light, bold | LinkedIn or Facebook link post |
 | `x` | 1600 × 900 | light, bold | X post |
 | `story` | 1080 × 1920 | light, bold | Instagram, Facebook or LinkedIn story |
-| `reels-cover` | 1080 × 1920 | default | Reels and Shorts cover |
-| `carousel-cover` | 1080 × 1350 | default (Bold), ai | First slide of a carousel |
+| `reels-cover` | 1080 × 1920 | default | Reels and Shorts cover (the empty top and bottom are for the app's buttons and captions — keep them clear) |
+| `carousel-cover` | 1080 × 1350 | default (Bold), ai | First slide of a carousel: headline plus one supporting line |
 | `carousel-slide` | 1080 × 1350 | light, bold, ai | Inside slides: render one per slide, numbered |
 | `email-header` | 1200 × 400 | light, bold | Newsletter and campaign email header |
 | `video-background` | 1920 × 1080 | default | Background behind a talking-head video, with lower third |
@@ -44,6 +44,10 @@ and violet highlights. Violet is an accent only. Use AI or partner only when the
 **Images:** a product screenshot replaces the drawn sample in the card. Speaker photos must be
 transparent cut-out PNGs (person only, no background). If none are given, the template keeps
 neutral placeholders and the check lists them.
+
+**Stories and Reels covers** leave the top and bottom empty on purpose: the app puts its
+buttons, profile and reply bar there. Never fill those bands; if a marketer asks why it looks
+empty, say so.
 
 **Carousels:** always build from `carousel-cover` and `carousel-slide` (AI news and stories: the
 `ai` version of both). Render the cover, then one `carousel-slide` per point with "Slide number" (01,

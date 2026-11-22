@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.8.5 — Nov 2026
+Built on 2.8.3 and to be merged on top of 2.8.4 (email detection). Fixes from the pre-rollout test (all formats, 12 violation cases, real-world requests), for sharing with the whole Zoho Creator group.
+- check_system.py: icons from other sets (Font Awesome, Material…) are now flagged whatever their format (any quote style or grid size); the illustration assets count as CDS artwork.
+- check_system.py: one main button — more than one red button in a post, slide or email, or in one web section, is flagged.
+- check_system.py: an outside colour on a button now says the main button is always red/90.
+- Languages: Zoho Puvi is Latin only. Tamil, Devanagari, Arabic (bundled Noto Sans, assets/fonts/noto/) and Japanese, Chinese, Korean (Noto Sans CJK) render in social, video, YouTube, decks and newsletters, Arabic right to left, and every such piece gets a FONT NOTE for design review. Other scripts are flagged. Non-English print stops (the print tool can't join these letters); non-English web drafts are flagged (the web team localises zoho.com).
+- render_social.py: an AI or partner version sets its topic automatically, and rendered pages carry it, so the checker no longer asks "is this AI?" for them.
+- render_social.py: speaker names, roles and companies that don't fit the Webinar card are flagged.
+- Carousel cover: headline plus one supporting line (Figma Templates · Social and video, Bold and AI). social.md: Stories and Reels covers keep their top and bottom empty for the app's buttons.
+
 ## 2.8.4 — Nov 2026
 - check_system.py recognises an email page on its own, whatever the file name (build_email's new `cds-template` marker, the email-client meta tag, or a table-based email layout), so the Georgia and Helvetica Neue email exception applies without `--email`. A newsletter saved as index.html no longer fails on its fonts. Web pages that use Georgia are still flagged.
 - build_email.py marks its output with `<meta name='cds-template' content='email'>`.

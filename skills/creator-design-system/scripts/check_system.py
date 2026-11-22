@@ -22,6 +22,10 @@ What it checks
   6. Violet: only when the topic is AI or partner (--topic ai|partner).
   7. Contrast (WCAG AA): 4.5:1 for normal text, 3:1 for large text (24 px+, or 19 px+
      Semibold/Bold) and for icons and UI shapes.
+  8. Languages: Zoho Puvi covers Latin. Tamil, Devanagari, Arabic, Japanese, Chinese and Korean use
+     Noto Sans and are listed as FONT NOTE for design review; other scripts are flagged. Web pages
+     (cds-kind web) must stay in English: the web team localises zoho.com pages.
+  9. One main button: one red button per post, slide or email, and per section on web pages.
 
 Other scripts import `text_violations` and `brief_violations` so a brief with emoji or
 outside colours fails before anything is rendered.
@@ -161,7 +165,24 @@ def colour_violations(s, where=""):
     return out
 
 
-def brief_violations(brief, topic=None):
+PRINT_TEMPLATES = set(json.load(open(A / "print" / "layouts.json"))["templates"]) | set(json.load(open(A / "print" / "layouts.json")).get("sets", {}))
+
+
+def brief_kind(brief):
+    if not isinstance(brief, dict):
+        return "social"
+    if brief.get("template") in PRINT_TEMPLATES:
+        return "print"
+    if "subject" in brief or "preheader" in brief:
+        return "email"
+    if brief.get("sections"):
+        return "web"
+    if "slides" in brief:
+        return "deck"
+    return "social"
+
+
+def brief_violations(brief, topic=None, kind=None):
     """For the JSON briefs the render/build scripts take."""
     out = []
     topic = topic or (brief.get("topic") if isinstance(brief, dict) else None)
@@ -170,7 +191,52 @@ def brief_violations(brief, topic=None):
             out.append(f"{path}: robot icon on an AI piece — use ai-sparkle (robot is only for a literal robot)")
         out += text_violations(s, f"{path}: ")
         if HEX_RE.search(s) and not s.lower().endswith((".png", ".jpg", ".svg")):
-            out += colour_violations(s, f"{path}: ")
+            v = colour_violations(s, f"{path}: ")
+            if re.search(r"button|cta|btn|colou?r", path.lower()):
+                v = [x + " — if this is for the main button, it is always red/90 (#e81d17)" for x in v]
+            out += v
+    out += script_violations(" ".join(t for _, t in _strings(brief)), kind or brief_kind(brief))
+    return out
+
+
+# ---------- languages (Nov 2026) ----------
+# Zoho Puvi covers Latin. Other scripts use Noto Sans fallbacks and are always flagged for design
+# review. Web pages are localised by the web team, so web drafts stay in English.
+SCRIPTS = [("Tamil", 0x0B80, 0x0BFF, "Noto Sans Tamil"), ("Devanagari (Hindi, Marathi)", 0x0900, 0x097F, "Noto Sans Devanagari"),
+           ("Arabic", 0x0600, 0x06FF, "Noto Sans Arabic"), ("Arabic", 0x0750, 0x077F, "Noto Sans Arabic"),
+           ("Arabic", 0xFB50, 0xFDFF, "Noto Sans Arabic"), ("Arabic", 0xFE70, 0xFEFF, "Noto Sans Arabic"),
+           ("Japanese", 0x3040, 0x30FF, "Noto Sans CJK JP"), ("Chinese or Japanese", 0x4E00, 0x9FFF, "Noto Sans CJK JP"),
+           ("Korean", 0xAC00, 0xD7AF, "Noto Sans CJK KR")]
+OTHER_SCRIPTS = [("Hebrew", 0x0590, 0x05FF), ("Bengali", 0x0980, 0x09FF), ("Gurmukhi", 0x0A00, 0x0A7F), ("Gujarati", 0x0A80, 0x0AFF),
+                 ("Odia", 0x0B00, 0x0B7F), ("Telugu", 0x0C00, 0x0C7F), ("Kannada", 0x0C80, 0x0CFF), ("Malayalam", 0x0D00, 0x0D7F),
+                 ("Thai", 0x0E00, 0x0E7F), ("Cyrillic", 0x0400, 0x04FF), ("Greek", 0x0370, 0x03FF)]
+FONT_NOTES = []   # fallback fonts used: reported for design review
+
+
+def scripts_in(s):
+    found, other = {}, set()
+    for ch in set(s or ""):
+        o = ord(ch)
+        for name, lo, hi, font in SCRIPTS:
+            if lo <= o <= hi:
+                found[name] = font
+        for name, lo, hi in OTHER_SCRIPTS:
+            if lo <= o <= hi:
+                other.add(name)
+    return found, other
+
+
+def script_violations(s, kind="social"):
+    found, other = scripts_in(s)
+    out = []
+    if kind == "web" and (found or other):
+        return ["non-English text on a web page — localised zoho.com pages are made by the web team; build the draft in English"]
+    if kind == "print" and (found or other):
+        return [f"{', '.join(sorted(set(found) | other))} text in print — the print tool can't join these letters correctly; the design team makes non-English print"]
+    for name in sorted(other):
+        out.append(f"{name} text — there is no CDS font for it yet; ask the design team before using it")
+    for name, font in found.items():
+        FONT_NOTES.append(f"{name} text uses {font} (Zoho Puvi has no {name} letters) — design review before publishing")
     return out
 
 
@@ -179,10 +245,10 @@ NEW_ICONS = []   # icons drawn because none fitted: reported for design review
 ICON_BODIES = set()
 for v in ICONS.values():
     for w in ("regular", "fill"):
-        ICON_BODIES |= set(re.findall(r'd="([^"]{20,})"', v[w]["body"]))
+        ICON_BODIES |= set(re.findall(r"""\bd=["']([^"']{20,})["']""", v[w]["body"]))
 ASSET_PATHS = set()
-for p in list((A / "logos").rglob("*.svg")) + list((A / "shapes").rglob("*.svg")) + list((A / "patterns").rglob("*.svg")):
-    ASSET_PATHS |= set(re.findall(r'd="([^"]{20,})"', p.read_text(errors="ignore")))
+for p in [x for d in ("logos", "shapes", "patterns", "illustrations") for x in (A / d).rglob("*.svg")]:
+    ASSET_PATHS |= set(re.findall(r"""\bd=["']([^"']{20,})["']""", p.read_text(errors="ignore")))
 
 
 def css_blocks(src):
@@ -199,9 +265,14 @@ def decl(block, prop):
 
 def check_html(src, email=False, topic=None):
     out = []
+    mt = re.search(r"""name=["']cds-topic["']\s+content=["'](\w+)["']""", src)
+    if not topic and mt and mt.group(1) in ("ai", "partner"):
+        topic = mt.group(1)
+    kind = "web" if re.search(r"""name=["']cds-kind["']\s+content=["']web["']""", src) else ("email" if email else "social")
     text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", src, flags=re.S | re.I)
     text = re.sub(r"<[^>]+>", " ", text)
     out += text_violations(re.sub(r"\s+", " ", text))
+    out += script_violations(text, kind)
     body = htmllib.unescape(re.sub(r"data:[^'\")]+", "", src))   # skip embedded fonts/images
     out += colour_violations(body)
     fonts_ok = ["zoho puvi"] + (["georgia", "helvetica neue", "helvetica", "arial", "sans-serif", "serif"] if email else [])
@@ -220,10 +291,12 @@ def check_html(src, email=False, topic=None):
                 out.append(f"new icon '{new.group(1)}' doesn't follow the CDS custom style — viewBox 0 0 32 32, "
                            "stroke-width 2, currentColor, no text (brand-rules.md > Icons)")
             continue
-        ds = re.findall(r'\sd="([^"]{20,})"', svg)
+        ds = re.findall(r"""\sd=["']([^"']{20,})["']""", svg)
         if ds and not all(d in ICON_BODIES or d in ASSET_PATHS for d in ds):
-            if re.search(r'viewBox="0 0 (256|32|24|16|20) ', svg):
-                out.append("an inline SVG icon is not from the CDS icon set — get it with python scripts/icon.py <name>")
+            vb = re.search(r"""viewBox=["']\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)""", svg)
+            size = re.search(r"""\swidth=["']?(\d+)""", svg)
+            if (vb and abs(float(vb.group(1)) - float(vb.group(2))) < 0.5) or (size and int(size.group(1)) <= 96):
+                out.append("an inline SVG icon is not from the CDS icon set (it looks like another set, e.g. Font Awesome or Material) — get the CDS one with python scripts/icon.py <name>, or draw a new one in the CDS style and mark it data-cds-new-icon")
     for b in css_blocks(body):
         fg, bg = decl(b, "color"), decl(b, "background(?:-color)?")
         if fg and bg:
@@ -236,11 +309,18 @@ def check_html(src, email=False, topic=None):
                 if worst < (3.0 if large else 4.5):
                     out.append(f"contrast {worst:.1f}:1 for {norm(f.group())} on {', '.join(norm(h) for h in g)} fails WCAG AA "
                                f"({'3' if large else '4.5'}:1 needed) — pick a pair from `python scripts/check_system.py pairs`")
-    for m in re.finditer(r"<(?P<tag>\w+)(?P<attrs>[^>]*)>", body):
-        attrs = m.group("attrs").lower()
-        if any(is_red(h) for h in HEX_RE.findall(attrs)):
-            if not (m.group("tag").lower() in ("a", "button", "td", "table") and re.search(r"btn|button|cta|bgcolor|background", attrs)) and "error" not in attrs:
-                out.append(f"red on <{m.group('tag')}> that isn't the main button — red is only for the main button or a form error")
+    web = re.search(r"""name=["']cds-kind["']\s+content=["']web["']""", body) is not None
+    for chunk in (re.split(r"<section\b", body) if web else [body]):
+        reds = 0
+        for m in re.finditer(r"<(?P<tag>\w+)(?P<attrs>[^>]*)>", chunk):
+            attrs = m.group("attrs").lower()
+            if any(is_red(h) for h in HEX_RE.findall(attrs)):
+                if m.group("tag").lower() in ("a", "button", "td", "table") and re.search(r"btn|button|cta|bgcolor|background", attrs):
+                    reds += 1
+                elif "error" not in attrs:
+                    out.append(f"red on <{m.group('tag')}> that isn't the main button — red is only for the main button or a form error")
+        if reds > 1:
+            out.append(f"{reds} red buttons in one {'section' if web else 'piece'} — only one main button per {'section' if web else 'post, slide or email'}; make the others outline buttons or text links")
     if topic not in ("ai", "partner") and any(is_violet(h) for h in HEX_RE.findall(body)):
         out.append("violet is used, but the topic isn't AI or partner — use blue, or pass --topic ai|partner if it is")
     out += ai_violations(body)
@@ -377,15 +457,19 @@ if __name__ == "__main__":
         for x in v:
             print("  ✗ " + x)
         bad += len(v)
+    if FONT_NOTES:
+        print("\nFONT NOTE(S) for design review: " + "; ".join(dict.fromkeys(FONT_NOTES)))
     if NEW_ICONS:
         print("\nNEW ICON(S) for design review (drawn because no CDS icon fitted): " + ", ".join(dict.fromkeys(NEW_ICONS)))
         print("  List each one in the handover so the design team can add it to the CDS 2.0 library.")
     sys.exit(1 if bad else 0)
 
 
-def guard(brief, argv, what="brief"):
+def guard(brief, argv, what="brief", kind=None):
     """Called by the build/render scripts: stop on system violations unless --allow-violation."""
-    v = brief_violations(brief)
+    v = brief_violations(brief, kind=kind)
+    if FONT_NOTES:
+        print("FONT NOTE(S) for design review: " + "; ".join(dict.fromkeys(FONT_NOTES)))
     if not v:
         return []
     print(f"SYSTEM VIOLATION(S) in the {what}:")

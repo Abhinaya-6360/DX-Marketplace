@@ -51,7 +51,7 @@ def set_text(shape, new_text):
 
 def main(plan_path, out_path):
     plan = json.load(open(plan_path))
-    from check_system import guard; guard(plan, sys.argv)
+    from check_system import guard; guard(plan, sys.argv, kind="deck")
     prs = Presentation(SOURCE_DECK)
     slides = list(prs.slides)
     wanted = [s["source"] for s in plan["slides"]]
