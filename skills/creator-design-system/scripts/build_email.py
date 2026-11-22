@@ -198,7 +198,7 @@ def build(spec, out):
                 f"<table role='presentation' cellpadding='0' cellspacing='0' style='margin:0 auto'><tr>{icons}</tr></table></td></tr>")
     pre = e(spec.get("preheader", ""))
     page = (f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>"
-            f"<meta name='x-apple-disable-message-reformatting'><title>{e(spec.get('subject', 'Zoho Creator'))}</title>"
+            f"<meta name='x-apple-disable-message-reformatting'><meta name='cds-template' content='email'><title>{e(spec.get('subject', 'Zoho Creator'))}</title>"
             f"<style>@media (max-width:620px){{.wrap{{width:100%!important}} td{{padding-left:20px!important;padding-right:20px!important}}}}</style></head>"
             f"<body style='margin:0;padding:0;background:{C['grey/20']}'>"
             f"<div style='display:none;max-height:0;overflow:hidden;opacity:0'>{pre}</div>"
