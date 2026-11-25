@@ -349,6 +349,178 @@
        "white": true
       }
      ]
+    },
+    "illustration-light": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "mesh-soft-blue",
+       "texture": 0.12
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": false
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        108,
+        56
+       ],
+       "colour": "blue",
+       "label": "NEW",
+       "centre": 540
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        308,
+        920,
+        176
+       ],
+       "style": "h1/semibold",
+       "fill": "grey/160",
+       "align": "center",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        140,
+        508,
+        800,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "role/text/secondary",
+       "align": "center",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        80,
+        620,
+        920,
+        324
+       ],
+       "illustration": true
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": false
+      }
+     ],
+     "_figma": "Template/Social post · Feature › Layout=Illustration, Tone=Light"
+    },
+    "illustration-bold": {
+     "safe": [
+      64,
+      64,
+      952,
+      952
+     ],
+     "el": [
+      {
+       "t": "bg",
+       "style": "glow",
+       "texture": 0
+      },
+      {
+       "t": "lockup",
+       "r": [
+        80,
+        80,
+        220,
+        69
+       ],
+       "white": true
+      },
+      {
+       "t": "tag",
+       "r": [
+        80,
+        232,
+        108,
+        56
+       ],
+       "colour": "yellow",
+       "label": "NEW",
+       "centre": 540
+      },
+      {
+       "t": "text",
+       "slot": "Headline",
+       "r": [
+        80,
+        308,
+        920,
+        176
+       ],
+       "style": "h1/semibold",
+       "fill": "base/white",
+       "align": "center",
+       "sample": "Approvals, automated in minutes"
+      },
+      {
+       "t": "text",
+       "slot": "Supporting text",
+       "r": [
+        140,
+        508,
+        800,
+        80
+       ],
+       "style": "h6/regular",
+       "fill": "blue/20",
+       "align": "center",
+       "sample": "Send every request to the right approver, without the follow-ups."
+      },
+      {
+       "t": "screenshot",
+       "r": [
+        80,
+        620,
+        920,
+        324
+       ],
+       "illustration": true
+      },
+      {
+       "t": "zoho",
+       "r": [
+        906,
+        968,
+        110,
+        48
+       ],
+       "white": true
+      }
+     ],
+     "_figma": "Template/Social post · Feature › Layout=Illustration, Tone=Bold"
     }
    }
   },

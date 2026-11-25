@@ -15,8 +15,18 @@ with `scripts/render_social.py`, which produces the exact-size PNG and runs the 
    topic, text per slot, tag, and image paths. Mark one or two highlight words with **double
    asterisks**.
 5. **Render:** `python scripts/render_social.py brief.json <name>.png`.
-6. **Fix every error** the check reports (text too long, collisions, outside the safe area) by
-   shortening the text — never by changing sizes or positions — and render again.
+6. **The layout adapts to the content.** Don't move or resize things by hand: the renderer does
+   it like a designer would, and prints each change as a `layout:` line. More text than the
+   sample: text above a picture pushes the picture down (it shrinks a little to keep its place),
+   text beside a picture flows down its column, and if there still isn't room the headline (then
+   the supporting text) steps down one or two CDS sizes. Less text: the picture moves up, or the
+   text closes up as one group centred on the picture. **Spacing rhythm**, the same in every
+   template and tone: tag (or eyebrow) to headline, and headline to the supporting text or date,
+   0.4 × the headline size (32 px for an 80 px headline), measured on the letters; text to the
+   picture below it at least 40 px and at most 6% of the width (65 px on a 1080 px post). A
+   picture that has reached its largest size sits centred in the room left. **Fix any error that's left** (text too
+   long, collisions, outside the safe area) by shortening the text, after asking the person, and
+   render again.
 7. **View the PNG**, then hand it over with the "To replace before publishing" list in plain
    language.
 
@@ -52,9 +62,21 @@ empty, say so.
 **Carousels:** always build from `carousel-cover` and `carousel-slide` (AI news and stories: the
 `ai` version of both). Render the cover, then one `carousel-slide` per point with "Slide number" (01,
 02…) and "Page counter" (02 / 06…), then combine the PNGs into a PDF, one page per slide. The page
-counter counts the cover as page 1, so point 01 sits on page 02; tell the marketer this. No custom
-illustrations (boarding passes, badges, mascots): the middle slot is a product screenshot. Icons only
+counter counts the cover as page 1, so point 01 sits on page 02; tell the marketer this. No one-off art
+in other styles (boarding passes, badges, mascots): the middle slot is a product screenshot or a CDS
+illustration (`references/illustrations.md`). Icons only
 in tiles, never after a sentence.
+
+**Tags (labels like NEW, GUIDE, LIVE WEBINAR)** never look like buttons. Three styles (Figma Tag ›
+Chip, Outline, Eyebrow), chosen for you by the layout: the soft **chip** by default; the **eyebrow**
+(small spaced capitals, no box) on text-led statement layouts; the thin **outline** over photos and
+busy backgrounds (Webinar, Reels covers, anything with a speaker or customer photo). On Bold, AI and
+dark backgrounds they're white. Override with `"tag_style"` only if the design clearly needs it.
+
+**Illustrations:** pass `"illustration"` instead of `"screenshot"`. Feature product versions switch to
+`illustration-light` / `illustration-bold` (Figma Layout=Illustration: centred tag, headline and text
+over a 920 × 324 picture zone); on other templates the text above a centred illustration is centred
+for you. Headlines are balanced so no line ends on a lone word.
 
 ## YouTube thumbnails
 

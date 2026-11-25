@@ -18,13 +18,16 @@ plan.json:
 - "text" maps shape id (from deck_inventory.py) to new text. Use "\\n" for a new
   paragraph. Formatting comes from the first run of the matching paragraph, so
   fonts, sizes and colours stay on-brand. Shapes not listed keep their sample text.
+  The layout adapts to the content: a box with more text grows into the free space below it
+  (the blocks under it move down), then steps down one or two of the deck's type sizes; past that,
+  check_deck.py asks you to shorten it.
 - "talk" is added to the speaker notes under the slide's own note.
 """
 import copy
 import json
 import sys
 from pptx import Presentation
-from deck_common import SOURCE_DECK, walk
+from deck_common import SOURCE_DECK, walk, fit_text, fit_note
 
 
 def set_text(shape, new_text):
@@ -60,12 +63,20 @@ def main(plan_path, out_path):
 
     for item in plan["slides"]:
         slide = slides[item["source"] - 1]
-        by_id = {sh.shape_id: sh for sh in walk(slide.shapes)}
-        for sid, text in item.get("text", {}).items():
+        by_id = {}
+        for sh in walk(slide.shapes):          # ids can repeat (a page number may share one): keep the first, as the inventory does
+            by_id.setdefault(sh.shape_id, sh)
+        top = lambda kv: by_id[int(kv[0])].top if int(kv[0]) in by_id else 0
+        for sid, text in sorted(item.get("text", {}).items(), key=top):   # top to bottom, so moves add up
             sh = by_id.get(int(sid))
             if sh is None or not sh.has_text_frame:
                 sys.exit(f"Slide {item['source']}: no text shape with id {sid}")
+            sample = sh.text_frame.text
             set_text(sh, text)
+            # the layout adapts to the content: grow into free space, then step down the type sizes
+            r = fit_text(slide, sh, text, apply=True, sample=sample)
+            if r and (r["steps"] or r["grow"]):
+                print(f"  layout: slide {item['source']} slot {sid}: {fit_note(r)}")
         if item.get("talk"):
             nf = slide.notes_slide.notes_text_frame
             nf.text = (nf.text + "\n\nTalk track: " if nf.text else "Talk track: ") + item["talk"]

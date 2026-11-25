@@ -67,7 +67,14 @@ decks longer than about 12 slides.
 
 ## Deck rules
 
-- Text: stay under each slot's max; shorten, never shrink the font, never add text boxes.
+- Text: aim for each slot's max. The layout adapts when text runs longer: build_deck grows the
+  box into free space below it (the blocks stacked under it move down with it; inside a card the
+  card keeps its padding so a row of cards stays equal), then steps the type down at most two of
+  the deck's sizes (60, 44, 40, 36, 28, 24, 20, 18, 16, 14, 12 pt; never under 12 pt), and keeps
+  titles to three lines. With less text than the sample the blocks under it close up, so a
+  title keeps its normal gap to the paragraph below. It prints each change as a `layout:` line and check_deck lists it under
+  To check. If it still doesn't fit, check_deck reports an error: shorten it, after asking the
+  person. Never add text boxes.
 - Colour: theme colours only. Red only on the main call to action. Violet only for AI and
   partner content.
 - Numbers on 5, 20, 24, 42, 43, 47–57 and charts: use only numbers the marketer gave, with a source.

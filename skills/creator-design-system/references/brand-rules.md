@@ -97,7 +97,16 @@ From Brand · Logo, section 06 · Together with partners. Creator always leads.
   The one exception is email newsletters: Georgia for headings, Helvetica Neue for body
   (see `references/email.md`).
 - Readable on a phone: on a 1080 px canvas, headlines 72 px or more, supporting text 32 px,
-  names 28–32 px. Never shrink text to make it fit; shorten it.
+  names 28–32 px.
+- **Layouts adapt to the content, in every collateral** (social, deck, print, web, email). When
+  there is more or less text than the template's sample, the layout adjusts the way a designer
+  would: first the blocks re-space and the box grows into free space (blocks below move down).
+  With less text the blocks below close up, so a heading keeps its normal gap to its paragraph
+  instead of an empty slot (beside a picture, short copy closes up and centres on the picture), then the text steps down **at most two sizes
+  on the same type scale**, never under the smallest sizes below. Only when that still doesn't
+  fit is the text shortened, and only after asking the person. Never change their words to make
+  a layout work. The renderers do this and report each change as a `layout:` line; look at the
+  result in place.
 - Smallest sizes: 12 px on screen. In print, body 9 pt, captions and labels 8 pt, contact and
   legal lines 7 pt, never smaller.
 - Highlight words: one or two words per headline, in a yellow/100 box (bold backgrounds),
@@ -169,6 +178,14 @@ Zoho Puvi has Latin letters only. For other languages:
 
 - Never generate product photos or Creator UI screenshots. Use what the marketer supplies;
   otherwise leave the "Product screenshot (replace)" or "Photo (replace)" slot and say so.
+- **Space around pictures:** keep at least 40 px (4% of the width) between any text and a screenshot,
+  illustration, tile, photo or card. Text never touches or crowds a picture.
+- **Illustrations** (`references/illustrations.md`): Claude draws flat CDS-style
+  illustrations for whatever the content is about (`scripts/illustration.py`), blues and greys with
+  other CDS colours as small accents (under 8%: yellow highlights, green success, red only for an
+  error, violet only on AI); stock illustrations are
+  fine when flat, licensed and recoloured to CDS. Never people drawn in code, logos, words or a
+  real-looking Creator screen. Every new or stock illustration goes to design review.
 - Never invent numbers, customers, quotes, prices or certifications. Leave the sample and
   flag it.
 - Keep every stat's source line.

@@ -11,7 +11,7 @@ Exit code 1 if there are errors.
 import json
 import sys
 from pptx import Presentation
-from deck_common import (SOURCE_DECK, walk, text_slots, sample_images, capacity, screen_regions, slot_role,
+from deck_common import (SOURCE_DECK, walk, text_slots, sample_images, capacity, fit_text, fit_note, screen_regions, slot_role,
                          DIVIDER_SLIDE, CLOSING_SLIDES)
 
 COVERS = {1, 32, 33}
@@ -47,13 +47,18 @@ def main(plan_path):
     for pos, item in enumerate(plan["slides"], 1):
         n = item["source"]
         slide = prs.slides[n - 1]
-        by_id = {sh.shape_id: sh for sh in walk(slide.shapes)}
+        by_id = {}
+        for sh in walk(slide.shapes):          # ids can repeat (a page number may share one): keep the first, as the inventory does
+            by_id.setdefault(sh.shape_id, sh)
         new = {int(k): v for k, v in item.get("text", {}).items()}
-        for sid, text in new.items():
+        for sid, text in sorted(new.items(), key=lambda kv: by_id[kv[0]].top):
             sh = by_id[sid]
-            cap = capacity(sh)
-            if len(text.replace("\n", " ")) > cap:
-                errors.append(f"Slide {pos} (source {n}): text in slot {sid} is {len(text)} characters; it holds about {cap}. Shorten it — don't shrink the font.")
+            r = fit_text(slide, sh, text, apply=True)     # same adaptation build_deck makes (in memory only)
+            if r is None:
+                errors.append(f"Slide {pos} (source {n}): text in slot {sid} is {len(text)} characters; it holds about {capacity(sh)}. "
+                              "Even with the free space and two type sizes smaller it doesn't fit; shorten it (ask the person first).")
+            elif r["steps"] or r["grow"]:
+                checks.append(f"Slide {pos} (source {n}): slot {sid}: {fit_note(r)}, to suit the content. Look at it in place.")
         regions = screen_regions(n, slide)
         roles = {sh.shape_id: slot_role(n, slide, sh, regions) for sh in text_slots(slide)}
         if any(r == "screen" for r in roles.values()):

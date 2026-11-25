@@ -164,7 +164,152 @@ def wrap(text, font, size, width):
 SETS = json.load(open(A / "print" / "layouts.json")).get("sets", {})
 
 
-def draw_page(c, tkey, b, errors, samples):
+# Print type sizes (pt), largest first. Text that runs long steps down this list, at most MAX_STEPS places.
+PRINT_SIZES = [72, 60, 48, 40, 36, 32, 30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 11, 10, 9, 8, 7.5, 7]
+MAX_STEPS = 2
+
+
+def step_size(pt, k):
+    """k print sizes below pt, never under the brand minimums: text set at 9pt or more stays at 9pt or
+    more (body); smaller text (labels 8pt, contact and legal 7pt) doesn't step at all."""
+    lower = [v for v in PRINT_SIZES if v < pt - 0.01 and v >= min(pt, 9)]
+    return pt if k <= 0 or not lower else lower[min(k, len(lower)) - 1]
+
+
+def adapt(t, b, notes):
+    """The layout adapts to the content, like a designer would set it (all units are the template's):
+    1. text that fits its box stays as it is;
+    2. a box with more text grows into the free space below it, and the blocks stacked under it in the
+       same column move down with it (inside a card the card's padding is kept, so cards stay equal);
+    3. otherwise the text steps down one or two print sizes (with whatever free space there is);
+    4. still too long: draw_page reports it, and the text needs shortening.
+    Returns a copy of the template's elements with sizes and positions adjusted."""
+    import copy
+    els = copy.deepcopy(t["el"]); sc = t["scale"]; TW, TH = t["size"]
+    txt, lst = b.get("text", {}), b.get("list", {})
+    safe_bottom = TH - SAFE / sc
+    near = 0.07 * TH                       # blocks closer than this belong to one stack
+    keep = 0.03 * TH                       # space kept before the next block
+    flowing = ("text", "list", "button", "qr")
+    def lines_at(el, size):
+        val = txt.get(el["slot"], el.get("sample", ""))
+        return len(wrap(val, f"Puvi-{el['font'][0]}", size * sc, el["r"][2] * sc))
+    order = sorted([e for e in els if e["t"] == "text" and e.get("slot")], key=lambda e: e["r"][1])
+    for el in order:
+        x, y, w, h = el["r"]; size0 = el["font"][1]
+        if lines_at(el, size0) * size0 * 1.3 <= h * 1.05 + 0.5 / sc:
+            continue
+        over = lambda o: o is not el and o["r"][0] < x + w - 0.5 and o["r"][0] + o["r"][2] > x + 0.5
+        bottom, stack = y + h, []
+        for o in sorted([o for o in els if over(o) and o["r"][1] >= y + h - 1], key=lambda o: o["r"][1]):
+            anchored = o["r"][1] + o["r"][3] >= TH * 0.92          # legal line, page-foot blocks: they stay put
+            if o["t"] in flowing and o["r"][1] - bottom <= near and not anchored:
+                stack.append(o); bottom = o["r"][1] + o["r"][3]
+            else:
+                break
+        floor = min([o["r"][1] for o in els if over(o) and o not in stack and o["r"][1] >= bottom - 1] + [safe_bottom])
+        for o in els:                       # a card or band around this text
+            if o["t"] not in ("rect", "panel") or o is el:
+                continue
+            ox, oy, ow, oh = o["r"]
+            if ox <= x + 0.5 and oy <= y + 0.5 and ox + ow >= x + w - 0.5 and oy + oh >= bottom - 0.5 and ow * oh < 0.6 * TW * TH:
+                edge = ox <= 0.5 or oy <= 0.5 or ox + ow >= TW - 0.5 or oy + oh >= TH - 0.5
+                floor = min(floor, oy + oh - keep if edge else bottom + keep)    # a band can grow inside; a card keeps its padding
+        room = max(0.0, floor - keep - bottom)
+        # free space above (a block that sits low on the page, like a back-cover heading, can rise into it)
+        above = [o["r"][1] + o["r"][3] for o in els if over(o) and o["t"] not in ("rect", "panel", "pattern") and o["r"][1] + o["r"][3] <= y + 0.5]
+        room_up = max(0.0, y - (max(above) if above else SAFE / sc) - 3 * keep) if y > 0.5 * TH else 0.0
+        for k in range(MAX_STEPS + 1):
+            size = step_size(size0, k)
+            if k and size == step_size(size0, k - 1):
+                break
+            n = lines_at(el, size); need = n * size * 1.3
+            grow = max(0.0, need - h)
+            long_title = grow and size >= 24 and n > 3 and k < MAX_STEPS
+            if grow <= room + room_up + 0.01 and not long_title:
+                if k:
+                    el["font"] = [el["font"][0], size]
+                if grow:
+                    down = min(grow, room); up = grow - down
+                    el["r"][1] -= up; el["r"][3] = h + grow
+                    for o in stack:
+                        o["r"][1] += down
+                bits = (["one print size smaller" if k == 1 else "two print sizes smaller"] if k else []) + \
+                       ([("box grown into the free space (blocks below moved down)" if grow <= room + 0.01 else "box grown into the free space (raised into the space above)")] if grow else [])
+                notes.append(f"{t['name']}: {el['slot']}: {' and '.join(bits)}")
+                break
+    # less text than the sample: the blocks stacked under it close up by the difference, so the gap
+    # from a heading to its paragraph is the template's gap, not leftover slot space
+    for el in sorted([e for e in els if e["t"] == "text" and e.get("slot")], key=lambda e: e["r"][1]):
+        x, y, w, h = el["r"]; size = el["font"][1]
+        val = txt.get(el["slot"], el.get("sample", ""))
+        if val == el.get("sample"):
+            continue
+        orig = next(o for o in t["el"] if o.get("slot") == el["slot"] and o["t"] == "text")
+        if el["font"] != orig["font"]:
+            continue
+        n_sample = len(wrap(orig.get("sample", ""), f"Puvi-{orig['font'][0]}", orig["font"][1] * sc, orig["r"][2] * sc))
+        sample_h = min(orig["r"][3], n_sample * orig["font"][1] * 1.3)
+        shrink = sample_h - lines_at(el, size) * size * 1.3
+        if shrink < 1 or h > orig["r"][3] + 0.5:          # only blocks that came out shorter (not ones that grew)
+            continue
+        over = lambda o: o is not el and o["r"][0] < x + w - 0.5 and o["r"][0] + o["r"][2] > x + 0.5
+        bottom, stack = y + h, []
+        for o in sorted([o for o in els if over(o) and o["r"][1] >= y + h - 1], key=lambda o: o["r"][1]):
+            if o["t"] in flowing and o["r"][1] - bottom <= near and o["r"][1] + o["r"][3] < TH * 0.92:
+                stack.append(o); bottom = o["r"][1] + o["r"][3]
+            else:
+                break
+        if stack:
+            el["r"][3] = h - shrink
+            for o in stack:
+                o["r"][1] -= shrink
+            notes.append(f"{t['name']}: {el['slot']}: shorter than the sample, blocks below closed up")
+    # a heading in a colour band, with its paragraph just below the band: the heading sits at the band's
+    # lower edge (the band's own side margin as padding), so heading and paragraph read as one group
+    for band in els:
+        if band["t"] not in ("panel", "rect") or band.get("radius"):
+            continue
+        bx, by, bw, bh = band["r"]
+        edge = bx <= 0.5 or by <= 0.5 or bx + bw >= TW - 0.5
+        if not edge or bw * bh >= 0.6 * TW * TH:
+            continue
+        group = [e for e in els if e["t"] in ("text", "list") and e.get("slot") and bx <= e["r"][0] and e["r"][0] + e["r"][2] <= bx + bw + 0.5
+                 and by < e["r"][1] and e["r"][1] + e["r"][3] <= by + bh + 0.5]
+        if not group:
+            continue
+        gx0 = min(e["r"][0] for e in group); gx1 = max(e["r"][0] + e["r"][2] for e in group)
+        below = [e for e in els if e["t"] in flowing and e["r"][1] >= by + bh and e["r"][0] < gx1 and e["r"][0] + e["r"][2] > gx0]
+        if not below or min(e["r"][1] for e in below) - (by + bh) > 0.1 * TH:
+            continue
+        pad = gx0 - bx if gx0 - bx > 1 else keep
+        gbottom = max(e["r"][1] + lines_at(e, e["font"][1]) * e["font"][1] * 1.3 if e["t"] == "text" else e["r"][1] + e["r"][3] for e in group)
+        shift = (by + bh - pad) - gbottom
+        if shift > 1:
+            for e in group:
+                e["r"][1] += shift
+            notes.append(f"{t['name']}: heading set at the foot of the colour band, close to the paragraph below")
+    # buttons and one-line list items step down too, before they're called too long
+    for el in els:
+        if el["t"] == "button" and el.get("slot"):
+            val = txt.get(el["slot"], el["sample"]); f = f"Puvi-{el['font'][0]}"
+            for k in range(1, MAX_STEPS + 1):
+                if pdfmetrics.stringWidth(val, f, el["font"][1] * sc) <= (el["r"][2] - 2 * el["pad"]) * sc:
+                    break
+                el["font"] = [el["font"][0], step_size(el["font"][1], 1)]
+                notes.append(f"{t['name']}: {el['slot']}: one print size smaller to fit the button")
+        if el["t"] == "list" and el.get("slot"):
+            items = lst.get(el["slot"]) or el["sample"]; f = f"Puvi-{el['font'][0]}"
+            for k in range(1, MAX_STEPS + 1):
+                if all(pdfmetrics.stringWidth("•  " + it, f, el["font"][1] * sc) <= el["r"][2] * sc for it in items):
+                    break
+                el["font"] = [el["font"][0], step_size(el["font"][1], 1)]
+                notes.append(f"{t['name']}: {el['slot']}: one print size smaller to fit each item on one line")
+    return els
+
+
+def draw_page(c, tkey, b, errors, samples, notes=None):
+    notes = [] if notes is None else notes
     t = T[tkey]
     sc = t["scale"]
     W, H = t["size"][0] * sc, t["size"][1] * sc
@@ -181,7 +326,7 @@ def draw_page(c, tkey, b, errors, samples):
     safe = (SAFE, SAFE, W - SAFE, H - SAFE)
     txt, lst = b.get("text", {}), b.get("list", {})
     label = t["name"]
-    for el in t["el"]:
+    for el in adapt(t, b, notes):
         k = el["t"]
         r = [v * sc for v in el["r"]]
         x, y, w, h = r
@@ -221,7 +366,7 @@ def draw_page(c, tkey, b, errors, samples):
                 c.setFont(font, size); c.setFillColor(cm(el["fill"]))
                 for i, it in enumerate(items[:el["max"]]):
                     line = "•  " + it
-                    if pdfmetrics.stringWidth(line, font, size) > w: errors.append(f"{label}: {el['slot']} — '{it[:30]}…' is too long for one line.")
+                    if pdfmetrics.stringWidth(line, font, size) > w: errors.append(f"{label}: {el['slot']} — '{it[:30]}…' is too long for one line, even two sizes smaller. Shorten it (ask the person first).")
                     c.drawString(x, H - y - size - i * el["step"] * sc, line)
                 continue
             val = txt.get(el["slot"])
@@ -230,13 +375,13 @@ def draw_page(c, tkey, b, errors, samples):
             if k == "button":
                 c.setFillColor(cm(el["fill"])); c.roundRect(x, H - y - h, w, h, el["radius"] * sc, stroke=0, fill=1)
                 c.setFont(font, size); c.setFillColor(cm(el["text"]))
-                if pdfmetrics.stringWidth(val, font, size) > w - 2 * el["pad"] * sc: errors.append(f"{label}: {el['slot']} — too long for the button.")
+                if pdfmetrics.stringWidth(val, font, size) > w - 2 * el["pad"] * sc: errors.append(f"{label}: {el['slot']} — too long for the button, even two sizes smaller. Shorten it (ask the person first).")
                 c.drawString(x + el["pad"] * sc, H - y - h / 2 - size * 0.35, val)
                 continue
             lead = size * 1.3
             lines = wrap(val, font, size, w)
             if len(lines) * lead > h * 1.05 + 0.5:
-                errors.append(f"{label}: {el['slot']} — {len(lines)} lines don't fit (room for {max(1, int(h / lead))}). Shorten it; don't change the size.")
+                errors.append(f"{label}: {el['slot']} — {len(lines)} lines don't fit (room for {max(1, int(h / lead))}). Even with the free space and two print sizes smaller it doesn't fit; shorten it (ask the person first).")
             c.setFont(font, size); c.setFillColor(cm(el["fill"]))
             for i, line in enumerate(lines):
                 ty = H - y - size - i * lead
@@ -271,13 +416,14 @@ def render(brief_path, out_pdf, preview=None):
     c = canvas.Canvas(str(out_pdf))
     name = T[pages[0]]["name"].split(" · ")[0]
     c.setTitle(f"Zoho Creator · {name}"); c.setAuthor("Zoho Creator · CDS 2.0")
-    errors, samples = [], []
+    errors, samples, notes = [], [], []
     for pk in pages:
         pb = {**b, **b.get("pages", {}).get(pk.split("-", 1)[1], {})} if key in SETS else b
-        draw_page(c, pk, pb, errors, samples)
+        draw_page(c, pk, pb, errors, samples, notes)
     c.save()
     t = T[pages[0]]
     print(f"Saved {out_pdf} · {name} · {len(pages)} page(s) · trim {t['size_mm'][0]}×{t['size_mm'][1]} mm · 3 mm bleed · CMYK" + (" · fold marks" if t.get("folds") else ""))
+    for n_ in dict.fromkeys(notes): print("  layout:", n_)
     print("PRINT CHECK"); print("Errors: none" if not errors else "Errors:")
     for e in errors: print("  ✗", e)
     print("To replace before printing:" if samples else "To replace: none")
