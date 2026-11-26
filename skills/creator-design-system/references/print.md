@@ -30,9 +30,15 @@ imposes them on A3.
 2. `python scripts/render_print.py slots <template>` to see the slots.
 3. Write brief.json (format at the top of the script) and run
    `python scripts/render_print.py brief.json <name>.pdf --preview <name>.png`.
-4. Fix every error (text too long, outside the 5 mm safe zone) by shortening the text. Never set
-   print text smaller than the minimums: body 9 pt, captions and labels 8 pt, contact and legal
-   lines 7 pt (Guides · Print).
+4. The layout adapts to the content: a box with more text grows into the free space below it
+   (the blocks under it move down; a block low on the page, like the back-cover heading, can rise
+   into the space above; inside a card the card keeps its padding; with less text the blocks below
+   close up; a heading in a colour band sits at the band's foot, close to the paragraph after the
+   band), then the text steps down at
+   most two print sizes. It never goes under the minimums: body 9 pt, captions and labels 8 pt,
+   contact and legal lines 7 pt (Guides · Print). Each change prints as a `layout:` line: look at
+   the preview. Fix any error that's left (text too long, outside the 5 mm safe zone) by
+   shortening the text, after asking the person.
 5. View the preview, then hand over the PDF.
 
 ## Handover — always say this

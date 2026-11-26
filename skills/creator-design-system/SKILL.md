@@ -62,6 +62,33 @@ set and the CDS templates. Never improvise outside it.
   one plain line what doesn't fit and why, offer two or three on-system options that look good
   and pass AA, and build the best one by default. Only if the marketer still insists, make it
   with `--allow-violation` and list it under **System violations** in the handover.
+- **Name only icons that exist.** Before suggesting or using an icon, find it with
+  `python scripts/icon.py find <word>` (or `list`); never offer names that aren't in the set.
+- **Pictures:** a real screenshot first; otherwise a CDS illustration you draw in the house style for that
+  content, not only the six references (`references/illustrations.md`, `scripts/illustration.py`), a recoloured stock illustration the
+  marketer supplies, the 3D tile, or no picture. Offer these as options. New and stock
+  illustrations are listed for design review.
+- **Work like a design lead.** Most people asking are marketers, PMs and developers, not
+  designers: they give the content, you make it look finished, elegant, consistent and clear,
+  without changing their words. Before handing over, look at the rendered piece and fix:
+  - **alignment on one axis:** a picture centred below the text means centred text (the renderer
+    does this, and Feature uses its Illustration layout); a picture beside the text keeps the text
+    left-aligned; never mix centred and left text in one block;
+  - **breathing room:** text never sits close to a screenshot, illustration, tile, photo or card:
+    at least 40 px (4% of the width) between them. render_social keeps this for you (it moves the
+    picture or narrows text beside it) and reports anything it can't fix; in other formats, keep the
+    same gap yourself;
+  - **scale and balance:** the picture fills its zone, nothing tiny floating in empty space, even
+    gaps between blocks;
+  - **typography:** headlines break into balanced lines with no lone last word (the renderer
+    balances them; shorten only if it still breaks badly, and ask before rewording);
+  - **one focal point** and nothing crowding the logos or the safe area.
+  - **the layout fits the content, not the other way round:** more or less text than the sample
+    re-spaces the blocks, grows boxes into free space or closes them up (a heading keeps its normal gap to its paragraph, never a leftover empty slot; on social, tag to headline and headline to supporting text are 0.4 × the headline size, text to picture 40 px to 6% of the width), and only then steps the
+    type down, at most two sizes on the same scale (never under the smallest sizes). Shorten only
+    if it still doesn't fit, and ask first. render_social, build_deck/check_deck and render_print
+    all do this and print each change as a `layout:` line; web and email pages are fluid HTML.
+  These rules hold for **every collateral**: social, decks, print, web pages and emails.
 - **One main button:** one red button per post, slide or email, and one per section on web
   pages. Any other action is an outline button or a text link.
 - **Other languages:** Zoho Puvi is Latin only. Non-English text uses Noto Sans and is flagged
@@ -98,6 +125,7 @@ set and the CDS templates. Never improvise outside it.
    - `assets/print/layouts.json` — the print templates; `scripts/render_print.py` makes CMYK PDFs with bleed.
    - `scripts/build_web.py` + `scripts/web_sections.py` — build designed web page drafts from the ~40 Templates · Web sections; start from a recipe in `assets/web/recipes/` (10 page types from the Figma example pages).
    - `assets/illustrations/ai-agent-bot.svg` — the AI agent bot illustration (dark backgrounds only, one per piece).
+   - `assets/illustrations/style/` — six reference illustrations in the CDS style; `scripts/illustration.py` draws, checks and renders new ones (`references/illustrations.md`).
    - `scripts/check_system.py` — the system guard: emoji, outside colours, fonts and icons, red and violet use, WCAG AA contrast; `pairs` lists the AA-safe colour pairs.
    - `scripts/build_email.py` — builds email newsletters (email-safe HTML + images, zipped).
    - `assets/deck/` — the 58-slide Zoho Show deck (plus one divider slide; 47–59 are infographics); `scripts/build_deck.py` and `check_deck.py` build and check decks.

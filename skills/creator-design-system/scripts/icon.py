@@ -2,6 +2,7 @@
 
 Usage:
   python icon.py list                        # all icon names
+  python icon.py find invoice                # icons whose name or use line matches (use these names only)
   python icon.py ai-sparkle                  # print Regular SVG
   python icon.py ai-sparkle --fill           # print Fill SVG (selected/active only)
   python icon.py ai-sparkle --size 24 --color "#0d4ef2" --out sparkle.svg
@@ -33,6 +34,10 @@ def svg(name, weight="regular", size=None, color=None):
 
 if __name__ == "__main__":
     a = sys.argv[1:]
+    if a and a[0] == "find":
+        lib = json.load(open(LIB))["library"]; words = [w.lower() for w in a[1:]]
+        hits = [n for n in sorted(lib) if all(w in (n + " " + lib[n].get("use", "")).lower() for w in words)]
+        print("\n".join(f"{n}  — {lib[n].get('use', '')}" for n in hits) or f"No CDS icon matches '{' '.join(a[1:])}'. Try another word, or run: python icon.py list"); sys.exit()
     if not a or a[0] == "list":
         lib = json.load(open(LIB))["library"]
         print("\n".join(f"{n}  — {lib[n]['use']}" if lib[n].get("use") else n for n in sorted(lib))); sys.exit()

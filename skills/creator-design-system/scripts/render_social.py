@@ -13,7 +13,10 @@ brief.json:
   "text": {"Headline": "Approvals, **automated** in minutes",
            "Supporting text": "Send every request to the right approver."},
   "tag": "NEW",                     # tag label; "" hides the tag
+  "tag_style": "chip",              # optional: chip | outline | eyebrow (chosen for you when left out)
   "screenshot": "/path/screen.png", # optional: product screenshot for the card
+  "illustration": "/path/art.svg",  # or, in the same slot: a CDS-style illustration (SVG, scripts/illustration.py)
+                                    # or a stock illustration (PNG) recoloured to CDS; both go to design review
   "photo": "/path/cutout.png",      # optional: Quote speaker (transparent cut-out PNG)
   "partner_logo": "/path/logo.png", # partner topic: Creator | partner co-branded lockup
   "speakers": [{"name": "Priya Raman", "role": "Product Marketing", "company": "Zoho Creator",
@@ -97,6 +100,18 @@ def text_css(el):
     return f"font-size:{size}px;font-weight:{weight};line-height:{lh}px;letter-spacing:{ls};"
 
 
+def smaller_styles(el, n=2):
+    """The next CDS text styles down (same weight), for when the content is longer than the template expects."""
+    if "px" in el:
+        size, weight = el["px"]
+        return [f"font-size:{round(size * f)}px;line-height:{round(size * f * el.get('lh', 1.25))}px" for f in (0.9, 0.8)][:n]
+    cur = TS[el["style"]]
+    weight = cur["weight"]
+    down = sorted({v["size"]: v for k, v in TS.items() if v["weight"] == weight and v["size"] < cur["size"]
+                   and k.split("/")[0].startswith(("h", "text-large"))}.values(), key=lambda v: -v["size"])[:n]
+    return [f"font-size:{v['size']}px;line-height:{v['lineHeight']}px;letter-spacing:{float(v['letterSpacing'][:-1]) / 100}em" for v in down]
+
+
 def rich(text, tone_bold, topic, hl=None):
     t = html.escape(text).replace("\n", "<br>")
     if hl:
@@ -125,6 +140,49 @@ def background(style, texture, topic):
     tex = (f"<div style='position:absolute;inset:0;background:url({svg_uri(tile)}) 0 0/480px 480px;"
            f"opacity:{texture}'></div>") if texture else ""
     return f"<div style='position:absolute;inset:0;background:{g}'></div>{tex}", bold
+
+
+def illustration_zone(r, v, W, H):
+    """An illustration has no frame, so it may use more room than the screenshot card: the full width
+    between the text margins, from the slot's top to the slot's bottom, stopping above the logos."""
+    x, y, w, h = r
+    texts = [e for e in v["el"] if e["t"] in ("text", "tag", "lockup")]
+    margin = min([e["r"][0] for e in texts] + [x])
+    left, right, bottom = margin, W - margin, y + h
+    for e in v["el"]:                        # text beside the picture (landscape, X): stay clear of it
+        if e["t"] in ("text", "tag", "lockup", "zoho") and "r" in e:
+            ex, ey, ew, eh = e["r"]
+            if ey < y + h and ey + eh > y + 10:
+                if ex + ew <= x + 10: left = max(left, ex + ew + 40)
+                elif ex >= x + w - 10: right = min(right, ex - 40)
+    for e in v["el"]:
+        if e["t"] in ("zoho", "lockup", "text") and "r" in e:
+            ex, ey, ew, eh = e["r"]
+            if ey > y + h * 0.5 and ex < right and ex + ew > left and ey < y + h + 40:   # a logo or line below the picture
+                bottom = min(bottom, ey - 24)
+    return [left, y, right - left, max(int(h * 0.75), bottom - y)]
+
+
+FIT_JS = """<script>for(const s of document.querySelectorAll('svg[data-cds-illustration]')){const b=s.getBBox(),p=Math.max(b.width,b.height)*0.02;
+s.setAttribute('viewBox',`${b.x-p} ${b.y-p} ${b.width+2*p} ${b.height+2*p}`);}</script>"""
+
+
+def illustration_slot(r, path, bold=False):
+    """A CDS illustration (SVG, drawn in the style) or a stock illustration (PNG/JPG) in the picture zone:
+    no card frame, cropped to the drawing, scaled up to fill the zone, sitting on its bottom edge."""
+    x, y, w, h = r
+    p = Path(path)
+    base = f"position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;display:flex;align-items:flex-end;justify-content:center"
+    if p.suffix.lower() == ".svg":
+        svg = re.sub(r"<\?xml[^>]*>", "", p.read_text())
+        svg = re.sub(r"\swidth=[\"']\d+[\"']\s+height=[\"']\d+[\"']", "", svg, count=1)
+        svg = re.sub(r"<svg\b", "<svg style='width:100%;height:100%' preserveAspectRatio='xMidYMax meet'", svg, count=1)
+        if "data-cds-illustration" in svg:
+            svg = svg.replace("data-cds-illustration", f"data-name='{p.stem}' data-cds-illustration", 1)
+        if bold:   # on blue or Midnight the light ground shadow reads as a white bar: make it a faint glow
+            svg = re.sub(r'(<ellipse\b[^>]*fill=")#e7edfe(")', r'\1#ffffff\2 fill-opacity="0.12"', svg, flags=re.I)
+        return f"<div data-el='screenshot' style='{base}'>{svg}{FIT_JS}</div>"
+    return f"<div data-el='screenshot' style='{base}'><img src='{data_uri(p)}' style='max-width:100%;max-height:100%;object-fit:contain;object-position:bottom'></div>"
 
 
 def screenshot_card(r, img):
@@ -200,9 +258,61 @@ def tile3d(r, family, icon, alpha=1):
             f"<div style='{face}'><div style='{gloss}'></div></div><div style='{hair}'></div>{ic}</div>")
 
 
+CENTRE_KEEP = {"Page counter", "Swipe cue", "Name", "Role"}   # slots that keep their place
+
+
+def tag_style(brief, el, bold):
+    """Social labels (Figma Tag › Chip, Outline, Eyebrow). A solid block reads as a button, so posts use:
+    eyebrow on text-led layouts (statement versions: the headline carries the post), outline over photos
+    and busy backgrounds (webinar speakers, Reels covers), and the soft chip everywhere else.
+    `"tag_style": "chip" | "outline" | "eyebrow"` in the brief overrides it."""
+    if brief.get("tag_style") in ("chip", "outline", "eyebrow"):
+        return brief["tag_style"]
+    ver, tpl = brief.get("version", ""), brief.get("template", "")
+    if ver.startswith("statement"):
+        return "eyebrow"
+    if tpl in ("webinar", "reels-cover") or brief.get("photo"):
+        return "outline"
+    return "chip"
+
+
+def centre_over_picture(v, W):
+    """Design-lead alignment: when a picture is centred below the text (an illustration, not a framed
+    screenshot), the tag, slide number, headline and supporting text above it are centred too, on a
+    comfortable measure. Text beside a picture (Landscape, X) stays left-aligned. Content never changes."""
+    shot = next((e for e in v["el"] if e["t"] == "screenshot"), None)
+    if not shot:
+        return v
+    sx, sy, sw, sh = shot["r"]
+    above = [e for e in v["el"] if e["t"] in ("text", "tag") and "r" in e and e.get("slot") not in CENTRE_KEEP
+             and e["r"][1] + e["r"][3] <= sy + 10]
+    beside = [e for e in v["el"] if e["t"] == "text" and "r" in e and e["r"][1] < sy + sh and e["r"][1] + e["r"][3] > sy + 10]
+    if not above or beside:
+        return v
+    v = json.loads(json.dumps(v))
+    margin = min(e["r"][0] for e in v["el"] if e["t"] in ("text", "tag", "lockup") and "r" in e)
+    for e in v["el"]:
+        if e["t"] not in ("text", "tag") or "r" not in e or e.get("slot") in CENTRE_KEEP or e["r"][1] + e["r"][3] > sy + 10:
+            continue
+        x, y, w, h = e["r"]
+        if e["t"] == "tag":
+            e["centre"] = W / 2
+        else:
+            full = W - 2 * margin
+            ww = full if e.get("slot") in ("Headline", "Slide number") else min(w, full - 120)   # body on a shorter measure
+            e["r"] = [round((W - ww) / 2), y, ww, h]
+            e["align"] = "center"
+    return v
+
+
 def build(brief):
     t = LAYOUTS[brief["template"]]
+    ver0 = brief.get("version", "default")
+    if brief.get("illustration") and f"illustration-{ver0.split('-')[-1]}" in t["variants"] and ver0.startswith("product"):
+        brief = dict(brief, version=f"illustration-{ver0.split('-')[-1]}")   # Feature: the Illustration layout (Figma Layout=Illustration)
     v = t["variants"][brief.get("version", "default")]
+    if brief.get("illustration"):
+        v = centre_over_picture(v, t["size"][0])
     W, H = t["size"]
     ver = brief.get("version", "default")
     implied = "ai" if ver.endswith("ai") else "partner" if ver.endswith("partner") else "default"
@@ -237,13 +347,23 @@ def build(brief):
             if label == "":
                 continue
             x, y, w, h = el["r"]
-            s = h / 40
-            c = el["colour"]
-            if topic == "ai" and not bold and c == "blue":
-                c = "violet"
-            bgc, fg = TAG[c]
-            html_el.append(f"<div data-el='tag' style='position:absolute;left:{x}px;top:{y}px;height:{h}px;padding:0 {20*s}px;border-radius:{4*s}px;"
-                           f"background:{colour(bgc)};color:{colour(fg)};font-size:{16*s}px;font-weight:600;line-height:{h}px;white-space:nowrap'>{html.escape(label)}</div>")
+            style = tag_style(brief, el, bold)
+            light_fg = COL["violet/100"] if topic in ("ai", "partner") else COL["blue/100"]
+            light_bg = COL["violet/20"] if topic in ("ai", "partner") else COL["blue/20"]
+            fg = "#ffffff" if bold else light_fg
+            if style == "eyebrow":
+                hh = round(max(h * 0.55, W * 0.026)); fs = round(hh * 0.66)
+                box = f"height:{hh}px;line-height:{hh}px;font-size:{fs}px;letter-spacing:.14em;color:{fg}"
+            else:
+                hh = round(min(h, max(h * 0.8, W * 0.038))); fs = round(hh * 0.4)   # readable in the feed, never a big block
+                fill = (f"background:{'rgba(255,255,255,.14)' if bold else light_bg}" if style == "chip"
+                        else f"border:{max(1.5, h / 37):.1f}px solid {'rgba(255,255,255,.5)' if bold else light_fg}")
+                box = (f"height:{hh}px;line-height:{hh - (3 if style == 'outline' else 0)}px;padding:0 {round(hh * 0.4)}px;"
+                       f"border-radius:{hh}px;{fill};font-size:{fs}px;letter-spacing:.08em;color:{fg}")
+            ty = y + (h - hh) / 2
+            pos = f"left:{el['centre']}px;transform:translateX(-50%)" if el.get("centre") else f"left:{x}px"
+            html_el.append(f"<div data-el='tag' data-style='{style}' style='position:absolute;{pos};top:{ty}px;box-sizing:border-box;{box};"
+                           f"font-weight:600;text-transform:uppercase;white-space:nowrap'>{html.escape(label)}</div>")
             if "tag" not in brief:
                 samples.append(f"tag '{label}' (sample label)")
         elif k == "text":
@@ -253,8 +373,18 @@ def build(brief):
                 val = el["sample"]
                 samples.append(f"{el['slot']} (sample text)")
             align = "right" if (RTL_RE.search(val) and el["align"] == "left") else el["align"]
-            html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;"
+            wrap = "text-wrap:balance;" if (el["slot"] in ("Headline", "Quote") or align == "center") else "text-wrap:pretty;"   # no lone last word
+            steps = html.escape(json.dumps(smaller_styles(el)), quote=True)
+            html_el.append(f"<div data-el='text' data-slot='{el['slot']}' data-h='{h}' data-steps=\"{steps}\" style='position:absolute;left:{x}px;top:{y}px;width:{w}px;{wrap}"
                            f"color:{colour(el['fill'])};text-align:{align};{rtl_css(val)}{text_css(el)}'>{rich(val, bold, topic, el.get('hl'))}</div>")
+        elif k == "screenshot" and brief.get("illustration"):
+            zone = el["r"] if brief.get("version", "").startswith("illustration") else illustration_zone(el["r"], v, W, H)
+            html_el.append(illustration_slot(zone, brief["illustration"], bold))
+            ip = Path(brief["illustration"])
+            if ip.suffix.lower() != ".svg":
+                samples.append(f"stock illustration {ip.name}: design review (licence, flat style, recoloured to CDS; run check_system.py on it)")
+            elif 'data-cds-illustration="reference"' not in ip.read_text():
+                samples.append(f"illustration {ip.name}: drawn in the CDS style, design review before publishing")
         elif k == "screenshot":
             c, s = screenshot_card(el["r"], brief.get("screenshot"))
             html_el.append(c)
@@ -369,6 +499,176 @@ CHECK_JS = """(safe) => {
   return out; }"""
 
 
+FLOW_JS = r"""([G, safe]) => {
+  // Design-lead layout: the template is a starting point, not a fixed grid. Text takes the height its content
+  // needs; when it is longer, the picture below moves down and gets shorter; when it is shorter, the picture moves
+  // up and gets taller. If the picture would get too small, the headline (then the body) steps down to the next
+  // CDS text style, at most two steps. Nothing is cut and the words never change.
+  const out = {fixed: [], tooLong: []};
+  const R = e => e.getBoundingClientRect();
+  const pic = document.querySelector("[data-el='screenshot']");
+  const KEEP = ['Page counter', 'Swipe cue', 'Name', 'Role', 'Prompt'];
+  const all = [...document.querySelectorAll("[data-el='text'],[data-el='tag']")].filter(t => !KEEP.includes(t.dataset.slot));
+  const stepDown = t => { const st = JSON.parse(t.dataset.steps || '[]'); const i = +(t.dataset.step || 0);
+    if (i >= st.length) return false; t.style.cssText += ';' + st[i]; t.dataset.step = i + 1; return true; };
+  if (pic) {
+    const p0 = R(pic), isIll = !!pic.querySelector('svg[data-cds-illustration]') || !!pic.querySelector('img') && !pic.style.borderRadius;
+    const stack = all.filter(t => R(t).top < p0.top && R(t).left < p0.right && R(t).right > p0.left).sort((a, b) => R(a).top - R(b).top);
+    if (stack.length) {
+      const slotH = t => t.dataset.el === 'tag' ? R(t).height : +t.dataset.h;
+      const tops = stack.map(t => parseFloat(t.style.top));
+      const gaps = stack.map((t, i) => (i + 1 < stack.length ? tops[i + 1] : p0.top) - (tops[i] + slotH(t)));
+      const bottom = p0.bottom, minH = p0.height * 0.6, maxH = p0.height * (isIll ? 1.35 : 1.2);
+      // text to picture: at least G, at most 6% of the width, so the text and the picture read together
+      const PICGAP = Math.max(G, Math.round(R(document.querySelector('#c')).width * 0.06));
+      const layout = () => { let y = tops[0];
+        stack.forEach((t, i) => { t.style.top = y + 'px'; const h = R(t).height; if (t.dataset.el === 'text') t.dataset.h = Math.ceil(h);
+          y += h + (i + 1 < stack.length ? Math.max(gaps[i], 12) : Math.min(Math.max(gaps[i], G), PICGAP)); });
+        return y; };
+      let top = layout();
+      const big = [...stack].filter(t => t.dataset.el === 'text').sort((a, b) => parseFloat(getComputedStyle(b).fontSize) - parseFloat(getComputedStyle(a).fontSize));
+      while (bottom - top < minH) {
+        const t = big.find(x => +(x.dataset.step || 0) < JSON.parse(x.dataset.steps || '[]').length && (x === big[0] || +(big[0].dataset.step || 0) >= 1));
+        if (!t || !stepDown(t)) break;
+        out.fixed.push(`${t.dataset.slot}: one CDS size smaller to fit the content`); top = layout();
+      }
+      let h = bottom - top;
+      if (h < minH) { out.tooLong.push(`${stack.map(t => t.dataset.slot || 'tag').join(' + ')} leave only ${Math.round(h)}px for the picture`); h = minH; }
+      if (h > maxH) { top += (h - maxH) / 2; h = maxH; }   // short text: the picture grows to its limit, then sits centred in the room left
+      const r = R(pic); const dTop = top - r.top;
+      if (Math.abs(dTop) > 2 || Math.abs(h - r.height) > 2) {
+        pic.style.top = (parseFloat(pic.style.top) + dTop) + 'px'; pic.style.height = h + 'px';
+        if (!isIll && pic.style.width) { const w0 = parseFloat(pic.style.width), w1 = Math.min(w0 * h / r.height, w0 * 1.15);
+          pic.style.left = (parseFloat(pic.style.left) + (w0 - w1) / 2) + 'px'; pic.style.width = w1 + 'px'; }
+        if (Math.abs(dTop) > 2) out.fixed.push(`picture ${dTop > 0 ? 'moved down' : 'moved up'} ${Math.round(Math.abs(dTop))}px to sit close to the text`);
+      }
+    }
+  }
+  // text beside a picture or with no picture (Landscape, X, statement layouts): a column that grows downward.
+  // Blocks keep their template place unless the one above needs the room; the last may grow to the safe area.
+  const done = new Set(pic ? all.filter(t => { const a = R(t), b = R(pic); return a.top < b.top && a.left < b.right && a.right > b.left; }) : []);
+  const col = all.filter(t => !done.has(t) && t.dataset.el === 'text').sort((a, b) => parseFloat(a.style.top) - parseFloat(b.style.top));
+  if (col.length) {
+    const tops = col.map(t => parseFloat(t.style.top)), slots = col.map(t => +t.dataset.h);
+    // a block the template already places below the safe area (a video lower third) keeps its own floor
+    const limit = Math.max(safe ? safe[1] + safe[3] : 1e9, tops[col.length - 1] + slots[col.length - 1]);
+    const blockers = [...document.querySelectorAll("[data-el='zoho'],[data-el='lockup'],[data-el='screenshot'],[data-el='tile']")].map(R);
+    // text beside a picture keeps G px clear of it: set the measure first, then flow, so the wrap is final
+    if (pic) col.forEach(t => { const a = R(t), b = R(pic);
+      if (a.left < b.left && a.right > b.left - G) { t.style.width = Math.max(200, b.left - G - a.left) + 'px'; } });
+    const flowCol = () => { let prevBottom = -1e9, last = 0;
+      col.forEach((t, i) => { const gap = i ? Math.max(tops[i] - (tops[i - 1] + slots[i - 1]), 16) : 0;
+        const y = i ? Math.max(tops[i], prevBottom + gap) : tops[i]; t.style.top = y + 'px';
+        prevBottom = y + R(t).height; last = prevBottom; });
+      const a = R(col[col.length - 1]);
+      const hitsLogo = blockers.some(b => a.left < b.right && a.right > b.left && a.bottom > b.top && a.top < b.bottom);
+      return last <= limit && !hitsLogo; };
+    const order = [...col].sort((a, b) => parseFloat(getComputedStyle(b).fontSize) - parseFloat(getComputedStyle(a).fontSize));
+    let ok = flowCol(), guard = 0;
+    while (!ok && guard++ < 4) { const t = order.find(x => +(x.dataset.step || 0) < Math.min(2, JSON.parse(x.dataset.steps || '[]').length));
+      if (!t) break; stepDown(t); out.fixed.push(`${t.dataset.slot}: one CDS size smaller to fit the content`); ok = flowCol(); }
+    // short copy beside a picture: don't leave the template's gaps half empty; set the tag and text as one
+    // compact group, centred on the picture
+    const besidePic = pic && col.every(t => R(t).right <= R(pic).left + 4);
+    if (ok && besidePic) {
+      const tag = all.find(t => t.dataset.el === 'tag' && R(t).right <= R(pic).left + 4);
+      const group = (tag ? [tag] : []).concat(col);
+      const hs = group.map(t => R(t).height), lh = parseFloat(getComputedStyle(col[0]).lineHeight) || 60;
+      const gaps = group.map((t, i) => i === 0 ? 0 : (group[i - 1] === tag ? Math.max(20, lh * 0.3) : Math.max(24, lh * 0.4)));
+      const total = hs.reduce((a, b) => a + b, 0) + gaps.reduce((a, b) => a + b, 0);
+      const span = R(group[group.length - 1]).bottom - R(group[0]).top;
+      if (total < span - 40) {
+        const lock = document.querySelector("[data-el='lockup']"), p = R(pic);
+        const minTop = lock ? R(lock).bottom + 40 : R(group[0]).top;
+        let y = Math.max(minTop, Math.min(p.top + p.height / 2 - total / 2, (safe ? safe[1] + safe[3] : 1e9) - total));
+        group.forEach((t, i) => { y += gaps[i]; t.style.top = y + 'px'; y += hs[i]; });
+        out.fixed.push('short text: set as one group, centred on the picture');
+      }
+    }
+    if (ok) col.forEach(t => { t.dataset.h = Math.ceil(R(t).height); });
+    else out.tooLong.push(`${col.map(t => t.dataset.slot).join(' + ')} run past the safe area`);
+  }
+  return out;
+}"""
+
+
+RHYTHM_JS = r"""(safe) => {
+  // Design-lead rhythm: the gap from the tag (or eyebrow) to the headline, and from the headline to the line under
+  // it (supporting text, date), is 0.4 x the headline size, never under 16px, in every template and tone. Measured
+  // on the letters, not the boxes. Blocks below move with it; a picture under them gives up (or takes back) the room.
+  const out = {fixed: []};
+  const H = document.querySelector("[data-slot='Headline']");
+  if (!H || !H.textContent.trim()) return out;
+  const glyph = el => { const r = document.createRange(); r.selectNodeContents(el); const rs = [...r.getClientRects()].filter(x => x.width && x.height);
+    return rs.length ? {top: Math.min(...rs.map(x => x.top)), bottom: Math.max(...rs.map(x => x.bottom))} : el.getBoundingClientRect(); };
+  const R = e => e.getBoundingClientRect();
+  const fs = parseFloat(getComputedStyle(H).fontSize), V = Math.max(16, Math.round(fs * 0.4));
+  const cols = (a, b) => R(a).left < R(b).right - 2 && R(a).right > R(b).left + 2;
+  const texts = [...document.querySelectorAll("[data-el='text'],[data-el='tag']")].filter(t => t.textContent.trim());
+  const pic = document.querySelector("[data-el='screenshot']");
+  const limit = safe ? safe[1] + safe[3] : 1e9;
+  const shiftBelow = (from, d, label) => {
+    const y0 = R(from).top - 2;
+    const CH = R(document.querySelector('#c')).height, FOOT = ['Page counter', 'Swipe cue', 'Prompt', 'Name', 'Role'];
+    const movers = texts.filter(t => R(t).top >= y0 && cols(t, from) && !FOOT.includes(t.dataset.slot) && R(t).top < CH * 0.85);
+    const lastBottom = Math.max(...movers.map(t => glyph(t).bottom));
+    const picBelow = pic && R(pic).top >= y0 && cols(pic, from);
+    if (d > 0 && !picBelow && lastBottom + d > limit) d = Math.max(0, limit - lastBottom);
+    if (Math.abs(d) < 2) return;
+    movers.forEach(t => { t.style.top = (parseFloat(t.style.top) + d) + 'px'; });
+    if (picBelow && pic.style.height) { pic.style.top = (parseFloat(pic.style.top) + d) + 'px'; pic.style.height = (parseFloat(pic.style.height) - d) + 'px'; }
+    out.fixed.push(`${label}: gap set to ${V}px (0.4 x the headline size)`);
+  };
+  // above: tag or eyebrow -> headline (the headline and everything under it move)
+  const above = texts.filter(t => t !== H && cols(t, H) && glyph(t).bottom <= glyph(H).top + 2 && (t.dataset.el === 'tag' || t.dataset.slot === 'Eyebrow'))
+    .sort((a, b) => glyph(b).bottom - glyph(a).bottom)[0];
+  if (above) shiftBelow(H, V - (glyph(H).top - glyph(above).bottom), `${above.dataset.slot || 'tag'} to Headline`);
+  // below: headline -> supporting text / date
+  const NEXT = ['Supporting text', 'Date and time', 'Date', 'Subline', 'Body'];
+  const below = texts.filter(t => t !== H && cols(t, H) && NEXT.includes(t.dataset.slot) && glyph(t).top >= glyph(H).bottom - 2)
+    .sort((a, b) => glyph(a).top - glyph(b).top)[0];
+  if (below) shiftBelow(below, V - (glyph(below).top - glyph(H).bottom), `Headline to ${below.dataset.slot}`);
+  return out;
+}"""
+
+
+SPACE_JS = r"""(G) => {
+  // Design-lead spacing: text never sits close to a picture. Keep at least G px between any text block and a
+  // screenshot, illustration, tile, photo or card: move or shrink the picture, or narrow text beside it.
+  const H = document.querySelector('#c').getBoundingClientRect().height;
+  const txt = el => { const r = document.createRange(); r.selectNodeContents(el); const rs = [...r.getClientRects()].filter(x => x.width && x.height);
+    if (!rs.length) return el.getBoundingClientRect();
+    return {left: Math.min(...rs.map(x => x.left)), right: Math.max(...rs.map(x => x.right)), top: Math.min(...rs.map(x => x.top)), bottom: Math.max(...rs.map(x => x.bottom))}; };
+  const pic = el => { const s = el.querySelector('svg[data-cds-illustration]');
+    if (!s) return el.getBoundingClientRect();
+    const rs = [...s.children].filter(c => c.tagName !== 'script').map(c => c.getBoundingClientRect()).filter(x => x.width && x.height);
+    return {left: Math.min(...rs.map(x => x.left)), right: Math.max(...rs.map(x => x.right)), top: Math.min(...rs.map(x => x.top)), bottom: Math.max(...rs.map(x => x.bottom))}; };
+  const out = {fixed: [], close: []};
+  // speaker cards, cut-out photos and the chat bubble on a tile are layered on purpose in the templates
+  const pics = [...document.querySelectorAll("[data-el='screenshot'],[data-el='tile']")];
+  const texts = [...document.querySelectorAll("[data-el='text'],[data-el='tag']")].filter(t => t.textContent.trim() && !['Prompt', 'Name', 'Role'].includes(t.dataset.slot));
+  for (let pass = 0; pass < 3; pass++) for (const p of pics) for (const t of texts) {
+    const a = txt(t), b = pic(p), name = t.dataset.slot || 'tag';
+    const overlapX = a.left < b.right && a.right > b.left, overlapY = a.top < b.bottom && a.bottom > b.top;
+    if (overlapX && a.bottom <= b.top + 4 && b.top - a.bottom < G) {             // text above the picture
+      const need = Math.ceil(G - (b.top - a.bottom)), r = p.getBoundingClientRect();
+      if (p.querySelector('svg[data-cds-illustration]') || p.querySelector('img') && p.dataset.el === 'screenshot' && !p.style.borderRadius) {
+        p.style.top = (parseFloat(p.style.top) + need) + 'px'; p.style.height = (r.height - need) + 'px';   // the illustration refits
+      } else if (r.bottom + need <= H - 40) { p.style.top = (parseFloat(p.style.top) + need) + 'px'; }
+      else { out.close.push(`${name} is ${Math.round(b.top - a.bottom)}px from the picture (needs ${G})`); continue; }
+      out.fixed.push(`${name}: picture moved ${need}px further away`);
+    } else if (overlapY && a.right <= b.left + 4 && b.left - a.right < G) {     // text left of the picture
+      const need = Math.ceil(G - (b.left - a.right)), w = t.getBoundingClientRect().width;
+      t.style.width = (w - need) + 'px'; t.style.maxWidth = (w - need) + 'px';
+      out.fixed.push(`${name}: text measure narrowed ${need}px to keep clear of the picture`);
+    } else if (overlapX && overlapY) {
+      out.close.push(`${name} touches the picture`);
+    }
+  }
+  return out;
+}"""
+
+
 def render(brief_path, out_png):
     brief = json.load(open(brief_path))
     from check_system import guard; guard(brief, sys.argv)
@@ -383,14 +683,26 @@ def render(brief_path, out_png):
         pg.goto(out_html.resolve().as_uri())
         pg.evaluate("document.fonts.ready")
         pg.wait_for_timeout(250)
+        flow = pg.evaluate(FLOW_JS, [max(40, round(W * 0.04)), safe])
+        pg.wait_for_timeout(80)
+        rhythm = pg.evaluate(RHYTHM_JS, safe)
+        flow["fixed"] += rhythm["fixed"]
+        space = pg.evaluate(SPACE_JS, max(40, round(W * 0.04)))   # minimum gap between text and any picture
+        pg.wait_for_timeout(100)
         res = pg.evaluate(CHECK_JS, safe)
         pg.locator("#c").screenshot(path=str(out_png))
         b.close()
-    errors = [f"Text too long — {o}. Shorten it; don't change the size." for o in res["overflow"]]
+    errors = [f"Text too long — {o}. Even two CDS sizes smaller it doesn't fit; shorten it (ask the person first)." for o in res["overflow"]]
+    errors += [f"Text too long — {o}. Shorten it (ask the person first) or use a version with more room." for o in flow["tooLong"]]
     errors += [f"Collision — {o}." for o in res["overlap"]]
     errors += [f"Outside the safe area — {o}." for o in res["outside"]]
+    errors += [f"Too close — {o}. Shorten the text or use a version with more room." for o in dict.fromkeys(space["close"])]
     errors += [f"Too long for the speaker card — {o}. Shorten it (e.g. first and last name, a shorter job title)." for o in res.get("speaker", [])]
     print(f"Saved {out_png} ({W}×{H}) and {out_html.name}")
+    for f in dict.fromkeys(flow["fixed"]):
+        print("  layout:", f)
+    for f in dict.fromkeys(space["fixed"]):
+        print("  spacing:", f)
     print("BRAND CHECK")
     print("Errors: none" if not errors else "Errors:")
     for e in errors:

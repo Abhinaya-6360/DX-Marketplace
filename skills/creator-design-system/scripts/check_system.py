@@ -196,6 +196,8 @@ def brief_violations(brief, topic=None, kind=None):
                 v = [x + " — if this is for the main button, it is always red/90 (#e81d17)" for x in v]
             out += v
     out += script_violations(" ".join(t for _, t in _strings(brief)), kind or brief_kind(brief))
+    if isinstance(brief, dict) and isinstance(brief.get("illustration"), str) and Path(brief["illustration"]).exists():
+        out += check_file(brief["illustration"], topic)
     return out
 
 
@@ -242,6 +244,73 @@ def script_violations(s, kind="social"):
 
 # ---------- files ----------
 NEW_ICONS = []   # icons drawn because none fitted: reported for design review
+NEW_ILLUSTRATIONS = []   # illustrations Claude drew in the CDS style: reported for design review
+IMAGE_NOTES = []   # supplied pictures (stock illustrations, photos): colours outside CDS, for design review
+
+
+def image_notes(path, max_colours=6):
+    """Colours in a supplied picture that are clearly outside CDS 2.0 (notes for design review, not violations).
+    Each pixel is compared with every CDS colour; whites, greys and black are skipped, and only colours
+    covering at least 2% of the coloured area that sit far from every CDS colour are listed."""
+    try:
+        import numpy as np
+        from PIL import Image
+    except ImportError:
+        return []
+    p = Path(path)
+    im = np.asarray(Image.open(p).convert("RGBA").resize((200, 200)), dtype=float)
+    px = im[im[..., 3] > 200][:, :3]
+    if not len(px):
+        return []
+    mx, mn = px.max(1), px.min(1)
+    sat = (mx - mn) / np.maximum(mx, 1)
+    keep = (sat > 0.18) & (mx > 40) & ~((mn > 235))
+    px = px[keep]
+    names = [k for k, v in COL.items() if re.fullmatch(r"#[0-9a-f]{6}", v)]
+    pal = np.array([[int(COL[k][i:i + 2], 16) for i in (1, 3, 5)] for k in names], dtype=float)
+    d = np.sqrt(((px[:, None, :] - pal[None, :, :]) ** 2).sum(-1))
+    far = d.min(1) > 28
+    off, near_i = px[far], d.argmin(1)[far]
+    total = max(len(px), 1)   # the coloured part of the picture
+    groups = {}
+    for c, n in zip(off.astype(int), near_i):     # group by the CDS colour each one is closest to
+        groups.setdefault(names[n], []).append(c)
+    out = []
+    for k, cs in sorted(groups.items(), key=lambda kv: -len(kv[1])):
+        if len(cs) / total < 0.02 or len(out) >= max_colours:
+            break
+        avg = "#%02x%02x%02x" % tuple(int(v) for v in np.mean(cs, 0))
+        near = k
+        out.append(f"{avg} (about {max(1, round(len(cs) * 100 / total))}% of the coloured area) — nearest CDS colour {near} ({COL[near]})")
+    if out:
+        IMAGE_NOTES.append(f"{p.name}: colours outside CDS: " + "; ".join(out) + ". Recolour them before publishing (skin and hair can stay natural).")
+    return []
+    import colorsys
+    p = Path(path)
+    im = Image.open(p).convert("RGBA").resize((160, 160))
+    data = im.get_flattened_data() if hasattr(im, "get_flattened_data") else im.getdata()
+    px = [c[:3] for c in data if c[3] > 200]
+    if not px:
+        return []
+    bins = {}
+    for r, g, b in px:
+        h, l, sat = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+        if sat < 0.15 or l > 0.93 or l < 0.08:      # whites, greys, black: neutral
+            continue
+        k = (r // 32, g // 32, b // 32)
+        bins.setdefault(k, []).append((r, g, b))
+    out = []
+    for k, cs in sorted(bins.items(), key=lambda kv: -len(kv[1])):
+        if len(cs) / len(px) < 0.002 or len(out) >= max_colours:
+            break
+        avg = "#%02x%02x%02x" % tuple(sum(c[i] for c in cs) // len(cs) for i in range(3))
+        near = nearest(avg)
+        d = sum((int(avg[i:i + 2], 16) - int(COL[near][i:i + 2], 16)) ** 2 for i in (1, 3, 5)) ** 0.5
+        if d > 16:
+            out.append(f"{avg} ({len(cs) * 100 // len(px)}% of the picture) is outside CDS — nearest {near} ({COL[near]})")
+    if out:
+        IMAGE_NOTES.append(f"{p.name}: " + "; ".join(out) + ". Recolour to CDS before publishing (skin and hair can stay natural).")
+    return []
 ICON_BODIES = set()
 for v in ICONS.values():
     for w in ("regular", "fill"):
@@ -263,16 +332,29 @@ def decl(block, prop):
     return m.group(1).strip() if m else None
 
 
+ICON_FONT_RE = re.compile(r"""class\s*=\s*["'][^"']*\b(?:fa[srlbdt]?|fa-[\w-]+|material-icons[\w-]*|material-symbols[\w-]*|bi-[\w-]+|glyphicon[\w-]*|ion-[\w-]+|icofont-[\w-]+)\b"""
+                         r"""|href\s*=\s*["'][^"']*(?:font-?awesome|material-?(?:icons|symbols)|bootstrap-icons|ionicons)""", re.I)
+
+
 def check_html(src, email=False, topic=None):
     out = []
     mt = re.search(r"""name=["']cds-topic["']\s+content=["'](\w+)["']""", src)
     if not topic and mt and mt.group(1) in ("ai", "partner"):
         topic = mt.group(1)
-    kind = "web" if re.search(r"""name=["']cds-kind["']\s+content=["']web["']""", src) else ("email" if email else "social")
+    mk = re.search(r"""name=["']cds-kind["']\s+content=["'](\w+)["']""", src)
+    email = email or (mk is not None and mk.group(1) == "email") or (mk is None and looks_like_email(src))   # 2.8.4 detection
+    kind = "web" if (mk and mk.group(1) == "web") else ("email" if email else "social")
     text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", src, flags=re.S | re.I)
     text = re.sub(r"<[^>]+>", " ", text)
     out += text_violations(re.sub(r"\s+", " ", text))
     out += script_violations(text, kind)
+    if ICON_FONT_RE.search(src):   # icon fonts: Font Awesome, Material, Bootstrap Icons, Ionicons, Glyphicons
+        out.append("an icon font from another set is used (e.g. Font Awesome or Material Icons) — use CDS icons as inline SVG: python scripts/icon.py <name>")
+    for m in re.finditer(r"<svg\b[^>]*data-cds-illustration=[\"'](\w+)[\"'][^>]*>(.*?)</svg>", src, flags=re.S | re.I):
+        from illustration import style_problems
+        out += style_problems(m.group(0))
+        if m.group(1).lower() == "new":
+            NEW_ILLUSTRATIONS.append(re.sub(r"\W+", " ", (re.search(r"data-name=[\"']([^\"']+)", m.group(0)) or [0, "illustration"])[1]).strip() or "illustration")
     body = htmllib.unescape(re.sub(r"data:[^'\")]+", "", src))   # skip embedded fonts/images
     out += colour_violations(body)
     fonts_ok = ["zoho puvi"] + (["georgia", "helvetica neue", "helvetica", "arial", "sans-serif", "serif"] if email else [])
@@ -281,6 +363,8 @@ def check_html(src, email=False, topic=None):
         if first and first not in fonts_ok and not first.startswith("var("):
             out.append(f"font '{first}' is not in the system — use Zoho Puvi" + (" (email: Georgia / Helvetica Neue)" if email else ""))
     for svg in re.findall(r"<svg\b.*?</svg>", body, flags=re.S | re.I):
+        if "data-cds-illustration" in svg[:400]:
+            continue   # CDS-style illustrations are checked above (style and colours)
         new = re.search(r'data-cds-new-icon="([^"]+)"', svg)
         if new:
             ok = ('viewBox="0 0 32 32"' in svg and re.search(r'stroke-width="2"', svg)
@@ -310,7 +394,8 @@ def check_html(src, email=False, topic=None):
                     out.append(f"contrast {worst:.1f}:1 for {norm(f.group())} on {', '.join(norm(h) for h in g)} fails WCAG AA "
                                f"({'3' if large else '4.5'}:1 needed) — pick a pair from `python scripts/check_system.py pairs`")
     web = re.search(r"""name=["']cds-kind["']\s+content=["']web["']""", body) is not None
-    for chunk in (re.split(r"<section\b", body) if web else [body]):
+    no_ill = re.sub(r"<svg\b[^>]*data-cds-illustration.*?</svg>", "", body, flags=re.S | re.I)   # illustration accents are checked by illustration.py
+    for chunk in (re.split(r"<section\b", no_ill) if web else [no_ill]):
         reds = 0
         for m in re.finditer(r"<(?P<tag>\w+)(?P<attrs>[^>]*)>", chunk):
             attrs = m.group("attrs").lower()
@@ -413,6 +498,8 @@ def check_file(p, topic=None, email=False):
     p = Path(p); s = p.suffix.lower()
     if s == ".pptx":
         return check_pptx(p, topic)
+    if s in (".png", ".jpg", ".jpeg", ".webp"):
+        return image_notes(p)
     src = p.read_text(errors="ignore")
     if s == ".json":
         return brief_violations(json.loads(src), topic)
@@ -459,6 +546,10 @@ if __name__ == "__main__":
         bad += len(v)
     if FONT_NOTES:
         print("\nFONT NOTE(S) for design review: " + "; ".join(dict.fromkeys(FONT_NOTES)))
+    if NEW_ILLUSTRATIONS:
+        print("\nNEW ILLUSTRATION(S) for design review (drawn in the CDS illustration style): " + ", ".join(dict.fromkeys(NEW_ILLUSTRATIONS)))
+    if IMAGE_NOTES:
+        print("\nIMAGE NOTE(S) for design review:\n  " + "\n  ".join(dict.fromkeys(IMAGE_NOTES)))
     if NEW_ICONS:
         print("\nNEW ICON(S) for design review (drawn because no CDS icon fitted): " + ", ".join(dict.fromkeys(NEW_ICONS)))
         print("  List each one in the handover so the design team can add it to the CDS 2.0 library.")
